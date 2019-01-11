@@ -34,7 +34,7 @@ const BUTTONS = ['Acoustic',
 'Tile ',
 'Transite',
 'Vinyl',
-'Wood'  "Cancel"];
+'Wood',  "Cancel"];
 const SURFACES = ['Non Play Area', 'Play Area', 'Cancel'];
 const TYPES = ["Aluminum", "DH", "Casement", "Louvered", "Fixed", "Horiz Slider", "Transom", "Vinyl", "Bay", "Guarded", "Cancel"];
 const SIDES = ["A", "B", "C", "D", "Cancel"];
