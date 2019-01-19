@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
-  AsyncStorage,
+  AsyncStorage
 } from 'react-native';
 import {RkTheme, RkText, RkButton, RkCard, rkCardImg, RkChoice, RkChoiceGroup} from 'react-native-ui-kitten';
 import { Input, Label, Icon, Container, Header, Content, Accordion, ListItem, CheckBox, Body, Text, Button, ActionSheet, Item} from "native-base";
@@ -41,17 +41,41 @@ export default class HomeScreen extends React.Component {
     this._retrieveData()
     this.getPermissions()
   }
-  uploadData(){
-    console.log('clear')
-    //push to db
-    //upload photo
+  uploadData = async (jobs) => {
+    console.log(jobs)
 
-    AsyncStorage.clear()
+    //push to db
+    jobs.map(x => {
+      AsyncStorage.getItem(x).then(state =>
+        fetch('https://e618e91f.ngrok.io/upload',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            jobid: x,
+            state: JSON.stringify({state}),
+          }),
+        })
+          .then((response) => response.json())
+                .then((responseJson) => {
+                  console.log(responseJson);
+                })
+                .catch((error) => {
+                  console.error(error);
+                })
+                //upload photo
+
+      );
+    })
+
+    //AsyncStorage.clear()
     this.setState({jobs:[]})
   }
 
   getPermissions = async() => {
-    console.log('get perms')
     const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
     if (status !== 'granted') {
       alert('You will need to enable camera roll permissions to upload a room layout');
@@ -121,7 +145,7 @@ RkTheme.setType('RkButton', 'faded', {
               </Button>
             </View>)
           })}
-          <Button block success style={{paddingTop:10}} onPress={this.uploadData}>
+          <Button block success style={{paddingTop:10}} onPress={() => this.uploadData(this.state.jobs)}>
             <Text>Upload</Text>
           </Button>
           </RkCard>

@@ -47,7 +47,7 @@ const CANCEL_INDEX2 = 8;
 
 
 function InsSheet(props) {
-  let testing = () =>{
+  let testing = () => {
     console.log('set.selected')
   }
   return (
@@ -55,8 +55,8 @@ function InsSheet(props) {
       <Item>
         <Input value={props.name} onChangeText={(text) => props.setName(text, props.id)} placeholder="Inspection Sheet" />
       </Item>
-      <Accordion setSelected={testing} dataArray={props.data} expanded ={props.total} onChange={() => alert('ghgsd')}
-      sheetId={props.id}  removeWindow={props.removeWindow} renderHeader={props.renderWindowHeader} renderContent={(content) => props.renderSheet(content, props.id)}
+      <Accordion setSelected={testing} dataArray={props.data} expanded={props.total}
+        sheetId={props.id} removeWindow={props.removeWindow} renderHeader={props.renderWindowHeader} renderContent={(content) => props.renderSheet(content, props.id)}
       />
       <Button
         onPress={() =>
@@ -199,42 +199,50 @@ export default class LinksScreen extends React.Component {
   }
   renderHtmlFooter(sheetId, content) {
     return (
-      <View><Button block error style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
-        this.state.insSheets.map(x => {
-          x.data.map(y => {
-            if (y.id == content.id) {
-              y.expanded = true,
-                y.done = true
-              console.log('setting expanded to false', y);
-            }
-          }),
-          x.total = 0
-        })
-        this.setState({})
-      }}>
-        <Text>Done</Text>
-      </Button>
-        <Button block error style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
-          Alert.alert(
-            'Remove Window',
-            'Are you sure?',
-            [
+      <Grid>
+        <Col>
+          <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
+            this.state.insSheets.map(x => {
+              console.log(content.id)
+              console.log('x', x.id)
+              if (x.id == sheetId) {
+                x.data.map(y => {
+                  if (y.id == content.id) {
+                    y.done = true
+                    y.expanded = false
+                  }
+                })
+                x.total = false
+              }
+            })
+            this.setState({})
+          }}>
+            <Text>Done</Text>
+          </Button>
+        </Col>
+        <Col>
+          <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+            Alert.alert(
+              'Remove Window',
+              'Are you sure?',
+              [
 
-              { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-              { text: 'OK', onPress: () => this.removeWindow(sheetId, content.id) },
-            ],
-            { cancelable: false }
-          )
-        }}>
-          <Text>remove</Text>
-        </Button>
-      </View>
+                { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                { text: 'OK', onPress: () => this.removeWindow(sheetId, content.id) },
+              ],
+              { cancelable: false }
+            )
+          }}>
+            <Text>Remove</Text>
+          </Button>
+        </Col>
+      </Grid>
     )
   }
 
   _renderWindowHeader(obj, expanded, props) {
     console.log(props)
-    if (obj.done){
+    if (obj.done) {
       console.log('setting false!')
       expanded = false
     }
@@ -260,38 +268,38 @@ export default class LinksScreen extends React.Component {
         <View>
           <Grid style={{ marginTop: 0 }}>
             <Col>
-            <Button block error style={{ marginTop: 10, marginRight: 10 }}
-              onPress={() =>
-                ActionSheet.show(
-                  {
-                    options: SIDES,
-                    cancelButtonIndex: 5,
-                    title: "Select Side"
-                  },
-                  buttonIndex => {
-                    content.side = SIDES[buttonIndex]
-                    this.setState({})
-                  }
-                )}>
-              <Text>Side</Text>
-            </Button>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 5,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
             </Col>
             <Col>
-            <Button block error style={{ marginTop: 10 }}
-              onPress={() =>
-                ActionSheet.show(
-                  {
-                    options: TYPES,
-                    cancelButtonIndex: 10,
-                    title: "Select Side"
-                  },
-                  buttonIndex => {
-                    content.windowType = TYPES[buttonIndex]
-                    this.setState({})
-                  }
-                )}>
-              <Text>{content.windowType || 'Type'}</Text>
-            </Button>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.windowType = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>{content.windowType || 'Type'}</Text>
+              </Button>
             </Col>
           </Grid>
           <Grid style={{ marginTop: 10 }}>
@@ -391,12 +399,13 @@ export default class LinksScreen extends React.Component {
                   console.log(content.id)
                   console.log('x', x.id)
                   if (x.id == sheetId) {
-                    x.data.map( y => {
-                      if (y.id == content.id){
+                    x.data.map(y => {
+                      if (y.id == content.id) {
                         y.done = true
                         y.expanded = false
                       }
                     })
+                    x.total = false
                   }
                 })
                 this.setState({})
@@ -420,7 +429,7 @@ export default class LinksScreen extends React.Component {
                 <Text>Remove</Text>
               </Button>
             </Col>
-           </Grid>
+          </Grid>
         </View>
       );
     }
@@ -2900,7 +2909,7 @@ export default class LinksScreen extends React.Component {
         {
           id: 1, name: 'Living Room', type: 'InsSheet', data: [
             { id: 1, type: 'window', side: 'A', title: "Window", sill: { M: null, I: false, R: 0 }, sash: { M: null, I: false, R: 0 }, frame: { M: null, I: false, R: 0 } }
-          ],total : 0
+          ], total: 0
         }
       ],
       sheets: [{ id: 1 }, { id: 2 }, { id: 3 }],
@@ -2913,7 +2922,7 @@ export default class LinksScreen extends React.Component {
         { id: 5, type: 'layout', title: "Layout Photo" },
         { id: 6, type: 'layout2', title: "Property Photo" }
       ],
-      selected : 0
+      selected: 0
     }
     this.addSheet = this.addSheet.bind(this)
     this.getPhoto = this.getPhoto.bind(this)
@@ -2962,7 +2971,7 @@ export default class LinksScreen extends React.Component {
     this.setDate = this.setDate.bind(this)
   }
   componentDidMount() {
-    this.setState({total: this.state.insSheets[0].data.length - 1});
+    this.setState({ total: this.state.insSheets[0].data.length - 1 });
   }
 
   willFocusSubscription = this.props.navigation.addListener(
@@ -3015,7 +3024,7 @@ export default class LinksScreen extends React.Component {
           sash: { M: null, I: false, R: 0 },
           frame: { M: null, I: false, R: 0 }
         }],
-        index:1
+        index: 1
       }]
     }))
     //console.log(this.state)
@@ -3130,10 +3139,10 @@ export default class LinksScreen extends React.Component {
           sash: { M: null, I: false, R: 0 },
           frame: { M: null, I: false, R: 0 }
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
-    this.setState({insSheets:this.state.insSheets})
+    this.setState({ insSheets: this.state.insSheets })
   }
   addSoilSample(id) {
     console.log("addSoilSample", id);
@@ -3147,7 +3156,7 @@ export default class LinksScreen extends React.Component {
           subSamples: null,
           surface: null
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3165,7 +3174,7 @@ export default class LinksScreen extends React.Component {
           subSamples: null,
           surface: null
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3184,7 +3193,7 @@ export default class LinksScreen extends React.Component {
           door: { M: null, I: false, R: 0 },
           frame: { M: null, I: false, R: 0 },
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3203,7 +3212,7 @@ export default class LinksScreen extends React.Component {
           shelf: { M: null, I: false, R: 0 },
           support: { M: null, I: false, R: 0 },
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3222,7 +3231,7 @@ export default class LinksScreen extends React.Component {
           frame: { M: null, I: false, R: 0 },
           shutters: { M: null, I: false, R: 0 },
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3241,7 +3250,7 @@ export default class LinksScreen extends React.Component {
           shelf: { M: null, I: false, R: 0 },
           countertop: { M: null, I: false, R: 0 },
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3259,7 +3268,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3277,7 +3286,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3295,7 +3304,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3313,7 +3322,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3331,7 +3340,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3349,7 +3358,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3367,7 +3376,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3385,7 +3394,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3403,7 +3412,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3421,7 +3430,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3439,7 +3448,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3457,7 +3466,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3475,7 +3484,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3493,7 +3502,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3511,7 +3520,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3529,7 +3538,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3547,7 +3556,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3565,7 +3574,7 @@ export default class LinksScreen extends React.Component {
           I: false,
           R: 0,
         }],
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
@@ -3580,12 +3589,12 @@ export default class LinksScreen extends React.Component {
             return i
           }
         }),
-        x.total = x.data.length - 1
+          x.total = x.data.length - 1
       }
     })
     this.setState({})
   }
-  expandWindow(){
+  expandWindow() {
     let len = this.state.insSheets[0].data;
     console.log(parseInt(len) - 1);
     return parseInt(len) - 1;
@@ -3651,7 +3660,7 @@ export default class LinksScreen extends React.Component {
               {
                 id: 1, name: 'Living Room', type: 'InsSheet', data: [
                   { id: 1, type: 'window', side: 'A', title: "Window", sill: { M: null, I: false, R: 0 }, sash: { M: null, I: false, R: 0 }, frame: { M: null, I: false, R: 0 } }
-                ], total : 0
+                ], total: 0
               }
             ],
             sheets: [{ id: 1 }, { id: 2 }, { id: 3 }],
@@ -3690,7 +3699,7 @@ export default class LinksScreen extends React.Component {
         >
           {this.state.insSheets.map(x => {
             if (x.type == 'InsSheet') {
-              return <InsSheet data={x.data} addWindow={this.addWindow} removeWindow={this.removeWindow} total = {x.total} addDoorway={this.addDoorway} addCloset={this.addCloset} addCommonWindow={this.addCommonWindow} addCabinet={this.addCabinet} addWall={this.addWall} addBaseboard={this.addBaseboard} addHeaterVent={this.addHeaterVent} addCeiling={this.addCeiling} addFloor={this.addFloor}
+              return <InsSheet data={x.data} addWindow={this.addWindow} removeWindow={this.removeWindow} total={x.total} addDoorway={this.addDoorway} addCloset={this.addCloset} addCommonWindow={this.addCommonWindow} addCabinet={this.addCabinet} addWall={this.addWall} addBaseboard={this.addBaseboard} addHeaterVent={this.addHeaterVent} addCeiling={this.addCeiling} addFloor={this.addFloor}
                 addEaves={this.addEaves} addRafters={this.addRafters} addFascia={this.addFascia} addSoffit={this.addSoffit} addgd={this.addgd} addgdf={this.addgdf} addColumn={this.addColumn} addBeam={this.addBeam} addGutter={this.addGutter} addDownspout={this.addDownspout} addeub={this.addeub} addVent={this.addVent}
                 addAccessPanel={this.addAccessPanel} renderWindowHeader={this._renderWindowHeader} renderSheet={this._renderSheet} name={x.name} setName={this.setName} id={x.id} key={x.id} />
             }
@@ -3705,7 +3714,7 @@ export default class LinksScreen extends React.Component {
             <Text>Checklists</Text>
           </View>
           <Accordion dataArray={this.state.data} expanded={false} renderHeader={this._renderHeader} renderContent={this._renderContent} />
-          <ScrollView  enableAutoAutomaticScroll={false}>
+          <ScrollView enableAutoAutomaticScroll={false}>
             <Button block style={{ marginTop: 30 }}
               onPress={() =>
                 ActionSheet.show(
