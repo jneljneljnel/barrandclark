@@ -830,21 +830,6 @@ export default class LinksScreen extends React.Component {
               )}>
             <Text>Side</Text>
           </Button>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
           <Button
             style={{ marginTop: 10 }}
             onPress={() =>
@@ -3670,8 +3655,10 @@ export default class LinksScreen extends React.Component {
               { id: 2, type: '5.1', title: "Form 5.1" },
               { id: 3, type: 'calibration', title: "Calibration" },
               { id: 4, type: 'layout', title: "Layout Photo" },
-              { id: 4, type: 'layout', title: "Property Photo" }
-            ]
+              { id: 4, type: 'layout2', title: "Property Photo" }
+            ],
+            image:'',
+            propimage:''
           })
         );
       } catch (error) {

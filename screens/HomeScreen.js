@@ -9,7 +9,8 @@ import {
   AsyncStorage
 } from 'react-native';
 import {RkTheme, RkText, RkButton, RkCard, rkCardImg, RkChoice, RkChoiceGroup} from 'react-native-ui-kitten';
-import { Input, Label, Icon, Container, Header, Content, Accordion, ListItem, CheckBox, Body, Text, Button, ActionSheet, Item} from "native-base";
+import { Title, List, Left, Right, Thumbnail, Input, Label, Icon, Container, Header, Content, Accordion, ListItem, CheckBox, Body, Text, Button, ActionSheet, Item} from "native-base";
+import { Col, Row, Grid } from 'react-native-easy-grid';
 import { WebBrowser, Permissions } from 'expo';
 import { MonoText } from '../components/StyledText';
 
@@ -22,6 +23,7 @@ export default class HomeScreen extends React.Component {
     }
     this._retrieveData = this._retrieveData.bind(this)
     this.uploadData = this.uploadData.bind(this)
+    this.getPropPhoto = this.getPropPhoto.bind(this)
   }
   willFocusSubscription = this.props.navigation.addListener(
   'willFocus',
@@ -83,13 +85,20 @@ export default class HomeScreen extends React.Component {
     }
   }
 
+  getPropPhoto = async(j) => {
+    const photo = await AsyncStorage.getItem(j)
+    //console.log(JSON.parse(photo).propimage)
+    return await JSON.parse(photo).propimage
+  }
+
   _retrieveData = async () => {
-  console.log('getting data')
+  console.log('getting data!')
   try {
     const value = await AsyncStorage.getAllKeys();
     if (value !== null) {
-      console.log(value);
-      this.setState({jobs:value})
+      const promises = value.map( j => this.getPropPhoto(j))
+      const pics = await Promise.all(promises).then( res => res)
+      this.setState({jobs:value, pics: pics})
 
     }
    } catch (error) {
@@ -119,38 +128,76 @@ RkTheme.setType('RkButton', 'faded', {
   }
 });
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <RkCard rkType='story'>
-
-          <View rkCardHeader>
-           <RkText  style={{textAlign:'center'}} rkType={this.state.jobs.length?'danger':'success'}>
-           {this.state.jobs.length? 'You have un uploaded jobs': 'No jobs to uplaod'}
-           </RkText>
-          </View>
+      <Container>
+      <Header>
+       <Title>{this.state.jobs.length? 'You have un uploaded jobs': 'No jobs to uplaod'}</Title>
+      </Header>
+        <Content>
+          <List>
           {this.state.jobs.map( (j,i) => {
-            console.log('job', this.state.jobs[i] )
-            return(<View key={i} rkCardContent>
-              <TouchableOpacity choiceTrigger>
-              <View style={{flexDirection:'row', alignItems:'center'}}>
-
-              <Text> JobId: {j} </Text>
-              </View>
-              </TouchableOpacity>
-              <Button
-              onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}
-              title="Edit"
-              >
+            return(<ListItem thumbnail key={i}>
+              <Left>
+                <Thumbnail square source={{ uri: this.state.pics[i] }} />
+              </Left>
+              <Body>
+                <Text>{j}</Text>
+                <Text note numberOfLines={1}>Its time to build a difference . .</Text>
+              </Body>
+              <Right>
+              <Button transparent onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}>
                 <Text>Edit</Text>
               </Button>
-            </View>)
+              </Right>
+            </ListItem>)
           })}
-          <Button block success style={{paddingTop:10}} onPress={() => this.uploadData(this.state.jobs)}>
-            <Text>Upload</Text>
-          </Button>
-          </RkCard>
-        </ScrollView>
-      </View>
+          </List>
+        </Content>
+         <Button block success style={{marginBottom:10, bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
+           <Text>Upload All</Text>
+         </Button>
+      </Container>
+
+      // <View >
+      //
+      //           <View rkCardHeader>
+      //            <RkText  style={{textAlign:'center'}} rkType={this.state.jobs.length?'danger':'success'}>
+      //            {this.state.jobs.length? 'You have un uploaded jobs': 'No jobs to uplaod'}
+      //            </RkText>
+      //           </View>
+      //   <ScrollView >
+      //     <RkCard rkType='story'>
+      //     <Grid>
+      //     {this.state.jobs.map( (j,i) => {
+      //       console.log('job', this.state.jobs[i] )
+      //       console.log('pic', this.state.pics[i] )
+      //       return(
+      //
+      //         <View key={i} rkCardContent>
+      //         <Thumbnail square large source={{uri: this.state.pics[i]}}  />)
+      //
+      //         <TouchableOpacity choiceTrigger>
+      //         <View style={{flexDirection:'row', alignItems:'center'}}>
+      //
+      //         <Text> JobId: {j} </Text>
+      //         </View>
+      //         </TouchableOpacity>
+      //         <Button
+      //         onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}
+      //         title="Edit"
+      //         >
+      //           <Text>Edit</Text>
+      //         </Button>
+      //       </View>
+      //
+      //     )
+      //     })}
+      //     </Grid>
+      //     </RkCard>
+      //   </ScrollView>
+      //   <Button block success style={{marginBottom:30, position: 'absolute', bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
+      //     <Text>Upload</Text>
+      //   </Button>
+      // </View>
     );
   }
 }
