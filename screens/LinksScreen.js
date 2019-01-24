@@ -3,6 +3,10 @@ import { NavigationEvents, NavigationActions } from 'react-navigation';
 import { WebBrowser, Permissions } from 'expo';
 import { DocumentPicker, ImagePicker } from 'expo';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import DateTimePicker from 'react-native-modal-datetime-picker';
+import Moment from 'moment';
+
+
 import {
   Alert,
   Image,
@@ -240,8 +244,24 @@ export default class LinksScreen extends React.Component {
     )
   }
 
+  renderHtmlFooterChecklist(content) {
+    //  this.setState({colStatus:true})
+    return (
+      <Grid>
+        <Col>
+          <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
+            this.setState({ colStatus: 'bb' })
+            console.log(this.state.colStatus)
+          }}>
+            <Text>Done</Text>
+          </Button>
+        </Col>
+      </Grid>
+    )
+  }
+
   _renderWindowHeader(obj, expanded, props) {
-    console.log(props)
+    //console.log(props)
     if (obj.done) {
       console.log('setting false!')
       expanded = false
@@ -273,7 +293,7 @@ export default class LinksScreen extends React.Component {
                   ActionSheet.show(
                     {
                       options: SIDES,
-                      cancelButtonIndex: 5,
+                      cancelButtonIndex: 10,
                       title: "Select Side"
                     },
                     buttonIndex => {
@@ -436,37 +456,44 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Doorway') {
       return (
         <View>
-          <Button block error style={{ paddingTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: SIDES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.side = SIDES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Side</Text>
-          </Button>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.doorType = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>{content.doorType || 'Type'}</Text>
-          </Button>
-          <Grid>
+          <Grid style={{ marginTop: 0 }}>
+            <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+            <Col>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.doorType = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>{content.doorType || 'Type'}</Text>
+              </Button>
+            </Col>
+          </Grid>
+
+          <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
               <Text>Door</Text>
               <Button
@@ -523,11 +550,40 @@ export default class LinksScreen extends React.Component {
                 <Input keyboardType="numeric" placeholder="Reading" onChangeText={(text) => { content.frame.R = text }} />
               </Item>
             </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Threshold</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: BUTTONS,
+                      cancelButtonIndex: CANCEL_INDEX,
+                      title: "Testing ActionSheet"
+                    },
+                    buttonIndex => {
+                      content.thresh.M = BUTTONS[buttonIndex]
+                      this.setState({})
+                    }
+                  )}
+              >
+                <Text>{content.thresh.M || "Material"}</Text>
+              </Button>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.thresh.I} onChange={(e) => {
+                  content.thresh.I = !content.thresh.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" onChangeText={(text) => { content.thresh.R = text }} />
+              </Item>
+            </Col>
           </Grid>
           <Item stackedLabel>
             <Label>Comments</Label>
             <Input value={content.comments} onChangeText={(text) => { content.comments = text }} />
           </Item>
+
           {this.renderHtmlFooter(sheetId, content)}
         </View>
       )
@@ -540,7 +596,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: TYPES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -680,7 +736,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: TYPES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -820,7 +876,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: SIDES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -869,36 +925,44 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Baseboard') {
       return (
         <View>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: SIDES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.side = SIDES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Side</Text>
-          </Button>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
+          <Grid style={{ marginTop: 0 }}>
+            <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+            <Col>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.type = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Type</Text>
+              </Button>
+            </Col>
+          </Grid>
+
+
           <Button
             style={{ marginTop: 10 }}
             onPress={() =>
@@ -937,36 +1001,42 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Heater Vent') {
       return (
         <View>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: SIDES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.side = SIDES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Side</Text>
-          </Button>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
+          <Grid style={{ marginTop: 0 }}>
+            <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+            <Col>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.type = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Type</Text>
+              </Button>
+            </Col>
+          </Grid>
           <Button
             style={{ marginTop: 10 }}
             onPress={() =>
@@ -1010,7 +1080,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: TYPES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -1058,12 +1128,14 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Floor') {
       return (
         <View>
-          <Button block error style={{ marginTop: 10 }}
+           <Grid style={{ marginTop: 0 }}>
+            <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
             onPress={() =>
               ActionSheet.show(
                 {
                   options: SIDES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -1073,12 +1145,14 @@ export default class LinksScreen extends React.Component {
               )}>
             <Text>Side</Text>
           </Button>
+          </Col>
+          <Col>
           <Button block error style={{ marginTop: 10 }}
             onPress={() =>
               ActionSheet.show(
                 {
                   options: TYPES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -1088,6 +1162,8 @@ export default class LinksScreen extends React.Component {
               )}>
             <Text>Type</Text>
           </Button>
+          </Col>
+          </Grid>
           <Button
             style={{ marginTop: 10 }}
             onPress={() =>
@@ -1126,12 +1202,14 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Eaves' || 'Rafters' || 'Fascia' || 'Soffit' || 'Garage Door' || 'Garage Door Frame') {
       return (
         <View>
-          <Button block error style={{ marginTop: 10 }}
+          <Grid style={{ marginTop: 0 }}>
+            <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
             onPress={() =>
               ActionSheet.show(
                 {
                   options: SIDES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -1141,12 +1219,14 @@ export default class LinksScreen extends React.Component {
               )}>
             <Text>Side</Text>
           </Button>
+          </Col>
+          <Col>
           <Button block error style={{ marginTop: 10 }}
             onPress={() =>
               ActionSheet.show(
                 {
                   options: TYPES,
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Select Side"
                 },
                 buttonIndex => {
@@ -1156,6 +1236,8 @@ export default class LinksScreen extends React.Component {
               )}>
             <Text>Type</Text>
           </Button>
+          </Col>
+          </Grid>
           <Button
             style={{ marginTop: 10 }}
             onPress={() =>
@@ -1195,21 +1277,7 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Cabinet') {
       return (
         <View>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 5,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
+
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
               <Text>Frame</Text>
@@ -1473,7 +1541,8 @@ export default class LinksScreen extends React.Component {
   }
 
   _renderContent(content) {
-    console.log(content)
+    console.log(content);
+    let idd = content.id;
     if (content.type == 'property details') {
       return (
         <View>
@@ -1530,7 +1599,7 @@ export default class LinksScreen extends React.Component {
           </Item>
           <Item stackedLabel>
             <Label>Year built</Label>
-            <Input value={content.year} onChangeText={(text) => { content.year = text }} />
+            <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Build On/Over</Label>
@@ -1538,7 +1607,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: ['basement', 'hillside', 'parking garage', 'raised foundation', 'Other', 'Cacel'],
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Build on/over"
                 },
                 buttonIndex => {
@@ -1664,7 +1733,7 @@ export default class LinksScreen extends React.Component {
               ActionSheet.show(
                 {
                   options: ['Courtyard', 'Exterior', 'Hallways', 'Stairways', 'Other', 'Cancel'],
-                  cancelButtonIndex: 5,
+                  cancelButtonIndex: 10,
                   title: "Accessed"
                 },
                 buttonIndex => {
@@ -1795,28 +1864,29 @@ export default class LinksScreen extends React.Component {
           </Item>
           <Item stackedLabel>
             <Label>Number of Stories in building</Label>
-            <Input value={content.buildingstories} onChangeText={(text) => { content.buildingstories = text }} />
+            <Input keyboardType="numeric" value={content.buildingstories} onChangeText={(text) => { content.buildingstories = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Stories in unit</Label>
-            <Input value={content.unitstories} onChangeText={(text) => { content.unitstories = text }} />
+            <Input keyboardType="numeric" value={content.unitstories} onChangeText={(text) => { content.unitstories = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Beds</Label>
-            <Input value={content.bednums} onChangeText={(text) => { content.bednums = text }} />
+            <Input keyboardType="numeric" value={content.bednums} onChangeText={(text) => { content.bednums = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Baths</Label>
-            <Input value={content.bathnums} onChangeText={(text) => { content.bathnums = text }} />
+            <Input keyboardType="numeric" value={content.bathnums} onChangeText={(text) => { content.bathnums = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of dust</Label>
-            <Input value={content.dustnums} onChangeText={(text) => { content.dustnums = text }} />
+            <Input keyboardType="numeric" value={content.dustnums} onChangeText={(text) => { content.dustnums = text }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of soil</Label>
-            <Input value={content.soilnums} onChangeText={(text) => { content.soilnums = text }} />
+            <Input keyboardType="numeric" value={content.soilnums} onChangeText={(text) => { content.soilnums = text }} />
           </Item>
+          {this.renderHtmlFooterChecklist(content)}
         </View>
       );
     }
@@ -1947,11 +2017,12 @@ export default class LinksScreen extends React.Component {
             <Input value={content.ownername} onChangeText={(text) => { content.ownername = text }} />
           </Item>
           <Item stackedLabel>
-            <Label>Owner Interview date</Label>
+            <Label>Owner Interview Date</Label>
             <DatePicker
               defaultDate={content.ownInterviewDate}
               locale={"en"}
               timeZoneOffsetInMinutes={undefined}
+              format="MM/DD/YYYY"
               modalTransparent={false}
               animationType={"fade"}
               androidMode={"default"}
@@ -1970,6 +2041,7 @@ export default class LinksScreen extends React.Component {
             <DatePicker
               defaultDate={content.resInterviewDate}
               locale={"en"}
+              dateFormat="MM/DD/YYYY"
               timeZoneOffsetInMinutes={undefined}
               modalTransparent={false}
               animationType={"fade"}
@@ -2342,12 +2414,13 @@ export default class LinksScreen extends React.Component {
             <Label>If yes, what work will be done and when</Label>
             <Input value={content.whenwork} onChangeText={(text) => { content.whenwork = text }} />
           </Item>
+          {this.renderHtmlFooterChecklist(content)}
         </Form>
       )
     }
     if (content.type == '5.1') {
       return (
-        <ScrollView>
+        <Form>
           <Item stackedLabel>
             <Label>Apt Number</Label>
             <Input keyboardType="numeric" value={content.aptnum} onChangeText={(text) => { content.aptnum = text }} />
@@ -2365,6 +2438,7 @@ export default class LinksScreen extends React.Component {
             <DatePicker
               defaultDate={content.assInterviewDate}
               locale={"en"}
+              dateFormat="MM/DD/YYYY"
               timeZoneOffsetInMinutes={undefined}
               modalTransparent={false}
               animationType={"fade"}
@@ -2676,7 +2750,8 @@ export default class LinksScreen extends React.Component {
             <Label>comments</Label>
             <Input value={content.foundationcomments} onChangeText={(text) => { content.foundationcomments = text }} />
           </Item>
-        </ScrollView>
+          {this.renderHtmlFooterChecklist(content)}
+        </Form>
       )
     }
     if (content.type == 'details') {
@@ -2691,6 +2766,7 @@ export default class LinksScreen extends React.Component {
             <DatePicker
               defaultDate={new Date()}
               locale={"en"}
+              dateFormat="MM/DD/YYYY"
               timeZoneOffsetInMinutes={undefined}
               modalTransparent={false}
               animationType={"fade"}
@@ -2725,19 +2801,142 @@ export default class LinksScreen extends React.Component {
             <Label>Action Level</Label>
             <Input keyboardType="numeric" value={content.actionlevel} onChangeText={(text) => { content.actionlevel = text }} />
           </Item>
+          {this.renderHtmlFooterChecklist(content)}
         </Form>
       )
+    }
+    if (content.type == 'calibration') {
+        return (
+          <Form>
+          <Item stackedLabel>
+            <Label>Serial Number</Label>
+            <Input keyboardType="numeric" />
+          </Item>
+            <Grid>
+              <Col>
+              <Item stackedLabel last>
+                <Text style={{paddingTop:10}}>Start of Day</Text>
+
+                <TouchableOpacity onPress={this._showStartDateTimePicker}>
+                {this.state.startCalibrate? <Text style={{paddingTop:20, paddingBottom:10}}>{Moment(this.state.startCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{paddingTop:20, paddingBottom:10}}>Select Date & Time</Text> }
+                </TouchableOpacity>
+                <DateTimePicker is24Hour={false} mode='datetime'
+                isVisible={this.state.isStartDateTimePickerVisible}
+                onConfirm={this._handleStartDatePicked}
+                onCancel={this._hideStartDateTimePicker}
+                />
+              </Item>
+              </Col>
+            </Grid>
+            <Grid>
+              <Col>
+                <Item stackedLabel>
+                  <Label>one</Label>
+                  <Input keyboardType="numeric"  onChangeText={(text) => { content.startone = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>two</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.starttwo = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>three</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }}/>
+                </Item>
+              </Col>
+            </Grid>
+            <Grid>
+              <Col>
+                <Item stackedLabel>
+                  <Label>four</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>five</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.startfive = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>six</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.startsix= text }}/>
+                </Item>
+              </Col>
+            </Grid>
+            <Grid>
+              <Col>
+              <Item stackedLabel last>
+                <Text style={{paddingTop:10}}>End of Day</Text>
+                <TouchableOpacity onPress={this._showEndDateTimePicker}>
+                {this.state.endCalibrate? <Text style={{paddingTop:20, paddingBottom:10}}>{Moment(this.state.endCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{paddingTop:20, paddingBottom:10}}>Select Date & Time</Text> }
+                </TouchableOpacity>
+                <DateTimePicker is24Hour={false} mode='datetime'
+                isVisible={this.state.isEndDateTimePickerVisible}
+                onConfirm={this._handleEndDatePicked}
+                onCancel={this._hideEndDateTimePicker}
+                />
+                </Item>
+              </Col>
+            </Grid>
+            <Grid>
+              <Col>
+                <Item stackedLabel>
+                  <Label>one</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endone = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>two</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endtwo = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>three</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endThree = text }}/>
+                </Item>
+              </Col>
+            </Grid>
+            <Grid>
+              <Col>
+                <Item stackedLabel>
+                  <Label>four</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endfour = text }} />
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>five</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endfive = text }}/>
+                </Item>
+              </Col>
+              <Col>
+                <Item stackedLabel>
+                  <Label>six</Label>
+                  <Input keyboardType="numeric" onChangeText={(text) => { content.endsix = text }}/>
+                </Item>
+              </Col>
+            </Grid>
+          </Form>
+        )
     }
     if (content.type == 'layout') {
       if (this.state.image) {
         return (
           <Content>
             <Thumbnail square large source={{ uri: this.state.image }} />
+            {this.renderHtmlFooterChecklist(content)}
           </Content>
         )
       }
       else {
-        return (<Text>No Image Attached </Text>)
+        return (<Text style={{padding:15}}>No Image Attached </Text>)
       }
     }
     if (content.type == 'layout2') {
@@ -2745,11 +2944,12 @@ export default class LinksScreen extends React.Component {
         return (
           <Content>
             <Thumbnail square large source={{ uri: this.state.propimage }} />
+            {this.renderHtmlFooterChecklist(content)}
           </Content>
         )
       }
       else {
-        return (<Text>No Image Attached </Text>)
+        return (<Text style={{padding:15}}>No Image Attached </Text>)
       }
     }
     if (content.type == 'window') {
@@ -2907,7 +3107,10 @@ export default class LinksScreen extends React.Component {
         { id: 5, type: 'layout', title: "Layout Photo" },
         { id: 6, type: 'layout2', title: "Property Photo" }
       ],
-      selected: 0
+      selected: 0,
+      colStatus: false,
+      isDateTimePickerVisible:false
+
     }
     this.addSheet = this.addSheet.bind(this)
     this.getPhoto = this.getPhoto.bind(this)
@@ -2954,6 +3157,12 @@ export default class LinksScreen extends React.Component {
     this._storeData = this._storeData.bind(this)
     this.setName = this.setName.bind(this)
     this.setDate = this.setDate.bind(this)
+    this._showStartDateTimePicker = this._showStartDateTimePicker.bind(this)
+    this._showEndDateTimePicker = this._showEndDateTimePicker.bind(this)
+    this._hideStartDateTimePicker = this._hideStartDateTimePicker.bind(this)
+    this._hideEndDateTimePicker = this._hideEndDateTimePicker.bind(this)
+    this._handleStartDatePicked = this._handleStartDatePicked.bind(this)
+    this._handleEndDatePicked = this._handleEndDatePicked.bind(this)
   }
   componentDidMount() {
     this.setState({ total: this.state.insSheets[0].data.length - 1 });
@@ -2977,6 +3186,23 @@ export default class LinksScreen extends React.Component {
     }
   );
 
+  _showStartDateTimePicker(){this.setState({ isStartDateTimePickerVisible: true })};
+  _showEndDateTimePicker(){this.setState({ isEndDateTimePickerVisible: true })};
+
+  _hideStartDateTimePicker(){this.setState({ isStartDateTimePickerVisible: false })};
+  _hideEndDateTimePicker(){this.setState({ isEndDateTimePickerVisible: false })};
+
+  _handleStartDatePicked(date){
+    console.log('A date has been picked: ', date);
+    this.setState({startCalibrate:date})
+    this._hideStartDateTimePicker();
+  };
+
+  _handleEndDatePicked(date){
+    console.log('A date has been picked: ', date);
+    this.setState({endCalibrate:date})
+    this._hideEndStartDateTimePicker();
+  };
 
   jobId(e) {
     console.log('jobId', e)
@@ -3177,6 +3403,7 @@ export default class LinksScreen extends React.Component {
           leadsTo: null,
           door: { M: null, I: false, R: 0 },
           frame: { M: null, I: false, R: 0 },
+          thresh: { M: null, I: false, R: 0 },
         }],
           x.total = x.data.length - 1
       }
@@ -3222,13 +3449,13 @@ export default class LinksScreen extends React.Component {
     this.setState({})
   }
   addCabinet(id) {
-    //console.log("addWindow", id);
+    console.log("ADDING CABINET!");
     let newData = this.state.insSheets.map(x => {
       if (x.id == id) {
         x.data = [...x.data, {
           id: x.data.length + 1,
           side: false,
-          type: 'not set',
+          type: 'Cabinet',
           title: "Cabinet",
           frame: { M: null, I: false, R: 0 },
           door: { M: null, I: false, R: 0 },
@@ -3657,13 +3884,17 @@ export default class LinksScreen extends React.Component {
               { id: 4, type: 'layout', title: "Layout Photo" },
               { id: 4, type: 'layout2', title: "Property Photo" }
             ],
-            image:'',
-            propimage:''
+            image: '',
+            propimage: '',
+            colStatus: false
           })
         );
       } catch (error) {
         console.log(error)
       }
+    }
+    else{
+      alert('Please add a Jobid');
     }
   }
   handleScroll(event) {
@@ -3676,7 +3907,7 @@ export default class LinksScreen extends React.Component {
       <Container>
         <View>
           <Item >
-            <Input placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text }) }} />
+            <Input keyboardType="numeric" placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text }) }} />
             <Icon name='close-circle' />
           </Item>
         </View>
@@ -3700,7 +3931,9 @@ export default class LinksScreen extends React.Component {
           <View style={{ paddingTop: 10 }}>
             <Text>Checklists</Text>
           </View>
-          <Accordion dataArray={this.state.data} expanded={false} renderHeader={this._renderHeader} renderContent={this._renderContent} />
+          <Accordion dataArray={this.state.data} expanded={this.state.colStatus} setSelected={() => {
+            alert('jhj');
+          }} renderHeader={this._renderHeader} renderContent={this._renderContent} />
           <ScrollView enableAutoAutomaticScroll={false}>
             <Button block style={{ marginTop: 30 }}
               onPress={() =>

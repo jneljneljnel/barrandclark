@@ -49,7 +49,7 @@ export default class HomeScreen extends React.Component {
     //push to db
     jobs.map(x => {
       AsyncStorage.getItem(x).then(state =>
-        fetch('https://e618e91f.ngrok.io/upload',
+        fetch('https://c26dfad1.ngrok.io',
         {
           method: 'POST',
           headers: {
@@ -72,8 +72,10 @@ export default class HomeScreen extends React.Component {
 
       );
     })
-
-    //AsyncStorage.clear()
+    if(jobs.length){
+      alert('Jobs sucessfully Uploaded');
+    }
+    AsyncStorage.clear()
     this.setState({jobs:[]})
   }
 
@@ -129,9 +131,9 @@ RkTheme.setType('RkButton', 'faded', {
 });
     return (
       <Container>
-      <Header>
-       <Title>{this.state.jobs.length? 'You have un uploaded jobs': 'No jobs to uplaod'}</Title>
-      </Header>
+        <Header>
+         <Title style={{paddingTop:10}}>{this.state.jobs.length? 'You have un uploaded jobs': 'No jobs to uplaod'}</Title>
+        </Header>
         <Content>
           <List>
           {this.state.jobs.map( (j,i) => {
@@ -141,7 +143,7 @@ RkTheme.setType('RkButton', 'faded', {
               </Left>
               <Body>
                 <Text>{j}</Text>
-                <Text note numberOfLines={1}>Its time to build a difference . .</Text>
+                <Text note numberOfLines={1}></Text>
               </Body>
               <Right>
               <Button transparent onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}>
@@ -152,8 +154,8 @@ RkTheme.setType('RkButton', 'faded', {
           })}
           </List>
         </Content>
-         <Button block success style={{marginBottom:10, bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
-           <Text>Upload All</Text>
+         <Button block success style={{marginBottom:30, bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
+           <Text>Upload</Text>
          </Button>
       </Container>
 

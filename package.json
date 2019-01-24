@@ -16,9 +16,11 @@
     "@expo/samples": "2.1.1",
     "dotenv": "^6.2.0",
     "expo": "^30.0.1",
+    "moment": "^2.23.0",
     "native-base": "2.8.2",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-permissions": "^1.1.1",
     "react-native-ui-kitten": "^3.1.2",
     "react-navigation": "^2.16.0"
