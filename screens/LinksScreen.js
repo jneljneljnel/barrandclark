@@ -41,7 +41,7 @@ const BUTTONS = ['Acoustic',
   'Vinyl',
   'Wood', "Cancel"];
 const SURFACES = ['Non Play Area', 'Play Area', 'Cancel'];
-const TYPES = ["Aluminum", "DH", "Casement", "Louvered", "Fixed", "Horiz Slider", "Transom", "Vinyl", "Bay", "Guarded", "Cancel"];
+const TYPES = ["Aluminum", "Double Hung", "Casement", "Louvered", "Fixed", "Horiz Slider", "Transom", "Vinyl", "Bay", "Garden", "Cancel"];
 const SIDES = ["A", "B", "C", "D", "Cancel"];
 const sheetButons = ["Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Form 5.0", "Layout Photo", "Property Photo", 'Cancel'];
 const itemButons = ['Window', 'Common Window', 'Doorway', 'Closet', 'Cabinet', 'Wall', 'Baseboard', 'Heater Vent', 'Ceiling', 'Floor', 'Eaves', 'Rafters', 'Fascia', 'Soffit', 'Garage Door', 'Garage Door Frame', 'Column',
@@ -55,10 +55,7 @@ function InsSheet(props) {
     console.log('set.selected')
   }
   return (
-    <View style={{ padding: 10, paddingBottom: 15 }}>
-      <Item>
-        <Input value={props.name} onChangeText={(text) => props.setName(text, props.id)} placeholder="Inspection Sheet" />
-      </Item>
+    <View>
       <Accordion setSelected={testing} dataArray={props.data} expanded={props.total}
         sheetId={props.id} removeWindow={props.removeWindow} renderHeader={props.renderWindowHeader} renderContent={(content) => props.renderSheet(content, props.id)}
       />
@@ -216,7 +213,13 @@ export default class LinksScreen extends React.Component {
                     y.expanded = false
                   }
                 })
-                x.total = false
+                let col = x.total;
+                if (col !== false) {
+                  col += '1';
+                  x.total = col;
+                } else {
+                  x.total = 'window';
+                }
               }
             })
             this.setState({})
@@ -250,8 +253,13 @@ export default class LinksScreen extends React.Component {
       <Grid>
         <Col>
           <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
-            this.setState({ colStatus: 'bb' })
-            console.log(this.state.colStatus)
+            let col = this.state.colStatus;
+            if (col !== false) {
+              col += '1';
+              this.setState({ colStatus: col });
+            } else {
+              this.setState({ colStatus: 'check' });
+            }
           }}>
             <Text>Done</Text>
           </Button>
@@ -341,6 +349,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.sill.M || "Material"}</Text>
               </Button>
+              <Text >{content.sill.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.sill.I} onChange={(e) => {
                   content.sill.I = !content.sill.I
@@ -369,6 +378,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.sash.M || "Material"}</Text>
               </Button>
+              <Text >{content.sash.I == true ? 'Intact' : 'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.sash.I} onChange={(e) => {
                   content.sash.I = !content.sash.I
@@ -397,6 +407,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.frame.M || "Material"}</Text>
               </Button>
+              <Text >{content.frame.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                   content.frame.I = !content.frame.I
@@ -512,6 +523,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.door.M || "Material"}</Text>
               </Button>
+              <Text >{content.door.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.door.I} onChange={(e) => {
                   content.door.I = !content.door.I
@@ -540,6 +552,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.frame.M || "Material"}</Text>
               </Button>
+              <Text >{content.frame.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                   content.frame.I = !content.frame.I
@@ -568,6 +581,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.thresh.M || "Material"}</Text>
               </Button>
+              <Text >{content.thresh.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.thresh.I} onChange={(e) => {
                   content.thresh.I = !content.thresh.I
@@ -625,6 +639,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.door.M || "Material"}</Text>
               </Button>
+              <Text >{content.door.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.door.I} onChange={(e) => {
                   content.door.I = !content.door.I
@@ -653,6 +668,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.frame.M || "Material"}</Text>
               </Button>
+              <Text >{content.frame.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                   content.frame.I = !content.frame.I
@@ -681,6 +697,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.shelf.M || "Material"}</Text>
               </Button>
+              <Text >{content.shelf.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.shelf.I} onChange={(e) => {
                   content.shelf.I = !content.shelf.I
@@ -709,6 +726,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.support.M || "Material"}</Text>
               </Button>
+              <Text >{content.support.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.support.I} onChange={(e) => {
                   content.support.I = !content.support.I
@@ -765,6 +783,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.well.M || "Material"}</Text>
               </Button>
+              <Text >{content.well.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.well.I} onChange={(e) => {
                   content.well.I = !content.well.I
@@ -793,6 +812,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.sash.M || "Material"}</Text>
               </Button>
+              <Text >{content.sash.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.sash.I} onChange={(e) => {
                   content.sash.I = !content.sash.I
@@ -821,6 +841,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.frame.M || "Material"}</Text>
               </Button>
+              <Text >{content.frame.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                   content.frame.I = !content.frame.I
@@ -849,6 +870,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.shutters.M || "Material"}</Text>
               </Button>
+              <Text >{content.shutters.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.shutters.I} onChange={(e) => {
                   content.shutters.I = !content.shutters.I
@@ -903,6 +925,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -980,6 +1003,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -1054,6 +1078,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -1107,6 +1132,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -1128,41 +1154,41 @@ export default class LinksScreen extends React.Component {
     if (content.title == 'Floor') {
       return (
         <View>
-           <Grid style={{ marginTop: 0 }}>
+          <Grid style={{ marginTop: 0 }}>
             <Col>
               <Button block error style={{ marginTop: 10, marginRight: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: SIDES,
-                  cancelButtonIndex: 10,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.side = SIDES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Side</Text>
-          </Button>
-          </Col>
-          <Col>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 10,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
-          </Col>
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+            <Col>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.type = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Type</Text>
+              </Button>
+            </Col>
           </Grid>
           <Button
             style={{ marginTop: 10 }}
@@ -1181,6 +1207,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -1205,38 +1232,38 @@ export default class LinksScreen extends React.Component {
           <Grid style={{ marginTop: 0 }}>
             <Col>
               <Button block error style={{ marginTop: 10, marginRight: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: SIDES,
-                  cancelButtonIndex: 10,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.side = SIDES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Side</Text>
-          </Button>
-          </Col>
-          <Col>
-          <Button block error style={{ marginTop: 10 }}
-            onPress={() =>
-              ActionSheet.show(
-                {
-                  options: TYPES,
-                  cancelButtonIndex: 10,
-                  title: "Select Side"
-                },
-                buttonIndex => {
-                  content.type = TYPES[buttonIndex]
-                  this.setState({})
-                }
-              )}>
-            <Text>Type</Text>
-          </Button>
-          </Col>
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.side = SIDES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+            <Col>
+              <Button block error style={{ marginTop: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: TYPES,
+                      cancelButtonIndex: 10,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      content.type = TYPES[buttonIndex]
+                      this.setState({})
+                    }
+                  )}>
+                <Text>Type</Text>
+              </Button>
+            </Col>
           </Grid>
           <Button
             style={{ marginTop: 10 }}
@@ -1255,6 +1282,7 @@ export default class LinksScreen extends React.Component {
           >
             <Text>{content.M || "Material"}</Text>
           </Button>
+          <Text >{content.I==true?'Intact':'Deteriorated'}{content.I}</Text>
           <ListItem>
             <RkChoice rkType='posNeg' selected={content.I} onChange={(e) => {
               content.I = !content.I
@@ -1297,6 +1325,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.frame.M || "Material"}</Text>
               </Button>
+              <Text >{content.frame.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                   content.frame.I = !content.frame.I
@@ -1325,6 +1354,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.door.M || "Material"}</Text>
               </Button>
+              <Text >{content.door.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.door.I} onChange={(e) => {
                   content.door.I = !content.door.I
@@ -1353,6 +1383,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.shelf.M || "Material"}</Text>
               </Button>
+              <Text >{content.shelf.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.shelf.I} onChange={(e) => {
                   content.shelf.I = !content.shelf.I
@@ -1381,6 +1412,7 @@ export default class LinksScreen extends React.Component {
               >
                 <Text>{content.countertop.M || "Material"}</Text>
               </Button>
+              <Text >{content.countertop.I==true?'Intact':'Deteriorated'}</Text>
               <ListItem>
                 <RkChoice rkType='posNeg' selected={content.countertop.I} onChange={(e) => {
                   content.countertop.I = !content.countertop.I
@@ -1885,6 +1917,32 @@ export default class LinksScreen extends React.Component {
           <Item stackedLabel>
             <Label>Number of soil</Label>
             <Input keyboardType="numeric" value={content.soilnums} onChangeText={(text) => { content.soilnums = text }} />
+          </Item>
+          <Item stackedLabel>
+            <Label>Do children live in the home?</Label>
+            <Input value={content.garage} onFocus={() =>
+              ActionSheet.show(
+                {
+                  options: ['Yed', 'No', 'Don\'t know', 'Cancel'],
+                  cancelButtonIndex: 4,
+                  title: "Garage"
+                },
+                buttonIndex => {
+                  if (buttonIndex == 0) {
+                    content.garage = 'Yed'
+                    this.setState({})
+                  }
+                  if (buttonIndex == 1) {
+                    content.garage = 'No'
+                    this.setState({})
+                  }
+                  if (buttonIndex == 2) {
+                    content.garage = 'Don\'t know'
+                    this.setState({})
+                  }
+                }
+              )}
+            />
           </Item>
           {this.renderHtmlFooterChecklist(content)}
         </View>
@@ -2806,125 +2864,126 @@ export default class LinksScreen extends React.Component {
       )
     }
     if (content.type == 'calibration') {
-        return (
-          <Form>
+      return (
+        <Form>
           <Item stackedLabel>
             <Label>Serial Number</Label>
             <Input keyboardType="numeric" />
           </Item>
-            <Grid>
-              <Col>
+          <Grid>
+            <Col>
               <Item stackedLabel last>
-                <Text style={{paddingTop:10}}>Start of Day</Text>
+                <Text style={{ paddingTop: 10 }}>Start of Day</Text>
 
                 <TouchableOpacity onPress={this._showStartDateTimePicker}>
-                {this.state.startCalibrate? <Text style={{paddingTop:20, paddingBottom:10}}>{Moment(this.state.startCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{paddingTop:20, paddingBottom:10}}>Select Date & Time</Text> }
+                  {this.state.startCalibrate ? <Text style={{ paddingTop: 20, paddingBottom: 10 }}>{Moment(this.state.startCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{ paddingTop: 20, paddingBottom: 10 }}>Select Date & Time</Text>}
                 </TouchableOpacity>
                 <DateTimePicker is24Hour={false} mode='datetime'
-                isVisible={this.state.isStartDateTimePickerVisible}
-                onConfirm={this._handleStartDatePicked}
-                onCancel={this._hideStartDateTimePicker}
+                  isVisible={this.state.isStartDateTimePickerVisible}
+                  onConfirm={this._handleStartDatePicked}
+                  onCancel={this._hideStartDateTimePicker}
                 />
               </Item>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
-                <Item stackedLabel>
-                  <Label>one</Label>
-                  <Input keyboardType="numeric"  onChangeText={(text) => { content.startone = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>two</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.starttwo = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>three</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }}/>
-                </Item>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
-                <Item stackedLabel>
-                  <Label>four</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>five</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.startfive = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>six</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.startsix= text }}/>
-                </Item>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
+            </Col>
+          </Grid>
+          <Grid>
+            <Col>
+              <Item stackedLabel>
+                <Label>one</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.startone = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>two</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.starttwo = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>three</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid>
+            <Col>
+              <Item stackedLabel>
+                <Label>four</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.startthree = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>five</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.startfive = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>six</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.startsix = text }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid>
+            <Col>
               <Item stackedLabel last>
-                <Text style={{paddingTop:10}}>End of Day</Text>
+                <Text style={{ paddingTop: 10 }}>End of Day</Text>
                 <TouchableOpacity onPress={this._showEndDateTimePicker}>
-                {this.state.endCalibrate? <Text style={{paddingTop:20, paddingBottom:10}}>{Moment(this.state.endCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{paddingTop:20, paddingBottom:10}}>Select Date & Time</Text> }
+                  {this.state.endCalibrate ? <Text style={{ paddingTop: 20, paddingBottom: 10 }}>{Moment(this.state.endCalibrate).format('MMMM Do YYYY, h:mm:ss a')}</Text> : <Text style={{ paddingTop: 20, paddingBottom: 10 }}>Select Date & Time</Text>}
                 </TouchableOpacity>
                 <DateTimePicker is24Hour={false} mode='datetime'
-                isVisible={this.state.isEndDateTimePickerVisible}
-                onConfirm={this._handleEndDatePicked}
-                onCancel={this._hideEndDateTimePicker}
+                  isVisible={this.state.isEndDateTimePickerVisible}
+                  onConfirm={this._handleEndDatePicked}
+                  onCancel={this._hideEndDateTimePicker}
                 />
-                </Item>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
-                <Item stackedLabel>
-                  <Label>one</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endone = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>two</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endtwo = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>three</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endThree = text }}/>
-                </Item>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
-                <Item stackedLabel>
-                  <Label>four</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endfour = text }} />
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>five</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endfive = text }}/>
-                </Item>
-              </Col>
-              <Col>
-                <Item stackedLabel>
-                  <Label>six</Label>
-                  <Input keyboardType="numeric" onChangeText={(text) => { content.endsix = text }}/>
-                </Item>
-              </Col>
-            </Grid>
-          </Form>
-        )
+              </Item>
+            </Col>
+          </Grid>
+          <Grid>
+            <Col>
+              <Item stackedLabel>
+                <Label>one</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endone = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>two</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endtwo = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>three</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endThree = text }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid>
+            <Col>
+              <Item stackedLabel>
+                <Label>four</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endfour = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>five</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endfive = text }} />
+              </Item>
+            </Col>
+            <Col>
+              <Item stackedLabel>
+                <Label>six</Label>
+                <Input keyboardType="numeric" onChangeText={(text) => { content.endsix = text }} />
+              </Item>
+            </Col>
+          </Grid>
+          {this.renderHtmlFooterChecklist()}
+        </Form>
+      )
     }
     if (content.type == 'layout') {
       if (this.state.image) {
@@ -2936,7 +2995,7 @@ export default class LinksScreen extends React.Component {
         )
       }
       else {
-        return (<Text style={{padding:15}}>No Image Attached </Text>)
+        return (<Text style={{ padding: 15 }}>No Image Attached </Text>)
       }
     }
     if (content.type == 'layout2') {
@@ -2949,7 +3008,7 @@ export default class LinksScreen extends React.Component {
         )
       }
       else {
-        return (<Text style={{padding:15}}>No Image Attached </Text>)
+        return (<Text style={{ padding: 15 }}>No Image Attached </Text>)
       }
     }
     if (content.type == 'window') {
@@ -3083,9 +3142,12 @@ export default class LinksScreen extends React.Component {
       );
     }
   }
+
   static navigationOptions = {
     title: 'Inspection',
+    onTabPress: ({ }) => alert("it's a tap!")
   };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -3093,7 +3155,17 @@ export default class LinksScreen extends React.Component {
       insSheets: [
         {
           id: 1, name: 'Living Room', type: 'InsSheet', data: [
-            { id: 1, type: 'window', side: 'A', title: "Window", sill: { M: null, I: false, R: 0 }, sash: { M: null, I: false, R: 0 }, frame: { M: null, I: false, R: 0 } }
+            {
+              id: 1,
+              side: false,
+              expanded: 1,
+              type: 'Doorway',
+              title: "Doorway",
+              leadsTo: null,
+              door: { M: null, I: true, R: 0 },
+              frame: { M: null, I: true, R: 0 },
+              thresh: { M: null, I: true, R: 0 },
+            }
           ], total: 0
         }
       ],
@@ -3108,10 +3180,13 @@ export default class LinksScreen extends React.Component {
         { id: 6, type: 'layout2', title: "Property Photo" }
       ],
       selected: 0,
+      isDateTimePickerVisible: false,
       colStatus: false,
-      isDateTimePickerVisible:false
-
+      color: 'black'
     }
+
+    // this.inputRef = this.inputRef.bind(this);
+    this._handleRef = this._handleRef.bind(this)
     this.addSheet = this.addSheet.bind(this)
     this.getPhoto = this.getPhoto.bind(this)
     this.getPropertyPhoto = this.getPropertyPhoto.bind(this)
@@ -3168,9 +3243,11 @@ export default class LinksScreen extends React.Component {
     this.setState({ total: this.state.insSheets[0].data.length - 1 });
   }
 
+
   willFocusSubscription = this.props.navigation.addListener(
     'willFocus',
     payload => {
+      // alert('jhsjhdjd');
       if (this.props.navigation.state.params && this.props.navigation.state.params.edit[0]) {
         console.log('edit!', this.props.navigation.state.params)
         AsyncStorage.getItem(this.props.navigation.state.params.edit[0]).then(x => {
@@ -3186,21 +3263,23 @@ export default class LinksScreen extends React.Component {
     }
   );
 
-  _showStartDateTimePicker(){this.setState({ isStartDateTimePickerVisible: true })};
-  _showEndDateTimePicker(){this.setState({ isEndDateTimePickerVisible: true })};
 
-  _hideStartDateTimePicker(){this.setState({ isStartDateTimePickerVisible: false })};
-  _hideEndDateTimePicker(){this.setState({ isEndDateTimePickerVisible: false })};
 
-  _handleStartDatePicked(date){
+  _showStartDateTimePicker() { this.setState({ isStartDateTimePickerVisible: true }) };
+  _showEndDateTimePicker() { this.setState({ isEndDateTimePickerVisible: true }) };
+
+  _hideStartDateTimePicker() { this.setState({ isStartDateTimePickerVisible: false }) };
+  _hideEndDateTimePicker() { this.setState({ isEndDateTimePickerVisible: false }) };
+
+  _handleStartDatePicked(date) {
     console.log('A date has been picked: ', date);
-    this.setState({startCalibrate:date})
+    this.setState({ startCalibrate: date })
     this._hideStartDateTimePicker();
   };
 
-  _handleEndDatePicked(date){
+  _handleEndDatePicked(date) {
     console.log('A date has been picked: ', date);
-    this.setState({endCalibrate:date})
+    this.setState({ endCalibrate: date })
     this._hideEndStartDateTimePicker();
   };
 
@@ -3229,16 +3308,20 @@ export default class LinksScreen extends React.Component {
         type: 'InsSheet',
         data: [{
           id: 1,
-          type: 'Window',
-          title: 'Window',
-          sill: { M: null, I: false, R: 0 },
-          sash: { M: null, I: false, R: 0 },
-          frame: { M: null, I: false, R: 0 }
+          side: false,
+          expanded: 1,
+          type: 'Doorway',
+          title: "Doorway",
+          leadsTo: null,
+          door: { M: null, I: true, R: 0 },
+          frame: { M: null, I: true, R: 0 },
+          thresh: { M: null, I: true, R: 0 },
         }],
         index: 1
       }]
     }))
     //console.log(this.state)
+    this._sheetInput._root.focus();
   }
   getPhoto() {
     console.log('add photo')
@@ -3346,14 +3429,16 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Window",
           expanded: true,
-          sill: { M: null, I: false, R: 0 },
-          sash: { M: null, I: false, R: 0 },
-          frame: { M: null, I: false, R: 0 }
+          sill: { M: null, I: true, R: 0 },
+          sash: { M: null, I: true, R: 0 },
+          frame: { M: null, I: true, R: 0 }
         }],
           x.total = x.data.length - 1
       }
     })
-    this.setState({ insSheets: this.state.insSheets })
+    this.setState({ insSheets: this.state.insSheets });
+    //this._sheetInput._root.focus();
+
   }
   addSoilSample(id) {
     console.log("addSoilSample", id);
@@ -3401,14 +3486,15 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Doorway",
           leadsTo: null,
-          door: { M: null, I: false, R: 0 },
-          frame: { M: null, I: false, R: 0 },
-          thresh: { M: null, I: false, R: 0 },
+          door: { M: null, I: true, R: 0 },
+          frame: { M: null, I: true, R: 0 },
+          thresh: { M: null, I: true, R: 0 },
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addCloset(id) {
     //console.log("addWindow", id);
@@ -3419,15 +3505,16 @@ export default class LinksScreen extends React.Component {
           side: false,
           type: 'not set',
           title: "Closet",
-          door: { M: null, I: false, R: 0 },
-          frame: { M: null, I: false, R: 0 },
-          shelf: { M: null, I: false, R: 0 },
-          support: { M: null, I: false, R: 0 },
+          door: { M: null, I: true, R: 0 },
+          frame: { M: null, I: true, R: 0 },
+          shelf: { M: null, I: true, R: 0 },
+          support: { M: null, I: true, R: 0 },
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addCommonWindow(id) {
     //console.log("addWindow", id);
@@ -3438,15 +3525,16 @@ export default class LinksScreen extends React.Component {
           side: false,
           type: 'not set',
           title: "Common Window",
-          well: { M: null, I: false, R: 0 },
-          sash: { M: null, I: false, R: 0 },
-          frame: { M: null, I: false, R: 0 },
-          shutters: { M: null, I: false, R: 0 },
+          well: { M: null, I: true, R: 0 },
+          sash: { M: null, I: true, R: 0 },
+          frame: { M: null, I: true, R: 0 },
+          shutters: { M: null, I: true, R: 0 },
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addCabinet(id) {
     console.log("ADDING CABINET!");
@@ -3457,15 +3545,17 @@ export default class LinksScreen extends React.Component {
           side: false,
           type: 'Cabinet',
           title: "Cabinet",
-          frame: { M: null, I: false, R: 0 },
-          door: { M: null, I: false, R: 0 },
-          shelf: { M: null, I: false, R: 0 },
-          countertop: { M: null, I: false, R: 0 },
+          I: true,
+          frame: { M: null, I: true, R: 0 },
+          door: { M: null, I: true, R: 0 },
+          shelf: { M: null, I: true, R: 0 },
+          countertop: { M: null, I: true, R: 0 },
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addWall(id) {
     //console.log("addWindow", id);
@@ -3477,13 +3567,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Wall",
           M: null,
-          I: false,
+          I: true,
           R: 0
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addBaseboard(id) {
     //console.log("addWindow", id);
@@ -3495,13 +3586,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Baseboard",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addHeaterVent(id) {
     //console.log("addWindow", id);
@@ -3513,13 +3605,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Heater Vent",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addCeiling(id) {
     //console.log("addWindow", id);
@@ -3531,13 +3624,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Ceiling",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addFloor(id) {
     //console.log("addWindow", id);
@@ -3549,13 +3643,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Floor",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addEaves(id) {
     //console.log("addWindow", id);
@@ -3567,13 +3662,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Eaves",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addRafters(id) {
     //console.log("addWindow", id);
@@ -3585,13 +3681,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Rafters",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addFascia(id) {
     //console.log("addWindow", id);
@@ -3603,13 +3700,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Fascia",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addSoffit(id) {
     //console.log("addWindow", id);
@@ -3621,13 +3719,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Soffit",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addgd(id) {
     //console.log("addWindow", id);
@@ -3639,13 +3738,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Garage Door",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addgdf(id) {
     //console.log("addWindow", id);
@@ -3657,13 +3757,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Garage Door Frame",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addColumn(id) {
     //console.log("addWindow", id);
@@ -3675,13 +3776,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Column",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addBeam(id) {
     //console.log("addWindow", id);
@@ -3693,13 +3795,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Beam",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addGutter(id) {
     //console.log("addWindow", id);
@@ -3711,13 +3814,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Gutter",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addDownspout(id) {
     //console.log("addWindow", id);
@@ -3729,13 +3833,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Downspout",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addeub(id) {
     //console.log("addWindow", id);
@@ -3747,13 +3852,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Utility Box",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addVent(id) {
     //console.log("addWindow", id);
@@ -3765,13 +3871,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Vent",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   addAccessPanel(id) {
     //console.log("addWindow", id);
@@ -3783,13 +3890,14 @@ export default class LinksScreen extends React.Component {
           type: 'not set',
           title: "Access Panel",
           M: null,
-          I: false,
+          I: true,
           R: 0,
         }],
           x.total = x.data.length - 1
       }
     })
     this.setState({})
+    //this._sheetInput._root.focus();
   }
   removeWindow(sheetId, id) {
     console.log("remove", sheetId, id);
@@ -3805,6 +3913,7 @@ export default class LinksScreen extends React.Component {
       }
     })
     this.setState({})
+
   }
   expandWindow() {
     let len = this.state.insSheets[0].data;
@@ -3871,7 +3980,17 @@ export default class LinksScreen extends React.Component {
             insSheets: [
               {
                 id: 1, name: 'Living Room', type: 'InsSheet', data: [
-                  { id: 1, type: 'window', side: 'A', title: "Window", sill: { M: null, I: false, R: 0 }, sash: { M: null, I: false, R: 0 }, frame: { M: null, I: false, R: 0 } }
+                  {
+                    id: 1,
+                    side: false,
+                    expanded: 1,
+                    type: 'Doorway',
+                    title: "Doorway",
+                    leadsTo: null,
+                    door: { M: null, I: true, R: 0 },
+                    frame: { M: null, I: true, R: 0 },
+                    thresh: { M: null, I: true, R: 0 },
+                  }
                 ], total: 0
               }
             ],
@@ -3893,9 +4012,22 @@ export default class LinksScreen extends React.Component {
         console.log(error)
       }
     }
-    else{
-      alert('Please add a Jobid');
+    else {
+      Alert.alert(
+        'Message',
+        'Please add a Jobid',
+        [
+          { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+          { text: 'OK', onPress: () => { this._usernameInput._root.focus() } },
+        ],
+        { cancelable: false }
+      )
+      // alert('');
+      this.setState({ color: 'red' });
     }
+  }
+  _handleRef(c) {
+    this._input = c;
   }
   handleScroll(event) {
     this.setState({ scrollOffsetY: Math.round(event.nativeEvent.contentOffset.y) });
@@ -3906,9 +4038,9 @@ export default class LinksScreen extends React.Component {
     return (
       <Container>
         <View>
-          <Item >
-            <Input keyboardType="numeric" placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text }) }} />
-            <Icon name='close-circle' />
+          <Item listBorderColor="red">
+            <Input keyboardType="numeric" inputColorPlaceholder='red' placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text, color: 'black' }) }} ref={c => this._usernameInput = c} />
+            <Icon name='close-circle' style={{ color: this.state.color }} />
           </Item>
         </View>
         <ScrollView
@@ -3917,9 +4049,13 @@ export default class LinksScreen extends React.Component {
         >
           {this.state.insSheets.map(x => {
             if (x.type == 'InsSheet') {
-              return <InsSheet data={x.data} addWindow={this.addWindow} removeWindow={this.removeWindow} total={x.total} addDoorway={this.addDoorway} addCloset={this.addCloset} addCommonWindow={this.addCommonWindow} addCabinet={this.addCabinet} addWall={this.addWall} addBaseboard={this.addBaseboard} addHeaterVent={this.addHeaterVent} addCeiling={this.addCeiling} addFloor={this.addFloor}
-                addEaves={this.addEaves} addRafters={this.addRafters} addFascia={this.addFascia} addSoffit={this.addSoffit} addgd={this.addgd} addgdf={this.addgdf} addColumn={this.addColumn} addBeam={this.addBeam} addGutter={this.addGutter} addDownspout={this.addDownspout} addeub={this.addeub} addVent={this.addVent}
-                addAccessPanel={this.addAccessPanel} renderWindowHeader={this._renderWindowHeader} renderSheet={this._renderSheet} name={x.name} setName={this.setName} id={x.id} key={x.id} />
+              return <View style={{ padding: 10, paddingBottom: 15 }} key={x.id + 'view'}>
+                <Item key={x.id + 'item'} >
+                  <Input key={x.id + 'pp'} ref={c => this._sheetInput = c} value={x.name} onChangeText={(text) => this.setName(text, x.id)} placeholder="Inspection Sheet" />
+                </Item><InsSheet data={x.data} addWindow={this.addWindow} removeWindow={this.removeWindow} total={x.total} addDoorway={this.addDoorway} addCloset={this.addCloset} addCommonWindow={this.addCommonWindow} addCabinet={this.addCabinet} addWall={this.addWall} addBaseboard={this.addBaseboard} addHeaterVent={this.addHeaterVent} addCeiling={this.addCeiling} addFloor={this.addFloor}
+                  addEaves={this.addEaves} addRafters={this.addRafters} addFascia={this.addFascia} addSoffit={this.addSoffit} addgd={this.addgd} addgdf={this.addgdf} addColumn={this.addColumn} addBeam={this.addBeam} addGutter={this.addGutter} addDownspout={this.addDownspout} addeub={this.addeub} addVent={this.addVent}
+                  addAccessPanel={this.addAccessPanel} focusNextField={this.focusNextField} renderWindowHeader={this._renderWindowHeader} renderSheet={this._renderSheet} name={x.name} setName={this.setName} inputRef={this._handleRef} id={x.id} key={x.id} sheet />
+              </View>
             }
             if (x.type == 'SoilSheet') {
               return <SoilSheet data={x.data} id={x.id} addSoilSample={this.addSoilSample} renderWindowHeader={this._renderWindowHeader} renderSoilSheet={this.renderSoilSheet} key={x.id} />
@@ -3931,9 +4067,7 @@ export default class LinksScreen extends React.Component {
           <View style={{ paddingTop: 10 }}>
             <Text>Checklists</Text>
           </View>
-          <Accordion dataArray={this.state.data} expanded={this.state.colStatus} setSelected={() => {
-            alert('jhj');
-          }} renderHeader={this._renderHeader} renderContent={this._renderContent} />
+          <Accordion dataArray={this.state.data} expanded={this.state.colStatus} renderHeader={this._renderHeader} renderContent={this._renderContent} />
           <ScrollView enableAutoAutomaticScroll={false}>
             <Button block style={{ marginTop: 30 }}
               onPress={() =>
