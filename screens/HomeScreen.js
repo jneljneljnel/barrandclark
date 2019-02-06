@@ -45,33 +45,34 @@ export default class HomeScreen extends React.Component {
   }
   uploadData = async (jobs) => {
     console.log(jobs)
+    if (jobs.length){
+      jobs.map(x => {
+        AsyncStorage.getItem(x).then(state =>
+          fetch('http://44cc9999.ngrok.io/upload',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              jobid: x,
+              state: state,
+            }),
+          })
+            .then((response) => response.json())
+                  .then((responseJson) => {
+                    console.log(responseJson);
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  })
+                  //upload photo
 
+        );
+      })
+    }
     //push to db
-    jobs.map(x => {
-      AsyncStorage.getItem(x).then(state =>
-        fetch('https://c26dfad1.ngrok.io',
-        {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            jobid: x,
-            state: JSON.stringify({state}),
-          }),
-        })
-          .then((response) => response.json())
-                .then((responseJson) => {
-                  console.log(responseJson);
-                })
-                .catch((error) => {
-                  console.error(error);
-                })
-                //upload photo
-
-      );
-    })
     if(jobs.length){
       alert('Jobs sucessfully Uploaded');
     }
