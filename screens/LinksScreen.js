@@ -5920,10 +5920,11 @@ export default class LinksScreen extends React.Component {
                   },
                   buttonIndex => {
                     content.surface = SURFACES[buttonIndex]
+                    this.setState({})
                   }
                 )}
             >
-              <Text>Surface Type</Text>
+              <Text>{content.surface || 'Surface Type' }</Text>
             </Button>
           </Item>
 
