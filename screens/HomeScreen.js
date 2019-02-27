@@ -48,7 +48,7 @@ export default class HomeScreen extends React.Component {
     if (jobs.length){
       jobs.map(x => {
         AsyncStorage.getItem(x).then(state =>
-          fetch('http://44cc9999.ngrok.io/upload',
+          fetch('https://nameless-reef-31035.herokuapp.com/upload',
           {
             method: 'POST',
             headers: {
@@ -63,6 +63,7 @@ export default class HomeScreen extends React.Component {
             .then((response) => response.json())
                   .then((responseJson) => {
                     console.log(responseJson);
+                    AsyncStorage.removeItem(x)
                   })
                   .catch((error) => {
                     console.error(error);
