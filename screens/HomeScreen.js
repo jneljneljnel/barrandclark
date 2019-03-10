@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Alert,
   Image,
   Platform,
   ScrollView,
@@ -75,7 +76,7 @@ export default class HomeScreen extends React.Component {
     }
     //push to db
     if(jobs.length){
-      alert('Jobs sucessfully Uploaded');
+      Alert.alert('Jobs sucessfully uploaded');
     }
     AsyncStorage.clear()
     this.setState({jobs:[]})
@@ -156,7 +157,18 @@ RkTheme.setType('RkButton', 'faded', {
           })}
           </List>
         </Content>
-         <Button block success style={{marginBottom:30, bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
+         <Button block success style={{marginBottom:30, bottom:0}} onPress={() => {
+           Alert.alert(
+             'Upload all jobs',
+             'Are you sure?',
+             [
+               { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+               { text: 'OK', onPress: () => {  this.uploadData(this.state.jobs) } },
+             ],
+             { cancelable: true }
+           )
+
+         }}>
            <Text>Upload</Text>
          </Button>
       </Container>
