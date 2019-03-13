@@ -4537,6 +4537,8 @@ export default class LinksScreen extends React.Component {
                         content.wallD.M = INTSUB2[buttonIndex]
                         content.baseboard.M = INTSUB2[buttonIndex]
                         content.ceiling.M = INTSUB2[buttonIndex]
+                        content.vent.M = INTSUB2[buttonIndex]
+                        content.floor.M = INTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -4617,7 +4619,7 @@ export default class LinksScreen extends React.Component {
                 <Input keyboardType="numeric" placeholder="Reading" value={content.wallC.R.toString()} onChangeText={(text) => { content.wallC.R = text; this.setState({}) }} />
               </Item>
             </Col>
-            <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+            <Col style={{ height: 190 }}>
               <Text>Wall D</Text>
               <Button
                 onPress={() =>
@@ -4650,7 +4652,7 @@ export default class LinksScreen extends React.Component {
             </Col>
           </Grid>
           <Grid style={{ marginTop: 10 }}>
-            <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+            <Col style={{ height: 190 }}>
               <Text>Ceiling</Text>
               <Button
                 onPress={() =>
@@ -4736,6 +4738,119 @@ export default class LinksScreen extends React.Component {
                 <Input keyboardType="numeric" placeholder="Reading" value={content.baseboard.R} onChangeText={(text) => { content.baseboard.R = text; this.setState({}) }} />
               </Item>
             </Col>
+          </Grid>
+
+          <Grid>
+          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+            <Text>Vent</Text>
+            <Grid>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: SIDES,
+                        cancelButtonIndex: SIDES.length - 1,
+                        title: content.vent.S || "Select Material"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != SIDES.length - 1) {
+                          content.vent.S = SIDES[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.vent.S || "Side"}</Text>
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: INTSUB2,
+                        cancelButtonIndex: INTSUB2.length - 1,
+                        title: content.vent.M || "Select Material"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != INTSUB2.length - 1) {
+                          content.vent.M = INTSUB2[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.vent.M || "Material"}</Text>
+                </Button>
+              </Col>
+            </Grid>
+            <Text style={{ marginTop: 20 }}>{content.vent.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <ListItem>
+              <RkChoice rkType='posNeg' selected={content.vent.I} onChange={(e) => {
+                content.vent.I = !content.vent.I
+                this.setState({})
+              }} />
+            </ListItem>
+            <Item>
+              <Input keyboardType="numeric" placeholder="Reading" value={content.vent.R} onChangeText={(text) => { content.vent.R = text; this.setState({}) }} />
+            </Item>
+          </Col>
+          <Col style={{ height: 190 }}>
+            <Text>Floor</Text>
+            <Grid>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: SIDES,
+                        cancelButtonIndex: SIDES.length - 1,
+                        title: content.floor.S || "Select Material"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != SIDES.length - 1) {
+                          content.floor.S = SIDES[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.floor.S || "Side"}</Text>
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: INTSUB2,
+                        cancelButtonIndex: INTSUB2.length - 1,
+                        title: content.floor.M || "Select Material"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != INTSUB2.length - 1) {
+                          content.floor.M = INTSUB2[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.floor.M || "Material"}</Text>
+                </Button>
+              </Col>
+            </Grid>
+            <Text style={{ marginTop: 20 }}>{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <ListItem>
+              <RkChoice rkType='posNeg' selected={content.floor.I} onChange={(e) => {
+                content.floor.I = !content.floor.I
+                this.setState({})
+              }} />
+            </ListItem>
+            <Item>
+              <Input keyboardType="numeric" placeholder="Reading" value={content.floor.R} onChangeText={(text) => { content.floor.R = text; this.setState({}) }} />
+            </Item>
+          </Col>
           </Grid>
 
           <Item stackedLabel>
@@ -7936,7 +8051,9 @@ export default class LinksScreen extends React.Component {
               wallC: { S: false, M: null, I: true, R: '0.' },
               wallD: { S: false, M: null, I: true, R: '0.' },
               ceiling: { S: false, M: null, I: true, R: '0.' },
-              baseboard: { S: false, M: null, I: true, R: '0.' }
+              baseboard: { S: false, M: null, I: true, R: '0.' },
+              vent: { S: false, M: null, I: true, R: '0.' },
+              floor: { S: false, M: null, I: true, R: '0.' }
             },
             {
               id: 5,
@@ -8148,6 +8265,8 @@ export default class LinksScreen extends React.Component {
             wallC: { S: false, M: null, I: true, R: '0.' },
             wallD: { S: false, M: null, I: true, R: '0.' },
             ceiling: { S: false, M: null, I: true, R: '0.' },
+            baseboard: { S: false, M: null, I: true, R: '0.' },
+            vent: { S: false, M: null, I: true, R: '0.' },
             baseboard: { S: false, M: null, I: true, R: '0.' }
           },
           {
@@ -8859,7 +8978,9 @@ export default class LinksScreen extends React.Component {
             wallC: { S: false, M: null, I: true, R: '0.' },
             wallD: { S: false, M: null, I: true, R: '0.' },
             ceiling: { S: false, M: null, I: true, R: '0.' },
-            baseboard: { S: false, M: null, I: true, R: '0.' }
+            baseboard: { S: false, M: null, I: true, R: '0.' },
+            floor: { S: false, M: null, I: true, R: '0.' },
+            vent: { S: false, M: null, I: true, R: '0.' }
           }],
             x.total = x.data.length - 1
         }
@@ -9169,7 +9290,10 @@ export default class LinksScreen extends React.Component {
                     wallC: { S: false, M: null, I: true, R: '0.' },
                     wallD: { S: false, M: null, I: true, R: '0.' },
                     ceiling: { S: false, M: null, I: true, R: '0.' },
-                    baseboard: { S: false, M: null, I: true, R: '0.' }
+                    baseboard: { S: false, M: null, I: true, R: '0.' },
+                    floor: { S: false, M: null, I: true, R: '0.' },
+                    vent: { S: false, M: null, I: true, R: '0.' },
+
                   },
                   {
                     id: 5,
