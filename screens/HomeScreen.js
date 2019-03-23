@@ -142,7 +142,7 @@ RkTheme.setType('RkButton', 'faded', {
           {this.state.jobs.map( (j,i) => {
             return(<ListItem thumbnail key={i}>
               <Left>
-                <Thumbnail square source={{ uri: this.state.pics[i] }} />
+                <Thumbnail square source={{ uri: this.state.pics[i] || '/cat' }} />
               </Left>
               <Body>
                 <Text>{j}</Text>

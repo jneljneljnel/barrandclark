@@ -53,7 +53,8 @@ const TYPESCOL = ["Front Porch", "Rear Porch", "Side Porch", "Cancel"];
 const TYPESGUTT = ["Older", "Newer", "Upper", "Lower", "Cancel"];
 const TYPESDOOR = ["Older", "Newer", "Sliding Glass Door", "Pocket Door", "Cancel"];
 const TYPESCAB = ["Upper", "Lower", "Older", "Newer", "Ironing Board", "Cancel"];
-const TYPESCLOSET = ["Water Heater", "Forced Air Unit", "Older", "Newer", "Cancel"];
+const TYPESWALLS = ["Upper", "Lower", "Older", "Newer", "Wainscot", "Cancel"];
+
 
 const EXTTYPES1 = ["Older", "Newer", "Cancel"];
 const EXTTYPES2 = ["Aluminum", "Casement", "Double Hung", "Fixed", "Horizontal Sliding", "Louvered", "Transom", "Vinyl", "Bay Window", "Garden Window", "Cancel"];
@@ -107,15 +108,17 @@ const INTSUB7 = ['Wood', 'Plaster', 'Tile', 'Concrete', 'Brick', "Acoustic",
 
 const INTSUB8 = ['Concrete', 'Wood', 'Metal', 'Tile', "Acoustic", "Asphalt",
   "Brick", "Fiberglass", "Gypsum", "Plaster", "Plastic", "Stucco", "Transite", "Vinyl", 'Cancel'];
+const INTSUB9 = ["Tile","Cancel"];
+const INTSUB10 = ["Wood","Plaster","Metal","Tile","Cancel"];
 
-
-const SIDES = ["A", "B", "C", "D", "North", "South", "East", "West", "Cancel"];
+const SIDES = ["A", "B", "C", "D", "N", "S", "E", "W", "Cancel"];
+const SIDESEXT = ["A", "B", "C", "D", "North", "South", "East", "West", "Cancel"];
 const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Form 5.0", "Layout Photo", "Property Photo", 'Cancel'];
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
 
-const itemButons = ['Window', 'Doorway', 'Exterior Doorway', 'Interior Room Walls', 'Closet', 'Cabinet', 'Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Roof Trim', 'Porch', 'Garage Doors', 'Other Item', 'Cancel'];
-const itemExtButons = ['Exterior Doorway', 'Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Stairs', 'Garage Doors', 'Misc Exterior', 'Closet', 'Cabinet', 'Trim', 'Parking Lot', 'Cancel'];
+const itemButons = ['Interior Window', 'Interior Doorway', 'Exterior Doorway', 'Interior Walls', 'Closet', 'Cabinet', 'Interior Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Tile', 'Cancel'];
+const itemExtButons = ['Exterior Doorway', 'Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Garage Doors', 'Stairs', 'Misc Exterior', 'Parking Lot', 'Cancel'];
 const CANCEL_INDEX = 14;
 const CANCEL_INDEX2 = 8;
 
@@ -135,7 +138,7 @@ function InsSheet(props) {
             {
               options: itemButons,
               cancelButtonIndex: itemButons.length - 1,
-              title: "Add Item2"
+              title: "Add Item"
             },
             buttonIndex => {
               for (var i = 0; i < itemButons.length - 1; i++) {
@@ -1197,7 +1200,7 @@ export default class LinksScreen extends React.Component {
           </Grid>
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Door</Text>
+              <Text>Closet Door</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -1231,7 +1234,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Frame</Text>
+              <Text>Closet Frame</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -1262,7 +1265,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Shelf</Text>
+              <Text>Closet Shelf</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -1293,7 +1296,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Support</Text>
+              <Text>Closet Shelf Support</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -1560,22 +1563,23 @@ export default class LinksScreen extends React.Component {
 
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Well</Text>
+              <Text>Window Well</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB2,
-                      cancelButtonIndex: EXTSUB2.length - 1,
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
                       title: content.well.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB2.length - 1) {
-                        content.well.M = EXTSUB2[buttonIndex]
-                        content.sash.M = EXTSUB2[buttonIndex]
-                        content.frame.M = EXTSUB2[buttonIndex]
-                        content.shutters.M = EXTSUB2[buttonIndex]
-                        content.securitybars.M = EXTSUB2[buttonIndex]
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.well.M = EXTSUB9[buttonIndex]
+                        content.sash.M = EXTSUB9[buttonIndex]
+                        content.frame.M = EXTSUB9[buttonIndex]
+                        content.shutters.M = EXTSUB9[buttonIndex]
+                        content.securitybars.M = EXTSUB9[buttonIndex]
+                        content.awning.M = EXTSUB9[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1595,18 +1599,18 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Sash</Text>
+              <Text>Window Sash</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB2,
-                      cancelButtonIndex: EXTSUB2.length - 1,
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
                       title: content.sash.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB2.length - 1) {
-                        content.sash.M = EXTSUB2[buttonIndex]
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.sash.M = EXTSUB9[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1626,18 +1630,18 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Frame</Text>
+              <Text>Window Frame</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB2,
-                      cancelButtonIndex: EXTSUB2.length - 1,
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
                       title: content.frame.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB2.length - 1) {
-                        content.frame.M = EXTSUB2[buttonIndex]
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.frame.M = EXTSUB9[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1665,13 +1669,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB2,
-                      cancelButtonIndex: EXTSUB2.length - 1,
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
                       title: content.shutters.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB2.length - 1) {
-                        content.shutters.M = EXTSUB2[buttonIndex]
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.shutters.M = EXTSUB9[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1696,13 +1700,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB2,
-                      cancelButtonIndex: EXTSUB2.length - 1,
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
                       title: content.securitybars.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB2.length - 1) {
-                        content.securitybars.M = EXTSUB2[buttonIndex]
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.securitybars.M = EXTSUB9[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1719,6 +1723,37 @@ export default class LinksScreen extends React.Component {
               </ListItem>
               <Item>
                 <Input keyboardType="numeric" placeholder="Reading" value={content.securitybars.R} onChangeText={(text) => { content.securitybars.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Awning</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB9,
+                      cancelButtonIndex: EXTSUB9.length - 1,
+                      title: content.awning.M || "Select Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB9.length - 1) {
+                        content.awning.M = EXTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.awning.M || "Material"}</Text>
+              </Button>
+              <Text >{content.awning.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.awning.I} onChange={(e) => {
+                  content.awning.I = !content.awning.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.awning.R} onChangeText={(text) => { content.awning.R = text; this.setState({}) }} />
               </Item>
             </Col>
           </Grid>
@@ -1936,6 +1971,8 @@ export default class LinksScreen extends React.Component {
                         content.rafters.M = EXTSUB2[buttonIndex]
                         content.fascia.M = EXTSUB2[buttonIndex]
                         content.soffit.M = EXTSUB2[buttonIndex]
+                        content.corbel.M = EXTSUB2[buttonIndex]
+                        content.roofSup.M = EXTSUB2[buttonIndex]
                         content.gutter.M = EXTSUB2[buttonIndex]
                         content.downspout.M = EXTSUB2[buttonIndex]
                         this.setState({})
@@ -1962,13 +1999,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB1,
-                      cancelButtonIndex: EXTSUB1.length - 1,
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB1.length - 1) {
-                        content.rafters.M = EXTSUB1[buttonIndex]
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.rafters.M = EXTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -1993,13 +2030,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB1,
-                      cancelButtonIndex: EXTSUB1.length - 1,
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB1.length - 1) {
-                        content.fascia.M = EXTSUB1[buttonIndex]
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.fascia.M = EXTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2026,13 +2063,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB1,
-                      cancelButtonIndex: EXTSUB1.length - 1,
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB1.length - 1) {
-                        content.soffit.M = EXTSUB1[buttonIndex]
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.soffit.M = EXTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2057,13 +2094,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB1,
-                      cancelButtonIndex: EXTSUB1.length - 1,
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB1.length - 1) {
-                        content.gutter.M = EXTSUB1[buttonIndex]
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.gutter.M = EXTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2088,13 +2125,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTSUB1,
-                      cancelButtonIndex: EXTSUB1.length - 1,
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTSUB1.length - 1) {
-                        content.downspout.M = EXTSUB1[buttonIndex]
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.downspout.M = EXTSUB2[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2111,6 +2148,70 @@ export default class LinksScreen extends React.Component {
               </ListItem>
               <Item>
                 <Input keyboardType="numeric" placeholder="Reading" value={content.downspout.R} onChangeText={(text) => { content.downspout.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Corbel</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.corbel.M = EXTSUB2[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.corbel.M || "Material"}</Text>
+              </Button>
+              <Text >{content.corbel.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.corbel.I} onChange={(e) => {
+                  content.corbel.I = !content.corbel.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.corbel.R} onChangeText={(text) => { content.corbel.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Roof Support</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB2,
+                      cancelButtonIndex: EXTSUB2.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB2.length - 1) {
+                        content.roofSup.M = EXTSUB2[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.roofSup.M || "Material"}</Text>
+              </Button>
+              <Text >{content.roofSup.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.roofSup.I} onChange={(e) => {
+                  content.roofSup.I = !content.roofSup.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.roofSup.R} onChangeText={(text) => { content.roofSup.R = text; this.setState({}) }} />
               </Item>
             </Col>
           </Grid>
@@ -2168,6 +2269,7 @@ export default class LinksScreen extends React.Component {
                         content.handrail.M = EXTSUB4[buttonIndex]
                         content.railing.M = EXTSUB4[buttonIndex]
                         content.railcap.M = EXTSUB4[buttonIndex]
+                        content.mailSlot.M = EXTSUB4[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2380,6 +2482,37 @@ export default class LinksScreen extends React.Component {
                 <Input keyboardType="numeric" placeholder="Reading" value={content.railcap.R} onChangeText={(text) => { content.railcap.R = text; this.setState({}) }} />
               </Item>
             </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Mail Slot</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB4,
+                      cancelButtonIndex: EXTSUB4.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB4.length - 1) {
+                        content.mailSlot.M = EXTSUB4[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.mailSlot.M || "Material"}</Text>
+              </Button>
+              <Text >{content.mailSlot.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.mailSlot.I} onChange={(e) => {
+                  content.mailSlot.I = !content.mailSlot.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.mailSlot.R} onChangeText={(text) => { content.mailSlot.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
           </Grid>
           <Item stackedLabel>
             <Label>Comments</Label>
@@ -2434,6 +2567,7 @@ export default class LinksScreen extends React.Component {
                         content.vTrim.M = EXTSUB7[buttonIndex]
                         content.mDoor.M = EXTSUB7[buttonIndex]
                         content.shelf.M = EXTSUB7[buttonIndex]
+                        content.shelfSupport.M = EXTSUB7[buttonIndex]
                         content.support.M = EXTSUB7[buttonIndex]
                         this.setState({})
                       }
@@ -2617,6 +2751,37 @@ export default class LinksScreen extends React.Component {
           </Grid>
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Shelf Support</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB7,
+                      cancelButtonIndex: EXTSUB7.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB7.length - 1) {
+                        content.shelfSupport.M = EXTSUB7[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.shelfSupport.M || "Material"}</Text>
+              </Button>
+              <Text >{content.shelfSupport.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.shelfSupport.I} onChange={(e) => {
+                  content.shelfSupport.I = !content.shelfSupport.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.shelfSupport.R} onChangeText={(text) => { content.shelfSupport.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
               <Text>Support</Text>
               <Button
                 onPress={() =>
@@ -2701,6 +2866,8 @@ export default class LinksScreen extends React.Component {
                         content.handrail.M = EXTSUB5[buttonIndex]
                         content.railing.M = EXTSUB5[buttonIndex]
                         content.stringer.M = EXTSUB5[buttonIndex]
+                        content.newel.M = EXTSUB5[buttonIndex]
+                        content.baluster.M = EXTSUB5[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -2881,6 +3048,71 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
           </Grid>
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Newel Post</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB5,
+                      cancelButtonIndex: EXTSUB5.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB5.length - 1) {
+                        content.newel.M = EXTSUB5[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.newel.M || "Material"}</Text>
+              </Button>
+              <Text >{content.newel.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.newel.I} onChange={(e) => {
+                  content.newel.I = !content.newel.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.newel.R} onChangeText={(text) => { content.newel.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Baluster</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB5,
+                      cancelButtonIndex: EXTSUB5.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB5.length - 1) {
+                        content.baluster.M = EXTSUB5[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.baluster.M || "Material"}</Text>
+              </Button>
+              <Text >{content.baluster.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.baluster.I} onChange={(e) => {
+                  content.baluster.I = !content.baluster.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.baluster.R} onChangeText={(text) => { content.baluster.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+
           <Item stackedLabel>
             <Label>Comments</Label>
             <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
@@ -3073,6 +3305,11 @@ export default class LinksScreen extends React.Component {
                         content.frame.M = EXTSUB6[buttonIndex]
                         content.vent.M = EXTSUB6[buttonIndex]
                         content.accessPanel.M = EXTSUB6[buttonIndex]
+                        content.gate.M = EXTSUB6[buttonIndex]
+                        content.fence.M = EXTSUB6[buttonIndex]
+                        content.playEquip.M = EXTSUB6[buttonIndex]
+                        content.planterBox.M = EXTSUB6[buttonIndex]
+                        content.equipment.M = EXTSUB6[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -3156,6 +3393,170 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
           </Grid>
+
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Gate</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB6,
+                      cancelButtonIndex: EXTSUB6.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB6.length - 1) {
+                        content.gate.M = EXTSUB6[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.gate.M || "Material"}</Text>
+              </Button>
+              <Text >{content.gate.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.gate.I} onChange={(e) => {
+                  content.gate.I = !content.gate.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.gate.R} onChangeText={(text) => { content.gate.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Fence</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB6,
+                      cancelButtonIndex: EXTSUB6.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB6.length - 1) {
+                        content.fence.M = EXTSUB6[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.fence.M || "Material"}</Text>
+              </Button>
+              <Text >{content.fence.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.fence.I} onChange={(e) => {
+                  content.fence.I = !content.fence.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.fence.R} onChangeText={(text) => { content.fence.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Playground Equipment</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB6,
+                      cancelButtonIndex: EXTSUB6.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB6.length - 1) {
+                        content.playEquip.M = EXTSUB6[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.playEquip.M || "Material"}</Text>
+              </Button>
+              <Text >{content.playEquip.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.playEquip.I} onChange={(e) => {
+                  content.playEquip.I = !content.playEquip.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.playEquip.R} onChangeText={(text) => { content.playEquip.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Planter Box</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB6,
+                      cancelButtonIndex: EXTSUB6.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB6.length - 1) {
+                        content.planterBox.M = EXTSUB6[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.planterBox.M || "Material"}</Text>
+              </Button>
+              <Text >{content.planterBox.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.planterBox.I} onChange={(e) => {
+                  content.planterBox.I = !content.planterBox.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.planterBox.R} onChangeText={(text) => { content.planterBox.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Equipment</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB6,
+                      cancelButtonIndex: EXTSUB6.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB6.length - 1) {
+                        content.equipment.M = EXTSUB6[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.equipment.M || "Material"}</Text>
+              </Button>
+              <Text >{content.equipment.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.equipment.I} onChange={(e) => {
+                  content.equipment.I = !content.equipment.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.equipment.R} onChangeText={(text) => { content.equipment.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+
           <Item stackedLabel>
             <Label>Comments</Label>
             <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
@@ -3751,6 +4152,8 @@ export default class LinksScreen extends React.Component {
                         content.handrail.M = EXTSUB5[buttonIndex]
                         content.railing.M = EXTSUB5[buttonIndex]
                         content.stringer.M = EXTSUB5[buttonIndex]
+                        content.newel.M = EXTSUB5[buttonIndex]
+                        content.baluster.M = EXTSUB5[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -3931,6 +4334,70 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
           </Grid>
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Newel Post</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB5,
+                      cancelButtonIndex: EXTSUB5.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB5.length - 1) {
+                        content.newel.M = EXTSUB5[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.newel.M || "Material"}</Text>
+              </Button>
+              <Text >{content.newel.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.newel.I} onChange={(e) => {
+                  content.newel.I = !content.newel.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.newel.R} onChangeText={(text) => { content.newel.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Baluster</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: EXTSUB5,
+                      cancelButtonIndex: EXTSUB5.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != EXTSUB5.length - 1) {
+                        content.baluster.M = EXTSUB5[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.baluster.M || "Material"}</Text>
+              </Button>
+              <Text >{content.baluster.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.baluster.I} onChange={(e) => {
+                  content.baluster.I = !content.baluster.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.baluster.R} onChangeText={(text) => { content.baluster.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
           <Item stackedLabel>
             <Label>Comments</Label>
             <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
@@ -3939,7 +4406,7 @@ export default class LinksScreen extends React.Component {
         </View>
       );
     }
-    if (content.title == 'Window') {
+    if (content.title == 'Interior Window') {
       return (
         <View keyboardShouldPersistTaps={true}>
           <Grid style={{ marginTop: 0 }}>
@@ -3984,7 +4451,7 @@ export default class LinksScreen extends React.Component {
           </Grid>
           <Grid style={{ marginTop: 10 }} keyboardShouldPersistTaps={true}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Sill</Text>
+              <Text>Window Sill</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -4017,7 +4484,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
-              <Text>Sash</Text>
+              <Text>Window Sash</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -4048,7 +4515,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Frame</Text>
+              <Text>Window Frame</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -4088,7 +4555,7 @@ export default class LinksScreen extends React.Component {
       );
     }
     /** exterior windows */
-    if (content.title == 'Doorway') {
+    if (content.title == 'Interior Doorway') {
       return (
         <View keyboardDismissMode="on-drag">
           <Grid style={{ marginTop: 0 }}>
@@ -4493,7 +4960,7 @@ export default class LinksScreen extends React.Component {
       )
     }
 
-    if (content.title == 'Interior Room Walls') {
+    if (content.title == 'Interior Walls') {
       return (
         <View>
           <Grid>
@@ -4502,13 +4969,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: EXTTYPES3,
-                      cancelButtonIndex: EXTTYPES3.length - 1,
+                      options: TYPESWALLS,
+                      cancelButtonIndex: TYPESWALLS.length - 1,
                       title: "Select Side"
                     },
                     buttonIndex => {
-                      if (buttonIndex != EXTTYPES3.length - 1) {
-                        content.type = EXTTYPES3[buttonIndex]
+                      if (buttonIndex != TYPESWALLS.length - 1) {
+                        content.type = TYPESWALLS[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -4741,116 +5208,116 @@ export default class LinksScreen extends React.Component {
           </Grid>
 
           <Grid>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
-            <Text>Vent</Text>
-            <Grid>
-              <Col>
-                <Button
-                  onPress={() =>
-                    ActionSheet.show(
-                      {
-                        options: SIDES,
-                        cancelButtonIndex: SIDES.length - 1,
-                        title: content.vent.S || "Select Material"
-                      },
-                      buttonIndex => {
-                        if (buttonIndex != SIDES.length - 1) {
-                          content.vent.S = SIDES[buttonIndex]
-                          this.setState({})
+            <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+              <Text>Vent</Text>
+              <Grid>
+                <Col>
+                  <Button
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: SIDES,
+                          cancelButtonIndex: SIDES.length - 1,
+                          title: content.vent.S || "Select Material"
+                        },
+                        buttonIndex => {
+                          if (buttonIndex != SIDES.length - 1) {
+                            content.vent.S = SIDES[buttonIndex]
+                            this.setState({})
+                          }
                         }
-                      }
-                    )}
-                >
-                  <Text>{content.vent.S || "Side"}</Text>
-                </Button>
-              </Col>
-              <Col>
-                <Button
-                  onPress={() =>
-                    ActionSheet.show(
-                      {
-                        options: INTSUB2,
-                        cancelButtonIndex: INTSUB2.length - 1,
-                        title: content.vent.M || "Select Material"
-                      },
-                      buttonIndex => {
-                        if (buttonIndex != INTSUB2.length - 1) {
-                          content.vent.M = INTSUB2[buttonIndex]
-                          this.setState({})
+                      )}
+                  >
+                    <Text>{content.vent.S || "Side"}</Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: INTSUB2,
+                          cancelButtonIndex: INTSUB2.length - 1,
+                          title: content.vent.M || "Select Material"
+                        },
+                        buttonIndex => {
+                          if (buttonIndex != INTSUB2.length - 1) {
+                            content.vent.M = INTSUB2[buttonIndex]
+                            this.setState({})
+                          }
                         }
-                      }
-                    )}
-                >
-                  <Text>{content.vent.M || "Material"}</Text>
-                </Button>
-              </Col>
-            </Grid>
-            <Text style={{ marginTop: 20 }}>{content.vent.I == true ? 'Intact' : 'Deteriorated'}</Text>
-            <ListItem>
-              <RkChoice rkType='posNeg' selected={content.vent.I} onChange={(e) => {
-                content.vent.I = !content.vent.I
-                this.setState({})
-              }} />
-            </ListItem>
-            <Item>
-              <Input keyboardType="numeric" placeholder="Reading" value={content.vent.R} onChangeText={(text) => { content.vent.R = text; this.setState({}) }} />
-            </Item>
-          </Col>
-          <Col style={{ height: 190 }}>
-            <Text>Floor</Text>
-            <Grid>
-              <Col>
-                <Button
-                  onPress={() =>
-                    ActionSheet.show(
-                      {
-                        options: SIDES,
-                        cancelButtonIndex: SIDES.length - 1,
-                        title: content.floor.S || "Select Material"
-                      },
-                      buttonIndex => {
-                        if (buttonIndex != SIDES.length - 1) {
-                          content.floor.S = SIDES[buttonIndex]
-                          this.setState({})
+                      )}
+                  >
+                    <Text>{content.vent.M || "Material"}</Text>
+                  </Button>
+                </Col>
+              </Grid>
+              <Text style={{ marginTop: 20 }}>{content.vent.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.vent.I} onChange={(e) => {
+                  content.vent.I = !content.vent.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.vent.R} onChangeText={(text) => { content.vent.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ height: 190 }}>
+              <Text>Floor</Text>
+              <Grid>
+                <Col>
+                  <Button
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: SIDES,
+                          cancelButtonIndex: SIDES.length - 1,
+                          title: content.floor.S || "Select Material"
+                        },
+                        buttonIndex => {
+                          if (buttonIndex != SIDES.length - 1) {
+                            content.floor.S = SIDES[buttonIndex]
+                            this.setState({})
+                          }
                         }
-                      }
-                    )}
-                >
-                  <Text>{content.floor.S || "Side"}</Text>
-                </Button>
-              </Col>
-              <Col>
-                <Button
-                  onPress={() =>
-                    ActionSheet.show(
-                      {
-                        options: INTSUB2,
-                        cancelButtonIndex: INTSUB2.length - 1,
-                        title: content.floor.M || "Select Material"
-                      },
-                      buttonIndex => {
-                        if (buttonIndex != INTSUB2.length - 1) {
-                          content.floor.M = INTSUB2[buttonIndex]
-                          this.setState({})
+                      )}
+                  >
+                    <Text>{content.floor.S || "Side"}</Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: INTSUB2,
+                          cancelButtonIndex: INTSUB2.length - 1,
+                          title: content.floor.M || "Select Material"
+                        },
+                        buttonIndex => {
+                          if (buttonIndex != INTSUB2.length - 1) {
+                            content.floor.M = INTSUB2[buttonIndex]
+                            this.setState({})
+                          }
                         }
-                      }
-                    )}
-                >
-                  <Text>{content.floor.M || "Material"}</Text>
-                </Button>
-              </Col>
-            </Grid>
-            <Text style={{ marginTop: 20 }}>{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
-            <ListItem>
-              <RkChoice rkType='posNeg' selected={content.floor.I} onChange={(e) => {
-                content.floor.I = !content.floor.I
-                this.setState({})
-              }} />
-            </ListItem>
-            <Item>
-              <Input keyboardType="numeric" placeholder="Reading" value={content.floor.R} onChangeText={(text) => { content.floor.R = text; this.setState({}) }} />
-            </Item>
-          </Col>
+                      )}
+                  >
+                    <Text>{content.floor.M || "Material"}</Text>
+                  </Button>
+                </Col>
+              </Grid>
+              <Text style={{ marginTop: 20 }}>{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.floor.I} onChange={(e) => {
+                  content.floor.I = !content.floor.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.floor.R} onChangeText={(text) => { content.floor.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
           </Grid>
 
           <Item stackedLabel>
@@ -4908,7 +5375,7 @@ export default class LinksScreen extends React.Component {
           </Grid>
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Door</Text>
+              <Text>Closet Door</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -4942,7 +5409,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Frame</Text>
+              <Text>Closet Frame</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -4973,7 +5440,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Shelf</Text>
+              <Text>Closet Shelf</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -5004,7 +5471,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Support</Text>
+              <Text>Closet Shelf Support</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -5316,7 +5783,7 @@ export default class LinksScreen extends React.Component {
         </Grid>
         <Grid style={{ marginTop: 10 }}>
           <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-            <Text>Frame</Text>
+            <Text>Cabinet Frame</Text>
             <Button
               onPress={() =>
                 ActionSheet.show(
@@ -5352,7 +5819,7 @@ export default class LinksScreen extends React.Component {
             </Item>
           </Col>
           <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-            <Text>Door</Text>
+            <Text>Cabinet Door/Drawer</Text>
             <Button
               onPress={() =>
                 ActionSheet.show(
@@ -5383,7 +5850,7 @@ export default class LinksScreen extends React.Component {
             </Item>
           </Col>
           <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-            <Text>Shelf</Text>
+            <Text>Cabinet Shelf</Text>
             <Button
               onPress={() =>
                 ActionSheet.show(
@@ -5414,7 +5881,7 @@ export default class LinksScreen extends React.Component {
             </Item>
           </Col>
           <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-            <Text>Counter</Text>
+            <Text>Countertop</Text>
             <Button
               onPress={() =>
                 ActionSheet.show(
@@ -5514,7 +5981,7 @@ export default class LinksScreen extends React.Component {
       </View>
       );
     }
-    if (content.title == 'Trim') {
+    if (content.title == 'Interior Trim') {
       return (
         <View>
           <Grid style={{ marginTop: 0 }}>
@@ -5542,13 +6009,13 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: INTSUB5,
-                      cancelButtonIndex: 24,
+                      options: EXTTYPES1,
+                      cancelButtonIndex: EXTTYPES1.length - 1,
                       title: "Select Side"
                     },
                     buttonIndex => {
-                      if (buttonIndex != TYPES.length - 1) {
-                        content.type = INTSUB5[buttonIndex]
+                      if (buttonIndex != EXTTYPES1.length - 1) {
+                        content.type = EXTTYPES1[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -5565,18 +6032,20 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: content.cModling.M || "Select Material"
                     },
                     buttonIndex => {
-                      if (buttonIndex != TYPES.length - 1) {
-                        content.cModling.M = BUTTONS[buttonIndex]
-                        content.horizontal.M = BUTTONS[buttonIndex]
-                        content.vertical.M = BUTTONS[buttonIndex]
-                        content.picture.M = BUTTONS[buttonIndex]
-                        content.plate.M = BUTTONS[buttonIndex]
-                        content.corner.M = BUTTONS[buttonIndex]
+                      if (buttonIndex != INTSUB10.length - 1) {
+                        content.cModling.M = INTSUB10[buttonIndex]
+                        content.horizontal.M = INTSUB10[buttonIndex]
+                        content.vertical.M = INTSUB10[buttonIndex]
+                        content.picture.M = INTSUB10[buttonIndex]
+                        content.plate.M = INTSUB10[buttonIndex]
+                        content.chain.M = INTSUB10[buttonIndex]
+                        content.trim.M = INTSUB10[buttonIndex]
+                        content.frame.M = INTSUB10[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -5596,17 +6065,17 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
-              <Text>Picture</Text>
+              <Text>Picture Rail</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      content.picture.M = BUTTONS[buttonIndex]
+                      content.picture.M = INTSUB10[buttonIndex]
                       this.setState({})
                     }
                   )}
@@ -5630,12 +6099,12 @@ export default class LinksScreen extends React.Component {
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      content.plate.M = BUTTONS[buttonIndex]
+                      content.plate.M = INTSUB10[buttonIndex]
                       this.setState({})
                     }
                   )}
@@ -5656,17 +6125,17 @@ export default class LinksScreen extends React.Component {
           </Grid>
           <Grid style={{ marginTop: 10 }}>
             <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
-              <Text>Horizontal</Text>
+              <Text>Horizontal Trim</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: content.horizontal.M || "Select Material"
                     },
                     buttonIndex => {
-                      content.horizontal.M = BUTTONS[buttonIndex]
+                      content.horizontal.M = INTSUB10[buttonIndex]
                       this.setState({})
                     }
                   )}
@@ -5685,17 +6154,17 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
-              <Text>Vertical</Text>
+              <Text>Vertical Trim</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      content.vertical.M = BUTTONS[buttonIndex]
+                      content.vertical.M = INTSUB10[buttonIndex]
                       this.setState({})
                     }
                   )}
@@ -5714,32 +6183,92 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
-              <Text>Corner Boards</Text>
+              <Text>Chair Rail</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
                     {
-                      options: BUTTONS,
-                      cancelButtonIndex: CANCEL_INDEX,
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
                       title: "Material"
                     },
                     buttonIndex => {
-                      content.corner.M = BUTTONS[buttonIndex]
+                      content.chain.M = INTSUB10[buttonIndex]
                       this.setState({})
                     }
                   )}
               >
-                <Text>{content.corner.M || "Material"}</Text>
+                <Text>{content.chain.M || "Material"}</Text>
               </Button>
-              <Text style={{ marginTop: 10 }}>{content.corner.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <Text style={{ marginTop: 10 }}>{content.chain.I == true ? 'Intact' : 'Deteriorated'}</Text>
               <ListItem>
-                <RkChoice rkType='posNeg' selected={content.corner.I} onChange={(e) => {
-                  content.corner.I = !content.corner.I
+                <RkChoice rkType='posNeg' selected={content.chain.I} onChange={(e) => {
+                  content.chain.I = !content.chain.I
                   this.setState({})
                 }} />
               </ListItem>
               <Item>
-                <Input keyboardType="numeric" placeholder="Reading" value={content.corner.R.toString()} onChangeText={(text) => { content.corner.R = text; this.setState({}) }} />
+                <Input keyboardType="numeric" placeholder="Reading" value={content.chain.R.toString()} onChangeText={(text) => { content.chain.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid style={{ marginTop: 10 }}>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+              <Text>Trim</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
+                      title: content.trim.M || "Select Material"
+                    },
+                    buttonIndex => {
+                      content.trim.M = INTSUB10[buttonIndex]
+                      this.setState({})
+                    }
+                  )}
+              >
+                <Text>{content.trim.M || "Material"}</Text>
+              </Button>
+              <Text style={{ marginTop: 10 }} >{content.trim.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.trim.I} onChange={(e) => {
+                  content.trim.I = !content.trim.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.trim.R.toString()} onChangeText={(text) => { content.trim.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+              <Text>Frame</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB10,
+                      cancelButtonIndex: INTSUB10.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      content.frame.M = INTSUB10[buttonIndex]
+                      this.setState({})
+                    }
+                  )}
+              >
+                <Text>{content.frame.M || "Material"}</Text>
+              </Button>
+              <Text style={{ marginTop: 10 }}>{content.frame.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
+                  content.frame.I = !content.frame.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.frame.R.toString()} onChangeText={(text) => { content.frame.R = text; this.setState({}) }} />
               </Item>
             </Col>
           </Grid>
@@ -6013,7 +6542,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Attic Access Frame</Text>
+              <Text>Attic Access/Frame</Text>
               <Grid>
                 <Col>
                   <Button
@@ -6068,7 +6597,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Electric Panel</Text>
+              <Text>Electric Panel/Frame</Text>
               <Grid>
                 <Col>
                   <Button
@@ -6129,6 +6658,279 @@ export default class LinksScreen extends React.Component {
           </Item>
           {this.renderHtmlFooter(sheetId, content)}
         </View>
+      );
+    }
+
+    /** Tile */
+    if (content.title == 'Tile') {
+      return (
+        <View keyboardDismissMode="on-drag">
+          <Grid style={{ marginTop: 0 }}>
+          <Col>
+              <Button block error style={{ marginTop: 10, marginRight: 10 }}
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: SIDES,
+                      cancelButtonIndex: 9,
+                      title: "Select Side"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != SIDES.length - 1) {
+                        content.side = SIDES[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}>
+                <Text>Side</Text>
+              </Button>
+            </Col>
+          </Grid>
+
+          <Grid >
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Shower</Text>
+              <Grid>
+                <Col>
+                  <Button
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: INTSUB9,
+                          cancelButtonIndex: INTSUB9.length - 1,
+                          title: content.shower.M || "Select Material"
+                        },
+                        buttonIndex => {
+                          if (buttonIndex != INTSUB9.length - 1) {
+                            content.shower.M = INTSUB9[buttonIndex]
+                            content.wall.M = INTSUB9[buttonIndex]
+                            content.curb.M = INTSUB9[buttonIndex]
+                            content.ceiling.M = INTSUB9[buttonIndex]
+                            content.floor.M = INTSUB9[buttonIndex]
+                            content.backsplash.M = INTSUB9[buttonIndex]
+                            content.trim.M = INTSUB9[buttonIndex]
+                            this.setState({})
+                          }
+                        }
+                      )}
+                  >
+                    <Text>{content.shower.M || "Material"}</Text>
+                  </Button>
+                </Col>
+              </Grid>
+              <Text style={{ marginTop: 45 }} >{content.shower.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.shower.I} onChange={(e) => {
+                  content.shower.I = !content.shower.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.shower.R} onChangeText={(text) => { content.shower.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Wall</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.wall.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.wall.M || "Material"}</Text>
+              </Button>
+              <Text >{content.wall.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.wall.I} onChange={(e) => {
+                  content.wall.I = !content.wall.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.wall.R} onChangeText={(text) => { content.wall.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Curb</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.curb.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.curb.M || "Material"}</Text>
+              </Button>
+              <Text >{content.curb.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.curb.I} onChange={(e) => {
+                  content.curb.I = !content.curb.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.curb.R} onChangeText={(text) => { content.curb.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Grid style={{ marginTop: 10 }}>
+          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Ceiling</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.ceiling.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.ceiling.M || "Material"}</Text>
+              </Button>
+              <Text >{content.ceiling.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.ceiling.I} onChange={(e) => {
+                  content.ceiling.I = !content.ceiling.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.ceiling.R} onChangeText={(text) => { content.ceiling.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Floor</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.floor.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.floor.M || "Material"}</Text>
+              </Button>
+              <Text >{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.floor.I} onChange={(e) => {
+                  content.floor.I = !content.floor.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.floor.R} onChangeText={(text) => { content.floor.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Backsplash</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.backsplash.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.backsplash.M || "Material"}</Text>
+              </Button>
+              <Text >{content.backsplash.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.backsplash.I} onChange={(e) => {
+                  content.backsplash.I = !content.backsplash.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.backsplash.R} onChangeText={(text) => { content.backsplash.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+
+          </Grid>
+          <Grid>
+            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+              <Text>Trim</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB9,
+                      cancelButtonIndex: INTSUB9.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB9.length - 1) {
+                        content.trim.M = INTSUB9[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.trim.M || "Material"}</Text>
+              </Button>
+              <Text >{content.trim.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.trim.I} onChange={(e) => {
+                  content.trim.I = !content.trim.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.trim.R} onChangeText={(text) => { content.trim.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+          </Grid>
+          <Item stackedLabel>
+            <Label>Comments</Label>
+            <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
+          </Item>
+          {this.renderHtmlFooter(sheetId, content)}
+        </View>
+
+
       );
     }
 
@@ -6220,6 +7022,7 @@ export default class LinksScreen extends React.Component {
                         content.mantle.M = INTSUB7[buttonIndex]
                         content.hearth.M = INTSUB7[buttonIndex]
                         content.fireplace.M = INTSUB7[buttonIndex]
+                        content.chimney.M = INTSUB7[buttonIndex]
                         this.setState({})
                       }
                     }
@@ -6298,6 +7101,37 @@ export default class LinksScreen extends React.Component {
               </ListItem>
               <Item>
                 <Input keyboardType="numeric" placeholder="Reading" value={content.fireplace.R.toString()} onChangeText={(text) => { content.fireplace.R = text; this.setState({}) }} />
+              </Item>
+            </Col>
+            <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+              <Text>Chimney</Text>
+              <Button
+                onPress={() =>
+                  ActionSheet.show(
+                    {
+                      options: INTSUB7,
+                      cancelButtonIndex: INTSUB7.length - 1,
+                      title: "Material"
+                    },
+                    buttonIndex => {
+                      if (buttonIndex != INTSUB7.length - 1) {
+                        content.chimney.M = INTSUB7[buttonIndex]
+                        this.setState({})
+                      }
+                    }
+                  )}
+              >
+                <Text>{content.chimney.M || "Material"}</Text>
+              </Button>
+              <Text style={{ marginTop: 10 }}>{content.chimney.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                <RkChoice rkType='posNeg' selected={content.chimney.I} onChange={(e) => {
+                  content.chimney.I = !content.chimney.I
+                  this.setState({})
+                }} />
+              </ListItem>
+              <Item>
+                <Input keyboardType="numeric" placeholder="Reading" value={content.chimney.R.toString()} onChangeText={(text) => { content.chimney.R = text; this.setState({}) }} />
               </Item>
             </Col>
           </Grid>
@@ -6567,6 +7401,7 @@ export default class LinksScreen extends React.Component {
       );
     }
   }
+
 
   renderSoilSheet(content, sheetId) {
     if (content.type == 'detail') {
@@ -7764,7 +8599,7 @@ export default class LinksScreen extends React.Component {
         <Form>
           <Item stackedLabel>
             <Label>Serial Number</Label>
-            <Input keyboardType="numeric" value={content.serial} onChangeText={(text) => { content.serial = text; this.setState({}) }}/>
+            <Input keyboardType="numeric" value={content.serial} onChangeText={(text) => { content.serial = text; this.setState({}) }} />
           </Item>
           <Grid>
             <Col>
@@ -7792,13 +8627,13 @@ export default class LinksScreen extends React.Component {
             <Col>
               <Item stackedLabel>
                 <Label>two</Label>
-                <Input keyboardType="numeric" value={content.starttwo}  onChangeText={(text) => { content.starttwo = text; this.setState({}) }} />
+                <Input keyboardType="numeric" value={content.starttwo} onChangeText={(text) => { content.starttwo = text; this.setState({}) }} />
               </Item>
             </Col>
             <Col>
               <Item stackedLabel>
                 <Label>three</Label>
-                <Input keyboardType="numeric" value={content.startthree}  onChangeText={(text) => { content.startthree = text; this.setState({}) }} />
+                <Input keyboardType="numeric" value={content.startthree} onChangeText={(text) => { content.startthree = text; this.setState({}) }} />
               </Item>
             </Col>
           </Grid>
@@ -7821,7 +8656,7 @@ export default class LinksScreen extends React.Component {
             <Col>
               <Item stackedLabel>
                 <Label>one</Label>
-                <Input keyboardType="numeric" value={content.endone} onChangeText={(text) => { content.endone = text; this.setState({})}} />
+                <Input keyboardType="numeric" value={content.endone} onChangeText={(text) => { content.endone = text; this.setState({}) }} />
               </Item>
             </Col>
             <Col>
@@ -7867,12 +8702,12 @@ export default class LinksScreen extends React.Component {
         return (<Text style={{ padding: 15 }}>No Image Attached </Text>)
       }
     }
-    if (content.type == 'window') {
+    if (content.type == 'Interior Window') {
       return (
         <View>
           <Grid>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Sill</Text>
+              <Text>Window Sill</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -7913,7 +8748,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
-              <Text>Sash</Text>
+              <Text> Window Sash</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -7954,7 +8789,7 @@ export default class LinksScreen extends React.Component {
               </Item>
             </Col>
             <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
-              <Text>Frame</Text>
+              <Text>Window Frame</Text>
               <Button
                 onPress={() =>
                   ActionSheet.show(
@@ -8014,8 +8849,8 @@ export default class LinksScreen extends React.Component {
             {
               id: 1,
               title: "Sheet Details",
-              "unit": null,
-              "building": null
+              "unit": '',
+              "building": ''
             },
             {
               id: 2,
@@ -8034,8 +8869,8 @@ export default class LinksScreen extends React.Component {
               id: 3,
               side: false,
               expanded: 1,
-              type: 'Doorway',
-              title: "Doorway",
+              type: 'Interior Doorway',
+              title: "Interior Doorway",
               leadsTo: null,
               door: { M: null, I: true, R: '0.' },
               frame: { M: null, I: true, R: '0.' },
@@ -8045,7 +8880,7 @@ export default class LinksScreen extends React.Component {
               id: 4,
               type: false,
               loc: 1,
-              title: "Interior Room Walls",
+              title: "Interior Walls",
               wallA: { S: false, M: null, I: true, R: '0.' },
               wallB: { S: false, M: null, I: true, R: '0.' },
               wallC: { S: false, M: null, I: true, R: '0.' },
@@ -8059,7 +8894,7 @@ export default class LinksScreen extends React.Component {
               id: 5,
               side: false,
               type: false,
-              title: "Window",
+              title: "Interior Window",
               expanded: true,
               loc: 1,
               sill: { M: null, I: true, R: '0.' },
@@ -8248,8 +9083,8 @@ export default class LinksScreen extends React.Component {
             id: 3,
             side: false,
             expanded: 1,
-            type: 'Doorway',
-            title: "Doorway",
+            type: 'Interior Doorway',
+            title: "Interior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: '0.' },
             frame: { M: null, I: true, R: '0.' },
@@ -8259,7 +9094,7 @@ export default class LinksScreen extends React.Component {
             id: 4,
             type: false,
             loc: 1,
-            title: "Interior Room Walls",
+            title: "Interior Walls",
             wallA: { S: false, M: null, I: true, R: '0.' },
             wallB: { S: false, M: null, I: true, R: '0.' },
             wallC: { S: false, M: null, I: true, R: '0.' },
@@ -8267,13 +9102,13 @@ export default class LinksScreen extends React.Component {
             ceiling: { S: false, M: null, I: true, R: '0.' },
             baseboard: { S: false, M: null, I: true, R: '0.' },
             vent: { S: false, M: null, I: true, R: '0.' },
-            baseboard: { S: false, M: null, I: true, R: '0.' }
+            floor: { S: false, M: null, I: true, R: '0.' }
           },
           {
             id: 5,
             side: false,
             type: false,
-            title: "Window",
+            title: "Interior Window",
             expanded: true,
             loc: 1,
             sill: { M: null, I: true, R: '0.' },
@@ -8351,6 +9186,7 @@ export default class LinksScreen extends React.Component {
             frame: { M: null, I: true, R: '0.' },
             shutters: { M: null, I: true, R: '0.' },
             securitybars: { M: null, I: true, R: '0.' },
+            awning: { M: null, I: true, R: '0.' },
           },
           {
             id: 4,
@@ -8376,6 +9212,8 @@ export default class LinksScreen extends React.Component {
             soffit: { M: null, I: true, R: '0.' },
             gutter: { M: null, I: true, R: '0.' },
             downspout: { M: null, I: true, R: '0.' },
+            corbel: { M: null, I: true, R: '0.' },
+            roofSup: { M: null, I: true, R: '0.' },
           },
           {
             id: 6,
@@ -8573,6 +9411,7 @@ export default class LinksScreen extends React.Component {
             frame: { M: null, I: true, R: '0.' },
             shutters: { M: null, I: true, R: '0.' },
             securitybars: { M: null, I: true, R: '0.' },
+            awning: { M: null, I: true, R: '0.' }
           }],
             x.total = x.data.length - 1
         }
@@ -8615,6 +9454,8 @@ export default class LinksScreen extends React.Component {
             soffit: { M: null, I: true, R: '0.' },
             gutter: { M: null, I: true, R: '0.' },
             downspout: { M: null, I: true, R: '0.' },
+            corbel: { M: null, I: true, R: '0.' },
+            roofSup: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -8638,6 +9479,7 @@ export default class LinksScreen extends React.Component {
             handrail: { M: null, I: true, R: '0.' },
             railing: { M: null, I: true, R: '0.' },
             railcap: { M: null, I: true, R: '0.' },
+            mailSlot: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -8660,6 +9502,7 @@ export default class LinksScreen extends React.Component {
             vTrim: { M: null, I: true, R: '0.' },
             mDoor: { M: null, I: true, R: '0.' },
             shelf: { M: null, I: true, R: '0.' },
+            shelfSupport: { M: null, I: true, R: '0.' },
             support: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
@@ -8683,6 +9526,8 @@ export default class LinksScreen extends React.Component {
             handrail: { M: null, I: true, R: '0.' },
             railing: { M: null, I: true, R: '0.' },
             stringer: { M: null, I: true, R: '0.' },
+            newel: { M: null, I: true, R: '0.' },
+            baluster: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -8720,6 +9565,11 @@ export default class LinksScreen extends React.Component {
             frame: { M: null, I: true, R: '0.' },
             vent: { M: null, I: true, R: '0.' },
             accessPanel: { M: null, I: true, R: '0.' },
+            gate: { M: null, I: true, R: '0.' },
+            fence: { M: null, I: true, R: '0.' },
+            playEquip: { M: null, I: true, R: '0.' },
+            planterBox: { M: null, I: true, R: '0.' },
+            equipment: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -8789,7 +9639,7 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({})
     }
-    if (name == 'Trim') {
+    if (name == 'Interior Trim') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
@@ -8797,7 +9647,7 @@ export default class LinksScreen extends React.Component {
             side: false,
             expanded: 1,
             type: false,
-            title: "Trim",
+            title: "Interior Trim",
             loc: '2',
             cModling: { M: null, I: true, R: '0.' },
             horizontal: { M: null, I: true, R: '0.' },
@@ -8812,9 +9662,6 @@ export default class LinksScreen extends React.Component {
       this.setState({})
     }
   }
-
-
-
 
   //////////////Interior
   addItemInterior(id, name) {
@@ -8842,29 +9689,32 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({})
     }
-    if (name == 'Stairs') {
-      let newData = this.state.insSheets.map(x => {
-        if (x.id == id) {
-          x.data = [...x.data, {
-            id: x.data.length + 1,
-            side: false,
-            expanded: 1,
-            type: 'not set',
-            title: "Stairs",
-            loc: 1,
-            leadsTo: null,
-            tread: { M: null, I: true, R: '0.' },
-            riser: { M: null, I: true, R: '0.' },
-            deck: { M: null, I: true, R: '0.' },
-            handrail: { M: null, I: true, R: '0.' },
-            railing: { M: null, I: true, R: '0.' },
-            stringer: { M: null, I: true, R: '0.' },
-          }],
-            x.total = x.data.length - 1
-        }
-      })
-      this.setState({})
-    }
+    // if (name == 'Stairs') {
+    //   let newData = this.state.insSheets.map(x => {
+    //     if (x.id == id) {
+    //       x.data = [...x.data, {
+    //         id: x.data.length + 1,
+    //         side: false,
+    //         expanded: 1,
+    //         type: 'not set',
+    //         title: "Stairs",
+    //         loc: 1,
+    //         leadsTo: null,
+    //         tread: { M: null, I: true, R: '0.' },
+    //         riser: { M: null, I: true, R: '0.' },
+    //         deck: { M: null, I: true, R: '0.' },
+    //         handrail: { M: null, I: true, R: '0.' },
+    //         railing: { M: null, I: true, R: '0.' },
+    //         stringer: { M: null, I: true, R: '0.' },
+    //         newel: { M: null, I: true, R: '0.' },
+    //         baluster: { M: null, I: true, R: '0.' },
+    //
+    //       }],
+    //         x.total = x.data.length - 1
+    //     }
+    //   })
+    //   this.setState({})
+    // }
     if (name == 'Garage Doors') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
@@ -8907,14 +9757,14 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({})
     }
-    if (name == 'Window') {
+    if (name == 'Interior Window') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
             type: 'not set',
-            title: "Window",
+            title: "Interior Window",
             expanded: true,
             loc: 1,
             sill: { M: null, I: true, R: '0.' },
@@ -8926,7 +9776,7 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({ insSheets: this.state.insSheets });
     }
-    if (name == 'Doorway') {
+    if (name == 'Interior Doorway') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
@@ -8934,7 +9784,7 @@ export default class LinksScreen extends React.Component {
             side: false,
             expanded: 1,
             type: 'not set',
-            title: "Doorway",
+            title: "Interior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: '0.' },
             frame: { M: null, I: true, R: '0.' },
@@ -8966,13 +9816,13 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({})
     }
-    if (name == 'Interior Room Walls') {
+    if (name == 'Interior Walls') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
             type: 'not set',
-            title: "Interior Room Walls",
+            title: "Interior Walls",
             wallA: { S: false, M: null, I: true, R: '0.' },
             wallB: { S: false, M: null, I: true, R: '0.' },
             wallC: { S: false, M: null, I: true, R: '0.' },
@@ -9025,7 +9875,7 @@ export default class LinksScreen extends React.Component {
       })
       this.setState({})
     }
-    if (name == 'Trim') {
+    if (name == 'Interior Trim') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
@@ -9033,13 +9883,15 @@ export default class LinksScreen extends React.Component {
             side: false,
             expanded: 1,
             type: false,
-            title: "Trim",
+            title: "Interior Trim",
             cModling: { M: null, I: true, R: '0.' },
             horizontal: { M: null, I: true, R: '0.' },
             vertical: { M: null, I: true, R: '0.' },
             picture: { M: null, I: true, R: '0.' },
             plate: { M: null, I: true, R: '0.' },
-            corner: { M: null, I: true, R: '0.' }
+            chain: { M: null, I: true, R: '0.' },
+            trim: { M: null, I: true, R: '0.' },
+            frame: { M: null, I: true, R: '0.' }
           }],
             x.total = x.data.length - 1
         }
@@ -9081,6 +9933,7 @@ export default class LinksScreen extends React.Component {
             mantle: { M: null, I: true, R: '0.' },
             hearth: { M: null, I: true, R: '0.' },
             fireplace: { M: null, I: true, R: '0.' },
+            chimney: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -9101,6 +9954,29 @@ export default class LinksScreen extends React.Component {
             stringer: { M: null, I: true, R: '0.' },
             handrail: { M: null, I: true, R: '0.' },
             railing: { M: null, I: true, R: '0.' },
+            newel: { M: null, I: true, R: '0.' },
+            baluster: { M: null, I: true, R: '0.' },
+          }],
+            x.total = x.data.length - 1
+        }
+      })
+      this.setState({})
+    }
+    if (name == 'Tile') {
+      let newData = this.state.insSheets.map(x => {
+        if (x.id == id) {
+          x.data = [...x.data, {
+            id: x.data.length + 1,
+            side: false,
+            type: 'not set',
+            title: "Tile",
+            shower: { M: null, I: true, R: '0.' },
+            wall: { M: null, I: true, R: '0.' },
+            curb: { M: null, I: true, R: '0.' },
+            ceiling: { M: null, I: true, R: '0.' },
+            floor: { M: null, I: true, R: '0.' },
+            backsplash: { M: null, I: true, R: '0.' },
+            trim: { M: null, I: true, R: '0.' },
           }],
             x.total = x.data.length - 1
         }
@@ -9194,10 +10070,10 @@ export default class LinksScreen extends React.Component {
       data: [...prevState.data,
       {
         id: (prevState.data.length + 1),
-        type: 'window',
+        type: 'Interior Window',
         side: false,
         type: 'not set',
-        title: "Window ",
+        title: "Interior Window ",
         sill: { M: null, I: false, R: '0.' },
         sash: { M: null, I: false, R: '0.' },
         frame: { M: null, I: false, R: '0.' }
@@ -9273,8 +10149,8 @@ export default class LinksScreen extends React.Component {
                     id: 3,
                     side: false,
                     expanded: 1,
-                    type: 'Doorway',
-                    title: "Doorway",
+                    type: 'Interior Doorway',
+                    title: "Interior Doorway",
                     leadsTo: null,
                     door: { M: null, I: true, R: '0.' },
                     frame: { M: null, I: true, R: '0.' },
@@ -9284,7 +10160,7 @@ export default class LinksScreen extends React.Component {
                     id: 4,
                     type: false,
                     loc: 1,
-                    title: "Interior Room Walls",
+                    title: "Interior Walls",
                     wallA: { S: false, M: null, I: true, R: '0.' },
                     wallB: { S: false, M: null, I: true, R: '0.' },
                     wallC: { S: false, M: null, I: true, R: '0.' },
@@ -9299,7 +10175,7 @@ export default class LinksScreen extends React.Component {
                     id: 5,
                     side: false,
                     type: false,
-                    title: "Window",
+                    title: "Interior Window",
                     expanded: true,
                     loc: 1,
                     sill: { M: null, I: true, R: '0.' },
