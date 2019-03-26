@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Alert,
   Image,
   Platform,
   ScrollView,
@@ -45,35 +46,37 @@ export default class HomeScreen extends React.Component {
   }
   uploadData = async (jobs) => {
     console.log(jobs)
+    if (jobs.length){
+      jobs.map(x => {
+        AsyncStorage.getItem(x).then(state =>
+          fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              jobid: x,
+              state: state,
+            }),
+          })
+            .then((response) => response.json())
+                  .then((responseJson) => {
+                    console.log(responseJson);
+                    AsyncStorage.removeItem(x)
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  })
+                  //upload photo
 
+        );
+      })
+    }
     //push to db
-    jobs.map(x => {
-      AsyncStorage.getItem(x).then(state =>
-        fetch('https://c26dfad1.ngrok.io',
-        {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            jobid: x,
-            state: JSON.stringify({state}),
-          }),
-        })
-          .then((response) => response.json())
-                .then((responseJson) => {
-                  console.log(responseJson);
-                })
-                .catch((error) => {
-                  console.error(error);
-                })
-                //upload photo
-
-      );
-    })
     if(jobs.length){
-      alert('Jobs sucessfully Uploaded');
+      Alert.alert('Jobs sucessfully uploaded');
     }
     AsyncStorage.clear()
     this.setState({jobs:[]})
@@ -139,7 +142,7 @@ RkTheme.setType('RkButton', 'faded', {
           {this.state.jobs.map( (j,i) => {
             return(<ListItem thumbnail key={i}>
               <Left>
-                <Thumbnail square source={{ uri: this.state.pics[i] }} />
+                <Thumbnail square source={{ uri: this.state.pics[i] || '/cat' }} />
               </Left>
               <Body>
                 <Text>{j}</Text>
@@ -154,7 +157,18 @@ RkTheme.setType('RkButton', 'faded', {
           })}
           </List>
         </Content>
-         <Button block success style={{marginBottom:30, bottom:0}} onPress={() => this.uploadData(this.state.jobs)}>
+         <Button block success style={{marginBottom:30, bottom:0}} onPress={() => {
+           Alert.alert(
+             'Upload all jobs',
+             'Are you sure?',
+             [
+               { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+               { text: 'OK', onPress: () => {  this.uploadData(this.state.jobs) } },
+             ],
+             { cancelable: true }
+           )
+
+         }}>
            <Text>Upload</Text>
          </Button>
       </Container>
