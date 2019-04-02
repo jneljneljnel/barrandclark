@@ -25,6 +25,7 @@ export default class HomeScreen extends React.Component {
     this._retrieveData = this._retrieveData.bind(this)
     this.uploadData = this.uploadData.bind(this)
     this.getPropPhoto = this.getPropPhoto.bind(this)
+    this.clearData = this.clearData.bind(this)
   }
   willFocusSubscription = this.props.navigation.addListener(
   'willFocus',
@@ -45,7 +46,6 @@ export default class HomeScreen extends React.Component {
     this.getPermissions()
   }
   uploadData = async (jobs) => {
-    console.log(jobs)
     if (jobs.length){
       jobs.map(x => {
         AsyncStorage.getItem(x).then(state =>
@@ -90,24 +90,36 @@ export default class HomeScreen extends React.Component {
     }
   }
 
+  clearData = async() => {
+    AsyncStorage.clear()
+  }
+
   getPropPhoto = async(j) => {
     const photo = await AsyncStorage.getItem(j)
     //console.log(JSON.parse(photo).propimage)
-    return await JSON.parse(photo).propimage
+    if(photo){
+      return await JSON.parse(photo).propimage
+    }
   }
 
   _retrieveData = async () => {
-  console.log('getting data!')
   try {
     const value = await AsyncStorage.getAllKeys();
     if (value !== null) {
       const promises = value.map( j => this.getPropPhoto(j))
       const pics = await Promise.all(promises).then( res => res)
       this.setState({jobs:value, pics: pics})
-
     }
    } catch (error) {
-     // Error retrieving data
+     Alert.alert(
+       'Error retriving data',
+       'error',
+       [
+         { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+         { text: 'OK', onPress: () => { this.clearData()  } },
+       ],
+       { cancelable: false }
+     )
    }
 }
 
