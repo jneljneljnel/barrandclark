@@ -26,6 +26,7 @@ export default class HomeScreen extends React.Component {
     this.uploadData = this.uploadData.bind(this)
     this.getPropPhoto = this.getPropPhoto.bind(this)
     this.clearData = this.clearData.bind(this)
+    this.deleteJob = this.deleteJob.bind(this)
   }
   willFocusSubscription = this.props.navigation.addListener(
   'willFocus',
@@ -92,6 +93,11 @@ export default class HomeScreen extends React.Component {
 
   clearData = async() => {
     AsyncStorage.clear()
+  }
+
+  deleteJob = async(j) =>{
+    AsyncStorage.removeItem(j)
+    this._retrieveData()
   }
 
   getPropPhoto = async(j) => {
@@ -161,9 +167,24 @@ RkTheme.setType('RkButton', 'faded', {
                 <Text note numberOfLines={1}></Text>
               </Body>
               <Right>
-              <Button transparent onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}>
-                <Text>Edit</Text>
+              <Grid>
+              <Button danger style={{marginRight: 10}} onPress={() => {
+                Alert.alert(
+                  'Delete Job',
+                  'Are you sure you want to delete this job?',
+                  [
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+                    { text: 'OK', onPress: () => {this.deleteJob(this.state.jobs[i])} },
+                  ],
+                  { cancelable: true }
+                )
+              }}>
+               <Text>Delete</Text>
               </Button>
+              <Button primary onPress={() => {navigate('Links', { edit: [this.state.jobs[i]]})}}>
+               <Text>Edit</Text>
+              </Button>
+              </Grid>
               </Right>
             </ListItem>)
           })}
