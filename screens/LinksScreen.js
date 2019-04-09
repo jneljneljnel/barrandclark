@@ -1203,7 +1203,7 @@ export default class LinksScreen extends React.Component {
                 }} />
               </ListItem>
               <Item>
-                <Input keyboardType="numeric" placeholder="Reading" value={content.door.R} onChangeText={(text) => { content.door.R = text; this.setState({}) }} />
+                <Input keyboardType="decimal" placeholder="Reading" value={content.door.R} onChangeText={(text) => { content.door.R = text; this.setState({}) }} />
               </Item>
             </Col>
 
@@ -12382,7 +12382,7 @@ if (content.title == 'Exterior Trim') {
         <Form>
           <Item stackedLabel>
             <Label>Apt Number</Label>
-            <Input value={content.aptnum} onChangeText={(text) => { content.aptnum = text; this.setState({}) }} />
+            <Input keyboardType="numeric" value={content.aptnum} onChangeText={(text) => { content.aptnum = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Name of property owner</Label>
@@ -12907,13 +12907,15 @@ if (content.title == 'Exterior Trim') {
             {
               id: 5,
               side: false,
-              type: false,
+              type: 'not set',
               title: "Interior Window",
               expanded: true,
               loc: 1,
-              sill: { M: null, I: true, R: null, name: 'Sill' },
-              sash: { M: null, I: true, R: null, name: 'Sash' },
-              frame: { M: null, I: true, R: null, name: 'Frame' }
+              sill: { M: null, I: true, R: null, name: 'Window Sill' },
+              sash: { M: null, I: true, R: null, name: 'Window Sash' },
+              frame: { M: null, I: true, R: null, name: 'Window Frame' },
+              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+              valence: { M: null, I: true, R: null, name: 'Valence' },
             },
             {
               id: 6,
@@ -13061,7 +13063,7 @@ if (content.title == 'Exterior Trim') {
           'Please add a Jobid',
           [
             { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
-            { text: 'OK', onPress: () => { this._usernameInput._root.focus() } },
+            { text: 'OK', onPress: () => { console.log('Ok Pressed!') } },
           ],
           { cancelable: false }
         )
