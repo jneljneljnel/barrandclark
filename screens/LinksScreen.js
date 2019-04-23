@@ -785,7 +785,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cModling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.cModling.R = String(Math.round(p) / 100);
+                                content.cModling.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -820,7 +820,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.picture.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.picture.R = String(Math.round(p) / 100);
+                                content.picture.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -855,7 +855,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.plate.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.plate.R = String(Math.round(p) / 100);
+                                content.plate.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -892,7 +892,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.horizontal.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.horizontal.R = String(Math.round(p) / 100);
+                                content.horizontal.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -927,7 +927,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vertical.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vertical.R = String(Math.round(p) / 100);
+                                content.vertical.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -962,7 +962,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corner.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.corner.R = String(Math.round(p) / 100);
+                                content.corner.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1060,7 +1060,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String(Math.round(p) / 100);
+                                content.door.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1095,7 +1095,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String(Math.round(p) / 100);
+                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1130,7 +1130,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelf.R = String(Math.round(p) / 100);
+                                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1165,7 +1165,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.support.R = String(Math.round(p) / 100);
+                                content.support.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1244,7 +1244,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String(Math.round(p) / 100);
+                                content.door.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1280,7 +1280,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String(Math.round(p) / 100);
+                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1316,7 +1316,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.thresh.R = String(Math.round(p) / 100);
+                                content.thresh.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1353,7 +1353,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitydoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.securitydoor.R = String(Math.round(p) / 100);
+                                content.securitydoor.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1388,7 +1388,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.screendoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.screendoor.R = String(Math.round(p) / 100);
+                                content.screendoor.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1408,7 +1408,7 @@ export default class LinksScreen extends React.Component {
         return (
             <View keyboardDismissMode="on-drag">
                 <Grid style={{ marginTop: 0 }}>
-                    
+
                     <Col>
                         <Button block error style={{ marginTop: 10 }}
                             onPress={() =>
@@ -1469,7 +1469,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.well.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.well.R = String(Math.round(p) / 100);
+                                content.well.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1505,7 +1505,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.sash.R = String(Math.round(p) / 100);
+                                content.sash.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1540,7 +1540,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String(Math.round(p) / 100);
+                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1578,7 +1578,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shutters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shutters.R = String(Math.round(p) / 100);
+                                content.shutters.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1613,7 +1613,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitybars.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.securitybars.R = String(Math.round(p) / 100);
+                                content.securitybars.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1648,7 +1648,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.awning.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.awning.R = String(Math.round(p) / 100);
+                                content.awning.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1685,7 +1685,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.windowScreen.R = String(Math.round(p) / 100);
+                                content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1761,7 +1761,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallA.R = String(Math.round(p) / 100);
+                                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1796,7 +1796,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallB.R = String(Math.round(p) / 100);
+                                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1831,7 +1831,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallC.R = String(Math.round(p) / 100);
+                                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1866,7 +1866,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallD.R = String(Math.round(p) / 100);
+                                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1942,7 +1942,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallA.R = String(Math.round(p) / 100);
+                                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1977,7 +1977,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallB.R = String(Math.round(p) / 100);
+                                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2012,7 +2012,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallC.R = String(Math.round(p) / 100);
+                                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2047,7 +2047,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallD.R = String(Math.round(p) / 100);
+                                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2130,7 +2130,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.eaves.R = String(Math.round(p) / 100);
+                                content.eaves.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2168,7 +2168,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.rafters.R = String(Math.round(p) / 100);
+                                content.rafters.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2208,7 +2208,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fascia.R = String(Math.round(p) / 100);
+                                content.fascia.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2246,7 +2246,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.soffit.R = String(Math.round(p) / 100);
+                                content.soffit.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2286,7 +2286,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.gutter.R = String(Math.round(p) / 100);
+                                content.gutter.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2324,7 +2324,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.downspout.R = String(Math.round(p) / 100);
+                                content.downspout.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2363,7 +2363,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corbel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.corbel.R = String(Math.round(p) / 100);
+                                content.corbel.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2400,7 +2400,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.roofSup.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.roofSup.R = String(Math.round(p) / 100);
+                                content.roofSup.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2482,7 +2482,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.column.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.column.R = String(Math.round(p) / 100);
+                                content.column.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2521,7 +2521,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.beam.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.beam.R = String(Math.round(p) / 100);
+                                content.beam.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2560,7 +2560,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.ceiling.R = String(Math.round(p) / 100);
+                                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2597,7 +2597,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.floor.R = String(Math.round(p) / 100);
+                                content.floor.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2636,7 +2636,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.handrail.R = String(Math.round(p) / 100);
+                                content.handrail.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2674,7 +2674,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railing.R = String(Math.round(p) / 100);
+                                content.railing.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2713,7 +2713,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railcap.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railcap.R = String(Math.round(p) / 100);
+                                content.railcap.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2750,7 +2750,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mailSlot.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mailSlot.R = String(Math.round(p) / 100);
+                                content.mailSlot.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2833,7 +2833,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cBoard.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.cBoard.R = String(Math.round(p) / 100);
+                                content.cBoard.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2871,7 +2871,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.trim.R = String(Math.round(p) / 100);
+                                content.trim.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2910,7 +2910,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.hTrim.R = String(Math.round(p) / 100);
+                                content.hTrim.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2947,7 +2947,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vTrim.R = String(Math.round(p) / 100);
+                                content.vTrim.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2988,7 +2988,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mDoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mDoor.R = String(Math.round(p) / 100);
+                                content.mDoor.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3026,7 +3026,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelf.R = String(Math.round(p) / 100);
+                                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3065,7 +3065,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelfSupport.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelfSupport.R = String(Math.round(p) / 100);
+                                content.shelfSupport.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3102,7 +3102,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.support.R = String(Math.round(p) / 100);
+                                content.support.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3182,7 +3182,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.tread.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.tread.R = String(Math.round(p) / 100);
+                                content.tread.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3218,7 +3218,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.riser.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.riser.R = String(Math.round(p) / 100);
+                                content.riser.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3255,7 +3255,7 @@ export default class LinksScreen extends React.Component {
 
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.deck.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.deck.R = String(Math.round(p) / 100);
+                                content.deck.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3292,7 +3292,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.handrail.R = String(Math.round(p) / 100);
+                                content.handrail.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3327,7 +3327,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railing.R = String(Math.round(p) / 100);
+                                content.railing.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3362,7 +3362,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.stringer.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.stringer.R = String(Math.round(p) / 100);
+                                content.stringer.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3399,7 +3399,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.newel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.newel.R = String(Math.round(p) / 100);
+                                content.newel.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3434,7 +3434,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baluster.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.baluster.R = String(Math.round(p) / 100);
+                                content.baluster.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3568,7 +3568,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String(Math.round(p) / 100);
+                                content.door.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3605,7 +3605,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.doorframe.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.doorframe.R = String(Math.round(p) / 100);
+                                content.doorframe.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3689,7 +3689,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String(Math.round(p) / 100);
+                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3726,7 +3726,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.equipment.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.equipment.R = String(Math.round(p) / 100);
+                                content.equipment.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3765,7 +3765,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vent.R = String(Math.round(p) / 100);
+                                content.vent.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3802,7 +3802,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.accessPanel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.accessPanel.R = String(Math.round(p) / 100);
+                                content.accessPanel.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3842,7 +3842,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gate.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.gate.R = String(Math.round(p) / 100);
+                                content.gate.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3879,7 +3879,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fence.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fence.R = String(Math.round(p) / 100);
+                                content.fence.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3919,7 +3919,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.playEquip.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.playEquip.R = String(Math.round(p) / 100);
+                                content.playEquip.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3956,7 +3956,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.planterBox.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.planterBox.R = String(Math.round(p) / 100);
+                                content.planterBox.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4057,7 +4057,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.bollard.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.bollard.R = String(Math.round(p) / 100);
+                                content.bollard.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4112,7 +4112,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStripe.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.parkingStripe.R = String(Math.round(p) / 100);
+                                content.parkingStripe.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4168,7 +4168,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStop.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.parkingStop.R = String(Math.round(p) / 100);
+                                content.parkingStop.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4223,7 +4223,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.curb.R = String(Math.round(p) / 100);
+                                content.curb.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4279,7 +4279,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.lightPost.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.lightPost.R = String(Math.round(p) / 100);
+                                content.lightPost.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4334,7 +4334,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.speedBump.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.speedBump.R = String(Math.round(p) / 100);
+                                content.speedBump.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4390,7 +4390,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireHydrant.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fireHydrant.R = String(Math.round(p) / 100);
+                                content.fireHydrant.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4449,7 +4449,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shower.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shower.R = String(Math.round(p) / 100);
+                                content.shower.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4485,7 +4485,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wall.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wall.R = String(Math.round(p) / 100);
+                                content.wall.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4521,7 +4521,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.curb.R = String(Math.round(p) / 100);
+                                content.curb.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4558,7 +4558,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.ceiling.R = String(Math.round(p) / 100);
+                                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4593,7 +4593,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.floor.R = String(Math.round(p) / 100);
+                                content.floor.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4628,7 +4628,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.backsplash.R = String(Math.round(p) / 100);
+                                content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4666,7 +4666,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.trim.R = String(Math.round(p) / 100);
+                                content.trim.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4722,7 +4722,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mantle.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mantle.R = String(Math.round(p) / 100);
+                                content.mantle.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4757,7 +4757,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hearth.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.hearth.R = String(Math.round(p) / 100);
+                                content.hearth.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4792,7 +4792,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireplace.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fireplace.R = String(Math.round(p) / 100);
+                                content.fireplace.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4827,7 +4827,7 @@ export default class LinksScreen extends React.Component {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chimney.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.chimney.R = String(Math.round(p) / 100);
+                                content.chimney.R = String((Math.round(p) / 100).toFixed(2));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4903,7 +4903,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.frame.R = String(Math.round(p) / 100);
+                            content.frame.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -4938,7 +4938,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.door.R = String(Math.round(p) / 100);
+                            content.door.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -4973,7 +4973,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.shelf.R = String(Math.round(p) / 100);
+                            content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -5008,7 +5008,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.countertop.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.countertop.R = String(Math.round(p) / 100);
+                            content.countertop.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -5046,7 +5046,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.backsplash.R = String(Math.round(p) / 100);
+                            content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -5081,7 +5081,7 @@ export default class LinksScreen extends React.Component {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.medicine.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.medicine.R = String(Math.round(p) / 100);
+                            content.medicine.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -5184,7 +5184,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.column.R} onChangeText={(text) => {
                   let p = text.split('.').join('');
-                  content.column.R = String(Math.round(p) / 100);
+                  content.column.R = String((Math.round(p) / 100).toFixed(2));
                   this.setState({})
               }} />
             </Item>
@@ -5237,9 +5237,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.beam.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.beam.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.beam.R = String(Math.round(p) / 100);
+                   content.beam.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5295,7 +5295,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.ceiling.R = String(Math.round(p) / 100);
+                   content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5349,7 +5349,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.floor.R = String(Math.round(p) / 100);
+                   content.floor.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5405,7 +5405,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.handrail.R = String(Math.round(p) / 100);
+                   content.handrail.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5460,7 +5460,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railing.R = String(Math.round(p) / 100);
+                   content.railing.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5516,7 +5516,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railcap.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railcap.R = String(Math.round(p) / 100);
+                   content.railcap.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5570,7 +5570,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mailSlot.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.mailSlot.R = String(Math.round(p) / 100);
+                   content.mailSlot.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5668,7 +5668,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.well.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.well.R = String(Math.round(p) / 100);
+                   content.well.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5704,7 +5704,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sash.R = String(Math.round(p) / 100);
+                   content.sash.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5739,7 +5739,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.frame.R = String(Math.round(p) / 100);
+                   content.frame.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5777,7 +5777,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shutters.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.shutters.R = String(Math.round(p) / 100);
+                   content.shutters.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5812,7 +5812,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitybars.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.securitybars.R = String(Math.round(p) / 100);
+                   content.securitybars.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5847,7 +5847,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.awning.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.awning.R = String(Math.round(p) / 100);
+                   content.awning.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5884,7 +5884,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.windowScreen.R = String(Math.round(p) / 100);
+                   content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -5984,7 +5984,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cBoard.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.cBoard.R = String(Math.round(p) / 100);
+                          content.cBoard.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6038,7 +6038,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.trim.R = String(Math.round(p) / 100);
+                          content.trim.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6094,7 +6094,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hTrim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.hTrim.R = String(Math.round(p) / 100);
+                          content.hTrim.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6148,7 +6148,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vTrim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.vTrim.R = String(Math.round(p) / 100);
+                          content.vTrim.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6206,7 +6206,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mDoor.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.mDoor.R = String(Math.round(p) / 100);
+                          content.mDoor.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6261,7 +6261,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.shelf.R = String(Math.round(p) / 100);
+                          content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6317,7 +6317,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelfSupport.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.shelfSupport.R = String(Math.round(p) / 100);
+                          content.shelfSupport.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6371,7 +6371,7 @@ _renderIntSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.support.R = String(Math.round(p) / 100);
+                          content.support.R = String((Math.round(p) / 100).toFixed(2));
                           this.setState({})
                       }} />
                   </Item>
@@ -6464,7 +6464,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.door.R = String(Math.round(p) / 100);
+                 content.door.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -6518,7 +6518,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.doorframe.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.doorframe.R = String(Math.round(p) / 100);
+                 content.doorframe.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -6619,7 +6619,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.bollard.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.bollard.R = String(Math.round(p) / 100);
+                   content.bollard.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6674,7 +6674,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStripe.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.parkingStripe.R = String(Math.round(p) / 100);
+                   content.parkingStripe.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6730,7 +6730,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStop.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.parkingStop.R = String(Math.round(p) / 100);
+                   content.parkingStop.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6785,7 +6785,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.curb.R = String(Math.round(p) / 100);
+                   content.curb.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6841,7 +6841,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.lightPost.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.lightPost.R = String(Math.round(p) / 100);
+                   content.lightPost.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6896,7 +6896,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.speedBump.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.speedBump.R = String(Math.round(p) / 100);
+                   content.speedBump.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -6952,7 +6952,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireHydrant.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.fireHydrant.R = String(Math.round(p) / 100);
+                   content.fireHydrant.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7054,7 +7054,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.frame.R = String(Math.round(p) / 100);
+                 content.frame.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7108,7 +7108,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.equipment.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.equipment.R = String(Math.round(p) / 100);
+                 content.equipment.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7164,7 +7164,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.vent.R = String(Math.round(p) / 100);
+                 content.vent.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7218,7 +7218,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.accessPanel.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.accessPanel.R = String(Math.round(p) / 100);
+                 content.accessPanel.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7275,7 +7275,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gate.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.gate.R = String(Math.round(p) / 100);
+                 content.gate.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7329,7 +7329,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fence.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.fence.R = String(Math.round(p) / 100);
+                 content.fence.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7386,7 +7386,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.playEquip.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.playEquip.R = String(Math.round(p) / 100);
+                 content.playEquip.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7440,7 +7440,7 @@ _renderIntSheet(content, sheetId) {
           <Item>
             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.planterBox.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.planterBox.R = String(Math.round(p) / 100);
+                 content.planterBox.R = String((Math.round(p) / 100).toFixed(2));
                  this.setState({})
               }} />
           </Item>
@@ -7520,7 +7520,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.eaves.R = String(Math.round(p) / 100);
+                   content.eaves.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7555,7 +7555,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.rafters.R = String(Math.round(p) / 100);
+                   content.rafters.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7590,7 +7590,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.fascia.R = String(Math.round(p) / 100);
+                   content.fascia.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7627,7 +7627,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.soffit.R = String(Math.round(p) / 100);
+                   content.soffit.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7662,7 +7662,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.gutter.R = String(Math.round(p) / 100);
+                   content.gutter.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7697,7 +7697,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.downspout.R = String(Math.round(p) / 100);
+                   content.downspout.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7734,7 +7734,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corbel.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.corbel.R = String(Math.round(p) / 100);
+                   content.corbel.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7769,7 +7769,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.roofSup.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.roofSup.R = String(Math.round(p) / 100);
+                   content.roofSup.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7849,7 +7849,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.tread.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.tread.R = String(Math.round(p) / 100);
+                   content.tread.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7885,7 +7885,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.riser.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.riser.R = String(Math.round(p) / 100);
+                   content.riser.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7921,7 +7921,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.deck.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.deck.R = String(Math.round(p) / 100);
+                   content.deck.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7958,7 +7958,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.handrail.R = String(Math.round(p) / 100);
+                   content.handrail.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -7993,7 +7993,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railing.R = String(Math.round(p) / 100);
+                   content.railing.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8028,7 +8028,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.stringer.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.stringer.R = String(Math.round(p) / 100);
+                   content.stringer.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8065,7 +8065,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.newel.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.newel.R = String(Math.round(p) / 100);
+                   content.newel.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8100,7 +8100,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baluster.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.baluster.R = String(Math.round(p) / 100);
+                   content.baluster.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8195,7 +8195,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sill.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sill.R = String(Math.round(p) / 100);
+                   content.sill.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8230,7 +8230,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sash.R = String(Math.round(p) / 100);
+                   content.sash.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8265,7 +8265,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.frame.R = String(Math.round(p) / 100);
+                   content.frame.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8302,7 +8302,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.windowScreen.R = String(Math.round(p) / 100);
+                   content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8337,7 +8337,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.valence.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.valence.R = String(Math.round(p) / 100);
+                   content.valence.R = String((Math.round(p) / 100).toFixed(2));
                    this.setState({})
                 }} />
             </Item>
@@ -8432,7 +8432,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String(Math.round(p) / 100);
+                                content.door.R = String((Math.round(p) / 100).toFixed(2));
                                  this.setState({})
                         }} />
                     </Item>
@@ -8467,7 +8467,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String(Math.round(p) / 100);
+                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                                  this.setState({})
                         }} />
                     </Item>
@@ -8502,7 +8502,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.thresh.R = String(Math.round(p) / 100);
+                                content.thresh.R = String((Math.round(p) / 100).toFixed(2));
                                  this.setState({})
                         }} />
                     </Item>
@@ -8600,7 +8600,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.door.R = String(Math.round(p) / 100);
+                            content.door.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -8635,7 +8635,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.frame.R = String(Math.round(p) / 100);
+                            content.frame.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -8670,7 +8670,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.thresh.R = String(Math.round(p) / 100);
+                            content.thresh.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -8710,7 +8710,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securityDoor.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.securityDoor.R = String(Math.round(p) / 100);
+                            content.securityDoor.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -8745,7 +8745,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.screenDoor.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.screenDoor.R = String(Math.round(p) / 100);
+                            content.screenDoor.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -8865,7 +8865,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallA.R = String(Math.round(p) / 100);
+                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -8900,7 +8900,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallB.R = String(Math.round(p) / 100);
+                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -8935,7 +8935,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallC.R = String(Math.round(p) / 100);
+                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -8970,7 +8970,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallD.R = String(Math.round(p) / 100);
+                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -9007,7 +9007,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.ceiling.R = String(Math.round(p) / 100);
+                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -9066,7 +9066,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baseboard.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.baseboard.R = String(Math.round(p) / 100);
+                content.baseboard.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -9128,7 +9128,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.vent.R = String(Math.round(p) / 100);
+                content.vent.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -9187,7 +9187,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.floor.R = String(Math.round(p) / 100);
+                content.floor.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
               }} />
             </Item>
@@ -9282,7 +9282,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.door.R = String(Math.round(p) / 100);
+                content.door.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
              }} />
             </Item>
@@ -9317,7 +9317,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.frame.R = String(Math.round(p) / 100);
+                content.frame.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
              }} />
             </Item>
@@ -9352,7 +9352,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.shelf.R = String(Math.round(p) / 100);
+                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -9387,7 +9387,7 @@ _renderIntSheet(content, sheetId) {
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.support.R = String(Math.round(p) / 100);
+                content.support.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
              }} />
             </Item>
@@ -9464,7 +9464,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.eaves.R = String(Math.round(p) / 100);
+                            content.eaves.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9499,7 +9499,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.rafters.R = String(Math.round(p) / 100);
+                            content.rafters.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9534,7 +9534,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.fascia.R = String(Math.round(p) / 100);
+                            content.fascia.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9571,7 +9571,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.soffit.R = String(Math.round(p) / 100);
+                            content.soffit.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9606,7 +9606,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.gutter.R = String(Math.round(p) / 100);
+                            content.gutter.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9641,7 +9641,7 @@ _renderIntSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.downspout.R = String(Math.round(p) / 100);
+                            content.downspout.R = String((Math.round(p) / 100).toFixed(2));
                             this.setState({})
                         }} />
                     </Item>
@@ -9736,7 +9736,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.frame.R = String(Math.round(p) / 100);
+                      content.frame.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -9771,7 +9771,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.door.R = String(Math.round(p) / 100);
+                      content.door.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -9806,7 +9806,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.shelf.R = String(Math.round(p) / 100);
+                      content.shelf.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -9841,7 +9841,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.countertop.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.countertop.R = String(Math.round(p) / 100);
+                      content.countertop.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -9879,7 +9879,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.backsplash.R = String(Math.round(p) / 100);
+                      content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -9914,7 +9914,7 @@ if (content.title == 'Cabinet') {
               <Item>
                   <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.medicine.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.medicine.R = String(Math.round(p) / 100);
+                      content.medicine.R = String((Math.round(p) / 100).toFixed(2));
                       this.setState({})
                   }} />
               </Item>
@@ -10017,7 +10017,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cModling.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.cModling.R = String(Math.round(p) / 100);
+    content.cModling.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10076,7 +10076,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.picture.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.picture.R = String(Math.round(p) / 100);
+    content.picture.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10138,7 +10138,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.plate.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.plate.R = String(Math.round(p) / 100);
+    content.plate.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10198,7 +10198,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.horizontal.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.horizontal.R = String(Math.round(p) / 100);
+    content.horizontal.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
 
@@ -10260,7 +10260,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vertical.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.vertical.R = String(Math.round(p) / 100);
+    content.vertical.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10319,7 +10319,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chain.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.chain.R = String(Math.round(p) / 100);
+    content.chain.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10380,7 +10380,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.trim.R = String(Math.round(p) / 100);
+    content.trim.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10439,7 +10439,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.frame.R = String(Math.round(p) / 100);
+    content.frame.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -10545,7 +10545,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baseboard.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.baseboard.R = String(Math.round(p) / 100);
+                content.baseboard.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10605,7 +10605,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.ceiling.R = String(Math.round(p) / 100);
+                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10665,7 +10665,7 @@ return (
             <Item>
              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.vent.R = String(Math.round(p) / 100);
+                content.vent.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10726,7 +10726,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.floor.R = String(Math.round(p) / 100);
+                content.floor.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10785,7 +10785,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.atticFrame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.atticFrame.R = String(Math.round(p) / 100);
+                content.atticFrame.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10844,7 +10844,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.electricFrame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.electricFrame.R = String(Math.round(p) / 100);
+                content.electricFrame.R = String((Math.round(p) / 100).toFixed(2));
                 this.setState({})
             }} />
             </Item>
@@ -10926,7 +10926,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shower.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.shower.R = String(Math.round(p) / 100);
+        content.shower.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -10962,7 +10962,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wall.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.wall.R = String(Math.round(p) / 100);
+        content.wall.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -10998,7 +10998,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.curb.R = String(Math.round(p) / 100);
+        content.curb.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -11035,7 +11035,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.ceiling.R = String(Math.round(p) / 100);
+        content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -11070,7 +11070,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.floor.R = String(Math.round(p) / 100);
+        content.floor.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -11105,7 +11105,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.backsplash.R = String(Math.round(p) / 100);
+        content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -11143,7 +11143,7 @@ return (
             <Item>
               <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.trim.R = String(Math.round(p) / 100);
+        content.trim.R = String((Math.round(p) / 100).toFixed(2));
         this.setState({})
 }} />
             </Item>
@@ -11267,7 +11267,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mantle.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.mantle.R = String(Math.round(p) / 100);
+    content.mantle.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -11302,7 +11302,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hearth.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.hearth.R = String(Math.round(p) / 100);
+    content.hearth.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -11337,7 +11337,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireplace.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.fireplace.R = String(Math.round(p) / 100);
+    content.fireplace.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -11372,7 +11372,7 @@ return (
         <Item>
           <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chimney.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.chimney.R = String(Math.round(p) / 100);
+    content.chimney.R = String((Math.round(p) / 100).toFixed(2));
     this.setState({})
 }} />
         </Item>
@@ -11670,7 +11670,7 @@ return (
           </Item>
           <Item stackedLabel>
             <Label>Year built</Label>
-            <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text }} />
+            <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text; this.setState({})}} />
           </Item>
           <Item stackedLabel>
             <Label>Built On/Over</Label>
@@ -11764,27 +11764,27 @@ return (
           </Item>
           <Item stackedLabel>
             <Label>Number of units</Label>
-            <Input keyboardType="numeric" value={content.units} onChangeText={(text) => { content.units = text }} />
+            <Input keyboardType="numeric" value={content.units} onChangeText={(text) => { content.units = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of units tested</Label>
-            <Input keyboardType="numeric" value={content.tested} onChangeText={(text) => { content.tested = text }} />
+            <Input keyboardType="numeric" value={content.tested} onChangeText={(text) => { content.tested = text;  this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of buildings</Label>
-            <Input keyboardType="numeric" value={content.buildings} onChangeText={(text) => { content.buildings = text }} />
+            <Input keyboardType="numeric" value={content.buildings} onChangeText={(text) => { content.buildings = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of stories</Label>
-            <Input keyboardType="numeric" value={content.stories} onChangeText={(text) => { content.stories = text }} />
+            <Input keyboardType="numeric" value={content.stories} onChangeText={(text) => { content.stories = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of laundry facilities</Label>
-            <Input keyboardType="numeric" value={content.laundry} onChangeText={(text) => { content.laundry = text }} />
+            <Input keyboardType="numeric" value={content.laundry} onChangeText={(text) => { content.laundry = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of garages</Label>
-            <Input keyboardType="numeric" value={content.garages} onChangeText={(text) => { content.garages = text }} />
+            <Input keyboardType="numeric" value={content.garages} onChangeText={(text) => { content.garages = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Units acessed via</Label>
@@ -11919,31 +11919,31 @@ return (
           </Item>
           <Item stackedLabel>
             <Label>List areas not accessable</Label>
-            <Input value={content.noaccess} onChangeText={(text) => { content.noaccess = text }} />
+            <Input value={content.noaccess} onChangeText={(text) => { content.noaccess = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Stories in building</Label>
-            <Input keyboardType="numeric" value={content.buildingstories} onChangeText={(text) => { content.buildingstories = text }} />
+            <Input keyboardType="numeric" value={content.buildingstories} onChangeText={(text) => { content.buildingstories = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Stories in unit</Label>
-            <Input keyboardType="numeric" value={content.unitstories} onChangeText={(text) => { content.unitstories = text }} />
+            <Input keyboardType="numeric" value={content.unitstories} onChangeText={(text) => { content.unitstories = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Beds</Label>
-            <Input keyboardType="numeric" value={content.bednums} onChangeText={(text) => { content.bednums = text }} />
+            <Input keyboardType="numeric" value={content.bednums} onChangeText={(text) => { content.bednums = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of Baths</Label>
-            <Input keyboardType="numeric" value={content.bathnums} onChangeText={(text) => { content.bathnums = text }} />
+            <Input keyboardType="numeric" value={content.bathnums} onChangeText={(text) => { content.bathnums = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of dust</Label>
-            <Input keyboardType="numeric" value={content.dustnums} onChangeText={(text) => { content.dustnums = text }} />
+            <Input keyboardType="numeric" value={content.dustnums} onChangeText={(text) => { content.dustnums = text;  this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Number of soil</Label>
-            <Input keyboardType="numeric" value={content.soilnums} onChangeText={(text) => { content.soilnums = text }} />
+            <Input keyboardType="numeric" value={content.soilnums} onChangeText={(text) => { content.soilnums = text;  this.setState({}) }} />
           </Item>
           <Item stackedLabel>
             <Label>Do children live in the home?</Label>
