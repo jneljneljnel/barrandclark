@@ -115,7 +115,7 @@ const INTSUB9 = ["Tile", "Cancel"];
 //const INTSUB10 = ["Wood","Plaster","Metal","Tile","Cancel"];
 
 const SIDES = ["A", "B", "C", "D", "N", "S", "E", "W", "Cancel"];
-const DIRECTIONS = ["North Side", "South Side", "East Side", "West Side", "Cancel"];
+const DIRECTIONS = ["North Side", "South Side", "East Side", "West Side", "Garage", "Cancel"];
 const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Form 5.0", "Layout Photo", "Property Photo", 'Cancel'];
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
@@ -3489,17 +3489,17 @@ export default class LinksScreen extends React.Component {
                             ActionSheet.show(
                                 {
                                     options: DIRECTIONS,
-                                    cancelButtonIndex: 4,
+                                    cancelButtonIndex: 5,
                                     title: "Select Side"
                                 },
                                 buttonIndex => {
-                                    if (buttonIndex != 4) {
+                                    if (buttonIndex != 5) {
                                         content.direction = DIRECTIONS[buttonIndex]
                                         this.setState({})
                                     }
                                 }
                             )}>
-                        <Text>{content.direction || "Direction"}</Text>
+                        <Text>{content.direction || "Room Equivalent"}</Text>
                     </Button>
                 </Grid>
             </View>)
@@ -5320,23 +5320,6 @@ _renderIntSheet(content, sheetId) {
                   )}
               >
                 <Text>{content.floor.M || "Material"}</Text>
-              </Button>
-              <Button block error style={{ marginLeft: 10 }}
-                onPress={() =>
-                  ActionSheet.show(
-                    {
-                      options: SIDES,
-                      cancelButtonIndex: 8,
-                      title: "Select Side"
-                    },
-                    buttonIndex => {
-                      if (buttonIndex != 8) {
-                        content.floor.S = SIDES[buttonIndex]
-                        this.setState({})
-                      }
-                    }
-                  )}>
-                <Text>{content.floor.S|| "Side"}</Text>
               </Button>
             </Grid>
             <Text style={{ marginTop: 10 }}>{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -9141,26 +9124,6 @@ _renderIntSheet(content, sheetId) {
                   onPress={() =>
                     ActionSheet.show(
                       {
-                        options: SIDES,
-                        cancelButtonIndex: SIDES.length - 1,
-                        title: content.floor.S || "Select Material"
-                      },
-                      buttonIndex => {
-                        if (buttonIndex != SIDES.length - 1) {
-                          content.floor.S = SIDES[buttonIndex]
-                          this.setState({})
-                        }
-                      }
-                    )}
-                >
-                  <Text>{content.floor.S || "Side"}</Text>
-                </Button>
-              </Col>
-              <Col>
-                <Button
-                  onPress={() =>
-                    ActionSheet.show(
-                      {
                         options: INTSUB2,
                         cancelButtonIndex: INTSUB2.length - 1,
                         title: content.floor.M || "Select Material"
@@ -12826,19 +12789,19 @@ return (
               type: false,
               loc: 1,
               title: "Interior Walls",
-              wallA: { S: false, M: null, I: true, R: null, name: 'Wall A' },
-              wallB: { S: false, M: null, I: true, R: null, name: 'Wall B' },
-              wallC: { S: false, M: null, I: true, R: null, name: 'Wall C' },
-              wallD: { S: false, M: null, I: true, R: null, name: 'Wall D' },
+              wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A', item:'Wall' },
+              wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B', item:'Wall' },
+              wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C', item:'Wall' },
+              wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
               ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
               baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
               vent: { S: false, M: null, I: true, R: null, name: 'Vent' },
-              floor: { S: false, M: null, I: true, R: null, name: 'Floor' }
+              floor: { M: null, I: true, R: null, name: 'Floor' }
             },
             {
               id: 5,
               side: false,
-              type: 'not set',
+              type: false,
               title: "Interior Window",
               expanded: true,
               loc: 1,
@@ -13076,14 +13039,14 @@ return (
             type: false,
             loc: 1,
             title: "Interior Walls",
-            wallA: { S: false, M: null, I: true, R: null, name: 'Wall A' },
-            wallB: { S: false, M: null, I: true, R: null, name: 'Wall B' },
-            wallC: { S: false, M: null, I: true, R: null, name: 'Wall C' },
-            wallD: { S: false, M: null, I: true, R: null, name: 'Wall D' },
+            wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A' },
+            wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B' },
+            wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C' },
+            wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D' },
             ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
             baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
             vent: { S: false, M: null, I: true, R: null, name: 'Vent' },
-            floor: { S: false, M: null, I: true, R: null, name: 'Floor' }
+            floor: { M: null, I: true, R: null, name: 'Floor' }
           },
           {
             id: 5,
@@ -13147,7 +13110,7 @@ return (
             id: 2,
             side: false,
             expanded: 0,
-            type: 'not set',
+            type: false,
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
@@ -13160,7 +13123,7 @@ return (
             id: 3,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Windows",
             leadsTo: null,
             well: { M: null, I: true, R: null, name: 'Window Well' },
@@ -13175,7 +13138,7 @@ return (
             id: 4,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Walls",
             leadsTo: null,
             wallA: { S: false, M: null, I: true, R: null, name: 'Wall' },
@@ -13186,7 +13149,7 @@ return (
             id: 5,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Roof Trim",
             leadsTo: null,
             eaves: { M: null, I: true, R: null, name: 'Eaves' },
@@ -13202,7 +13165,7 @@ return (
             id: 6,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Garage Doors",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
@@ -13365,7 +13328,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
@@ -13386,7 +13349,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Windows",
             leadsTo: null,
             well: { M: null, I: true, R: null, name: 'Window Well' },
@@ -13409,7 +13372,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Parking Lot",
             leadsTo: null,
             bollard: { M: null, I: true, R: null, name: 'Bollard' },
@@ -13432,7 +13395,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Walls",
             leadsTo: null,
             wallA: { S: false, M: null, I: true, R: null, name: 'Wall A' },
@@ -13452,13 +13415,13 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Garage Walls",
             leadsTo: null,
-            wallA: { S: false, M: null, I: true, R: null, name: 'A - Wall' },
-            wallB: { S: false, M: null, I: true, R: null, name: 'B - Wall' },
-            wallC: { S: false, M: null, I: true, R: null, name: 'C - Wall' },
-            wallD: { S: false, M: null, I: true, R: null, name: 'D - Wall' },
+            wallA: { S: 'A', M: null, I: true, R: null, name: 'A - Wall', item:'Wall' },
+            wallB: { S: 'B', M: null, I: true, R: null, name: 'B - Wall', item:'Wall' },
+            wallC: { S: 'C', M: null, I: true, R: null, name: 'C - Wall', item:'Wall' },
+            wallD: { S: 'D', M: null, I: true, R: null, name: 'D - Wall', item:'Wall' },
           }],
             x.total = x.data.length - 1
         }
@@ -13472,7 +13435,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Roof Trim",
             leadsTo: null,
             eaves: { M: null, I: true, R: null, name: 'Eaves' },
@@ -13496,7 +13459,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Porch",
             leadsTo: null,
             column: { M: null, I: true, R: null, S: null, name: 'Column' },
@@ -13520,7 +13483,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Trim",
             leadsTo: null,
             cBoard: { M: null, I: true, R: null, name: 'Corner Boards' },
@@ -13544,7 +13507,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Stairs",
             leadsTo: null,
             tread: { M: null, I: true, R: null, name: 'Tread' },
@@ -13568,7 +13531,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Garage Doors",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Garage Door' },
@@ -13586,7 +13549,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Misc Exterior",
             leadsTo: null,
             frame: { M: null, I: true, R: null, name: 'Electric Panel/Frame' },
@@ -13610,7 +13573,7 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Closet",
             door: { M: null, I: true, R: null, name: 'Closet Door' },
             frame: { M: null, I: true, R: null, name: 'Closet Frame' },
@@ -13670,7 +13633,7 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Tile",
             shower: { M: null, I: true, R: null, name: 'Shower' },
             wall: { M: null, I: true, R: null, name: 'Wall' },
@@ -13692,7 +13655,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Fireplace",
             leadsTo: null,
             mantle: { M: null, I: true, R: null, name: 'Mantle' },
@@ -13717,7 +13680,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Porch",
             leadsTo: null,
             column: { M: null, I: true, R: null, S: null, name: 'Column' },
@@ -13741,7 +13704,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Windows",
             leadsTo: null,
             well: { M: null, I: true, R: null, name: 'Window Well' },
@@ -13764,7 +13727,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Exterior Trim",
             leadsTo: null,
             cBoard: { M: null, I: true, R: null, name: 'Corner Boards' },
@@ -13788,7 +13751,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Parking Lot",
             leadsTo: null,
             bollard: { M: null, I: true, R: null, S: null, name: 'Bollard' },
@@ -13811,7 +13774,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Garage Doors",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Garage Door' },
@@ -13829,7 +13792,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Interior Roof Trim",
             leadsTo: null,
             eaves: { M: null, I: true, R: null, name: 'Eaves' },
@@ -13853,7 +13816,7 @@ return (
     //         id: x.data.length + 1,
     //         side: false,
     //         expanded: 1,
-    //         type: 'not set',
+    //         type: false,
     //         title: "Stairs",
     //         loc: 1,
     //         leadsTo: null,
@@ -13880,7 +13843,7 @@ return (
             side: false,
             expanded: 1,
             loc: 1,
-            type: 'not set',
+            type: false,
             title: "Roof Trim",
             leadsTo: null,
             eaves: { M: null, I: true, R: null, name: 'Eaves' },
@@ -13902,7 +13865,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Misc Exterior",
             leadsTo: null,
             frame: { M: null, I: true, R: null, S: null, name: 'Electric Panel/Frame' },
@@ -13925,7 +13888,7 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Interior Window",
             expanded: true,
             loc: 1,
@@ -13947,7 +13910,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Interior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
@@ -13987,10 +13950,10 @@ return (
             id: x.data.length + 1,
             type: false,
             title: "Interior Walls",
-            wallA: { S: false, M: null, I: true, R: null, name: 'Wall A' },
-            wallB: { S: false, M: null, I: true, R: null, name: 'Wall B' },
-            wallC: { S: false, M: null, I: true, R: null, name: 'Wall C' },
-            wallD: { S: false, M: null, I: true, R: null, name: 'Wall D' },
+            wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A' , item:'Wall'},
+            wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B' , item:'Wall'},
+            wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C' , item:'Wall'},
+            wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D' , item:'Wall'},
             ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
             baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
             floor: { S: false, M: null, I: true, R: null, name: 'Floor' },
@@ -14007,7 +13970,7 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Closet",
             door: { M: null, I: true, R: null, name: 'Closet Door' },
             frame: { M: null, I: true, R: null, name: 'Closet Frame' },
@@ -14091,7 +14054,7 @@ return (
             id: x.data.length + 1,
             side: false,
             expanded: 1,
-            type: 'not set',
+            type: false,
             title: "Fireplace",
             leadsTo: null,
             mantle: { M: null, I: true, R: null, name: 'Mantle' },
@@ -14110,7 +14073,7 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Stairs",
             tread: { M: null, I: true, R: null, name: 'Tread' },
             riser: { M: null, I: true, R: null, name: 'Riser' },
@@ -14132,10 +14095,10 @@ return (
           x.data = [...x.data, {
             id: x.data.length + 1,
             side: false,
-            type: 'not set',
+            type: false,
             title: "Tile",
             shower: { M: null, I: true, R: null, name: 'Shower' },
-            wall: { M: null, I: true, R: null, name: 'Wall' },
+            wall: { M: null, I: true, R: null, name: 'Wall', item:'Wall'},
             curb: { M: null, I: true, R: null, name: 'Curb' },
             ceiling: { M: null, I: true, R: null, name: 'Ceiling' },
             floor: { M: null, I: true, R: null, name: 'Floor' },
@@ -14196,7 +14159,7 @@ return (
         x.data = [...x.data, {
           id: x.data.length + 1,
           side: false,
-          type: 'not set',
+          type: false,
           title: "Eaves",
           M: null,
           I: true,
@@ -14246,7 +14209,7 @@ return (
         id: (prevState.data.length + 1),
         type: 'Interior Window',
         side: false,
-        type: 'not set',
+        type: false,
         title: "Interior Window ",
         sill: { M: null, I: false, R: null },
         sash: { M: null, I: false, R: null },
@@ -14353,10 +14316,10 @@ return (
                     type: false,
                     loc: 1,
                     title: "Interior Walls",
-                    wallA: { S: false, M: null, I: true, R: null, name: 'Wall A' },
-                    wallB: { S: false, M: null, I: true, R: null, name: 'Wall B' },
-                    wallC: { S: false, M: null, I: true, R: null, name: 'Wall C' },
-                    wallD: { S: false, M: null, I: true, R: null, name: 'Wall D' },
+                    wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A', item:'Wall' },
+                    wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B', item:'Wall' },
+                    wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C', item:'Wall' },
+                    wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
                     ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
                     baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
                     floor: { S: false, M: null, I: true, R: null, name: 'Floor' },
