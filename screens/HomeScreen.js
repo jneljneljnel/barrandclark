@@ -46,9 +46,9 @@ export default class HomeScreen extends React.Component {
     this._retrieveData()
     this.getPermissions()
   }
-  uploadData = async (jobs) => {
-    if (jobs.length){
-      jobs.map(x => {
+  uploadData = () => {
+    if (this.state.jobs.length){
+      this.state.jobs.map((x, index) => {
         AsyncStorage.getItem(x).then(state =>
           fetch('https://nameless-reef-31035.herokuapp.com/upload',
           {
@@ -62,25 +62,41 @@ export default class HomeScreen extends React.Component {
               state: state,
             }),
           })
-            .then((response) => response.json())
-                  .then((responseJson) => {
-                    console.log(responseJson);
-                    AsyncStorage.removeItem(x)
-                  })
-                  .catch((error) => {
-                    console.error(error);
-                  })
-                  //upload photo
-
+          .then((response) => {
+            if(response.status === 200){
+              this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
+              AsyncStorage.removeItem(x)
+              Alert.alert(
+                'Success', 'Job successfyully uploaded',
+                [
+                  {text: 'Cancel', onPress: this._retrieveData},
+                  {text: 'OK', onPress: this._retrieveData},
+                ],
+               { cancelable: false });
+              return
+            } else {
+              Alert.alert(
+                'Error uploading job', 'Please try again later',
+                [
+                  {text: 'Cancel', onPress: this._retrieveData},
+                  {text: 'OK', onPress: this._retrieveData},
+                ],
+               { cancelable: false });
+              return
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          })
+          //upload photo
         );
       })
+      if (this.state.jobs.length){
+        this.setState({jobs:[]})
+      }
     }
     //push to db
-    if(jobs.length){
-      Alert.alert('Jobs sucessfully uploaded');
-    }
-    AsyncStorage.clear()
-    this.setState({jobs:[]})
+
   }
 
   getPermissions = async() => {
@@ -196,7 +212,7 @@ RkTheme.setType('RkButton', 'faded', {
              'Are you sure?',
              [
                { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
-               { text: 'OK', onPress: () => {  this.uploadData(this.state.jobs) } },
+               { text: 'OK', onPress: () => {  this.uploadData() } },
              ],
              { cancelable: true }
            )

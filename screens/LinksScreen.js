@@ -116,7 +116,7 @@ const INTSUB9 = ["Tile", "Cancel"];
 
 const SIDES = ["A", "B", "C", "D", "N", "S", "E", "W", "Cancel"];
 const DIRECTIONS = ["North Side", "South Side", "East Side", "West Side", "Garage", "Cancel"];
-const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Form 5.0", "Layout Photo", "Property Photo", 'Cancel'];
+const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Layout Photo", "Property Photo", 'Cancel'];
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
 
@@ -750,7 +750,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Crown Modling</Text>
                         <Button
                             onPress={() =>
@@ -783,14 +783,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cModling.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cModling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.cModling.R = String((Math.round(p) / 100).toFixed(2));
+                                content.cModling.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Picture</Text>
                         <Button
                             onPress={() =>
@@ -818,14 +818,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.picture.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.picture.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.picture.R = String((Math.round(p) / 100).toFixed(2));
+                                content.picture.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Plate Rail</Text>
                         <Button
                             onPress={() =>
@@ -853,16 +853,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.plate.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.plate.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.plate.R = String((Math.round(p) / 100).toFixed(2));
+                                content.plate.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Horizontal</Text>
                         <Button
                             onPress={() =>
@@ -890,14 +890,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.horizontal.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.horizontal.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.horizontal.R = String((Math.round(p) / 100).toFixed(2));
+                                content.horizontal.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Vertical</Text>
                         <Button
                             onPress={() =>
@@ -925,14 +925,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vertical.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vertical.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vertical.R = String((Math.round(p) / 100).toFixed(2));
+                                content.vertical.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Corner Boards</Text>
                         <Button
                             onPress={() =>
@@ -960,9 +960,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corner.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corner.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.corner.R = String((Math.round(p) / 100).toFixed(2));
+                                content.corner.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1027,7 +1027,7 @@ export default class LinksScreen extends React.Component {
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Closet Door</Text>
                         <Button
                             onPress={() =>
@@ -1058,14 +1058,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String((Math.round(p) / 100).toFixed(2));
+                                content.door.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Closet Frame</Text>
                         <Button
                             onPress={() =>
@@ -1093,14 +1093,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Closet Shelf</Text>
                         <Button
                             onPress={() =>
@@ -1128,14 +1128,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                                content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Closet Shelf Support</Text>
                         <Button
                             onPress={() =>
@@ -1163,9 +1163,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.support.R = String((Math.round(p) / 100).toFixed(2));
+                                content.support.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1210,7 +1210,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Door</Text>
                         <Button
                             onPress={() =>
@@ -1242,15 +1242,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String((Math.round(p) / 100).toFixed(2));
+                                content.door.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Door Frame</Text>
                         <Button
                             onPress={() =>
@@ -1278,15 +1278,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Threshold</Text>
                         <Button
                             onPress={() =>
@@ -1314,16 +1314,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.thresh.R = String((Math.round(p) / 100).toFixed(2));
+                                content.thresh.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Security Door</Text>
                         <Button
                             onPress={() =>
@@ -1351,14 +1351,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitydoor.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitydoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.securitydoor.R = String((Math.round(p) / 100).toFixed(2));
+                                content.securitydoor.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Screen Door</Text>
                         <Button
                             onPress={() =>
@@ -1386,9 +1386,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.screendoor.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.screendoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.screendoor.R = String((Math.round(p) / 100).toFixed(2));
+                                content.screendoor.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1433,7 +1433,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Window Well</Text>
                         <Button
                             onPress={() =>
@@ -1467,15 +1467,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.well.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.well.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.well.R = String((Math.round(p) / 100).toFixed(2));
+                                content.well.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Window Sash</Text>
                         <Button
                             onPress={() =>
@@ -1503,14 +1503,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.sash.R = String((Math.round(p) / 100).toFixed(2));
+                                content.sash.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Window Frame</Text>
                         <Button
                             onPress={() =>
@@ -1538,9 +1538,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1548,7 +1548,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Shutters</Text>
                         <Button
                             onPress={() =>
@@ -1576,14 +1576,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shutters.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shutters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shutters.R = String((Math.round(p) / 100).toFixed(2));
+                                content.shutters.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Security Bars</Text>
                         <Button
                             onPress={() =>
@@ -1611,14 +1611,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitybars.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitybars.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.securitybars.R = String((Math.round(p) / 100).toFixed(2));
+                                content.securitybars.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Awning</Text>
                         <Button
                             onPress={() =>
@@ -1646,16 +1646,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.awning.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.awning.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.awning.R = String((Math.round(p) / 100).toFixed(2));
+                                content.awning.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Window Screen</Text>
                         <Button
                             onPress={() =>
@@ -1683,9 +1683,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
+                                content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1728,7 +1728,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Wall </Text>
                         <Button
                             onPress={() =>
@@ -1759,14 +1759,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallA.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Wall</Text>
                         <Button
                             onPress={() =>
@@ -1794,14 +1794,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallB.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Wall</Text>
                         <Button
                             onPress={() =>
@@ -1829,14 +1829,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallC.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Wall</Text>
                         <Button
                             onPress={() =>
@@ -1864,9 +1864,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallD.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -1909,7 +1909,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>A - Wall</Text>
                         <Button
                             onPress={() =>
@@ -1940,14 +1940,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallA.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>B - Wall</Text>
                         <Button
                             onPress={() =>
@@ -1975,14 +1975,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallB.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>C - Wall</Text>
                         <Button
                             onPress={() =>
@@ -2010,14 +2010,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallC.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>D - Wall</Text>
                         <Button
                             onPress={() =>
@@ -2045,9 +2045,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wallD.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2091,7 +2091,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Eaves</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2128,14 +2128,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.eaves.R = String((Math.round(p) / 100).toFixed(2));
+                                content.eaves.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
 
                         <Text>Rafters</Text>
                         <Grid style={{ marginBottom: 20 }}>
@@ -2166,9 +2166,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.rafters.R = String((Math.round(p) / 100).toFixed(2));
+                                content.rafters.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2176,7 +2176,7 @@ export default class LinksScreen extends React.Component {
 
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Fascia</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2206,14 +2206,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fascia.R = String((Math.round(p) / 100).toFixed(2));
+                                content.fascia.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Soffit</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2244,9 +2244,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.soffit.R = String((Math.round(p) / 100).toFixed(2));
+                                content.soffit.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2254,7 +2254,7 @@ export default class LinksScreen extends React.Component {
 
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Gutter</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2284,14 +2284,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.gutter.R = String((Math.round(p) / 100).toFixed(2));
+                                content.gutter.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Downspout</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2322,16 +2322,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.downspout.R = String((Math.round(p) / 100).toFixed(2));
+                                content.downspout.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Corbel</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2361,14 +2361,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corbel.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corbel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.corbel.R = String((Math.round(p) / 100).toFixed(2));
+                                content.corbel.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Roof Support</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2398,9 +2398,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.roofSup.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.roofSup.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.roofSup.R = String((Math.round(p) / 100).toFixed(2));
+                                content.roofSup.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2443,7 +2443,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Column</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2480,16 +2480,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.column.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.column.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.column.R = String((Math.round(p) / 100).toFixed(2));
+                                content.column.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
 
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Beam</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2519,16 +2519,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.beam.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.beam.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.beam.R = String((Math.round(p) / 100).toFixed(2));
+                                content.beam.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Ceiling</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2558,14 +2558,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+                                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Floor</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2595,16 +2595,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.floor.R = String((Math.round(p) / 100).toFixed(2));
+                                content.floor.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Handrail</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2634,15 +2634,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.handrail.R = String((Math.round(p) / 100).toFixed(2));
+                                content.handrail.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Railing</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2672,16 +2672,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railing.R = String((Math.round(p) / 100).toFixed(2));
+                                content.railing.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Rail Cap</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2711,14 +2711,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railcap.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railcap.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railcap.R = String((Math.round(p) / 100).toFixed(2));
+                                content.railcap.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Mail Slot</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2748,9 +2748,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mailSlot.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mailSlot.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mailSlot.R = String((Math.round(p) / 100).toFixed(2));
+                                content.mailSlot.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2794,7 +2794,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Corner Boards</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2831,15 +2831,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cBoard.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cBoard.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.cBoard.R = String((Math.round(p) / 100).toFixed(2));
+                                content.cBoard.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Trim</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2869,16 +2869,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.trim.R = String((Math.round(p) / 100).toFixed(2));
+                                content.trim.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Horizontal Trim</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2908,14 +2908,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hTrim.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.hTrim.R = String((Math.round(p) / 100).toFixed(2));
+                                content.hTrim.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Vertical Trim</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2945,9 +2945,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vTrim.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vTrim.R = String((Math.round(p) / 100).toFixed(2));
+                                content.vTrim.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -2956,7 +2956,7 @@ export default class LinksScreen extends React.Component {
 
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Milk Door</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -2986,15 +2986,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mDoor.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mDoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mDoor.R = String((Math.round(p) / 100).toFixed(2));
+                                content.mDoor.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Shelf</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3024,16 +3024,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                                content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Shelf Support</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3063,14 +3063,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelfSupport.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelfSupport.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shelfSupport.R = String((Math.round(p) / 100).toFixed(2));
+                                content.shelfSupport.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Support</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3100,9 +3100,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.support.R = String((Math.round(p) / 100).toFixed(2));
+                                content.support.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3145,7 +3145,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Tread</Text>
                         <Button
                             onPress={() =>
@@ -3180,15 +3180,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.tread.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.tread.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.tread.R = String((Math.round(p) / 100).toFixed(2));
+                                content.tread.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Riser</Text>
                         <Button
                             onPress={() =>
@@ -3216,15 +3216,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.riser.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.riser.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.riser.R = String((Math.round(p) / 100).toFixed(2));
+                                content.riser.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Deck</Text>
                         <Button
                             onPress={() =>
@@ -3253,16 +3253,16 @@ export default class LinksScreen extends React.Component {
                         </ListItem>
                         <Item>
 
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.deck.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.deck.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.deck.R = String((Math.round(p) / 100).toFixed(2));
+                                content.deck.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Handrail</Text>
                         <Button
                             onPress={() =>
@@ -3290,14 +3290,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.handrail.R = String((Math.round(p) / 100).toFixed(2));
+                                content.handrail.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Railing</Text>
                         <Button
                             onPress={() =>
@@ -3325,14 +3325,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.railing.R = String((Math.round(p) / 100).toFixed(2));
+                                content.railing.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Stringer</Text>
                         <Button
                             onPress={() =>
@@ -3360,16 +3360,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.stringer.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.stringer.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.stringer.R = String((Math.round(p) / 100).toFixed(2));
+                                content.stringer.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Newel Post</Text>
                         <Button
                             onPress={() =>
@@ -3397,14 +3397,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.newel.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.newel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.newel.R = String((Math.round(p) / 100).toFixed(2));
+                                content.newel.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Baluster</Text>
                         <Button
                             onPress={() =>
@@ -3432,9 +3432,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baluster.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baluster.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.baluster.R = String((Math.round(p) / 100).toFixed(2));
+                                content.baluster.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3535,7 +3535,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Garage Door</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3566,14 +3566,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String((Math.round(p) / 100).toFixed(2));
+                                content.door.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Garage Door Frame</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3603,9 +3603,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.doorframe.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.doorframe.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.doorframe.R = String((Math.round(p) / 100).toFixed(2));
+                                content.doorframe.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3650,7 +3650,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Electric Panel/Frame</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3687,14 +3687,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Equipment</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3724,16 +3724,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.equipment.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.equipment.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.equipment.R = String((Math.round(p) / 100).toFixed(2));
+                                content.equipment.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Vent</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3763,14 +3763,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.vent.R = String((Math.round(p) / 100).toFixed(2));
+                                content.vent.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Access Panel/Frame</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3800,9 +3800,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.accessPanel.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.accessPanel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.accessPanel.R = String((Math.round(p) / 100).toFixed(2));
+                                content.accessPanel.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3810,7 +3810,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Gate</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3840,14 +3840,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gate.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gate.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.gate.R = String((Math.round(p) / 100).toFixed(2));
+                                content.gate.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Fence</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3877,9 +3877,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fence.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fence.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fence.R = String((Math.round(p) / 100).toFixed(2));
+                                content.fence.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -3887,7 +3887,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Playground Equipment</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3917,14 +3917,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.playEquip.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.playEquip.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.playEquip.R = String((Math.round(p) / 100).toFixed(2));
+                                content.playEquip.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Planter Box</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -3954,9 +3954,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.planterBox.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.planterBox.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.planterBox.R = String((Math.round(p) / 100).toFixed(2));
+                                content.planterBox.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4002,7 +4002,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Bollard</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4055,15 +4055,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.bollard.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.bollard.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.bollard.R = String((Math.round(p) / 100).toFixed(2));
+                                content.bollard.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Parking Stripe</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4110,16 +4110,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStripe.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStripe.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.parkingStripe.R = String((Math.round(p) / 100).toFixed(2));
+                                content.parkingStripe.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Parking Stop</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4166,15 +4166,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStop.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStop.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.parkingStop.R = String((Math.round(p) / 100).toFixed(2));
+                                content.parkingStop.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Curb</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4221,16 +4221,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.curb.R = String((Math.round(p) / 100).toFixed(2));
+                                content.curb.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Light Post</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4277,15 +4277,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.lightPost.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.lightPost.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.lightPost.R = String((Math.round(p) / 100).toFixed(2));
+                                content.lightPost.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Speed Bump</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4332,16 +4332,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.speedBump.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.speedBump.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.speedBump.R = String((Math.round(p) / 100).toFixed(2));
+                                content.speedBump.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Fire Hydrant</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
@@ -4388,9 +4388,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireHydrant.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireHydrant.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fireHydrant.R = String((Math.round(p) / 100).toFixed(2));
+                                content.fireHydrant.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4409,7 +4409,7 @@ export default class LinksScreen extends React.Component {
         return (
             <View keyboardDismissMode="on-drag">
                 <Grid >
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Shower</Text>
                         <Grid>
                             <Col>
@@ -4447,15 +4447,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shower.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shower.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.shower.R = String((Math.round(p) / 100).toFixed(2));
+                                content.shower.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Wall</Text>
                         <Button
                             onPress={() =>
@@ -4483,15 +4483,15 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wall.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wall.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.wall.R = String((Math.round(p) / 100).toFixed(2));
+                                content.wall.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
 
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Curb</Text>
                         <Button
                             onPress={() =>
@@ -4519,16 +4519,16 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.curb.R = String((Math.round(p) / 100).toFixed(2));
+                                content.curb.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Ceiling</Text>
                         <Button
                             onPress={() =>
@@ -4556,14 +4556,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+                                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Floor</Text>
                         <Button
                             onPress={() =>
@@ -4591,14 +4591,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.floor.R = String((Math.round(p) / 100).toFixed(2));
+                                content.floor.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Backsplash</Text>
                         <Button
                             onPress={() =>
@@ -4626,9 +4626,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
+                                content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4636,7 +4636,7 @@ export default class LinksScreen extends React.Component {
 
                 </Grid>
                 <Grid>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Trim</Text>
                         <Button
                             onPress={() =>
@@ -4664,9 +4664,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.trim.R = String((Math.round(p) / 100).toFixed(2));
+                                content.trim.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4689,7 +4689,7 @@ export default class LinksScreen extends React.Component {
 
 
                 <Grid style={{ marginTop: 10 }}>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Mantle</Text>
                         <Button
                             onPress={() =>
@@ -4720,14 +4720,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mantle.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mantle.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.mantle.R = String((Math.round(p) / 100).toFixed(2));
+                                content.mantle.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Hearth</Text>
                         <Button
                             onPress={() =>
@@ -4755,14 +4755,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hearth.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hearth.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.hearth.R = String((Math.round(p) / 100).toFixed(2));
+                                content.hearth.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Fireplace</Text>
                         <Button
                             onPress={() =>
@@ -4790,14 +4790,14 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireplace.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireplace.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.fireplace.R = String((Math.round(p) / 100).toFixed(2));
+                                content.fireplace.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
                     </Col>
-                    <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                    <Col style={{ height: 200 }}>
                         <Text>Chimney</Text>
                         <Button
                             onPress={() =>
@@ -4825,9 +4825,9 @@ export default class LinksScreen extends React.Component {
                             }} />
                         </ListItem>
                         <Item>
-                            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chimney.R} onChangeText={(text) => {
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chimney.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.chimney.R = String((Math.round(p) / 100).toFixed(2));
+                                content.chimney.R = String((Math.round(p) / 10).toFixed(1));
                                 this.setState({})
                             }} />
                         </Item>
@@ -4868,7 +4868,7 @@ export default class LinksScreen extends React.Component {
                 </Col>
             </Grid>
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Cabinet Frame</Text>
                     <Button
                         onPress={() =>
@@ -4901,14 +4901,14 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                            content.frame.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Cabinet Door/Drawer</Text>
                     <Button
                         onPress={() =>
@@ -4936,14 +4936,14 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.door.R = String((Math.round(p) / 100).toFixed(2));
+                            content.door.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Cabinet Shelf</Text>
                     <Button
                         onPress={() =>
@@ -4971,14 +4971,14 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                            content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Countertop</Text>
                     <Button
                         onPress={() =>
@@ -5006,9 +5006,9 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.countertop.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.countertop.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.countertop.R = String((Math.round(p) / 100).toFixed(2));
+                            content.countertop.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
@@ -5016,7 +5016,7 @@ export default class LinksScreen extends React.Component {
             </Grid>
 
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Backsplash</Text>
                     <Button
                         onPress={() =>
@@ -5044,14 +5044,14 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
+                            content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Medicine Cabinet</Text>
                     <Button
                         onPress={() =>
@@ -5079,9 +5079,9 @@ export default class LinksScreen extends React.Component {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.medicine.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.medicine.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.medicine.R = String((Math.round(p) / 100).toFixed(2));
+                            content.medicine.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
@@ -5128,7 +5128,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Column</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5182,15 +5182,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.column.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.column.R} onChangeText={(text) => {
                   let p = text.split('.').join('');
-                  content.column.R = String((Math.round(p) / 100).toFixed(2));
+                  content.column.R = String((Math.round(p) / 10).toFixed(1));
                   this.setState({})
               }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Beam</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5237,16 +5237,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.beam.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.beam.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.beam.R = String((Math.round(p) / 100).toFixed(2));
+                   content.beam.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Ceiling</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5293,14 +5293,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+                   content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Floor</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5330,16 +5330,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.floor.R = String((Math.round(p) / 100).toFixed(2));
+                   content.floor.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Handrail</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5386,15 +5386,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.handrail.R = String((Math.round(p) / 100).toFixed(2));
+                   content.handrail.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Railing</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5441,16 +5441,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railing.R = String((Math.round(p) / 100).toFixed(2));
+                   content.railing.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Rail Cap</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5497,14 +5497,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railcap.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railcap.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railcap.R = String((Math.round(p) / 100).toFixed(2));
+                   content.railcap.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Mail Slot</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -5551,9 +5551,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mailSlot.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mailSlot.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.mailSlot.R = String((Math.round(p) / 100).toFixed(2));
+                   content.mailSlot.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -5615,7 +5615,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Well</Text>
             <Button
               onPress={() =>
@@ -5649,15 +5649,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.well.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.well.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.well.R = String((Math.round(p) / 100).toFixed(2));
+                   content.well.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Sash</Text>
             <Button
               onPress={() =>
@@ -5685,14 +5685,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sash.R = String((Math.round(p) / 100).toFixed(2));
+                   content.sash.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Frame</Text>
             <Button
               onPress={() =>
@@ -5720,9 +5720,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                   content.frame.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -5730,7 +5730,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Shutters</Text>
             <Button
               onPress={() =>
@@ -5758,14 +5758,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shutters.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shutters.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.shutters.R = String((Math.round(p) / 100).toFixed(2));
+                   content.shutters.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Security Bars</Text>
             <Button
               onPress={() =>
@@ -5793,14 +5793,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securitybars.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitybars.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.securitybars.R = String((Math.round(p) / 100).toFixed(2));
+                   content.securitybars.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Awning</Text>
             <Button
               onPress={() =>
@@ -5828,16 +5828,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.awning.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.awning.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.awning.R = String((Math.round(p) / 100).toFixed(2));
+                   content.awning.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+        <Col style={{ height: 200 }}>
             <Text>Window Screen</Text>
             <Button
               onPress={() =>
@@ -5865,9 +5865,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
+                   content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -5911,7 +5911,7 @@ _renderIntSheet(content, sheetId) {
           </Grid>
 
           <Grid style={{ marginTop: 10 }}>
-              <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Corner Boards</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -5965,14 +5965,14 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cBoard.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cBoard.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.cBoard.R = String((Math.round(p) / 100).toFixed(2));
+                          content.cBoard.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
-              <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Trim</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6019,16 +6019,16 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.trim.R = String((Math.round(p) / 100).toFixed(2));
+                          content.trim.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
           </Grid>
           <Grid style={{ marginTop: 10 }}>
-              <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Horizontal Trim</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6075,14 +6075,14 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hTrim.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hTrim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.hTrim.R = String((Math.round(p) / 100).toFixed(2));
+                          content.hTrim.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
-              <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Vertical Trim</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6129,9 +6129,9 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vTrim.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vTrim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.vTrim.R = String((Math.round(p) / 100).toFixed(2));
+                          content.vTrim.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
@@ -6140,7 +6140,7 @@ _renderIntSheet(content, sheetId) {
 
           </Grid>
           <Grid style={{ marginTop: 10 }}>
-              <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Milk Door</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6187,15 +6187,15 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mDoor.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mDoor.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.mDoor.R = String((Math.round(p) / 100).toFixed(2));
+                          content.mDoor.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
 
-              <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Shelf</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6242,16 +6242,16 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                          content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
           </Grid>
           <Grid style={{ marginTop: 10 }}>
-              <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Shelf Support</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6298,14 +6298,14 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelfSupport.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelfSupport.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.shelfSupport.R = String((Math.round(p) / 100).toFixed(2));
+                          content.shelfSupport.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
               </Col>
-              <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+              <Col style={{ height: 200 }}>
                   <Text>Support</Text>
                   <Grid style={{ marginBottom: 20 }}>
                       <Button
@@ -6352,9 +6352,9 @@ _renderIntSheet(content, sheetId) {
                       }} />
                   </ListItem>
                   <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
+                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
-                          content.support.R = String((Math.round(p) / 100).toFixed(2));
+                          content.support.R = String((Math.round(p) / 10).toFixed(1));
                           this.setState({})
                       }} />
                   </Item>
@@ -6397,7 +6397,7 @@ _renderIntSheet(content, sheetId) {
       </Grid>
 
       <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Garage Door</Text>
           <Grid style={{marginBottom:20}}>
           <Button
@@ -6445,14 +6445,14 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.door.R = String((Math.round(p) / 100).toFixed(2));
+                 content.door.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Garage Door Frame</Text>
           <Grid style={{marginBottom:20}}>
           <Button
@@ -6499,9 +6499,9 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.doorframe.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.doorframe.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.doorframe.R = String((Math.round(p) / 100).toFixed(2));
+                 content.doorframe.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
@@ -6547,7 +6547,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Bollard</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6600,15 +6600,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.bollard.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.bollard.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.bollard.R = String((Math.round(p) / 100).toFixed(2));
+                   content.bollard.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Parking Stripe</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6655,16 +6655,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStripe.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStripe.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.parkingStripe.R = String((Math.round(p) / 100).toFixed(2));
+                   content.parkingStripe.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Parking Stop</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6711,15 +6711,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.parkingStop.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStop.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.parkingStop.R = String((Math.round(p) / 100).toFixed(2));
+                   content.parkingStop.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Curb</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6766,16 +6766,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.curb.R = String((Math.round(p) / 100).toFixed(2));
+                   content.curb.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Light Post</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6822,15 +6822,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.lightPost.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.lightPost.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.lightPost.R = String((Math.round(p) / 100).toFixed(2));
+                   content.lightPost.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Speed Bump</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6877,16 +6877,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.speedBump.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.speedBump.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.speedBump.R = String((Math.round(p) / 100).toFixed(2));
+                   content.speedBump.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+          <Col style={{ height: 200 }}>
             <Text>Fire Hydrant</Text>
             <Grid style={{ marginBottom: 20 }}>
               <Button
@@ -6933,9 +6933,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireHydrant.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireHydrant.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.fireHydrant.R = String((Math.round(p) / 100).toFixed(2));
+                   content.fireHydrant.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -6981,7 +6981,7 @@ _renderIntSheet(content, sheetId) {
       </Grid>
 
       <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Electric Panel/Frame</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7035,14 +7035,14 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                 content.frame.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Equipment</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7089,16 +7089,16 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.equipment.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.equipment.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.equipment.R = String((Math.round(p) / 100).toFixed(2));
+                 content.equipment.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
       </Grid>
       <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Vent</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7145,14 +7145,14 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.vent.R = String((Math.round(p) / 100).toFixed(2));
+                 content.vent.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Access Panel/Frame</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7199,9 +7199,9 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.accessPanel.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.accessPanel.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.accessPanel.R = String((Math.round(p) / 100).toFixed(2));
+                 content.accessPanel.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
@@ -7209,7 +7209,7 @@ _renderIntSheet(content, sheetId) {
       </Grid>
 
       <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Gate</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7256,14 +7256,14 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gate.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gate.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.gate.R = String((Math.round(p) / 100).toFixed(2));
+                 content.gate.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Fence</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7310,9 +7310,9 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fence.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fence.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.fence.R = String((Math.round(p) / 100).toFixed(2));
+                 content.fence.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
@@ -7320,7 +7320,7 @@ _renderIntSheet(content, sheetId) {
       </Grid>
 
       <Grid style={{ marginTop: 10 }}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Playground Equipment</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7367,14 +7367,14 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.playEquip.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.playEquip.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.playEquip.R = String((Math.round(p) / 100).toFixed(2));
+                 content.playEquip.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
         </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 200 }}>
+        <Col style={{ height: 200 }}>
           <Text>Planter Box</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
@@ -7421,9 +7421,9 @@ _renderIntSheet(content, sheetId) {
             }} />
           </ListItem>
           <Item>
-            <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.planterBox.R} onChangeText={(text) => {
+            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.planterBox.R} onChangeText={(text) => {
                  let p = text.split('.').join('');
-                 content.planterBox.R = String((Math.round(p) / 100).toFixed(2));
+                 content.planterBox.R = String((Math.round(p) / 10).toFixed(1));
                  this.setState({})
               }} />
           </Item>
@@ -7466,7 +7466,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Eaves</Text>
             <Button
               onPress={() =>
@@ -7501,14 +7501,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.eaves.R = String((Math.round(p) / 100).toFixed(2));
+                   content.eaves.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Rafters</Text>
             <Button
               onPress={() =>
@@ -7536,14 +7536,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.rafters.R = String((Math.round(p) / 100).toFixed(2));
+                   content.rafters.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Fascia</Text>
             <Button
               onPress={() =>
@@ -7571,16 +7571,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.fascia.R = String((Math.round(p) / 100).toFixed(2));
+                   content.fascia.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Soffit</Text>
             <Button
               onPress={() =>
@@ -7608,14 +7608,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.soffit.R = String((Math.round(p) / 100).toFixed(2));
+                   content.soffit.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Gutter</Text>
             <Button
               onPress={() =>
@@ -7643,14 +7643,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.gutter.R = String((Math.round(p) / 100).toFixed(2));
+                   content.gutter.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Downspout</Text>
             <Button
               onPress={() =>
@@ -7678,16 +7678,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.downspout.R = String((Math.round(p) / 100).toFixed(2));
+                   content.downspout.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Corbel</Text>
             <Button
               onPress={() =>
@@ -7715,14 +7715,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.corbel.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corbel.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.corbel.R = String((Math.round(p) / 100).toFixed(2));
+                   content.corbel.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Roof Support</Text>
             <Button
               onPress={() =>
@@ -7750,9 +7750,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.roofSup.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.roofSup.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.roofSup.R = String((Math.round(p) / 100).toFixed(2));
+                   content.roofSup.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -7795,7 +7795,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Tread</Text>
             <Button
               onPress={() =>
@@ -7830,15 +7830,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.tread.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.tread.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.tread.R = String((Math.round(p) / 100).toFixed(2));
+                   content.tread.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Riser</Text>
             <Button
               onPress={() =>
@@ -7866,15 +7866,15 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.riser.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.riser.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.riser.R = String((Math.round(p) / 100).toFixed(2));
+                   content.riser.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Deck</Text>
             <Button
               onPress={() =>
@@ -7902,16 +7902,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.deck.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.deck.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.deck.R = String((Math.round(p) / 100).toFixed(2));
+                   content.deck.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Handrail</Text>
             <Button
               onPress={() =>
@@ -7939,14 +7939,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.handrail.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.handrail.R = String((Math.round(p) / 100).toFixed(2));
+                   content.handrail.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Railing</Text>
             <Button
               onPress={() =>
@@ -7974,14 +7974,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.railing.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.railing.R = String((Math.round(p) / 100).toFixed(2));
+                   content.railing.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Stringer</Text>
             <Button
               onPress={() =>
@@ -8009,16 +8009,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.stringer.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.stringer.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.stringer.R = String((Math.round(p) / 100).toFixed(2));
+                   content.stringer.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Newel Post</Text>
             <Button
               onPress={() =>
@@ -8046,14 +8046,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.newel.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.newel.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.newel.R = String((Math.round(p) / 100).toFixed(2));
+                   content.newel.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Baluster</Text>
             <Button
               onPress={() =>
@@ -8081,9 +8081,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baluster.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baluster.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.baluster.R = String((Math.round(p) / 100).toFixed(2));
+                   content.baluster.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -8127,24 +8127,24 @@ _renderIntSheet(content, sheetId) {
                   {
                     options: EXTTYPES2,
                     cancelButtonIndex: EXTTYPES2.length - 1,
-                    title: "Select Side"
+                    title: "Select Type"
                   },
                   buttonIndex => {
                     if (buttonIndex != EXTTYPES2.length - 1) {
-                      content.windowType = EXTTYPES2[buttonIndex]
+                      content.doorType = EXTTYPES2[buttonIndex]
 
                     } else {
-                      content.windowType = '';
+                      content.doorType = '';
                     }
                     this.setState({})
                   }
                 )}>
-              <Text>{content.windowType || 'Type'}</Text>
+              <Text>{content.doorType || 'Type'}</Text>
             </Button>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }} keyboardShouldPersistTaps={true}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Sill</Text>
             <Button
               onPress={() =>
@@ -8176,14 +8176,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sill.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sill.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sill.R = String((Math.round(p) / 100).toFixed(2));
+                   content.sill.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Sash</Text>
             <Button
               onPress={() =>
@@ -8211,14 +8211,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.sash.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.sash.R = String((Math.round(p) / 100).toFixed(2));
+                   content.sash.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Window Frame</Text>
             <Button
               onPress={() =>
@@ -8246,16 +8246,16 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                   content.frame.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }} keyboardShouldPersistTaps={true}>
-        <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+        <Col style={{ height: 200 }}>
             <Text>Window Screen</Text>
             <Button
               onPress={() =>
@@ -8283,14 +8283,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.windowScreen.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.windowScreen.R = String((Math.round(p) / 100).toFixed(2));
+                   content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
           </Col>
-        <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+        <Col style={{ height: 200 }}>
             <Text>Valence</Text>
             <Button
               onPress={() =>
@@ -8318,9 +8318,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.valence.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.valence.R} onChangeText={(text) => {
                    let p = text.split('.').join('');
-                   content.valence.R = String((Math.round(p) / 100).toFixed(2));
+                   content.valence.R = String((Math.round(p) / 10).toFixed(1));
                    this.setState({})
                 }} />
             </Item>
@@ -8383,7 +8383,7 @@ _renderIntSheet(content, sheetId) {
             </Grid>
 
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Door</Text>
                     <Button
                         onPress={() =>
@@ -8413,14 +8413,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                         <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.door.R = String((Math.round(p) / 100).toFixed(2));
+                                content.door.R = String((Math.round(p) / 10).toFixed(1));
                                  this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Door Frame</Text>
                     <Button
                         onPress={() =>
@@ -8448,14 +8448,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                                  this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Threshold</Text>
                     <Button
                         onPress={() =>
@@ -8483,9 +8483,9 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
-                                content.thresh.R = String((Math.round(p) / 100).toFixed(2));
+                                content.thresh.R = String((Math.round(p) / 10).toFixed(1));
                                  this.setState({})
                         }} />
                     </Item>
@@ -8549,7 +8549,7 @@ _renderIntSheet(content, sheetId) {
             </Grid>
 
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Door</Text>
                     <Button
                         onPress={() =>
@@ -8581,14 +8581,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.door.R = String((Math.round(p) / 100).toFixed(2));
+                            content.door.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Door Frame</Text>
                     <Button
                         onPress={() =>
@@ -8616,14 +8616,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                            content.frame.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Threshold</Text>
                     <Button
                         onPress={() =>
@@ -8651,9 +8651,9 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.thresh.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.thresh.R = String((Math.round(p) / 100).toFixed(2));
+                            content.thresh.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
@@ -8661,7 +8661,7 @@ _renderIntSheet(content, sheetId) {
             </Grid>
 
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Security Door</Text>
                     <Button
                         onPress={() =>
@@ -8691,14 +8691,14 @@ _renderIntSheet(content, sheetId) {
                     <KeyboardAvoidingView enabled>
                     </KeyboardAvoidingView>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.securityDoor.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securityDoor.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.securityDoor.R = String((Math.round(p) / 100).toFixed(2));
+                            content.securityDoor.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Screen Door</Text>
                     <Button
                         onPress={() =>
@@ -8726,9 +8726,9 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.screenDoor.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.screenDoor.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.screenDoor.R = String((Math.round(p) / 100).toFixed(2));
+                            content.screenDoor.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
@@ -8811,7 +8811,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Text>Wall A</Text>
             <Button
               onPress={() =>
@@ -8846,14 +8846,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallA.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallA.R = String((Math.round(p) / 100).toFixed(2));
+                content.wallA.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Text>Wall B</Text>
             <Button
               onPress={() =>
@@ -8881,14 +8881,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallB.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallB.R = String((Math.round(p) / 100).toFixed(2));
+                content.wallB.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Text>Wall C</Text>
             <Button
               onPress={() =>
@@ -8916,9 +8916,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallC.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallC.R = String((Math.round(p) / 100).toFixed(2));
+                content.wallC.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
@@ -8951,9 +8951,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wallD.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.wallD.R = String((Math.round(p) / 100).toFixed(2));
+                content.wallD.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
@@ -8988,14 +8988,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+          <Col style={{ height: 209 }}>
             <Text>Baseboard</Text>
             <Grid>
               <Col>
@@ -9039,7 +9039,7 @@ _renderIntSheet(content, sheetId) {
                 </Button>
               </Col>
             </Grid>
-            <Text style={{ marginTop: 20 }}>{content.baseboard.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <Text style={{ marginTop: 30 }}>{content.baseboard.I == true ? 'Intact' : 'Deteriorated'}</Text>
             <ListItem>
               <RkChoice rkType='posNeg' selected={content.baseboard.I} onChange={(e) => {
                 content.baseboard.I = !content.baseboard.I
@@ -9047,9 +9047,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baseboard.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baseboard.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.baseboard.R = String((Math.round(p) / 100).toFixed(2));
+                content.baseboard.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
@@ -9057,7 +9057,7 @@ _renderIntSheet(content, sheetId) {
         </Grid>
 
         <Grid>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Text>Vent</Text>
             <Grid>
               <Col>
@@ -9109,14 +9109,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.vent.R = String((Math.round(p) / 100).toFixed(2));
+                content.vent.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
           </Col>
-          <Col style={{ height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Text>Floor</Text>
             <Grid>
               <Col>
@@ -9148,9 +9148,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.floor.R = String((Math.round(p) / 100).toFixed(2));
+                content.floor.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
@@ -9212,7 +9212,7 @@ _renderIntSheet(content, sheetId) {
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Closet Door</Text>
             <Button
               onPress={() =>
@@ -9235,7 +9235,7 @@ _renderIntSheet(content, sheetId) {
             >
               <Text>{content.door.M || "Material"}</Text>
             </Button>
-            <Text >{content.door.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <Text style={{ marginTop: 20 }}>{content.door.I == true ? 'Intact' : 'Deteriorated'}</Text>
             <ListItem>
               <RkChoice rkType='posNeg' selected={content.door.I} onChange={(e) => {
                 content.door.I = !content.door.I
@@ -9243,14 +9243,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.door.R = String((Math.round(p) / 100).toFixed(2));
+                content.door.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
              }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Closet Frame</Text>
             <Button
               onPress={() =>
@@ -9270,7 +9270,7 @@ _renderIntSheet(content, sheetId) {
             >
               <Text>{content.frame.M || "Material"}</Text>
             </Button>
-            <Text >{content.frame.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <Text style={{ marginTop: 20 }}>{content.frame.I == true ? 'Intact' : 'Deteriorated'}</Text>
             <ListItem>
               <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
                 content.frame.I = !content.frame.I
@@ -9278,14 +9278,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                content.frame.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
              }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Closet Shelf</Text>
             <Button
               onPress={() =>
@@ -9305,7 +9305,7 @@ _renderIntSheet(content, sheetId) {
             >
               <Text>{content.shelf.M || "Material"}</Text>
             </Button>
-            <Text >{content.shelf.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <Text style={{ marginTop: 20 }}>{content.shelf.I == true ? 'Intact' : 'Deteriorated'}</Text>
             <ListItem>
               <RkChoice rkType='posNeg' selected={content.shelf.I} onChange={(e) => {
                 content.shelf.I = !content.shelf.I
@@ -9313,14 +9313,14 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Closet Shelf Support</Text>
             <Button
               onPress={() =>
@@ -9340,7 +9340,7 @@ _renderIntSheet(content, sheetId) {
             >
               <Text>{content.support.M || "Material"}</Text>
             </Button>
-            <Text >{content.support.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <Text style={{ marginTop: 20 }}>{content.support.I == true ? 'Intact' : 'Deteriorated'}</Text>
             <ListItem>
               <RkChoice rkType='posNeg' selected={content.support.I} onChange={(e) => {
                 content.support.I = !content.support.I
@@ -9348,9 +9348,9 @@ _renderIntSheet(content, sheetId) {
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.support.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.support.R = String((Math.round(p) / 100).toFixed(2));
+                content.support.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
              }} />
             </Item>
@@ -9392,7 +9392,7 @@ _renderIntSheet(content, sheetId) {
             </Grid>
 
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Eaves</Text>
                     <Button
                         onPress={() =>
@@ -9417,7 +9417,7 @@ _renderIntSheet(content, sheetId) {
                     >
                         <Text>{content.eaves.M || "Material"}</Text>
                     </Button>
-                    <Text >{content.eaves.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                    <Text style={{ marginTop: 20 }}>{content.eaves.I == true ? 'Intact' : 'Deteriorated'}</Text>
                     <ListItem>
                         <RkChoice rkType='posNeg' selected={content.eaves.I} onChange={(e) => {
                             content.eaves.I = !content.eaves.I
@@ -9425,14 +9425,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.eaves.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.eaves.R = String((Math.round(p) / 100).toFixed(2));
+                            content.eaves.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Rafters</Text>
                     <Button
                         onPress={() =>
@@ -9452,7 +9452,7 @@ _renderIntSheet(content, sheetId) {
                     >
                         <Text>{content.rafters.M || "Material"}</Text>
                     </Button>
-                    <Text >{content.rafters.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                    <Text style={{ marginTop: 20 }}>{content.rafters.I == true ? 'Intact' : 'Deteriorated'}</Text>
                     <ListItem>
                         <RkChoice rkType='posNeg' selected={content.rafters.I} onChange={(e) => {
                             content.rafters.I = !content.rafters.I
@@ -9460,14 +9460,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.rafters.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.rafters.R = String((Math.round(p) / 100).toFixed(2));
+                            content.rafters.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Fascia</Text>
                     <Button
                         onPress={() =>
@@ -9487,7 +9487,7 @@ _renderIntSheet(content, sheetId) {
                     >
                         <Text>{content.fascia.M || "Material"}</Text>
                     </Button>
-                    <Text >{content.fascia.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                    <Text style={{ marginTop: 20 }}>{content.fascia.I == true ? 'Intact' : 'Deteriorated'}</Text>
                     <ListItem>
                         <RkChoice rkType='posNeg' selected={content.fascia.I} onChange={(e) => {
                             content.fascia.I = !content.fascia.I
@@ -9495,16 +9495,16 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fascia.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.fascia.R = String((Math.round(p) / 100).toFixed(2));
+                            content.fascia.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
             </Grid>
             <Grid style={{ marginTop: 10 }}>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Soffit</Text>
                     <Button
                         onPress={() =>
@@ -9524,7 +9524,7 @@ _renderIntSheet(content, sheetId) {
                     >
                         <Text>{content.soffit.M || "Material"}</Text>
                     </Button>
-                    <Text >{content.soffit.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                    <Text style={{ marginTop: 20 }}>{content.soffit.I == true ? 'Intact' : 'Deteriorated'}</Text>
                     <ListItem>
                         <RkChoice rkType='posNeg' selected={content.soffit.I} onChange={(e) => {
                             content.soffit.I = !content.soffit.I
@@ -9532,14 +9532,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.soffit.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.soffit.R = String((Math.round(p) / 100).toFixed(2));
+                            content.soffit.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Gutter</Text>
                     <Button
                         onPress={() =>
@@ -9559,7 +9559,7 @@ _renderIntSheet(content, sheetId) {
                     >
                         <Text>{content.gutter.M || "Material"}</Text>
                     </Button>
-                    <Text >{content.gutter.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                    <Text style={{ marginTop: 20 }}>{content.gutter.I == true ? 'Intact' : 'Deteriorated'}</Text>
                     <ListItem>
                         <RkChoice rkType='posNeg' selected={content.gutter.I} onChange={(e) => {
                             content.gutter.I = !content.gutter.I
@@ -9567,14 +9567,14 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.gutter.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.gutter.R = String((Math.round(p) / 100).toFixed(2));
+                            content.gutter.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
                 </Col>
-                <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+                <Col style={{ height: 200 }}>
                     <Text>Downspout</Text>
                     <Button
                         onPress={() =>
@@ -9602,9 +9602,9 @@ _renderIntSheet(content, sheetId) {
                         }} />
                     </ListItem>
                     <Item>
-                        <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.downspout.R} onChangeText={(text) => {
+                        <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
-                            content.downspout.R = String((Math.round(p) / 100).toFixed(2));
+                            content.downspout.R = String((Math.round(p) / 10).toFixed(1));
                             this.setState({})
                         }} />
                     </Item>
@@ -9664,7 +9664,7 @@ if (content.title == 'Cabinet') {
           </Col>
       </Grid>
       <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Cabinet Frame</Text>
               <Button
                   onPress={() =>
@@ -9697,14 +9697,14 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.frame.R = String((Math.round(p) / 100).toFixed(2));
+                      content.frame.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Cabinet Door/Drawer</Text>
               <Button
                   onPress={() =>
@@ -9732,14 +9732,14 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.door.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.door.R = String((Math.round(p) / 100).toFixed(2));
+                      content.door.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Cabinet Shelf</Text>
               <Button
                   onPress={() =>
@@ -9767,14 +9767,14 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shelf.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.shelf.R = String((Math.round(p) / 100).toFixed(2));
+                      content.shelf.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Countertop</Text>
               <Button
                   onPress={() =>
@@ -9802,9 +9802,9 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.countertop.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.countertop.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.countertop.R = String((Math.round(p) / 100).toFixed(2));
+                      content.countertop.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
@@ -9812,7 +9812,7 @@ if (content.title == 'Cabinet') {
       </Grid>
 
       <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Backsplash</Text>
               <Button
                   onPress={() =>
@@ -9840,14 +9840,14 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
+                      content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
               <Text>Medicine Cabinet</Text>
               <Button
                   onPress={() =>
@@ -9875,9 +9875,9 @@ if (content.title == 'Cabinet') {
                   }} />
               </ListItem>
               <Item>
-                  <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.medicine.R} onChangeText={(text) => {
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.medicine.R} onChangeText={(text) => {
                       let p = text.split('.').join('');
-                      content.medicine.R = String((Math.round(p) / 100).toFixed(2));
+                      content.medicine.R = String((Math.round(p) / 10).toFixed(1));
                       this.setState({})
                   }} />
               </Item>
@@ -9919,7 +9919,7 @@ return (
     </Grid>
 
     <Grid style={{ marginTop: 10 }}>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Crown Modling</Text>
         <Grid>
           <Col>
@@ -9978,14 +9978,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.cModling.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cModling.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.cModling.R = String((Math.round(p) / 100).toFixed(2));
+    content.cModling.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Picture Rail</Text>
         <Grid>
           <Col>
@@ -10037,16 +10037,16 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.picture.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.picture.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.picture.R = String((Math.round(p) / 100).toFixed(2));
+    content.picture.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
     </Grid>
     <Grid>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Plate Rail</Text>
         <Grid>
           <Col>
@@ -10099,14 +10099,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.plate.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.plate.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.plate.R = String((Math.round(p) / 100).toFixed(2));
+    content.plate.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Horizontal Trim</Text>
         <Grid>
           <Col>
@@ -10159,9 +10159,9 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.horizontal.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.horizontal.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.horizontal.R = String((Math.round(p) / 100).toFixed(2));
+    content.horizontal.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
 
@@ -10169,7 +10169,7 @@ return (
       </Col>
     </Grid>
     <Grid style={{ marginTop: 10 }}>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Vertical Trim</Text>
         <Grid>
           <Col>
@@ -10221,14 +10221,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vertical.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vertical.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.vertical.R = String((Math.round(p) / 100).toFixed(2));
+    content.vertical.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Chair Rail</Text>
         <Grid>
           <Col>
@@ -10280,16 +10280,16 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chain.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chain.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.chain.R = String((Math.round(p) / 100).toFixed(2));
+    content.chain.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
     </Grid>
     <Grid style={{ marginTop: 10 }}>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Trim</Text>
         <Grid>
           <Col>
@@ -10341,14 +10341,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.trim.R = String((Math.round(p) / 100).toFixed(2));
+    content.trim.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Frame</Text>
         <Grid>
           <Col>
@@ -10400,9 +10400,9 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.frame.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.frame.R = String((Math.round(p) / 100).toFixed(2));
+    content.frame.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
@@ -10449,7 +10449,7 @@ return (
         </Grid>
 
         <Grid >
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Baseboard</Text>
             <Grid>
               <Col>
@@ -10506,15 +10506,15 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.baseboard.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baseboard.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.baseboard.R = String((Math.round(p) / 100).toFixed(2));
+                content.baseboard.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Ceiling</Text>
             <Grid>
               <Col>
@@ -10566,15 +10566,15 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Vent</Text>
             <Grid>
               <Col>
@@ -10626,16 +10626,16 @@ return (
               }} />
             </ListItem>
             <Item>
-             <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.vent.R} onChangeText={(text) => {
+             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.vent.R = String((Math.round(p) / 100).toFixed(2));
+                content.vent.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Floor</Text>
             <Grid>
               <Col>
@@ -10687,14 +10687,14 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.floor.R = String((Math.round(p) / 100).toFixed(2));
+                content.floor.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Attic Access/Frame</Text>
             <Grid>
               <Col>
@@ -10746,14 +10746,14 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.atticFrame.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.atticFrame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.atticFrame.R = String((Math.round(p) / 100).toFixed(2));
+                content.atticFrame.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Electric Panel/Frame</Text>
             <Grid>
               <Col>
@@ -10805,9 +10805,9 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.electricFrame.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.electricFrame.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
-                content.electricFrame.R = String((Math.round(p) / 100).toFixed(2));
+                content.electricFrame.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
             }} />
             </Item>
@@ -10849,7 +10849,7 @@ return (
         </Grid>
 
         <Grid >
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Shower</Text>
             <Grid>
               <Col>
@@ -10887,15 +10887,15 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.shower.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shower.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.shower.R = String((Math.round(p) / 100).toFixed(2));
+        content.shower.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Wall</Text>
             <Button
               onPress={() =>
@@ -10923,15 +10923,15 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.wall.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wall.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.wall.R = String((Math.round(p) / 100).toFixed(2));
+        content.wall.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
           </Col>
 
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Curb</Text>
             <Button
               onPress={() =>
@@ -10959,16 +10959,16 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.curb.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.curb.R = String((Math.round(p) / 100).toFixed(2));
+        content.curb.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Ceiling</Text>
             <Button
               onPress={() =>
@@ -10996,14 +10996,14 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.ceiling.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.ceiling.R = String((Math.round(p) / 100).toFixed(2));
+        content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Floor</Text>
             <Button
               onPress={() =>
@@ -11031,14 +11031,14 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.floor.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.floor.R = String((Math.round(p) / 100).toFixed(2));
+        content.floor.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
           </Col>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Backsplash</Text>
             <Button
               onPress={() =>
@@ -11066,9 +11066,9 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.backsplash.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.backsplash.R = String((Math.round(p) / 100).toFixed(2));
+        content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
@@ -11076,7 +11076,7 @@ return (
 
         </Grid>
         <Grid>
-          <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+          <Col style={{ height: 200 }}>
             <Text>Trim</Text>
             <Button
               onPress={() =>
@@ -11104,9 +11104,9 @@ return (
               }} />
             </ListItem>
             <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.trim.R} onChangeText={(text) => {
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
         let p = text.split('.').join('');
-        content.trim.R = String((Math.round(p) / 100).toFixed(2));
+        content.trim.R = String((Math.round(p) / 10).toFixed(1));
         this.setState({})
 }} />
             </Item>
@@ -11128,7 +11128,7 @@ return (
     return (
       <View keyboardDismissMode="on-drag">
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+          <Col style={{ height: 200 }}>
             <Button
               onPress={() =>
                 ActionSheet.show(
@@ -11197,7 +11197,7 @@ return (
     </Grid>
 
     <Grid style={{ marginTop: 10 }}>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Mantle</Text>
         <Button
           onPress={() =>
@@ -11228,14 +11228,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.mantle.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mantle.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.mantle.R = String((Math.round(p) / 100).toFixed(2));
+    content.mantle.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Hearth</Text>
         <Button
           onPress={() =>
@@ -11263,14 +11263,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.hearth.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hearth.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.hearth.R = String((Math.round(p) / 100).toFixed(2));
+    content.hearth.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#E1E5F2', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Fireplace</Text>
         <Button
           onPress={() =>
@@ -11298,14 +11298,14 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.fireplace.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireplace.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.fireplace.R = String((Math.round(p) / 100).toFixed(2));
+    content.fireplace.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
       </Col>
-      <Col style={{ backgroundColor: '#FFFFFF', height: 190 }}>
+      <Col style={{ height: 200 }}>
         <Text>Chimney</Text>
         <Button
           onPress={() =>
@@ -11333,9 +11333,9 @@ return (
           }} />
         </ListItem>
         <Item>
-          <Input keyboardType="numeric" placeholder="Reading" maxLength={5} value={content.chimney.R} onChangeText={(text) => {
+          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chimney.R} onChangeText={(text) => {
     let p = text.split('.').join('');
-    content.chimney.R = String((Math.round(p) / 100).toFixed(2));
+    content.chimney.R = String((Math.round(p) / 10).toFixed(1));
     this.setState({})
 }} />
         </Item>
@@ -11609,74 +11609,76 @@ return (
     if (content.type == 'property details') {
       return (
         <View>
+
           <Item stackedLabel>
-            <Label>Type of dwelling</Label>
-            <Input value={content.dwelling} onFocus={() =>
-              ActionSheet.show(
-                {
-                  options: DWELLING,
-                  cancelButtonIndex: 8,
-                  title: "Type of Dwelling"
-                },
-                buttonIndex => {
-                  if (buttonIndex != 8) {
-                    content.dwelling = DWELLING[buttonIndex]
-                    this.setState({})
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Type of dwelling</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: DWELLING,
+                    cancelButtonIndex: 8,
+                    title: "Type of Dwelling"
+                  },
+                  buttonIndex => {
+                    if (buttonIndex != 8) {
+                      content.dwelling = DWELLING[buttonIndex]
+                      this.setState({})
+                    }
                   }
-                }
-              )}
-              onChangeText={(e) => {
-                content.dwelling = e
-                this.setState({})
-              }}
-            />
+                )} >
+                 <Text>{content.dwelling}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
+
           <Item stackedLabel>
             <Label>Year built</Label>
             <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text; this.setState({})}} />
           </Item>
+
           <Item stackedLabel>
-            <Label>Built On/Over</Label>
-            <Input value={content.builtover} onFocus={() =>
-              ActionSheet.show(
-                {
-                  options: ['basement', 'slab', 'hillside', 'parking garage', 'raised foundation', 'Other', 'Cancel'],
-                  cancelButtonIndex: 6,
-                  title: "Built on/over"
-                },
-                buttonIndex => {
-                  if (buttonIndex == 0) {
-                    content.builtover = 'basement'
-                    this.setState({})
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Built On/Over</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: ['basement', 'slab', 'hillside', 'parking garage', 'raised foundation', 'Other', 'Cancel'],
+                    cancelButtonIndex: 6,
+                    title: "Built on/over"
+                  },
+                  buttonIndex => {
+                    if (buttonIndex == 0) {
+                      content.builtover = 'basement'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 1) {
+                      content.builtover = 'slab'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 2) {
+                      content.builtover = 'hillside'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 3) {
+                      content.builtover = 'parking garage'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 4) {
+                      content.builtover = 'raised foundation'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 5) {
+                      content.builtover = this.value
+                      this.setState({})
+                    }
                   }
-                  if (buttonIndex == 1) {
-                    content.builtover = 'slab'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 2) {
-                    content.builtover = 'hillside'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 3) {
-                    content.builtover = 'parking garage'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 4) {
-                    content.builtover = 'raised foundation'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 5) {
-                    content.builtover = this.value
-                    this.setState({})
-                  }
-                }
-              )}
-              onChangeText={(e) => {
-                content.builtover = e
-                this.setState({})
-              }}
-            />
+                )} >
+                 <Text>{content.builtover}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
+
           <Text style={{ fontWeight: 'bold' }}>Exterior(Check all that apply)</Text>
           <ListItem>
             <Text>Brick</Text>
@@ -11700,30 +11702,33 @@ return (
           </ListItem>
 
           <Item stackedLabel>
-            <Label>COD Payment type</Label>
-            <Input value={content.payment} onFocus={() =>
-              ActionSheet.show(
-                {
-                  options: ['Cash', 'CC', 'Check', 'Cancel'],
-                  cancelButtonIndex: 3,
-                  title: "Payment"
-                },
-                buttonIndex => {
-                  if (buttonIndex == 0) {
-                    content.payment = 'Cash'
-                    this.setState({})
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>COD Payment type</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: ['Cash', 'CC', 'Check', 'Cancel'],
+                    cancelButtonIndex: 3,
+                    title: "Payment"
+                  },
+                  buttonIndex => {
+                    if (buttonIndex == 0) {
+                      content.payment = 'Cash'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 1) {
+                      content.payment = 'CC'
+                      this.setState({})
+                    }
+                    if (buttonIndex == 2) {
+                      content.payment = 'Check'
+                      this.setState({})
+                    }
                   }
-                  if (buttonIndex == 1) {
-                    content.payment = 'CC'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 2) {
-                    content.payment = 'Check'
-                    this.setState({})
-                  }
-                }
-              )}
-            />
+                )} >
+                 <Text>{content.payment}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
           <Item stackedLabel>
             <Label>Number of units</Label>
@@ -11750,9 +11755,10 @@ return (
             <Input keyboardType="numeric" value={content.garages} onChangeText={(text) => { content.garages = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel>
-            <Label>Units acessed via</Label>
-            <Input value={content.acess} onFocus={() =>
-              ActionSheet.show(
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Units acessed via</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
                 {
                   options: ['Courtyard', 'Exterior', 'Hallways', 'Stairways', 'Other', 'Cancel'],
                   cancelButtonIndex: 10,
@@ -11776,21 +11782,23 @@ return (
                     this.setState({})
                   }
                 }
-              )}
-              onChangeText={(e) => {
+              )}>
+                <Input value={content.acess}  onChangeText={(e) => {
                 content.exterior = e
                 this.setState({})
-              }}
-            />
+              }} />
+              </TouchableOpacity>
+            </View>
           </Item>
           <Item stackedLabel>
             <Label>XRF Serial</Label>
             <Input value={content.serial} onChangeText={(text) => { content.serial = text }} />
           </Item>
           <Item stackedLabel>
-            <Label>Overall Paint Condition</Label>
-            <Input value={content.paint} onFocus={() =>
-              ActionSheet.show(
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Overall Paint Condition</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
                 {
                   options: ['Poor', 'Fair', 'Good', 'Cancel'],
                   cancelButtonIndex: 3,
@@ -11810,8 +11818,10 @@ return (
                     this.setState({})
                   }
                 }
-              )}
-            />
+              )}>
+               <Text>{content.paint}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
           <Text style={{ fontWeight: 'bold' }}>Types of windows (Check all that apply)</Text>
           <ListItem>
@@ -11855,9 +11865,10 @@ return (
             <RkChoice rkType='posNeg' selected={content.garden} onChange={(e) => { content.garden = !e; this.setState({}) }} />
           </ListItem>
           <Item stackedLabel>
-            <Label>Garage</Label>
-            <Input value={content.garage} onFocus={() =>
-              ActionSheet.show(
+          <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Garage</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
                 {
                   options: ['None', 'Attached', 'Detached', 'Cancel'],
                   cancelButtonIndex: 3,
@@ -11877,8 +11888,10 @@ return (
                     this.setState({})
                   }
                 }
-              )}
-            />
+              )}>
+               <Text>{content.garage}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
           <Item stackedLabel>
             <Label>List areas not accessable</Label>
@@ -11909,9 +11922,10 @@ return (
             <Input keyboardType="numeric" value={content.soilnums} onChangeText={(text) => { content.soilnums = text;  this.setState({}) }} />
           </Item>
           <Item stackedLabel>
-            <Label>Do children live in the home?</Label>
-            <Input value={content.children} onFocus={() =>
-              ActionSheet.show(
+            <View style={{flexDirection:'column',width:'100%'}}>
+              <Label style={{width:'100%',fontSize:15}}>Do children live in the home?</Label>
+              <TouchableOpacity style={{width:'100%',padding: 13}} onPress={() =>
+                ActionSheet.show(
                 {
                   options: ['Yes', 'No', 'Don\'t know', 'Cancel'],
                   cancelButtonIndex: 3,
@@ -11930,528 +11944,16 @@ return (
                   }
                   this.setState({})
                 }
-              )}
-            />
+              )}>
+               <Text>{content.children}</Text>
+              </TouchableOpacity>
+            </View>
           </Item>
           {this.renderHtmlFooterChecklist(content)}
         </View>
       );
     }
 
-    if (content.type == 'job completion') {
-      return (
-        <View>
-          <Grid>
-            <Col style={{ backgroundColor: '#FFF' }}>
-              <Text>Calibrated XRF</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Tested reqired interiors</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Tested reqired exteriors</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Tested reqired commons</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>paint chip/soil sample if neccessary</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Drew site map</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Photographed cover shot and appropriate components</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-            </Col>
-            <Col>
-              <Text>Photographed cover shot and appropriate components</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Labled disk with job number and address</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Complete property description</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>reviewed all data pages</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Return all paperwork to office</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Pick up additional paperwork</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-              <Text>Have a nice day</Text>
-              <ListItem>
-                <RkChoice rkType='posNeg' onChange={(e) => { }} />
-              </ListItem>
-            </Col>
-          </Grid>
-        </View>
-      );
-    }
-    if (content.type == '5.0') {
-
-      return (
-        <Form>
-          <Item stackedLabel>
-            <Label>Apt Number</Label>
-            <Input value={content.aptnum} onChangeText={(text) => { content.aptnum = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Unit is</Label>
-            <Input value={content.occupied} onFocus={() =>
-              ActionSheet.show(
-                {
-                  options: ['Owner occupied', 'Renter Occupied', 'Cancel'],
-                  cancelButtonIndex: 3,
-                  title: "Unit is"
-                },
-                buttonIndex => {
-                  if (buttonIndex == 0) {
-                    content.occupied = 'Owner occupied'
-                    this.setState({})
-                  }
-                  if (buttonIndex == 1) {
-                    content.occupied = 'Renter Occupied'
-                    this.setState({})
-                  }
-                }
-              )} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Year of constructon</Label>
-            <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Prior LBP Testing?</Label>
-            <Text >{content.priortesting == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.priortesting} onChange={(e) => {
-              content.priortesting = !content.priortesting
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Name of owner interviewed</Label>
-            <Input value={content.ownername} onChangeText={(text) => { content.ownername = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Owner Interview Date</Label>
-            <DatePicker
-              defaultDate={content.ownInterviewDate}
-              locale={"en"}
-              timeZoneOffsetInMinutes={undefined}
-              format="MM/DD/YYYY"
-              formatChosenDate={date => { return moment(date).format('L'); }}
-              modalTransparent={false}
-              animationType={"fade"}
-              androidMode={"default"}
-              textStyle={{ color: "black" }}
-              placeHolderTextStyle={{ color: "#d3d3d3" }}
-              onDateChange={(newdate) => { content.ownInterviewDate = newdate }}
-            />
-          </Item>
-          <Item stackedLabel>
-            <Label>Name of resident interviewed</Label>
-            <Input value={content.residentname} onChangeText={(text) => { content.residentname = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Interview date</Label>
-            <DatePicker
-              defaultDate={content.resInterviewDate}
-              locale={"en"}
-              dateFormat="MM/DD/YYYY"
-              formatChosenDate={date => { return moment(date).format('L'); }}
-              timeZoneOffsetInMinutes={undefined}
-              modalTransparent={false}
-              animationType={"fade"}
-              androidMode={"default"}
-              textStyle={{ color: "black" }}
-              placeHolderTextStyle={{ color: "#d3d3d3" }}
-              onDateChange={(newdate) => { content.resInterviewDate = newdate }}
-            />
-          </Item>
-          <Item stackedLabel>
-            <Label>Name of risk Assessor</Label>
-            <Input value={content.assessor} onChangeText={(text) => { content.assessor = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do any children live in the home or visit frequently?</Label>
-            <Text >{content.childrenVisit == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.childrenVisit} onChange={(e) => {
-              content.childrenVisit = !content.childrenVisit
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If so how many?</Label>
-            <Input keyboardType="numeric" value={content.childnum} onChangeText={(text) => { content.childnum = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do and children tend to chew on any painted surfaces such as interior window sills</Label>
-            <Text >{content.chew == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.chew} onChange={(e) => {
-              content.chew = !content.chew
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes where? </Label>
-            <Input value={content.whereChew} onChangeText={(text) => { content.whereChew = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do women of child bearing age live in the home</Label>
-            <Text >{content.womenAge == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.womenAge} onChange={(e) => {
-              content.womenAge = !content.womenAge
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If this home is in a building with the other dwelling units, what comon areas are used by children</Label>
-            <Input value={content.commmon} onChangeText={(text) => { content.common = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Which entrance is used most frequently</Label>
-            <Input value={content.entrance} onChangeText={(text) => { content.entrance = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>What other entrances are used frequently</Label>
-            <Input value={content.otherentrance} onChangeText={(text) => { content.otherentrance = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Which windows are opened most frequently</Label>
-            <Input value={content.windows} onChangeText={(text) => { content.windows = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do you use window air-conditioners</Label>
-            <Text >{content.airCondition == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.airCondition} onChange={(e) => {
-              content.airCondition = !content.airCondition
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If so where?</Label>
-            <Input value={content.whereCondition} onChangeText={(text) => { content.whereCondition = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do you or any household members garden</Label>
-            <Text >{content.doYouGarden == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.doYouGarden} onChange={(e) => {
-              content.doYouGarden = !content.doYouGarden
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, Where is the garden</Label>
-            <Input value={content.garden} onChangeText={(text) => { content.garden = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Are you planning any landscaping that will remove grass or ground covering</Label>
-            <Text >{content.landscapingq == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.landscapingq} onChange={(e) => {
-              content.landscapingq = !content.landscapingq
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, where</Label>
-            <Input value={content.whereLandscaping} onChangeText={(text) => { content.whereLandscaping = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Which areas of the home get cleaned regularly</Label>
-            <Input value={content.cleaned} onChangeText={(text) => { content.cleaned = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Which areas of the home  are not cleaned regularly</Label>
-            <Input value={content.notcleaned} onChangeText={(text) => { content.notcleaned = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Are there any household members exposed to lead at work</Label>
-            <Text >{content.exposure == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.exposure} onChange={(e) => {
-              content.exposure = !content.exposure
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, are dirty work clothes brought home</Label>
-            <Text >{content.dirtyClothes == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.dirtyClothes} onChange={(e) => {
-              content.dirtyClothes = !content.dirtyClothes
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If they are brought home, who handles dirty cloths and where are they placed and cleaned</Label>
-            <Input value={content.handle} onChangeText={(text) => { content.handle = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Do you have pets </Label>
-            <Text >{content.pets == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.pets} onChange={(e) => {
-              content.pets = !content.pets
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, Do the pets go outdoors</Label>
-            <Text >{content.petsOutdoors == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.petsOutdoors} onChange={(e) => {
-              content.petsOutdoors = !content.petsOutdoors
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Any Building renovations or repainting done here during the past year</Label>
-            <Text >{content.renovations == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.renovations} onChange={(e) => {
-              content.renovations = !content.renovations
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, what work was done, and when</Label>
-            <Input value={content.whatWhenWork} onChangeText={(text) => { content.whatWhenWork = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Were Carpets, furniture and/or family belongings present in the work area</Label>
-            <Text >{content.itemsPresent == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.itemsPresent} onChange={(e) => {
-              content.itemsPresent = !content.itemsPresent
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, which items and where were they</Label>
-            <Input value={content.whereItems} onChangeText={(text) => { content.whereItems = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Was Construction debris stored in the yard</Label>
-            <Text >{content.stored == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.stored} onChange={(e) => {
-              content.stored = !content.stored
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, please describe what where and how it was stored</Label>
-            <Input value={content.howStored} onChangeText={(text) => { content.howStored = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Are you conducting or planning any building renovations</Label>
-            <Text >{content.ownerRenovations == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.ownerRenovations} onChange={(e) => {
-              content.ownerRenovations = !content.ownerRenovations
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>If yes, what work will be done and when</Label>
-            <Input value={content.whenwork} onChangeText={(text) => { content.whenwork = text; this.setState({}) }} />
-          </Item>
-          {this.renderHtmlFooterChecklist(content)}
-        </Form>
-      )
-    }
-    if (content.type == '5.1') {
-      return (
-        <Form>
-          <Item stackedLabel>
-            <Label>Apt Number</Label>
-            <Input keyboardType="numeric" value={content.aptnum} onChangeText={(text) => { content.aptnum = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Name of property owner</Label>
-            <Input value={content.ownername} onChangeText={(text) => { content.ownername = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Name of Risk Assessor</Label>
-            <Input value={content.assessorname} onChangeText={(text) => { content.assessorname = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Date of assessment</Label>
-            <DatePicker
-              defaultDate={content.assInterviewDate}
-              locale={"en"}
-              dateFormat="MM/DD/YYYY"
-              formatChosenDate={date => { return moment(date).format('L'); }}
-              timeZoneOffsetInMinutes={undefined}
-              modalTransparent={false}
-              animationType={"fade"}
-              androidMode={"default"}
-              textStyle={{ color: "black" }}
-              placeHolderTextStyle={{ color: "#d3d3d3" }}
-              onDateChange={(newdate) => { content.assInterviewDate = newdate }}
-            />
-          </Item>
-          <Text>Condition</Text>
-          <Item stackedLabel>
-            <Label>Roof missing parts or surfaces (tiles, boards, shakes etc)</Label>
-            <Text >{content.roof == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.roof} onChange={(e) => {
-              content.roof = !content.roof
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.roofcomments} onChangeText={(text) => { content.roofcomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Roof has holes or cracks</Label>
-            <Text >{content.cracks == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.cracks} onChange={(e) => {
-              content.cracks = !content.cracks
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.crackcomments} onChangeText={(text) => { content.crackcomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Gutters or downspouts broken</Label>
-            <Text >{content.gutters == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.gutters} onChange={(e) => {
-              content.gutters = !content.gutters
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.gutterscomments} onChangeText={(text) => { content.gutterscomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Chimney masonry cracked, bricks loose or missing, obviously out of plumb</Label>
-            <Text >{content.masony == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.masony} onChange={(e) => {
-              content.masony = !content.masony
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.masonrycomments} onChangeText={(text) => { content.masonrycomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Extirior or interior walls have obvious large cracks or holes, requiring more than routine painting</Label>
-            <Text >{content.walls == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.walls} onChange={(e) => {
-              content.walls = !content.walls
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.wallscomments} onChangeText={(text) => { content.wallscomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>extirior sides have missing boards or shingles</Label>
-            <Text >{content.sides == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.sides} onChange={(e) => {
-              content.sides = !content.sides
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.sidescomments} onChangeText={(text) => { content.sidescomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Water stains on interior walls or ceilings</Label>
-            <Text >{content.water == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.water} onChange={(e) => {
-              content.water = !content.water
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.watercomments} onChangeText={(text) => { content.watercomments = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Walls or ceilings deteriorated</Label>
-            <Text >{content.deteriorated == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.deteriorated} onChange={(e) => {
-              content.deteriorated = !content.deteriorated
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.deterioratedcomments} onChangeText={(text) => { content.deterioratedcomments = text }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>More than very small amount of paint deteriorated on a room</Label>
-
-            <Text >{content.paint == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.paint} onChange={(e) => {
-              content.paint = !content.paint
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.paintcomments} onChangeText={(text) => { content.paintcomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Two or windows or doors broken, missing or boarded up</Label>
-            <Text >{content.broken == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.broken} onChange={(e) => {
-              content.broken = !content.broken
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.brokencomments} onChangeText={(text) => { content.brokencomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Porch or steps have major elements broken, missing, or boarded up</Label>
-            <Text >{content.porch == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.porch} onChange={(e) => {
-              content.porch = !content.porch
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.porchcomments} onChangeText={(text) => { content.porchcomments = text; this.setState({}) }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>Foundation has major cracks, missing material, structure leans or visibly unsound</Label>
-            <Text >{content.foundation == true ? 'Yes' : 'No'}</Text>
-            <RkChoice rkType='posNeg' selected={content.foundation} onChange={(e) => {
-              content.foundation = !content.foundation
-              this.setState({})
-            }} />
-          </Item>
-          <Item stackedLabel>
-            <Label>comments</Label>
-            <Input value={content.foundationcomments} onChangeText={(text) => { content.foundationcomments = text; this.setState({}) }} />
-          </Item>
-          {this.renderHtmlFooterChecklist(content)}
-        </Form>
-      )
-    }
     if (content.type == 'details') {
       return (
         <Form>
@@ -12474,20 +11976,6 @@ return (
               placeHolderTextStyle={{ color: "#d3d3d3" }}
               onDateChange={(newdate) => { content.insDate = newdate }}
             />
-          </Item>
-          <Item stackedLabel>
-            <Label>Limited or Comprehensive</Label>
-            <Grid>
-              <Col>
-                <RkChoice style={{ marginTop: 10 }} rkType='posNeg' selected={content.lorc} onChange={(e) => {
-                  content.lorc = !content.lorc
-                  this.setState({})
-                }} />
-              </Col>
-              <Col>
-                <Text style={{ marginTop: 10 }}>{content.lorc == true ? 'Comprehensive' : 'Limited'}</Text>
-              </Col>
-            </Grid>
           </Item>
           {this.renderHtmlFooterChecklist(content)}
         </Form>
@@ -12605,7 +12093,7 @@ return (
       return (
         <View>
           <Grid>
-            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+            <Col style={{ height: 200 }}>
               <Text>Window Sill</Text>
               <Button
                 onPress={() =>
@@ -12649,7 +12137,7 @@ return (
                 <Input keyboardType="numeric" placeholder="Reading" onChangeText={(text) => { content.sill.R = text; this.setState({}) }} />
               </Item>
             </Col>
-            <Col style={{ backgroundColor: '#FFFFFF', height: 180 }}>
+            <Col style={{ height: 200 }}>
               <Text> Window Sash</Text>
               <Button
                 onPress={() =>
@@ -12692,7 +12180,7 @@ return (
                 <Input keyboardType="numeric" placeholder="Reading" onChangeText={(text) => { content.sash.R = text; this.setState({}) }} />
               </Item>
             </Col>
-            <Col style={{ backgroundColor: '#E1E5F2', height: 180 }}>
+            <Col style={{ height: 200 }}>
               <Text>Window Frame</Text>
               <Button
                 onPress={() =>
@@ -12842,8 +12330,6 @@ return (
       data: [
         { id: 0, type: 'details', title: "Job Details" },
         { id: 1, title: "Property Description Checklist", type: "property details" },
-        { id: 2, type: '5.0', title: "Form 5.0" },
-        { id: 3, type: '5.1', title: "Form 5.1" },
         { id: 4, type: 'calibration', title: "Calibration" },
         { id: 5, type: 'layout', title: "Layout Photo" },
         { id: 6, type: 'layout2', title: "Property Photo" }
@@ -14242,7 +13728,6 @@ return (
     }))
   }
   addFormFive() {
-    console.log('add form five')
     this.setState(prevState => ({
       data: [...prevState.data,
       {
@@ -14372,40 +13857,9 @@ return (
             sheets: [{ id: 1 }, { id: 2 }, { id: 3 }],
             data: [
               { id: 0, title: "Property Description Checklist", type: "property details" },
-              {
-                id: 1, type: '5.0', title: "Form 5.0", content: {
-                  priortesting: false,
-                  childrenVisit: false,
-                  chew: false,
-                  womenAge: false,
-                  airCondition: false,
-                  doYouGarden: false,
-                  landscapingq: false,
-                  exposure: false,
-                  dirtyClothes: false,
-                  pets: false,
-                  petsOutdoors: false,
-                  renovations: false,
-                  itemsPresent: false,
-                  stored: false,
-                  ownerRenovations: false
-                }
-              },
-              {
-                id: 2, type: '5.1', title: "Form 5.1", content: {
-                  roof: false,
-                  gutters: false,
-                  walls: false,
-                  sides: false,
-                  water: false,
-                  deteriorated: false,
-                  paint: false,
-                  broken: false
-                }
-              },
-              { id: 3, type: 'calibration', title: "Calibration" },
-              { id: 4, type: 'layout', title: "Layout Photo" },
-              { id: 4, type: 'layout2', title: "Property Photo" }
+              { id: 1, type: 'calibration', title: "Calibration" },
+              { id: 2, type: 'layout', title: "Layout Photo" },
+              { id: 3, type: 'layout2', title: "Property Photo" }
             ],
             image: '',
             propimage: '',
