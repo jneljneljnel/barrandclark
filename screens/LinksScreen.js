@@ -120,10 +120,10 @@ const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
 
-const itemButons = ['Interior Window', 'Interior Doorway', 'Exterior Doorway', 'Interior Walls', 'Interior Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Tile', 'Exterior Windows', 'Garage Doors', 'Parking Lot', 'Misc Exterior', 'Exterior Trim', 'Cancel'];
-const itemExtButons = ['Exterior Doorway', 'Tile','Fireplace','Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Closet', 'Cabinet','Garage Doors', 'Stairs', 'Misc Exterior', 'Parking Lot', 'Garage Walls', 'Cancel'];
-const CANCEL_INDEX = 14;
-const CANCEL_INDEX2 = 8;
+const itemButons = ['Interior Window', 'Interior Doorway', 'Exterior Doorway', 'Interior Walls', 'Interior Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Tile', 'Exterior Windows', 'Garage Doors', 'Parking Lot', 'Misc Exterior', 'Exterior Trim', 'Other Item', 'Cancel'];
+const itemExtButons = ['Exterior Doorway', 'Tile','Fireplace','Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Closet', 'Cabinet','Garage Doors', 'Stairs', 'Misc Exterior', 'Parking Lot', 'Garage Walls', 'Other Item', 'Cancel'];
+const CANCEL_INDEX = 15;
+const CANCEL_INDEX2 = 9;
 
 
 function InsSheet(props) {
@@ -372,7 +372,7 @@ export default class LinksScreen extends React.Component {
                       this.setState({})
                     }
                   )}>
-                <Text>Side</Text>
+                <Text>{content.side || "Side"}</Text>
               </Button>
             </Col>
             <Col>
@@ -452,7 +452,7 @@ export default class LinksScreen extends React.Component {
                       this.setState({})
                     }
                   )}>
-                <Text>Side</Text>
+                <Text>{content.side || "Side"}</Text>
               </Button>
             </Col>
             <Col>
@@ -532,7 +532,7 @@ export default class LinksScreen extends React.Component {
                       this.setState({})
                     }
                   )}>
-                <Text>Side</Text>
+                <Text>{content.side || "Side"}</Text>
               </Button>
             </Col>
             <Col>
@@ -613,7 +613,7 @@ export default class LinksScreen extends React.Component {
                       this.setState({})
                     }
                   )}>
-                <Text>Side</Text>
+                <Text>{content.side || "Side"}</Text>
               </Button>
             </Col>
           </Grid>
@@ -723,7 +723,7 @@ export default class LinksScreen extends React.Component {
                                         }
                                     }
                                 )}>
-                            <Text>Side</Text>
+                            <Text>{content.side || "Side"}</Text>
                         </Button>
                     </Col>
                     <Col>
@@ -1001,7 +1001,7 @@ export default class LinksScreen extends React.Component {
                                         }
                                     }
                                 )}>
-                            <Text>Side</Text>
+                            <Text>{content.side || "Side"}</Text>
                         </Button>
                     </Col>
                     <Col>
@@ -2062,6 +2062,81 @@ export default class LinksScreen extends React.Component {
         );
     }
 
+
+
+    /** other iter */
+    if (content.title == 'Other Item') {
+        return (
+            <View keyboardDismissMode="on-drag">
+                <Grid style={{ marginTop: 0 }}>
+                    <Col>
+                        <Button block error style={{ marginTop: 10 }}
+                            onPress={() =>
+                                ActionSheet.show(
+                                    {
+                                        options: EXTTYPES3,
+                                        cancelButtonIndex: EXTTYPES3.length - 1,
+                                        title: "Select Side"
+                                    },
+                                    buttonIndex => {
+                                        if (buttonIndex != EXTTYPES3.length - 1) {
+                                            content.doorType = EXTTYPES3[buttonIndex]
+                                        } else {
+                                            content.doorType = '';
+                                        }
+                                        this.setState({})
+                                    }
+                                )}>
+                            <Text>{content.doorType || 'Type'}</Text>
+                        </Button>
+                    </Col>
+                </Grid>
+
+                <Grid style={{ marginTop: 10 }}>
+                    <Col style={{ height: 200 }}>
+                        <Text>Other Item</Text>
+                        <Button
+                            onPress={() =>
+                                ActionSheet.show(
+                                    {
+                                        options: EXTSUBGWALL,
+                                        cancelButtonIndex: EXTSUBGWALL.length - 1,
+                                        title: content.other.M || "Select Material"
+                                    },
+                                    buttonIndex => {
+                                        if (buttonIndex != EXTSUBGWALL.length - 1) {
+                                            content.other.M = EXTSUBGWALL[buttonIndex]
+                                            this.setState({})
+                                        }
+                                    }
+                                )}
+                        >
+                            <Text>{content.other.M || "Material"}</Text>
+                        </Button>
+                        <Text style={{ marginTop: 10 }} >{content.other.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                        <ListItem>
+                            <RkChoice rkType='posNeg' selected={content.other.I} onChange={(e) => {
+                                content.other.I = !content.other.I
+                                this.setState({})
+                            }} />
+                        </ListItem>
+                        <Item>
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.other.R} onChangeText={(text) => {
+                                let p = text.split('.').join('');
+                                content.other.R = String((Math.round(p) / 10).toFixed(1));
+                                this.setState({})
+                            }} />
+                        </Item>
+                    </Col>
+                  </Grid>
+                <Item stackedLabel>
+                    <Label>Comments</Label>
+                    <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
+                </Item>
+                {this.renderExteriorHtmlFooter(sheetId, content)}
+            </View>
+        );
+    }
     /** roof trim */
     if (content.title == 'Roof Trim') {
         return (
@@ -3501,7 +3576,24 @@ export default class LinksScreen extends React.Component {
                             )}>
                         <Text>{content.direction || "Room Equivalent"}</Text>
                     </Button>
+                    <Col>
+                      <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+                        Alert.alert(
+                          'Remove',
+                          'Are you sure?',
+                          [
+
+                            { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                            { text: 'OK', onPress: () => this.removeSheet(sheetId) },
+                          ],
+                          { cancelable: false }
+                        )
+                      }}>
+                        <Text>Remove</Text>
+                      </Button>
+                    </Col>
                 </Grid>
+
             </View>)
     }
 
@@ -3734,7 +3826,7 @@ export default class LinksScreen extends React.Component {
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
                     <Col style={{ height: 200 }}>
-                        <Text>Vent</Text>
+                        <Text>Heater Vent</Text>
                         <Grid style={{ marginBottom: 20 }}>
                             <Button
                                 onPress={() =>
@@ -4044,7 +4136,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.bollard.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4099,7 +4191,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.parkingStripe.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4155,7 +4247,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.parkingStop.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4210,7 +4302,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.curb.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4266,7 +4358,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.lightPost.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4321,7 +4413,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.speedBump.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -4377,7 +4469,7 @@ export default class LinksScreen extends React.Component {
                                             }
                                         }
                                     )}>
-                                <Text>Side</Text>
+                                <Text>{content.side || "Side"}</Text>
                             </Button>
                         </Grid>
                         <Text >{content.fireHydrant.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -5588,7 +5680,7 @@ _renderIntSheet(content, sheetId) {
                   }
                 }
               )}>
-            <Text>Side</Text>
+            <Text>{content.side || "Side"}</Text>
           </Button>
         </Col>
           <Col>
@@ -5954,7 +6046,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.cBoard.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6008,7 +6100,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.trim.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6064,7 +6156,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.hTrim.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6118,7 +6210,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.vTrim.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6176,7 +6268,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.mDoor.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6231,7 +6323,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.shelf.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6287,7 +6379,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.shelfSupport.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6341,7 +6433,7 @@ _renderIntSheet(content, sheetId) {
                                       }
                                   }
                               )}>
-                          <Text>Side</Text>
+                          <Text>{content.side || "Side"}</Text>
                       </Button>
                   </Grid>
                   <Text >{content.support.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6434,7 +6526,7 @@ _renderIntSheet(content, sheetId) {
                                     }
                                 }
                             )}>
-                        <Text>Side</Text>
+                        <Text>{content.side || "Side"}</Text>
                     </Button>
                 </Grid>
           <Text >{content.door.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -6488,7 +6580,7 @@ _renderIntSheet(content, sheetId) {
                                     }
                                 }
                             )}>
-                        <Text>Side</Text>
+                        <Text>{content.side || "Side"}</Text>
                     </Button>
                 </Grid>
           <Text >{content.doorframe.I == true ? 'Intact' : 'Deteriorated'}</Text>
@@ -7099,7 +7191,7 @@ _renderIntSheet(content, sheetId) {
       </Grid>
       <Grid style={{ marginTop: 10 }}>
         <Col style={{ height: 200 }}>
-          <Text>Vent</Text>
+          <Text>Heater Vent</Text>
           <Grid style={{ marginBottom: 20 }}>
             <Button
               onPress={() =>
@@ -8117,7 +8209,7 @@ _renderIntSheet(content, sheetId) {
                     }
                   }
                 )}>
-              <Text>Side</Text>
+              <Text>{content.side || "Side"}</Text>
             </Button>
           </Col>
           <Col>
@@ -8355,7 +8447,7 @@ _renderIntSheet(content, sheetId) {
                                     }
                                 }
                             )}>
-                        <Text>Side</Text>
+                        <Text>{content.side || "Side"}</Text>
                     </Button>
                 </Col>
                 <Col>
@@ -8521,7 +8613,7 @@ _renderIntSheet(content, sheetId) {
                                     }
                                 }
                             )}>
-                        <Text>Side</Text>
+                        <Text>{content.side || "Side"}</Text>
                     </Button>
                 </Col>
                 <Col>
@@ -8960,41 +9052,6 @@ _renderIntSheet(content, sheetId) {
           </Col>
         </Grid>
         <Grid style={{ marginTop: 10 }}>
-          <Col style={{ height: 190 }}>
-            <Text>Ceiling</Text>
-            <Button
-              onPress={() =>
-                ActionSheet.show(
-                  {
-                    options: INTSUB2,
-                    cancelButtonIndex: INTSUB2.length - 1,
-                    title: content.ceiling.M || "Select Material"
-                  },
-                  buttonIndex => {
-                    if (buttonIndex != INTSUB2.length - 1) {
-                      content.ceiling.M = INTSUB2[buttonIndex]
-                      this.setState({})
-                    }
-                  }
-                )}
-            >
-              <Text>{content.ceiling.M || "Material"}</Text>
-            </Button>
-            <Text style={{ marginTop: 10 }}>{content.ceiling.I == true ? 'Intact' : 'Deteriorated'}</Text>
-            <ListItem>
-              <RkChoice rkType='posNeg' selected={content.ceiling.I} onChange={(e) => {
-                content.ceiling.I = !content.ceiling.I
-                this.setState({})
-              }} />
-            </ListItem>
-            <Item>
-              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
-                let p = text.split('.').join('');
-                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                this.setState({})
-              }} />
-            </Item>
-          </Col>
           <Col style={{ height: 209 }}>
             <Text>Baseboard</Text>
             <Grid>
@@ -9054,11 +9111,8 @@ _renderIntSheet(content, sheetId) {
               }} />
             </Item>
           </Col>
-        </Grid>
-
-        <Grid>
-          <Col style={{ height: 200 }}>
-            <Text>Vent</Text>
+          <Col style={{ height: 210 }}>
+            <Text>Heater Vent</Text>
             <Grid>
               <Col>
                 <Button
@@ -9112,6 +9166,44 @@ _renderIntSheet(content, sheetId) {
               <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                 let p = text.split('.').join('');
                 content.vent.R = String((Math.round(p) / 10).toFixed(1));
+                this.setState({})
+              }} />
+            </Item>
+          </Col>
+        </Grid>
+
+        <Grid>
+          <Col style={{ height: 190 }}>
+            <Text>Ceiling</Text>
+            <Button
+              onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: INTSUB2,
+                    cancelButtonIndex: INTSUB2.length - 1,
+                    title: content.ceiling.M || "Select Material"
+                  },
+                  buttonIndex => {
+                    if (buttonIndex != INTSUB2.length - 1) {
+                      content.ceiling.M = INTSUB2[buttonIndex]
+                      this.setState({})
+                    }
+                  }
+                )}
+            >
+              <Text>{content.ceiling.M || "Material"}</Text>
+            </Button>
+            <Text style={{ marginTop: 10 }}>{content.ceiling.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <ListItem>
+              <RkChoice rkType='posNeg' selected={content.ceiling.I} onChange={(e) => {
+                content.ceiling.I = !content.ceiling.I
+                this.setState({})
+              }} />
+            </ListItem>
+            <Item>
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
+                let p = text.split('.').join('');
+                content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
                 this.setState({})
               }} />
             </Item>
@@ -9186,7 +9278,7 @@ _renderIntSheet(content, sheetId) {
                     }
                   }
                 )}>
-              <Text>Side</Text>
+              <Text>{content.side || "Side"}</Text>
             </Button>
           </Col>
           <Col>
@@ -9638,7 +9730,7 @@ if (content.title == 'Cabinet') {
                               }
                           }
                       )}>
-                  <Text>Side</Text>
+                  <Text>{content.side || "Side"}</Text>
               </Button>
           </Col>
           <Col>
@@ -10419,6 +10511,106 @@ return (
 );
 }
 
+  /** OTHER ITEM interior **/
+
+  if (content.title == 'Other Item') {
+    return (
+      <View keyboardDismissMode="on-drag">
+        <Grid style={{ marginTop: 0 }}>
+          <Col>
+            <Button block error style={{ marginTop: 10 }}
+              onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: EXTTYPES1,
+                    cancelButtonIndex: EXTTYPES1.length - 1,
+                    title: "Select Type"
+                  },
+                  buttonIndex => {
+                    if (buttonIndex != EXTTYPES1.length - 1) {
+                      content.doorType = EXTTYPES1[buttonIndex]
+
+                    } else {
+                      content.doorType = '';
+                    }
+                    this.setState({})
+                  }
+                )}>
+              <Text>{content.doorType || 'Type'}</Text>
+            </Button>
+          </Col>
+        </Grid>
+
+        <Grid >
+          <Col style={{ height: 200 }}>
+            <Text>Other Item</Text>
+            <Grid>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: SIDES,
+                        cancelButtonIndex: SIDES.length - 1,
+                        title: content.other.S || "Select Side"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != SIDES.length - 1) {
+                          content.other.S = SIDES[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.other.S || "Side"}</Text>
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: INTSUB6,
+                        cancelButtonIndex: INTSUB6.length - 1,
+                        title: content.other.M || "Select Material"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != INTSUB6.length - 1) {
+                          content.other.M = INTSUB6[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}
+                >
+                  <Text>{content.other.M || "Material"}</Text>
+                </Button>
+              </Col>
+            </Grid>
+            <Text style={{ marginTop: 45 }} >{content.other.I == true ? 'Intact' : 'Deteriorated'}</Text>
+            <ListItem>
+              <RkChoice rkType='posNeg' selected={content.other.I} onChange={(e) => {
+                content.other.I = !content.other.I
+                this.setState({})
+              }} />
+            </ListItem>
+            <Item>
+              <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.other.R} onChangeText={(text) => {
+                let p = text.split('.').join('');
+                content.other.R = String((Math.round(p) / 10).toFixed(1));
+                this.setState({})
+            }} />
+            </Item>
+          </Col>
+        </Grid>
+        <Item stackedLabel>
+          <Label>Comments</Label>
+          <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
+        </Item>
+        {this.renderHtmlFooter(sheetId, content)}
+      </View>
+    );
+  }
+
   /** Misc interoir */
   if (content.title == 'Misc Interior') {
     return (
@@ -10575,7 +10767,7 @@ return (
           </Col>
 
           <Col style={{ height: 200 }}>
-            <Text>Vent</Text>
+            <Text>Heater Vent</Text>
             <Grid>
               <Col>
                 <Button
@@ -10822,47 +11014,44 @@ return (
     );
   }
 
-  /** Tile */
+  /** Interior Tile */
   if (content.title == 'Tile') {
     return (
       <View keyboardDismissMode="on-drag">
-        <Grid style={{ marginTop: 0 }}>
-          <Col>
-            <Button block error style={{ marginTop: 10, marginRight: 10 }}
-              onPress={() =>
-                ActionSheet.show(
-                  {
-                    options: SIDES,
-                    cancelButtonIndex: 9,
-                    title: "Select Side"
-                  },
-                  buttonIndex => {
-                    if (buttonIndex != SIDES.length - 1) {
-                      content.side = SIDES[buttonIndex]
-                      this.setState({})
-                    }
-                  }
-                )}>
-              <Text>Side</Text>
-            </Button>
-          </Col>
-        </Grid>
-
         <Grid >
           <Col style={{ height: 200 }}>
             <Text>Shower</Text>
             <Grid>
               <Col>
+                <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                  onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: SIDES,
+                        cancelButtonIndex: 9,
+                        title: "Select Side"
+                      },
+                      buttonIndex => {
+                        if (buttonIndex != SIDES.length - 1) {
+                          content.shower.S = SIDES[buttonIndex]
+                          this.setState({})
+                        }
+                      }
+                    )}>
+                  <Text>{content.shower.S || "Side"}</Text>
+                </Button>
+              </Col>
+              <Col>
                 <Button
                   onPress={() =>
                     ActionSheet.show(
                       {
-                        options: INTSUB9,
-                        cancelButtonIndex: INTSUB9.length - 1,
+                        options: INTSUB2,
+                        cancelButtonIndex: INTSUB2.length - 1,
                         title: content.shower.M || "Select Material"
                       },
                       buttonIndex => {
-                        if (buttonIndex != INTSUB9.length - 1) {
+                        if (buttonIndex != INTSUB2.length - 1) {
                           content.shower.M = INTSUB9[buttonIndex]
                           content.wall.M = INTSUB9[buttonIndex]
                           content.curb.M = INTSUB9[buttonIndex]
@@ -11191,7 +11380,7 @@ return (
                 }
               }
             )}>
-          <Text>Side</Text>
+          <Text>{content.side || "Side"}</Text>
         </Button>
       </Col>
     </Grid>
@@ -11683,6 +11872,10 @@ return (
           <ListItem>
             <Text>Brick</Text>
             <RkChoice rkType='posNeg' selected={content.brick} onChange={(e) => { content.brick = !e; this.setState({}) }} />
+          </ListItem>
+          <ListItem>
+            <Text>Wood Siding</Text>
+            <RkChoice rkType='posNeg' selected={content.wood} onChange={(e) => { content.wood = !e; this.setState({}) }} />
           </ListItem>
           <ListItem>
             <Text>Stucco</Text>
@@ -12274,7 +12467,47 @@ return (
             },
             {
               id: 4,
+              side: false,
+              expanded: 1,
               type: false,
+              title: "Interior Window",
+              leadsTo: null,
+              sill: { M: null, I: true, R: null, name: 'Window Sill' },
+              sash: { M: null, I: true, R: null, name: 'Window Sash' },
+              frame: { M: null, I: true, R: null, name: 'Window Frame' },
+              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+              valence: { M: null, I: true, R: null, name: 'Valence' },
+            },
+            {
+              id: 5,
+              side: false,
+              type: false,
+              title: "Closet",
+              expanded: 1,
+              loc: 1,
+              door: { M: null, I: true, R: null, name: 'Closet Door' },
+              frame: { M: null, I: true, R: null, name: 'Closet Frame' },
+              shelf: { M: null, I: true, R: null, name: 'Closet Shelf' },
+              support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
+            },
+            {
+              id: 6,
+              side: false,
+              type: false,
+              title: "Cabinet",
+              expanded: 1,
+              loc: 2,
+              frame: { M: null, I: true, R: null, name: 'Cabinet Frame' },
+              door: { M: null, I: true, R: null, name: 'Cabinet Door' },
+              shelf: { M: null, I: true, R: null, name: 'Cabinet Shelf' },
+              countertop: { M: null, I: true, R: null, name: 'Countertop' },
+              backsplash: { M: null, I: true, R: null, name: 'Backsplash' },
+              medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
+            },
+            {
+              id: 7,
+              type: false,
+              expanded: 1,
               loc: 1,
               title: "Interior Walls",
               wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A', item:'Wall' },
@@ -12283,45 +12516,8 @@ return (
               wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
               ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
               baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
-              vent: { S: false, M: null, I: true, R: null, name: 'Vent' },
+              vent: { S: false, M: null, I: true, R: null, name: 'Heater Vent' },
               floor: { M: null, I: true, R: null, name: 'Floor' }
-            },
-            {
-              id: 5,
-              side: false,
-              type: false,
-              title: "Interior Window",
-              expanded: true,
-              loc: 1,
-              sill: { M: null, I: true, R: null, name: 'Window Sill' },
-              sash: { M: null, I: true, R: null, name: 'Window Sash' },
-              frame: { M: null, I: true, R: null, name: 'Window Frame' },
-              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
-              valence: { M: null, I: true, R: null, name: 'Valence' },
-            },
-            {
-              id: 6,
-              side: false,
-              type: false,
-              title: "Closet",
-              loc: 1,
-              door: { M: null, I: true, R: null, name: 'Closet Door' },
-              frame: { M: null, I: true, R: null, name: 'Closet Frame' },
-              shelf: { M: null, I: true, R: null, name: 'Closet Shelf' },
-              support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
-            },
-            {
-              id: 7,
-              side: false,
-              type: false,
-              title: "Cabinet",
-              loc: 2,
-              frame: { M: null, I: true, R: null, name: 'Cabinet Frame' },
-              door: { M: null, I: true, R: null, name: 'Cabinet Door' },
-              shelf: { M: null, I: true, R: null, name: 'Cabinet Shelf' },
-              countertop: { M: null, I: true, R: null, name: 'Countertop' },
-              backsplash: { M: null, I: true, R: null, name: 'Backsplash' },
-              medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
             }
           ], total: 0
         }
@@ -12388,7 +12584,7 @@ return (
   }
   componentDidMount() {
     this.setState({ total: this.state.insSheets[0].data.length - 1 });
-    this.interval = setInterval(() => this.tempSave(), 20000)
+    this.interval = setInterval(() => this.tempSave(), 25000)
   }
   focusTheField = () => {
     this._passwordInput.focus();
@@ -12396,6 +12592,15 @@ return (
   focusTheField1 = () => {
     this._passwordInput1.focus();
   }
+
+  willBlurSubscription = this.props.navigation.addListener(
+  'willBlur',
+  payload => {
+    if(this.state.jobId){
+    this._storeData()
+    }
+  }
+);
   willFocusSubscription = this.props.navigation.addListener(
     'willFocus',
     payload => {
@@ -12411,7 +12616,7 @@ return (
           console.log('params', this.props.navigation.state.params)
         })
       }else if(this.state.jobId){
-        this.tempSave()
+        //this.tempSave()
       } else{
         Alert.alert(
           'Message',
@@ -12518,24 +12723,10 @@ return (
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
             frame: { M: null, I: true, R: null, name: 'Door Frame' },
-            thresh: { M: null, I: true, R: null, name: 'Threshold' }
+            thresh: { M: null, I: true, R: null, name: 'Threshold' },
           },
           {
             id: 4,
-            type: false,
-            loc: 1,
-            title: "Interior Walls",
-            wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A', item:'Wall' },
-            wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B', item:'Wall' },
-            wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C', item:'Wall' },
-            wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
-            ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
-            baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
-            vent: { S: false, M: null, I: true, R: null, name: 'Vent' },
-            floor: { M: null, I: true, R: null, name: 'Floor' }
-          },
-          {
-            id: 5,
             side: false,
             type: false,
             title: "Interior Window",
@@ -12548,7 +12739,7 @@ return (
             valence: { M: null, I: true, R: null, name: 'Valence' },
           },
           {
-            id: 6,
+            id: 5,
             side: false,
             type: false,
             title: "Closet",
@@ -12559,17 +12750,31 @@ return (
             support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
           },
           {
-            id: 7,
+            id: 6,
             side: false,
             type: false,
             title: "Cabinet",
             loc: 2,
             frame: { M: null, I: true, R: null, name: 'Cabinet Frame' },
-            door: { M: null, I: true, R: null, name: 'Cabinet Door/Drawer' },
+            door: { M: null, I: true, R: null, name: 'Cabinet Door' },
             shelf: { M: null, I: true, R: null, name: 'Cabinet Shelf' },
             countertop: { M: null, I: true, R: null, name: 'Countertop' },
             backsplash: { M: null, I: true, R: null, name: 'Backsplash' },
             medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
+          },
+          {
+            id: 7,
+            type: false,
+            loc: 1,
+            title: "Interior Walls",
+            wallA: { S: 'A', M: null, I: true, R: null, name: 'Wall A', item:'Wall' },
+            wallB: { S: 'B', M: null, I: true, R: null, name: 'Wall B', item:'Wall' },
+            wallC: { S: 'C', M: null, I: true, R: null, name: 'Wall C', item:'Wall' },
+            wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
+            ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
+            baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
+            vent: { S: false, M: null, I: true, R: null, name: 'Heater Vent' },
+            floor: { M: null, I: true, R: null, name: 'Floor' }
           }],
         index: 1
       }]
@@ -12916,6 +13121,23 @@ return (
       })
       this.setState({})
     }
+    if (name == 'Other Item') {
+      let newData = this.state.insSheets.map(x => {
+        if (x.id == id) {
+          x.data = [...x.data, {
+            id: x.data.length + 1,
+            side: false,
+            expanded: 1,
+            type: false,
+            title: "Other Item",
+            leadsTo: null,
+            other: { M: null, I: true, R: null, name: 'other', item:'other' },
+          }],
+            x.total = x.data.length - 1
+        }
+      })
+      this.setState({})
+    }
     if (name == 'Roof Trim') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
@@ -13041,7 +13263,7 @@ return (
             title: "Misc Exterior",
             leadsTo: null,
             frame: { M: null, I: true, R: null, name: 'Electric Panel/Frame' },
-            vent: { M: null, I: true, R: null, name: 'Vent' },
+            vent: { M: null, I: true, R: null, name: 'Heater Vent' },
             accessPanel: { M: null, I: true, R: null, name: 'Access Panel/Frame' },
             gate: { M: null, I: true, R: null, name: 'Gate' },
             fence: { M: null, I: true, R: null, name: 'Fence' },
@@ -13123,13 +13345,13 @@ return (
             side: false,
             type: false,
             title: "Tile",
-            shower: { M: null, I: true, R: null, name: 'Shower' },
-            wall: { M: null, I: true, R: null, name: 'Wall' },
-            curb: { M: null, I: true, R: null, name: 'Curb' },
-            ceiling: { M: null, I: true, R: null, name: 'Ceiling' },
-            floor: { M: null, I: true, R: null, name: 'Floor' },
-            backsplash: { M: null, I: true, R: null, name: 'Backsplash' },
-            trim: { M: null, I: true, R: null, name: 'Trim' },
+            shower: { S: null, M: null, I: true, R: null, name: 'Shower' },
+            wall: { S: null, M: null, I: true, R: null, name: 'Wall' },
+            curb: { S: null, M: null, I: true, R: null, name: 'Curb' },
+            ceiling: { S: null, M: null, I: true, R: null, name: 'Ceiling' },
+            floor: { S: null, M: null, I: true, R: null, name: 'Floor' },
+            backsplash: { S: null, M: null, I: true, R: null, name: 'Backsplash' },
+            trim: { S: null, M: null, I: true, R: null, name: 'Trim' },
           }],
             x.total = x.data.length - 1
         }
@@ -13357,7 +13579,7 @@ return (
             title: "Misc Exterior",
             leadsTo: null,
             frame: { M: null, I: true, R: null, S: null, name: 'Electric Panel/Frame' },
-            vent: { M: null, I: true, R: null, S: null, name: 'Vent' },
+            vent: { M: null, I: true, R: null, S: null, name: 'Heater Vent' },
             accessPanel: { M: null, I: true, R: null, S: null, name: 'Access Panel/Frame' },
             gate: { M: null, I: true, R: null, S: null, name: 'Gate' },
             fence: { M: null, I: true, R: null, S: null, name: 'Fence' },
@@ -13445,7 +13667,7 @@ return (
             ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
             baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
             floor: { S: false, M: null, I: true, R: null, name: 'Floor' },
-            vent: { S: false, M: null, I: true, R: null, name: 'Vent' }
+            vent: { S: false, M: null, I: true, R: null, name: 'Heater Vent' }
           }],
             x.total = x.data.length - 1
         }
@@ -13513,6 +13735,23 @@ return (
       })
       this.setState({})
     }
+    if (name == 'Other Item') {
+      let newData = this.state.insSheets.map(x => {
+        if (x.id == id) {
+          x.data = [...x.data, {
+            id: x.data.length + 1,
+            side: false,
+            expanded: 1,
+            type: false,
+            title: "Other Item",
+            leadsTo: null,
+            other: { S: null, M: null, I: true, R: null, name: 'Other Item' },
+          }],
+            x.total = x.data.length - 1
+        }
+      })
+      this.setState({})
+    }
     if (name == 'Misc Interior') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
@@ -13525,7 +13764,7 @@ return (
             leadsTo: null,
             baseboard: { S: null, M: null, I: true, R: null, name: 'Baseboard' },
             ceiling: { S: null, M: null, I: true, R: null, name: 'Ceiling' },
-            vent: { S: null, M: null, I: true, R: null, name: 'Vent' },
+            vent: { S: null, M: null, I: true, R: null, name: 'Heater Vent' },
             floor: { S: null, M: null, I: true, R: null, name: 'Floor' },
             atticFrame: { S: null, M: null, I: true, R: null, name: 'Attic Access/Frame' },
             electricFrame: { S: null, M: null, I: true, R: null, name: 'Electric Panel/Frame' },
@@ -13598,23 +13837,23 @@ return (
       })
       this.setState({})
     }
-    if (name == 'Other Item') {
-      let newData = this.state.insSheets.map(x => {
-        if (x.id == id) {
-          x.data = [...x.data, {
-            id: x.data.length + 1,
-            side: false,
-            title: "Other Item",
-            M: null,
-            I: true,
-            R: null,
-            comments: null
-          }],
-            x.total = x.data.length - 1
-        }
-      })
-      this.setState({})
-    }
+    // if (name == 'Other Item') {
+    //   let newData = this.state.insSheets.map(x => {
+    //     if (x.id == id) {
+    //       x.data = [...x.data, {
+    //         id: x.data.length + 1,
+    //         side: false,
+    //         title: "Other Item",
+    //         M: null,
+    //         I: true,
+    //         R: null,
+    //         comments: null
+    //       }],
+    //         x.total = x.data.length - 1
+    //     }
+    //   })
+    //   this.setState({})
+    // }
   }
 
 
@@ -13800,6 +14039,43 @@ return (
                   },
                   {
                     id: 4,
+                    side: false,
+                    type: false,
+                    title: "Interior Window",
+                    expanded: true,
+                    loc: 1,
+                    sill: { M: null, I: true, R: null, name: 'Window Sill' },
+                    sash: { M: null, I: true, R: null, name: 'Window Sash' },
+                    frame: { M: null, I: true, R: null, name: 'Window Frame' },
+                    windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+                    valence: { M: null, I: true, R: null, name: 'Valence' },
+                  },
+                  {
+                    id: 5,
+                    side: false,
+                    type: false,
+                    title: "Closet",
+                    loc: 1,
+                    door: { M: null, I: true, R: null, name: 'Closet Door' },
+                    frame: { M: null, I: true, R: null, name: 'Closet Frame' },
+                    shelf: { M: null, I: true, R: null, name: 'Closet Shelf' },
+                    support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
+                  },
+                  {
+                    id: 6,
+                    side: false,
+                    type: false,
+                    title: "Cabinet",
+                    loc: 2,
+                    frame: { M: null, I: true, R: null, name: 'Cabinet Frame' },
+                    door: { M: null, I: true, R: null, name: 'Cabinet Door' },
+                    shelf: { M: null, I: true, R: null, name: 'Cabinet Shelf' },
+                    countertop: { M: null, I: true, R: null, name: 'Countertop' },
+                    backsplash: { M: null, I: true, R: null, name: 'Backsplash' },
+                    medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
+                  },
+                  {
+                    id: 7,
                     type: false,
                     loc: 1,
                     title: "Interior Walls",
@@ -13809,47 +14085,8 @@ return (
                     wallD: { S: 'D', M: null, I: true, R: null, name: 'Wall D', item:'Wall' },
                     ceiling: { S: false, M: null, I: true, R: null, name: 'Ceiling' },
                     baseboard: { S: false, M: null, I: true, R: null, name: 'Baseboard' },
-                    floor: { S: false, M: null, I: true, R: null, name: 'Floor' },
-                    vent: { S: false, M: null, I: true, R: null, name: 'Vent' },
-
-                  },
-                  {
-                    id: 5,
-                    side: false,
-                    type: false,
-                    title: "Interior Window",
-                    expanded: true,
-                    loc: 1,
-                    sill: { M: null, I: true, R: null, name: 'Sill' },
-                    sash: { M: null, I: true, R: null, name: 'Sash' },
-                    frame: { M: null, I: true, R: null, name: 'Frame' },
-                    windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
-                    valence: { M: null, I: true, R: null, name: 'Valence' },
-                  },
-                  {
-                    id: 6,
-                    side: false,
-                    type: false,
-                    title: "Closet",
-                    loc: 1,
-                    door: { M: null, I: true, R: null, name: 'Door' },
-                    frame: { M: null, I: true, R: null, name: 'Frame' },
-                    shelf: { M: null, I: true, R: null, name: 'Shelf' },
-                    support: { M: null, I: true, R: null, name: 'Support' },
-                  },
-                  {
-                    id: 7,
-                    side: false,
-                    type: false,
-                    title: "Cabinet",
-                    loc: 2,
-                    frame: { M: null, I: true, R: null, name: 'Frame' },
-                    door: { M: null, I: true, R: null, name: 'Door' },
-                    shelf: { M: null, I: true, R: null, name: 'Shelf' },
-                    countertop: { M: null, I: true, R: null, name: 'Countertop' },
-                    backsplash: { M: null, I: true, R: null, name: 'Back Splash' },
-                    medicine: { M: null, I: true, R: null, name: 'Medicine' },
-                    comments: ''
+                    vent: { S: false, M: null, I: true, R: null, name: 'Heater Vent' },
+                    floor: { M: null, I: true, R: null, name: 'Floor' }
                   }
                 ], total: 0
               },

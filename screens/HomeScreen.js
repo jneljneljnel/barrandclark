@@ -28,10 +28,10 @@ export default class HomeScreen extends React.Component {
     this.clearData = this.clearData.bind(this)
     this.deleteJob = this.deleteJob.bind(this)
   }
-  willFocusSubscription = this.props.navigation.addListener(
-  'willFocus',
+  didFocusSubscription = this.props.navigation.addListener(
+  'didFocus',
     payload => {
-      this._retrieveData()
+      setTimeout(() => this._retrieveData(), 1000);
     }
   );
   static navigationOptions = {
@@ -50,7 +50,8 @@ export default class HomeScreen extends React.Component {
     if (this.state.jobs.length){
       this.state.jobs.map((x, index) => {
         AsyncStorage.getItem(x).then(state =>
-          fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          //fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          fetch('http://2584164a.ngrok.io/upload',
           {
             method: 'POST',
             headers: {
