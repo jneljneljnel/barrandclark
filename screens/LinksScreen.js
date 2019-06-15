@@ -116,7 +116,7 @@ const INTSUB9 = ["Tile", "Cancel"];
 
 const SIDES = ["A", "B", "C", "D", "N", "S", "E", "W", "Cancel"];
 const DIRECTIONS = ["North Side", "South Side", "East Side", "West Side", "Garage", "Cancel"];
-const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Job Completion Checklist", "Property Description Checklist", "Layout Photo", "Property Photo", 'Cancel'];
+const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "Soil Sample", "Dust Sample", "Layout Photo", "Property Photo", 'Cancel'];
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
 
@@ -14198,7 +14198,7 @@ return (
                 ActionSheet.show(
                   {
                     options: sheetButons,
-                    cancelButtonIndex: 9,
+                    cancelButtonIndex: 6,
                     title: "Add Sheet/Photo"
                   },
                   buttonIndex => {
@@ -14206,11 +14206,8 @@ return (
                     if (buttonIndex == 1) { this.addExtSheet() }
                     if (buttonIndex == 2) { this.addSoilSheet() }
                     if (buttonIndex == 3) { this.addDustSheet() }
-                    if (buttonIndex == 4) { this.addJobCompletionSheet() }
-                    if (buttonIndex == 5) { this.addPropertyDetailsSheet() }
-                    if (buttonIndex == 6) { this.addFormFive() }
-                    if (buttonIndex == 7) { this.getPhoto() }
-                    if (buttonIndex == 8) { this.getPropertyPhoto() }
+                    if (buttonIndex == 4) { this.getPhoto() }
+                    if (buttonIndex == 5) { this.getPropertyPhoto() }
                   }
                 )}
             >

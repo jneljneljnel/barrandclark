@@ -14,6 +14,8 @@ import { Title, List, Left, Right, Thumbnail, Input, Label, Icon, Container, Hea
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { WebBrowser, Permissions } from 'expo';
 import { MonoText } from '../components/StyledText';
+import { RNS3 } from 'react-native-aws3';
+
 
 
 export default class HomeScreen extends React.Component {
@@ -50,8 +52,8 @@ export default class HomeScreen extends React.Component {
     if (this.state.jobs.length){
       this.state.jobs.map((x, index) => {
         AsyncStorage.getItem(x).then(state =>
-          //fetch('https://nameless-reef-31035.herokuapp.com/upload',
-          fetch('http://2584164a.ngrok.io/upload',
+          fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          //fetch('http://2584164a.ngrok.io/upload',
           {
             method: 'POST',
             headers: {
@@ -74,6 +76,27 @@ export default class HomeScreen extends React.Component {
                   {text: 'OK', onPress: this._retrieveData},
                 ],
                { cancelable: false });
+
+               const imageFile = {
+                uri: this.state.pics[0],
+                name: x+'.png',
+                type: "image/png"
+               }
+               const options = {
+                 keyPrefix: "uploads/",
+                 bucket: "barrandclark",
+                 region: "us-west-1",
+                 accessKey: "AKIA3HLIV76UOGKFFDGB",
+                 secretKey: "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",
+                 successActionStatus: 201,
+                 ACL: 'public-read',
+               }
+               if(this.state.pics){
+                 console.log(this.state.pics)
+                 RNS3.put(imageFile, options).then(response => {
+                   console.log(response.body)
+                 })
+               }
               return
             } else {
               Alert.alert(
@@ -119,7 +142,7 @@ export default class HomeScreen extends React.Component {
 
   getPropPhoto = async(j) => {
     const photo = await AsyncStorage.getItem(j)
-    //console.log(JSON.parse(photo).propimage)
+    console.log(JSON.parse(photo).propimage)
     if(photo){
       return await JSON.parse(photo).propimage
     }
