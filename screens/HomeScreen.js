@@ -14,6 +14,8 @@ import { Title, List, Left, Right, Thumbnail, Input, Label, Icon, Container, Hea
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { WebBrowser, Permissions } from 'expo';
 import { MonoText } from '../components/StyledText';
+import { RNS3 } from 'react-native-aws3';
+
 
 
 export default class HomeScreen extends React.Component {
@@ -25,11 +27,13 @@ export default class HomeScreen extends React.Component {
     this._retrieveData = this._retrieveData.bind(this)
     this.uploadData = this.uploadData.bind(this)
     this.getPropPhoto = this.getPropPhoto.bind(this)
+    this.clearData = this.clearData.bind(this)
+    this.deleteJob = this.deleteJob.bind(this)
   }
-  willFocusSubscription = this.props.navigation.addListener(
-  'willFocus',
+  didFocusSubscription = this.props.navigation.addListener(
+  'didFocus',
     payload => {
-      this._retrieveData()
+      setTimeout(() => this._retrieveData(), 1000);
     }
   );
   static navigationOptions = {
@@ -44,12 +48,12 @@ export default class HomeScreen extends React.Component {
     this._retrieveData()
     this.getPermissions()
   }
-  uploadData = async (jobs) => {
-    console.log(jobs)
-    if (jobs.length){
-      jobs.map(x => {
+  uploadData = () => {
+    if (this.state.jobs.length){
+      this.state.jobs.map((x, index) => {
         AsyncStorage.getItem(x).then(state =>
           fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          //fetch('http://2584164a.ngrok.io/upload',
           {
             method: 'POST',
             headers: {
@@ -61,25 +65,62 @@ export default class HomeScreen extends React.Component {
               state: state,
             }),
           })
-            .then((response) => response.json())
-                  .then((responseJson) => {
-                    console.log(responseJson);
-                    AsyncStorage.removeItem(x)
-                  })
-                  .catch((error) => {
-                    console.error(error);
-                  })
-                  //upload photo
+          .then((response) => {
+            if(response.status === 200){
+              this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
+              AsyncStorage.removeItem(x)
+              Alert.alert(
+                'Success', 'Job successfyully uploaded',
+                [
+                  {text: 'Cancel', onPress: this._retrieveData},
+                  {text: 'OK', onPress: this._retrieveData},
+                ],
+               { cancelable: false });
 
+               const imageFile = {
+                uri: this.state.pics[0],
+                name: x+'.png',
+                type: "image/png"
+               }
+               const options = {
+                 keyPrefix: "uploads/",
+                 bucket: "barrandclark",
+                 region: "us-west-1",
+                 accessKey: "AKIA3HLIV76UOGKFFDGB",
+                 secretKey: "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",
+                 successActionStatus: 201,
+                 ACL: 'public-read',
+               }
+               if(this.state.pics){
+                 console.log(this.state.pics)
+                 RNS3.put(imageFile, options).then(response => {
+                   console.log(response.body)
+                 })
+               }
+              return
+            } else {
+              Alert.alert(
+                'Error uploading job', 'Please try again later',
+                [
+                  {text: 'Cancel', onPress: this._retrieveData},
+                  {text: 'OK', onPress: this._retrieveData},
+                ],
+               { cancelable: false });
+              return
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          })
+          //upload photo
         );
       })
+      if (this.state.jobs.length){
+        this.setState({jobs:[]})
+      }
     }
     //push to db
-    if(jobs.length){
-      Alert.alert('Jobs sucessfully uploaded');
-    }
-    AsyncStorage.clear()
-    this.setState({jobs:[]})
+
   }
 
   getPermissions = async() => {
@@ -90,24 +131,41 @@ export default class HomeScreen extends React.Component {
     }
   }
 
+  clearData = async() => {
+    AsyncStorage.clear()
+  }
+
+  deleteJob = async(j) =>{
+    AsyncStorage.removeItem(j)
+    this._retrieveData()
+  }
+
   getPropPhoto = async(j) => {
     const photo = await AsyncStorage.getItem(j)
-    //console.log(JSON.parse(photo).propimage)
-    return await JSON.parse(photo).propimage
+    console.log(JSON.parse(photo).propimage)
+    if(photo){
+      return await JSON.parse(photo).propimage
+    }
   }
 
   _retrieveData = async () => {
-  console.log('getting data!')
   try {
     const value = await AsyncStorage.getAllKeys();
     if (value !== null) {
       const promises = value.map( j => this.getPropPhoto(j))
       const pics = await Promise.all(promises).then( res => res)
       this.setState({jobs:value, pics: pics})
-
     }
    } catch (error) {
-     // Error retrieving data
+     Alert.alert(
+       'Error retriving data',
+       'error',
+       [
+         { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+         { text: 'OK', onPress: () => { this.clearData()  } },
+       ],
+       { cancelable: false }
+     )
    }
 }
 
@@ -149,9 +207,24 @@ RkTheme.setType('RkButton', 'faded', {
                 <Text note numberOfLines={1}></Text>
               </Body>
               <Right>
-              <Button transparent onPress={() => navigate('Links', { edit: [this.state.jobs[i]]})}>
-                <Text>Edit</Text>
+              <Grid>
+              <Button danger style={{marginRight: 10}} onPress={() => {
+                Alert.alert(
+                  'Delete Job',
+                  'Are you sure you want to delete this job?',
+                  [
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+                    { text: 'OK', onPress: () => {this.deleteJob(this.state.jobs[i])} },
+                  ],
+                  { cancelable: true }
+                )
+              }}>
+               <Text>Delete</Text>
               </Button>
+              <Button primary onPress={() => {navigate('Links', { edit: [this.state.jobs[i]]})}}>
+               <Text>Edit</Text>
+              </Button>
+              </Grid>
               </Right>
             </ListItem>)
           })}
@@ -163,7 +236,7 @@ RkTheme.setType('RkButton', 'faded', {
              'Are you sure?',
              [
                { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
-               { text: 'OK', onPress: () => {  this.uploadData(this.state.jobs) } },
+               { text: 'OK', onPress: () => {  this.uploadData() } },
              ],
              { cancelable: true }
            )
