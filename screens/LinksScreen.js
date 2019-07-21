@@ -17112,7 +17112,6 @@ if (content.title == 'Tile') {
           },
           {
             id: 2,
-            side: false,
             expanded: 0,
             type: false,
             title: "Exterior Doorway",
@@ -17650,7 +17649,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Exterior Doorway",
@@ -17671,7 +17669,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Exterior Windows",
@@ -17695,7 +17692,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Walls",
@@ -17715,7 +17711,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Roof Trim",
@@ -17740,7 +17735,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Exterior Trim",
@@ -17765,7 +17759,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Garage Doors",
@@ -17783,7 +17776,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Misc Exterior",
