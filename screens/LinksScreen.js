@@ -60,6 +60,7 @@ const EXTTYPES1 = ["Older", "Newer", "Cancel"];
 const EXTTYPES2 = ["Aluminum", "Casement", "Double Hung", "Fixed", "Horizontal Sliding", "Louvered", "Transom", "Vinyl", "Bay Window", "Garden Window", "Cancel"];
 const EXTTYPES3 = ["Older", "Newer", "Upper", "Lower", "Wainscott", "Cancel"];
 const EXTTYPES4 = ["Older", "Newer", "Original House", "Addition", "Cancel"];
+
 const EXTSUB1 = ["Wood", "Metal", "Vinyl", "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
   "Gypsum", "Plaster", "Plastic", "Stucco", "Tile", "Transite", "Cancel"];
 const EXTSUB2 = ["Wood", "Metal", "Vinyl", "Stucco", "Acoustic", "Asphalt", "Brick", "Concrete",
@@ -126,15 +127,22 @@ const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "
 
 const itemButons = ['Interior Window', 'Interior Doorway', 'Exterior Doorway', 'Interior Walls', 'Interior Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Tile', 'Exterior Windows', 'Garage Doors', 'Parking Lot', 'Misc Exterior', 'Exterior Trim', 'Other Item', 'Cancel'];
 const itemExtButons = ['Exterior Doorway', 'Tile','Fireplace','Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Closet', 'Cabinet','Garage Doors', 'Stairs', 'Misc Exterior', 'Parking Lot', 'Garage Walls', 'Other Item', 'Cancel'];
-const itemPermitButons = ['Exterior Doorway', 'Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Garage Doors', 'Exterior Trim','Misc Exterior', 'Cancel'];
+const itemPermitButons = ['Exterior Doorway', 'Exterior Windows', 'Walls', 'Roof Trim', 'Garage Doors', 'Exterior Trim','Misc Exterior', 'Cancel'];
 /** permiter sheet */
-const PermSub1 = ['Wood','Metal','Vinyl','Cancel'];
-const PermSub2 = ['Wood','Metal','Stucco','Vinyl','Concrete','Brick','Cancel'];
-const PermSub3 = ['Stucco','Wood','Metal','Vinyl','Cancel'];
-const PermSub4 = ['Wood','Metal','Stucco','Vinyl','Cancel'];
-const PermSub5 = ['Wood','Metal','Cancel'];
-const PermSub6 = ['Wood','Metal','Stucco','Concrete','Cancel'];
-const PermSub7 = ['Wood','Metal','Vinyl','Brick','Stucco','Concrete','Cancel'];
+const PermSub1 = ['Wood','Metal','Vinyl', 'Plaster', "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
+  "Gypsum", "Plastic", "Stucco", "Tile", "Transite",'Cancel'];
+const PermSub2 = ['Wood','Metal','Stucco','Vinyl','Concrete','Brick', 'Plaster', "Acoustic", "Asphalt", "Fiberglass",
+  "Gypsum", "Plastic", "Tile", "Transite", 'Cancel'];
+const PermSub3 = ['Stucco','Wood','Metal','Vinyl', 'Plaster', "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
+  "Gypsum", "Plastic", "Tile", "Transite", 'Cancel'];
+const PermSub4 = ['Wood','Metal','Stucco','Vinyl', 'Plaster', "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
+  "Gypsum", "Plastic", "Tile", "Transite", 'Cancel'];
+const PermSub5 = ['Wood','Metal', 'Plaster', "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
+  "Gypsum", "Plastic", "Stucco", "Tile", "Transite", "Vinyl",'Cancel'];
+const PermSub6 = ['Wood','Metal','Stucco','Concrete', 'Plaster', "Acoustic", "Asphalt", "Brick", "Fiberglass",
+  "Gypsum", "Plastic", "Tile", "Transite", "Vinyl",'Cancel'];
+const PermSub7 = ['Wood','Metal','Vinyl','Brick','Stucco','Concrete', 'Plaster', "Acoustic", "Asphalt", "Fiberglass",
+  "Gypsum", "Plastic", "Tile", "Transite", 'Cancel'];
 
 const CANCEL_INDEX = 15;
 const CANCEL_INDEX2 = 9;
@@ -1486,31 +1494,69 @@ _renderExtSheet(content, sheetId) {
 
               <Grid style={{ marginTop: 10 }}>
                   <Col style={{ height: 200 }}>
-                      <Text>Window Well</Text>
-                      <Button
-                          onPress={() =>
-                              ActionSheet.show(
-                                  {
-                                      options: EXTSUB9,
-                                      cancelButtonIndex: EXTSUB9.length - 1,
-                                      title: content.well.M || "Select Material"
-                                  },
-                                  buttonIndex => {
-                                      if (buttonIndex != EXTSUB9.length - 1) {
-                                          content.well.M = EXTSUB9[buttonIndex]
-                                          content.sash.M = EXTSUB9[buttonIndex]
-                                          content.frame.M = EXTSUB9[buttonIndex]
-                                          content.shutters.M = EXTSUB9[buttonIndex]
-                                          content.securitybars.M = EXTSUB9[buttonIndex]
-                                          content.awning.M = EXTSUB9[buttonIndex]
-                                          content.windowScreen.M = EXTSUB9[buttonIndex]
+                      <Text>Window Well!!</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.well.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.well.S = SIDES[buttonIndex]
+                                            content.sash.S = SIDES[buttonIndex]
+                                            content.frame.S = SIDES[buttonIndex]
+                                            content.shutters.S = SIDES[buttonIndex]
+                                            content.securitybars.S = SIDES[buttonIndex]
+                                            content.awning.S = SIDES[buttonIndex]
+                                            content.windowScreen.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.well.S = ''
+                                            content.sash.S = ''
+                                            content.frame.S = ''
+                                            content.shutters.S = ''
+                                            content.securitybars.S = ''
+                                            content.awning.S = ''
+                                            content.windowScreen.S = ''
+                                          }
                                           this.setState({})
                                       }
-                                  }
-                              )}
-                      >
-                          <Text>{content.well.M || "Material"}</Text>
-                      </Button>
+                                  )}
+                          >
+                              <Text>{content.well.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
+                        <Button
+                            onPress={() =>
+                                ActionSheet.show(
+                                    {
+                                        options: EXTSUB9,
+                                        cancelButtonIndex: EXTSUB9.length - 1,
+                                        title: content.well.M || "Select Material"
+                                    },
+                                    buttonIndex => {
+                                        if (buttonIndex != EXTSUB9.length - 1) {
+                                            content.well.M = EXTSUB9[buttonIndex]
+                                            content.sash.M = EXTSUB9[buttonIndex]
+                                            content.frame.M = EXTSUB9[buttonIndex]
+                                            content.shutters.M = EXTSUB9[buttonIndex]
+                                            content.securitybars.M = EXTSUB9[buttonIndex]
+                                            content.awning.M = EXTSUB9[buttonIndex]
+                                            content.windowScreen.M = EXTSUB9[buttonIndex]
+                                            this.setState({})
+                                        }
+                                    }
+                                )}
+                        >
+                            <Text>{content.well.M || "Material"}</Text>
+                        </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.well.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.well.I} onChange={(e) => {
@@ -1529,6 +1575,30 @@ _renderExtSheet(content, sheetId) {
 
                   <Col style={{ height: 200 }}>
                       <Text>Window Sash</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.sash.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.sash.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.sash.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.sash.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1547,6 +1617,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.sash.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.sash.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.sash.I} onChange={(e) => {
@@ -1564,6 +1636,30 @@ _renderExtSheet(content, sheetId) {
                   </Col>
                   <Col style={{ height: 200 }}>
                       <Text>Window Frame</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.frame.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.frame.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.frame.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.frame.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1582,6 +1678,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.frame.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.frame.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.frame.I} onChange={(e) => {
@@ -1602,6 +1700,30 @@ _renderExtSheet(content, sheetId) {
               <Grid style={{ marginTop: 10 }}>
                   <Col style={{ height: 200 }}>
                       <Text>Shutters</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.shutters.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.shutters.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.shutters.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.shutters.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1620,6 +1742,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.shutters.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.shutters.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.shutters.I} onChange={(e) => {
@@ -1637,6 +1761,30 @@ _renderExtSheet(content, sheetId) {
                   </Col>
                   <Col style={{ height: 200 }}>
                       <Text>Security Bars</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.securitybars.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.securitybars.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.securitybars.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.securitybars.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1655,6 +1803,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.securitybars.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.securitybars.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.securitybars.I} onChange={(e) => {
@@ -1672,6 +1822,30 @@ _renderExtSheet(content, sheetId) {
                   </Col>
                   <Col style={{ height: 200 }}>
                       <Text>Awning</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.awning.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.awning.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.awning.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.awning.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1690,6 +1864,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.awning.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.awning.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.awning.I} onChange={(e) => {
@@ -1709,6 +1885,30 @@ _renderExtSheet(content, sheetId) {
               <Grid style={{ marginTop: 10 }}>
                   <Col style={{ height: 200 }}>
                       <Text>Window Screen</Text>
+                      <Grid>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.windowScreen.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.windowScreen.S = SIDES[buttonIndex]
+                                          } else {
+                                            content.windowScreen.S = ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.windowScreen.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                       <Button
                           onPress={() =>
                               ActionSheet.show(
@@ -1727,6 +1927,8 @@ _renderExtSheet(content, sheetId) {
                       >
                           <Text>{content.windowScreen.M || "Material"}</Text>
                       </Button>
+                      </Col>
+                      </Grid>
                       <Text >{content.windowScreen.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
                           <RkChoice rkType='posNeg' selected={content.windowScreen.I} onChange={(e) => {
@@ -2573,6 +2775,43 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Column</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.column.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.column.S= SIDES[buttonIndex]
+                                            content.beam.S= SIDES[buttonIndex]
+                                            content.ceiling.S= SIDES[buttonIndex]
+                                            content.floor.S= SIDES[buttonIndex]
+                                            content.handrail.S= SIDES[buttonIndex]
+                                            content.railing.S= SIDES[buttonIndex]
+                                            content.railcap.S= SIDES[buttonIndex]
+                                            content.mailSlot.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.column.S= ''
+                                            content.beam.S= ''
+                                            content.ceiling.S= ''
+                                            content.floor.S= ''
+                                            content.handrail.S= ''
+                                            content.railing.S= ''
+                                            content.railcap.S= ''
+                                            content.mailSlot.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.column.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2598,6 +2837,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.column.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text >{content.column.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2619,6 +2859,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Beam</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.beam.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.beam.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.beam.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.beam.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2637,6 +2900,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.beam.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.beam.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2658,6 +2922,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Ceiling</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.ceiling.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.ceiling.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.ceiling.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.ceiling.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2676,6 +2963,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.ceiling.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }} >{content.ceiling.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2695,6 +2983,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Floor</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.floor.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.floor.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.floor.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.floor.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2713,6 +3024,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.floor.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.floor.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2734,6 +3046,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Handrail</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.handrail.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.handrail.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.handrail.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.handrail.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2752,6 +3087,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.handrail.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.handrail.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2772,6 +3108,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Railing</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.railing.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.railing.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.railing.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.railing.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2790,6 +3149,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.railing.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.railing.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2811,6 +3171,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Rail Cap</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.railcap.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.railcap.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.railcap.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.railcap.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2829,6 +3212,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.railcap.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.railcap.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -2848,6 +3232,29 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Mail Slot</Text>
                       <Grid style={{ marginBottom: 20 }}>
+                      <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: SIDES,
+                                          cancelButtonIndex: SIDES.length - 1,
+                                          title: content.mailSlot.S || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != SIDES.length - 1) {
+                                            content.mailSlot.S= SIDES[buttonIndex]
+                                          } else {
+                                            content.mailSlot.S= ''
+                                          }
+                                          this.setState({})
+                                      }
+                                  )}
+                          >
+                              <Text>{content.mailSlot.S || "Side"}</Text>
+                          </Button>
+                      </Col>
+                      <Col>
                           <Button
                               onPress={() =>
                                   ActionSheet.show(
@@ -2866,6 +3273,7 @@ _renderExtSheet(content, sheetId) {
                           >
                               <Text>{content.mailSlot.M || "Material"}</Text>
                           </Button>
+                        </Col>
                       </Grid>
                       <Text style={{ marginTop: 10 }}>{content.mailSlot.I == true ? 'Intact' : 'Deteriorated'}</Text>
                       <ListItem>
@@ -5264,36 +5672,51 @@ _renderExtSheet(content, sheetId) {
   }
 }
 
-//////////Permiter
+//////////Perimeter sheet
 _renderPermitSheet(content, sheetId) {
     console.log('rendersheet', content.title)
 
+    if (content.title == 'Sheet Details') {
+      return (
+          <View>
+              <Grid>
+                  <Col>
+                      <Item stackedLabel>
+                          <Label>Unit Number</Label>
+                          <Input value={content.unit} onChangeText={(text) => { content.unit = text; this.setState({}) }} />
+                      </Item>
+                  </Col>
+                  <Col>
+                      <Item stackedLabel>
+                          <Label>Building Number</Label>
+                          <Input value={content.building} onChangeText={(text) => { content.building = text; this.setState({}) }} />
+                      </Item>
+                  </Col>
+                  <Col>
+                      <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+                          Alert.alert(
+                              'Remove',
+                              'Are you sure?',
+                              [
+
+                                  { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                                  { text: 'OK', onPress: () => this.removeSheet(sheetId) },
+                              ],
+                              { cancelable: false }
+                          )
+                      }}>
+                          <Text>Remove</Text>
+                      </Button>
+                  </Col>
+              </Grid>
+          </View>
+      )
+    }
     if (content.title == 'Exterior Doorway') {
         return (
 
             <View keyboardDismissMode="on-drag">
                 <Grid style={{ marginTop: 0 }}>
-                  <Col>
-                        <Button block error style={{ marginTop: 10 }}
-                            onPress={() =>
-                                ActionSheet.show(
-                                    {
-                                        options: SIDES,
-                                        cancelButtonIndex: SIDES.length - 1,
-                                        title: "Select Side"
-                                    },
-                                    buttonIndex => {
-                                        if (buttonIndex != SIDES.length - 1) {
-                                            content.side = SIDES[buttonIndex]
-                                        } else {
-                                            content.side = '';
-                                        }
-                                        this.setState({})
-                                    }
-                                )}>
-                            <Text>{content.side || 'Side'}</Text>
-                        </Button>
-                    </Col>
                     <Col>
                         <Button block error style={{ marginTop: 10 }}
                             onPress={() =>
@@ -5663,28 +6086,6 @@ _renderPermitSheet(content, sheetId) {
         return (
             <View keyboardDismissMode="on-drag">
                 <Grid style={{ marginTop: 0 }}>
-                  <Col>
-                        <Button block error style={{ marginTop: 10 }}
-                            onPress={() =>
-                                ActionSheet.show(
-                                    {
-                                        options: SIDES,
-                                        cancelButtonIndex: SIDES.length - 1,
-                                        title: "Select Side"
-                                    },
-                                    buttonIndex => {
-                                        if (buttonIndex != SIDES.length - 1) {
-                                            content.side = SIDES[buttonIndex]
-                                        } else {
-                                            content.side = '';
-                                        }
-                                        this.setState({})
-                                    }
-                                )}>
-                            <Text>{content.side || 'Side'}</Text>
-                        </Button>
-                    </Col>
-
                     <Col>
                         <Button block error style={{ marginTop: 10 }}
                             onPress={() =>
@@ -6181,7 +6582,7 @@ _renderPermitSheet(content, sheetId) {
         );
     }
     /** exterior walls */
-    if (content.title == 'Exterior Walls') {
+    if (content.title == 'Walls') {
         return (
             <View keyboardDismissMode="on-drag">
                 {/* <Grid style={{ marginTop: 0 }}>
@@ -6210,7 +6611,7 @@ _renderPermitSheet(content, sheetId) {
 
                 <Grid style={{ marginTop: 10 }}>
                     <Col style={{ height: 200 }}>
-                        <Text>Wall </Text>
+                        <Text>Wall A</Text>
                         <Grid style={{ marginBottom: 20 }}>
                         <Col>
                             <Button
@@ -6281,7 +6682,7 @@ _renderPermitSheet(content, sheetId) {
                         </Item>
                     </Col>
                     <Col style={{ height: 200 }}>
-                        <Text>Wall</Text>
+                        <Text>Wall B</Text>
                         <Grid style={{ marginBottom: 20 }}>
                         <Col>
                             <Button
@@ -6348,7 +6749,7 @@ _renderPermitSheet(content, sheetId) {
                 </Grid>
                 <Grid style={{ marginTop: 10 }}>
                 <Col style={{ height: 200 }}>
-                        <Text>Wall</Text>
+                        <Text>Wall C</Text>
                         <Grid style={{ marginBottom: 20 }}>
                         <Col>
                             <Button
@@ -6411,7 +6812,7 @@ _renderPermitSheet(content, sheetId) {
                         </Item>
                     </Col>
                 <Col style={{ height: 200 }}>
-                        <Text>Wall</Text>
+                        <Text>Wall D</Text>
                         <Grid style={{ marginBottom: 20 }}>
                         <Col>
                             <Button
@@ -7609,28 +8010,6 @@ _renderPermitSheet(content, sheetId) {
         return (
             <View keyboardDismissMode="on-drag">
                 <Grid style={{ marginTop: 0 }}>
-                       <Col>
-                            <Button block error style={{ marginTop: 10 }}
-                                onPress={() =>
-                                    ActionSheet.show(
-                                        {
-                                            options: SIDES,
-                                            cancelButtonIndex: SIDES.length - 1,
-                                            title: content.side || "Select Material"
-                                        },
-                                        buttonIndex => {
-                                            if (buttonIndex != SIDES.length - 1) {
-                                                content.side = SIDES[buttonIndex]
-                                            } else {
-                                                content.side= '';
-                                            }
-                                            this.setState({})
-                                        }
-                                    )}
-                            >
-                                <Text>{content.side || "Side"}</Text>
-                            </Button>
-                        </Col>
                         <Col>
                         <Button block error style={{ marginTop: 10 }}
                             onPress={() =>
@@ -7841,14 +8220,14 @@ _renderPermitSheet(content, sheetId) {
                                         },
                                         buttonIndex => {
                                             if (buttonIndex != SIDES.length - 1) {
-                                                content.frame.S = PermSub7[buttonIndex]
-                                                content.vent.S = PermSub7[buttonIndex]
-                                                content.accessPanel.S = PermSub7[buttonIndex]
-                                                content.gate.S = PermSub7[buttonIndex]
-                                                content.fence.S = PermSub7[buttonIndex]
-                                                content.playEquip.S = PermSub7[buttonIndex]
-                                                content.planterBox.S = PermSub7[buttonIndex]
-                                                content.equipment.S = PermSub7[buttonIndex]
+                                                content.frame.S = SIDES[buttonIndex]
+                                                content.vent.S = SIDES[buttonIndex]
+                                                content.accessPanel.S = SIDES[buttonIndex]
+                                                content.gate.S = SIDES[buttonIndex]
+                                                content.fence.S = SIDES[buttonIndex]
+                                                content.playEquip.S = SIDES[buttonIndex]
+                                                content.planterBox.S = SIDES[buttonIndex]
+                                                content.equipment.S = SIDES[buttonIndex]
                                             } else {
                                                 content.frame.S = '';
                                                 content.vent.S = '';
@@ -15659,6 +16038,11 @@ if (content.title == 'Tile') {
           </Item>
 
           <Item stackedLabel>
+            <Label>If Other.</Label>
+            <Input keyboardType="text" value={content.dwellingOther} onChangeText={(text) => { content.dwellingOther = text; this.setState({})}} />
+          </Item>
+
+          <Item stackedLabel>
             <Label>Year built</Label>
             <Input keyboardType="numeric" value={content.year} onChangeText={(text) => { content.year = text; this.setState({})}} />
           </Item>
@@ -16659,13 +17043,13 @@ if (content.title == 'Tile') {
             type: false,
             title: "Exterior Windows",
             leadsTo: null,
-            well: { M: null, I: true, R: null, name: 'Window Well' },
-            sash: { M: null, I: true, R: null, name: 'Window Sash' },
-            frame: { M: null, I: true, R: null, name: 'Window Frame' },
-            shutters: { M: null, I: true, R: null, name: 'Shutters' },
-            securitybars: { M: null, I: true, R: null, name: 'Security Bars' },
-            awning: { M: null, I: true, R: null, name: 'Awning' },
-            windowScreen: { M: null, I: true, R: null, name: 'Window Screen' }
+            well: { M: null, I: true, R: null,S: false, name: 'Window Well' },
+            sash: { M: null, I: true, R: null,S: false, name: 'Window Sash' },
+            frame: { M: null, I: true, R: null, S: false,name: 'Window Frame' },
+            shutters: { M: null, I: true, R: null,S: false, name: 'Shutters' },
+            securitybars: { M: null, I: true, R: null,S: false, name: 'Security Bars' },
+            awning: { M: null, I: true, R: null,S: false, name: 'Awning' },
+            windowScreen: { M: null, I: true, R: null, S: false, name: 'Window Screen' }
           },
           {
             id: 4,
@@ -16716,7 +17100,7 @@ if (content.title == 'Tile') {
       {
         id: (prevState.insSheets.length + 1),
         type: 'PermitSheet',
-        name: 'PerimeterTest',
+        name: 'Perimeter Sheet',
         data: [
           {
             id: 1,
@@ -16919,13 +17303,13 @@ if (content.title == 'Tile') {
             type: false,
             title: "Exterior Windows",
             leadsTo: null,
-            well: { M: null, I: true, R: null, name: 'Window Well' },
-            sash: { M: null, I: true, R: null, name: 'Window Sash' },
-            frame: { M: null, I: true, R: null, name: 'Window Frame' },
-            shutters: { M: null, I: true, R: null, name: 'Shutters' },
-            securitybars: { M: null, I: true, R: null, name: 'Security Bars' },
-            awning: { M: null, I: true, R: null, name: 'Awning' },
-            windowScreen: { M: null, I: true, R: null, name: 'Window Screen' }
+            well: { M: null, I: true, R: null, S: false, name: 'Window Well' },
+            sash: { M: null, I: true, R: null, S: false, name: 'Window Sash' },
+            frame: { M: null, I: true, R: null, S: false, name: 'Window Frame' },
+            shutters: { M: null, I: true, R: null, S: false, name: 'Shutters' },
+            securitybars: { M: null, I: true, R: null,S: false,  name: 'Security Bars' },
+            awning: { M: null, I: true, R: null, S: false, name: 'Awning' },
+            windowScreen: { M: null, I: true, R: null,S: false,  name: 'Window Screen' }
           }],
             x.total = x.data.length - 1
         }
@@ -17306,7 +17690,7 @@ if (content.title == 'Tile') {
       this.setState({})
     }
 
-    if (name == 'Exterior Walls') {
+    if (name == 'Walls') {
       let newData = this.state.insSheets.map(x => {
         if (x.id == id) {
           x.data = [...x.data, {
@@ -17314,7 +17698,7 @@ if (content.title == 'Tile') {
             side: false,
             expanded: 1,
             type: false,
-            title: "Exterior Walls",
+            title: "Walls",
             leadsTo: null,
             wallA: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
             wallB: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
