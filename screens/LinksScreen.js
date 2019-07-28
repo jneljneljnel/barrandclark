@@ -125,9 +125,9 @@ const sheetButons = ["Interior Inspection Sheet", "Exterior Inspection Sheet", "
 //const itemButons = ['Window', 'Exterior Window', 'Doorway', 'Exterior Doorway', 'Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Room', 'Baseboard', 'Heater Vent', 'Stairs', 'Garage Door',
 //'Garage Door Frame', 'Gutter/Downspout', 'Utility Box', 'Vent', 'Railings, 'Other', 'Cancel'];
 
-const itemButons = ['Interior Window', 'Interior Doorway', 'Exterior Doorway', 'Interior Walls', 'Interior Roof Trim', 'Porch', 'Closet', 'Cabinet', 'Interior Trim', 'Misc Interior', 'Fireplace', 'Stairs', 'Tile', 'Exterior Windows', 'Garage Doors', 'Parking Lot', 'Misc Exterior', 'Exterior Trim', 'Other Item', 'Cancel'];
-const itemExtButons = ['Exterior Doorway', 'Tile','Fireplace','Exterior Windows', 'Exterior Walls', 'Roof Trim', 'Porch', 'Exterior Trim', 'Closet', 'Cabinet','Garage Doors', 'Stairs', 'Misc Exterior', 'Parking Lot', 'Garage Walls', 'Other Item', 'Cancel'];
-const itemPermitButons = ['Exterior Doorway', 'Exterior Windows', 'Walls', 'Roof Trim', 'Garage Doors', 'Exterior Trim','Misc Exterior', 'Cancel'];
+const itemButons = ['Exterior Doorway','Interior Doorway','Interior Window','Closet','Cabinet','Interior Walls','Tile','Interior Trim','Misc Interior','Fireplace','Stairs','Exterior Windows','Porch','Interior Roof Trim','Exterior Trim','Garage Doors','Misc Exterior','Parking Lot','Other Item','Cancel'];
+const itemExtButons = ['Exterior Doorway','Exterior Windows','Exterior Walls','Roof Trim','Porch','Misc Exterior','Exterior Trim','Garage Door','Garage Walls','Stairs','Fireplace','Parking Lot','Tile','Closet','Cabinet','Other Item','Cancel'];
+const itemPermitButons = ['Exterior Doorway', 'Exterior Windows', 'Walls', 'Roof Trim', 'Garage Doors', 'Exterior Trim','Misc Exterior','Other Item', 'Cancel'];
 /** permiter sheet */
 const PermSub1 = ['Wood','Metal','Vinyl', 'Plaster', "Acoustic", "Asphalt", "Brick", "Concrete", "Fiberglass",
   "Gypsum", "Plastic", "Stucco", "Tile", "Transite",'Cancel'];
@@ -355,6 +355,58 @@ export default class LinksScreen extends React.Component {
 
     )
   }
+  renderSoilandDustFooter(sheetId, content) {
+    return (
+
+      <Grid>
+        <Col>
+          <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
+            Keyboard.dismiss();
+            this.state.insSheets.map(x => {
+              console.log(content.id)
+              console.log('x', x.id)
+              if (x.id == sheetId) {
+                x.data.map(y => {
+                  if (y.id == content.id) {
+                    y.done = true
+                    y.expanded = false
+                  }
+                })
+                let col = x.total;
+                if (col !== false) {
+                  col += '1';
+                  x.total = col;
+                } else {
+                  x.total = 'window';
+                }
+              }
+            })
+            this.setState({})
+          }}>
+            <Text>Done</Text>
+          </Button>
+        </Col>
+        <Col>
+          <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+            Alert.alert(
+              'Remove',
+              'Are you sure?',
+              [
+
+                { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                { text: 'OK', onPress: () => this.removeSheet(sheetId)},
+              ],
+              { cancelable: false }
+            )
+          }}>
+            <Text>Remove</Text>
+          </Button>
+        </Col>
+      </Grid>
+
+    )
+  }
+
   renderHtmlFooter(sheetId, content) {
     return (
 
@@ -406,6 +458,112 @@ export default class LinksScreen extends React.Component {
 
     )
   }
+
+
+  renderSoilSampleFooter(sheetId, content) {
+    return (
+
+      <Grid>
+        <Col>
+          <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
+            Keyboard.dismiss();
+            this.state.insSheets.map(x => {
+              console.log(content.id)
+              console.log('x', x.id)
+              if (x.id == sheetId) {
+                x.data.map(y => {
+                  if (y.id == content.id) {
+                    y.done = true
+                    y.expanded = false
+                  }
+                })
+                let col = x.total;
+                if (col !== false) {
+                  col += '1';
+                  x.total = col;
+                } else {
+                  x.total = 'window';
+                }
+              }
+            })
+            this.setState({})
+          }}>
+            <Text>Done</Text>
+          </Button>
+        </Col>
+        <Col>
+          <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+            Alert.alert(
+              'Remove Sample?',
+              'Are you sure?',
+              [
+
+                { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                { text: 'OK', onPress: () => this.removeSoilSample(sheetId, content.id) },
+              ],
+              { cancelable: false }
+            )
+          }}>
+            <Text>Remove</Text>
+          </Button>
+        </Col>
+      </Grid>
+
+    )
+  }
+
+  renderDustSampleFooter(sheetId, content) {
+    return (
+
+      <Grid>
+        <Col>
+          <Button block success style={{ marginTop: 10, marginBottom: 10, marginRight: 10 }} onPress={() => {
+            Keyboard.dismiss();
+            this.state.insSheets.map(x => {
+              console.log(content.id)
+              console.log('x', x.id)
+              if (x.id == sheetId) {
+                x.data.map(y => {
+                  if (y.id == content.id) {
+                    y.done = true
+                    y.expanded = false
+                  }
+                })
+                let col = x.total;
+                if (col !== false) {
+                  col += '1';
+                  x.total = col;
+                } else {
+                  x.total = 'window';
+                }
+              }
+            })
+            this.setState({})
+          }}>
+            <Text>Done</Text>
+          </Button>
+        </Col>
+        <Col>
+          <Button block danger style={{ marginTop: 10, marginBottom: 10 }} onPress={() => {
+            Alert.alert(
+              'Remove Sample?',
+              'Are you sure?',
+              [
+
+                { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                { text: 'OK', onPress: () => this.removeDustSample(sheetId, content.id) },
+              ],
+              { cancelable: false }
+            )
+          }}>
+            <Text>Remove</Text>
+          </Button>
+        </Col>
+      </Grid>
+
+    )
+  }
+
 
   renderCommonSheet(sheetId, content) {
     if (content.title === 'Eaves' || content.title === 'Rafters' || content.title === 'Fascia' || content.title === 'Soffit') {
@@ -842,8 +1000,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cModling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.cModling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.cModling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -877,8 +1038,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.picture.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.picture.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.picture.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -912,8 +1076,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.plate.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.plate.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.plate.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -949,8 +1116,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.horizontal.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.horizontal.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.horizontal.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -984,8 +1154,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vertical.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vertical.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vertical.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1019,8 +1192,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corner.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.corner.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.corner.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1120,8 +1296,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1155,8 +1334,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1190,8 +1372,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelf.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1225,8 +1410,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.support.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.support.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1304,8 +1492,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1340,8 +1531,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1376,8 +1570,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.thresh.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.thresh.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1413,8 +1610,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitydoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.securitydoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.securitydoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1448,8 +1648,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.screendoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.screendoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.screendoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1494,7 +1697,7 @@ _renderExtSheet(content, sheetId) {
 
               <Grid style={{ marginTop: 10 }}>
                   <Col style={{ height: 200 }}>
-                      <Text>Window Well!!</Text>
+                      <Text>Window Well</Text>
                       <Grid>
                       <Col>
                           <Button
@@ -1567,8 +1770,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.well.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.well.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.well.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1629,8 +1835,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.sash.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.sash.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1690,8 +1899,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1754,8 +1966,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shutters.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shutters.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shutters.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1815,8 +2030,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitybars.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.securitybars.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.securitybars.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1876,8 +2094,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.awning.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.awning.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.awning.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -1939,8 +2160,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.windowScreen.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2015,8 +2239,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallA.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallA.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2050,8 +2277,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallB.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallB.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2085,8 +2315,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallC.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallC.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2120,8 +2353,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallD.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallD.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2196,8 +2432,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallA.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallA.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2231,8 +2470,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallB.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallB.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2266,8 +2508,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallC.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallC.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2301,8 +2546,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wallD.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wallD.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2377,8 +2625,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.other.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.other.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.other.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2459,8 +2710,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.eaves.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.eaves.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2497,8 +2751,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.rafters.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.rafters.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2537,8 +2794,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fascia.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fascia.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2575,8 +2835,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.soffit.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.soffit.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2615,8 +2878,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corbel.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.corbel.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.corbel.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2652,8 +2918,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.roofSup.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.roofSup.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.roofSup.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2691,8 +2960,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.gutter.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.gutter.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2729,8 +3001,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.downspout.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.downspout.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2849,8 +3124,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.column.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.column.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.column.R = null
+                            }this.setState({})
                           }} />
                       </Item>
 
@@ -2912,8 +3190,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.beam.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.beam.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.beam.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -2975,8 +3256,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.ceiling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3036,8 +3320,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.floor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3099,8 +3386,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.handrail.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.handrail.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3161,8 +3451,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railing.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railing.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3224,8 +3517,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railcap.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railcap.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railcap.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3285,8 +3581,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mailSlot.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mailSlot.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mailSlot.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3368,8 +3667,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cBoard.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.cBoard.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.cBoard.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3406,8 +3708,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.trim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3445,8 +3750,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hTrim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.hTrim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.hTrim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3482,8 +3790,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vTrim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vTrim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vTrim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3523,8 +3834,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mDoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mDoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mDoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3561,8 +3875,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelf.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3600,8 +3917,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelfSupport.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelfSupport.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelfSupport.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3637,8 +3957,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.support.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.support.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3717,8 +4040,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.tread.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.tread.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.tread.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3753,8 +4079,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.riser.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.riser.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.riser.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3790,8 +4119,11 @@ _renderExtSheet(content, sheetId) {
 
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.deck.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.deck.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.deck.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3827,8 +4159,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.handrail.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.handrail.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3862,8 +4197,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railing.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railing.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3897,8 +4235,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.stringer.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.stringer.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.stringer.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3934,8 +4275,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.newel.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.newel.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.newel.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -3969,8 +4313,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baluster.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.baluster.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.baluster.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4123,8 +4470,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4160,8 +4510,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.doorframe.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.doorframe.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.doorframe.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4244,8 +4597,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4281,8 +4637,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vent.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vent.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4320,8 +4679,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.accessPanel.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.accessPanel.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.accessPanel.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4357,8 +4719,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gate.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.gate.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.gate.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4397,8 +4762,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fence.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fence.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fence.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4434,8 +4802,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.playEquip.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.playEquip.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.playEquip.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4473,8 +4844,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.planterBox.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.planterBox.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.planterBox.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4510,8 +4884,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.equipment.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.equipment.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.equipment.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4592,7 +4969,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4614,8 +4991,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.bollard.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.bollard.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.bollard.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4650,7 +5030,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4672,8 +5052,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStripe.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.parkingStripe.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.parkingStripe.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4709,7 +5092,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4731,8 +5114,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStop.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.parkingStop.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.parkingStop.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4767,7 +5153,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4789,8 +5175,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.curb.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.curb.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4826,7 +5215,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4848,8 +5237,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.lightPost.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.lightPost.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.lightPost.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4884,7 +5276,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4906,8 +5298,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.speedBump.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.speedBump.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.speedBump.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -4943,7 +5338,7 @@ _renderExtSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -4965,8 +5360,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireHydrant.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fireHydrant.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fireHydrant.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5024,8 +5422,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shower.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shower.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shower.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5060,8 +5461,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wall.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.wall.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.wall.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5096,8 +5500,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.curb.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.curb.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5133,8 +5540,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.ceiling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5168,8 +5578,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.floor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5203,8 +5616,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.backsplash.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5241,8 +5657,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.trim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5297,8 +5716,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mantle.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mantle.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mantle.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5332,8 +5754,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hearth.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.hearth.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.hearth.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5367,8 +5792,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireplace.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fireplace.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fireplace.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5402,8 +5830,11 @@ _renderExtSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chimney.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.chimney.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.chimney.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -5478,8 +5909,11 @@ _renderExtSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.frame.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -5513,8 +5947,11 @@ _renderExtSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.door.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.door.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -5548,49 +5985,55 @@ _renderExtSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
-                      }} />
-                  </Item>
-              </Col>
-              <Col style={{ height: 200 }}>
-                  <Text>Countertop</Text>
-                  <Button
-                      onPress={() =>
-                          ActionSheet.show(
-                              {
-                                  options: INTSUB4,
-                                  cancelButtonIndex: INTSUB4.length - 1,
-                                  title: "Material"
-                              },
-                              buttonIndex => {
-                                  if (buttonIndex != INTSUB4.length - 1) {
-                                      content.countertop.M = INTSUB4[buttonIndex]
-                                      this.setState({})
-                                  }
-                              }
-                          )}
-                  >
-                      <Text>{content.countertop.M || "Material"}</Text>
-                  </Button>
-                  <Text >{content.countertop.I == true ? 'Intact' : 'Deteriorated'}</Text>
-                  <ListItem>
-                      <RkChoice rkType='posNeg' selected={content.countertop.I} onChange={(e) => {
-                          content.countertop.I = !content.countertop.I
-                          this.setState({})
-                      }} />
-                  </ListItem>
-                  <Item>
-                      <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.countertop.R} onChangeText={(text) => {
-                          let p = text.split('.').join('');
-                          content.countertop.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.shelf.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
           </Grid>
 
           <Grid style={{ marginTop: 10 }}>
+          <Col style={{ height: 200 }}>
+              <Text>Countertop</Text>
+              <Button
+                  onPress={() =>
+                      ActionSheet.show(
+                          {
+                              options: INTSUB4,
+                              cancelButtonIndex: INTSUB4.length - 1,
+                              title: "Material"
+                          },
+                          buttonIndex => {
+                              if (buttonIndex != INTSUB4.length - 1) {
+                                  content.countertop.M = INTSUB4[buttonIndex]
+                                  this.setState({})
+                              }
+                          }
+                      )}
+              >
+                  <Text>{content.countertop.M || "Material"}</Text>
+              </Button>
+              <Text >{content.countertop.I == true ? 'Intact' : 'Deteriorated'}</Text>
+              <ListItem>
+                  <RkChoice rkType='posNeg' selected={content.countertop.I} onChange={(e) => {
+                      content.countertop.I = !content.countertop.I
+                      this.setState({})
+                  }} />
+              </ListItem>
+              <Item>
+                  <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.countertop.R} onChangeText={(text) => {
+                      let p = text.split('.').join('');
+                      if(p){
+                      content.countertop.R = String((Math.round(p) / 10).toFixed(1));
+                    }else{
+                      content.countertop.R = null
+                    }this.setState({})
+                  }} />
+              </Item>
+          </Col>
               <Col style={{ height: 200 }}>
                   <Text>Backsplash</Text>
                   <Button
@@ -5621,8 +6064,11 @@ _renderExtSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.backsplash.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -5656,8 +6102,11 @@ _renderExtSheet(content, sheetId) {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.medicine.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.medicine.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.medicine.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -5810,8 +6259,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.door.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.door.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -5873,8 +6325,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.frame.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -5939,8 +6394,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.thresh.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.thresh.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6001,8 +6459,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitydoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.securitydoor.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.securitydoor.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6066,8 +6527,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.screendoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.screendoor.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.screendoor.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6185,8 +6649,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.well.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.well.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.well.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6248,8 +6715,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.sash.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.sash.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6313,8 +6783,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.frame.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6375,8 +6848,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.awning.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.awning.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.awning.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6440,8 +6916,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shutters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.shutters.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.shutters.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6502,8 +6981,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitybars.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.securitybars.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.securitybars.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6567,8 +7049,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.windowScreen.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6676,8 +7161,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.wallA.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.wallA.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6739,8 +7227,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.wallB.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.wallB.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6806,8 +7297,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.wallC.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.wallC.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6869,8 +7363,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.wallD.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.wallD.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -6991,8 +7488,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.eaves.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.eaves.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7053,8 +7553,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.rafters.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.rafters.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7117,8 +7620,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.fascia.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.fascia.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7179,8 +7685,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.soffit.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.soffit.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7243,8 +7752,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.gutter.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.gutter.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7305,8 +7817,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.downspout.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.downspout.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7322,7 +7837,7 @@ _renderPermitSheet(content, sheetId) {
                                         {
                                             options: SIDES,
                                             cancelButtonIndex: SIDES.length - 1,
-                                            title: content.corbel.S || "Select Material"
+                                            title: content.corbel.S || "Select Side"
                                         },
                                         buttonIndex => {
                                             if (buttonIndex != SIDES.length - 1) {
@@ -7368,8 +7883,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corbel.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.corbel.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.corbel.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7383,7 +7901,7 @@ _renderPermitSheet(content, sheetId) {
                                         {
                                             options: SIDES,
                                             cancelButtonIndex: SIDES.length - 1,
-                                            title: content.roofSup.S || "Select Material"
+                                            title: content.roofSup.S || "Select Side"
                                         },
                                         buttonIndex => {
                                             if (buttonIndex != SIDES.length - 1) {
@@ -7429,8 +7947,113 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.roofSup.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.roofSup.R = String((Math.round(p) / 10).toFixed(1));
+                              }else{
+                                content.roofSup.R = null
+                              }this.setState({})
+                            }} />
+                        </Item>
+                    </Col>
+                </Grid>
+                <Item stackedLabel>
+                    <Label>Comments</Label>
+                    <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
+                </Item>
+                {this.renderExteriorHtmlFooter(sheetId, content)}
+            </View>
+        );
+    }
+    ///perimeter other item//
+    if (content.title == 'Other Item') {
+        return (
+            <View keyboardDismissMode="on-drag">
+                <Grid style={{ marginTop: 0 }}>
+                    <Col>
+                        <Button block error style={{ marginTop: 10 }}
+                            onPress={() =>
+                                ActionSheet.show(
+                                    {
+                                        options: EXTTYPES3,
+                                        cancelButtonIndex: EXTTYPES3.length - 1,
+                                        title: "Select Type"
+                                    },
+                                    buttonIndex => {
+                                        if (buttonIndex != EXTTYPES3.length - 1) {
+                                            content.doorType = EXTTYPES3[buttonIndex]
+                                        } else {
+                                            content.doorType = '';
+                                        }
+                                        this.setState({})
+                                    }
+                                )}>
+                            <Text>{content.doorType || 'Type'}</Text>
+                        </Button>
+                    </Col>
+                </Grid>
+
+                <Grid style={{ marginTop: 10 }}>
+                    <Col style={{ height: 200 }}>
+                        <Text>Other Item</Text>
+                        <Grid>
+                          <Col>
+                              <Button
+                                  onPress={() =>
+                                      ActionSheet.show(
+                                          {
+                                              options: SIDES,
+                                              cancelButtonIndex: SIDES.length - 1,
+                                              title: content.other.S || "Select Material"
+                                          },
+                                          buttonIndex => {
+                                              if (buttonIndex != SIDES.length - 1) {
+                                                  content.other.S = SIDES[buttonIndex]
+                                              } else {
+                                                  content.other.S= '';
+                                              }
+                                              this.setState({})
+                                          }
+                                      )}
+                              >
+                                  <Text>{content.other.S || "Side"}</Text>
+                              </Button>
+                          </Col>
+                          <Col>
+                          <Button
+                              onPress={() =>
+                                  ActionSheet.show(
+                                      {
+                                          options: EXTSUBGWALL,
+                                          cancelButtonIndex: EXTSUBGWALL.length - 1,
+                                          title: content.other.M || "Select Material"
+                                      },
+                                      buttonIndex => {
+                                          if (buttonIndex != EXTSUBGWALL.length - 1) {
+                                              content.other.M = EXTSUBGWALL[buttonIndex]
+                                              this.setState({})
+                                          }
+                                      }
+                                  )}
+                          >
+                              <Text>{content.other.M || "Material"}</Text>
+                          </Button>
+                          </Col>
+                          </Grid>
+                        <Text style={{ marginTop: 10 }} >{content.other.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                        <ListItem>
+                            <RkChoice rkType='posNeg' selected={content.other.I} onChange={(e) => {
+                                content.other.I = !content.other.I
                                 this.setState({})
+                            }} />
+                        </ListItem>
+                        <Item>
+                            <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.other.R} onChangeText={(text) => {
+                                let p = text.split('.').join('');
+                                if(p){
+                                content.other.R = String((Math.round(p) / 10).toFixed(1));
+                              }else{
+                                content.other.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7551,8 +8174,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cBoard.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.cBoard.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.cBoard.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7613,8 +8239,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.trim.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7676,8 +8305,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.hTrim.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.hTrim.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7737,8 +8369,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vTrim.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.vTrim.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.vTrim.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7802,8 +8437,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mDoor.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.mDoor.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.mDoor.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7864,8 +8502,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.shelf.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7927,8 +8568,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelfSupport.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.shelfSupport.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.shelfSupport.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -7988,8 +8632,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.support.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.support.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -8095,8 +8742,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.door.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.door.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -8161,8 +8811,11 @@ _renderPermitSheet(content, sheetId) {
                         <Item>
                             <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.doorframe.R} onChangeText={(text) => {
                                 let p = text.split('.').join('');
+                                if(p){
                                 content.doorframe.R = String((Math.round(p) / 10).toFixed(1));
-                                this.setState({})
+                              }else{
+                                content.doorframe.R = null
+                              }this.setState({})
                             }} />
                         </Item>
                     </Col>
@@ -8283,8 +8936,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.frame.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8344,8 +9000,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.equipment.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.equipment.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.equipment.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8407,8 +9066,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.vent.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.vent.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8468,8 +9130,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.accessPanel.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.accessPanel.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.accessPanel.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8533,8 +9198,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gate.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.gate.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.gate.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8594,8 +9262,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fence.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.fence.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.fence.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8658,8 +9329,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.playEquip.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.playEquip.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.playEquip.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8719,8 +9393,11 @@ _renderPermitSheet(content, sheetId) {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.planterBox.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.planterBox.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.planterBox.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -8826,8 +9503,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.column.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.column.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.column.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -8884,8 +9564,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.beam.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.beam.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.beam.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -8943,8 +9626,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.ceiling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -8980,8 +9666,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.floor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9039,8 +9728,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.handrail.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.handrail.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9097,8 +9789,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railing.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railing.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9156,8 +9851,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railcap.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railcap.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railcap.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9213,8 +9911,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mailSlot.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mailSlot.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mailSlot.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9314,8 +10015,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.well.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.well.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.well.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9350,8 +10054,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.sash.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.sash.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9385,8 +10092,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9423,8 +10133,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shutters.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shutters.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shutters.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9458,8 +10171,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securitybars.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.securitybars.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.securitybars.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9493,8 +10209,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.awning.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.awning.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.awning.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9530,8 +10249,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.windowScreen.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9611,7 +10333,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9633,8 +10355,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cBoard.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.cBoard.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.cBoard.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9668,7 +10393,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9690,8 +10415,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.trim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9727,7 +10455,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9749,8 +10477,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hTrim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.hTrim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.hTrim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9784,7 +10515,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9806,8 +10537,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vTrim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vTrim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vTrim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9845,7 +10579,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9867,8 +10601,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mDoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mDoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mDoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9903,7 +10640,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9925,8 +10662,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelf.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -9962,7 +10702,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -9984,8 +10724,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelfSupport.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelfSupport.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelfSupport.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10019,7 +10762,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -10041,8 +10784,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.support.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.support.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10115,7 +10861,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -10137,8 +10883,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10172,7 +10921,7 @@ _renderIntSheet(content, sheetId) {
                                           title: "Select Side"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != 9) {
+                                          if (buttonIndex != SIDES.length - 1) {
                                               content.side = SIDES[buttonIndex]
                                               this.setState({})
                                           }else{
@@ -10194,8 +10943,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.doorframe.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.doorframe.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.doorframe.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10298,8 +11050,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.bollard.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.bollard.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.bollard.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10356,8 +11111,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStripe.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.parkingStripe.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.parkingStripe.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10415,8 +11173,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.parkingStop.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.parkingStop.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.parkingStop.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10473,8 +11234,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.curb.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.curb.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10532,8 +11296,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.lightPost.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.lightPost.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.lightPost.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10590,8 +11357,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.speedBump.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.speedBump.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.speedBump.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10649,8 +11419,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireHydrant.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fireHydrant.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fireHydrant.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10754,8 +11527,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10811,8 +11587,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.equipment.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.equipment.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.equipment.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10870,8 +11649,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vent.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vent.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10927,8 +11709,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.accessPanel.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.accessPanel.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.accessPanel.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -10987,8 +11772,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gate.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.gate.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.gate.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11044,8 +11832,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fence.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fence.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fence.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11104,8 +11895,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.playEquip.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.playEquip.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.playEquip.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11161,8 +11955,11 @@ _renderIntSheet(content, sheetId) {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.planterBox.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.planterBox.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.planterBox.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11273,8 +12070,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.eaves.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.eaves.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11333,8 +12133,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.rafters.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.rafters.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11395,8 +12198,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.fascia.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.fascia.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11455,8 +12261,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.soffit.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.soffit.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11517,8 +12326,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.corbel.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.corbel.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.corbel.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11577,8 +12389,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.roofSup.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.roofSup.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.roofSup.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11639,8 +12454,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.gutter.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.gutter.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11699,8 +12517,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.downspout.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.downspout.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -11779,8 +12600,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.tread.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.tread.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.tread.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11815,8 +12639,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.riser.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.riser.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.riser.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11851,8 +12678,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.deck.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.deck.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.deck.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11888,8 +12718,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.handrail.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.handrail.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.handrail.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11923,8 +12756,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.railing.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.railing.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.railing.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11958,8 +12794,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.stringer.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.stringer.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.stringer.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -11995,8 +12834,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.newel.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.newel.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.newel.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12030,8 +12872,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baluster.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.baluster.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.baluster.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12058,7 +12903,7 @@ if (content.title == 'Interior Roof Trim') {
                                       title: "Select Side"
                                   },
                                   buttonIndex => {
-                                      if (buttonIndex != 9) {
+                                      if (buttonIndex != SIDES.length - 1) {
                                           content.side = SIDES[buttonIndex]
                                           this.setState({})
                                       }else{
@@ -12128,8 +12973,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sill.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.sill.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.sill.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12163,8 +13011,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.sash.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.sash.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.sash.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12198,8 +13049,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12235,8 +13089,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.windowScreen.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.windowScreen.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.windowScreen.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12270,8 +13127,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.valence.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.valence.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.valence.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12368,8 +13228,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12403,8 +13266,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12438,8 +13304,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.thresh.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.thresh.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12539,8 +13408,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12574,8 +13446,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12609,8 +13484,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.thresh.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.thresh.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.thresh.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12649,8 +13527,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.securityDoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.securityDoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.securityDoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12684,8 +13565,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.screenDoor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.screenDoor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.screenDoor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -12805,8 +13689,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallA.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.wallA.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.wallA.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -12840,8 +13727,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallB.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.wallB.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.wallB.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -12875,8 +13765,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallC.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.wallC.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.wallC.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -12910,8 +13803,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wallD.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.wallD.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.wallD.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -12974,8 +13870,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baseboard.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.baseboard.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.baseboard.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -13036,8 +13935,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.vent.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.vent.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -13074,8 +13976,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.ceiling.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -13113,8 +14018,11 @@ if (content.title == 'Interior Roof Trim') {
                     <Item>
                         <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                             let p = text.split('.').join('');
+                            if(p){
                             content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                            this.setState({})
+                          }else{
+                            content.floor.R = null
+                          }this.setState({})
                         }} />
                     </Item>
                 </Col>
@@ -13211,8 +14119,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.door.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.door.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13246,8 +14157,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13281,8 +14195,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelf.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13316,13 +14233,16 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.support.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.support.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.support.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
               </Grid>
-              <Item stackedLabel>
+              <Item stackedLabel style={{ marginTop: 20 }}>
                   <Label>Comments</Label>
                   <Input value={content.comments} onChangeText={(text) => { content.comments = text; this.setState({}) }} />
               </Item>
@@ -13393,8 +14313,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.eaves.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.eaves.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.eaves.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13428,8 +14351,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.rafters.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.rafters.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.rafters.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13463,8 +14389,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fascia.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fascia.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fascia.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13500,8 +14429,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.soffit.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.soffit.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.soffit.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13535,8 +14467,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.gutter.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.gutter.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.gutter.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13570,8 +14505,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.downspout.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.downspout.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.downspout.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -13668,8 +14606,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.frame.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -13703,8 +14644,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.door.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.door.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.door.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -13738,11 +14682,17 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.shelf.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
+          </Grid>
+
+          <Grid style={{ marginTop: 10 }}>
               <Col style={{ height: 200 }}>
                   <Text>Countertop</Text>
                   <Button
@@ -13773,14 +14723,14 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.countertop.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.countertop.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.countertop.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
-          </Grid>
-
-          <Grid style={{ marginTop: 10 }}>
               <Col style={{ height: 200 }}>
                   <Text>Backsplash</Text>
                   <Button
@@ -13811,8 +14761,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.backsplash.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -13846,8 +14799,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.medicine.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.medicine.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.medicine.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -13952,8 +14908,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.cModling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.cModling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.cModling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14014,8 +14973,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.picture.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.picture.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.picture.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14079,8 +15041,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.plate.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.plate.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.plate.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14142,8 +15107,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.horizontal.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.horizontal.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.horizontal.R = null
+                            }this.setState({})
                           }} />
 
                       </Item>
@@ -14207,8 +15175,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vertical.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.vertical.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.vertical.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14269,8 +15240,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chain.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.chain.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.chain.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14333,8 +15307,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.trim.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14395,8 +15372,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.frame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.frame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.frame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14500,8 +15480,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.other.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.other.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.other.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14607,8 +15590,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.baseboard.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.baseboard.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.baseboard.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14670,8 +15656,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.ceiling.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14734,8 +15723,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.vent.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.vent.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.vent.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -14796,8 +15788,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.floor.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14860,8 +15855,11 @@ if (content.title == 'Interior Roof Trim') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.atticFrame.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.atticFrame.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.atticFrame.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -14923,8 +15921,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.electricFrame.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.electricFrame.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.electricFrame.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -14987,8 +15988,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shelf.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.shelf.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.shelf.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15049,8 +16053,11 @@ if (content.title == 'Interior Roof Trim') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mailSlot.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mailSlot.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mailSlot.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15073,7 +16080,7 @@ if (content.title == 'Tile') {
                   <Text>Shower</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15131,8 +16138,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.shower.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.shower.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.shower.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15141,7 +16151,7 @@ if (content.title == 'Tile') {
                   <Text>Wall</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15193,8 +16203,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wall.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.wall.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.wall.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15206,7 +16219,7 @@ if (content.title == 'Tile') {
                   <Text>Curb</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15258,8 +16271,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.curb.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.curb.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.curb.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15267,7 +16283,7 @@ if (content.title == 'Tile') {
                   <Text>Ceiling</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15319,8 +16335,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.ceiling.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.ceiling.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.ceiling.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15331,7 +16350,7 @@ if (content.title == 'Tile') {
                   <Text>Floor</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15383,8 +16402,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.floor.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.floor.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.floor.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15392,7 +16414,7 @@ if (content.title == 'Tile') {
                   <Text>Backsplash</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0, marginRight: 10 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15444,8 +16466,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.backsplash.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.backsplash.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.backsplash.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15456,7 +16481,7 @@ if (content.title == 'Tile') {
                   <Text>Trim</Text>
                   <Grid>
                       <Col>
-                          <Button block error style={{ marginTop: 0, marginRight: 10 }}
+                          <Button error style={{ marginTop: 0 }}
                               onPress={() =>
                                   ActionSheet.show(
                                       {
@@ -15508,8 +16533,11 @@ if (content.title == 'Tile') {
                   <Item>
                       <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.trim.R} onChangeText={(text) => {
                           let p = text.split('.').join('');
+                          if(p){
                           content.trim.R = String((Math.round(p) / 10).toFixed(1));
-                          this.setState({})
+                        }else{
+                          content.trim.R = null
+                        }this.setState({})
                       }} />
                   </Item>
               </Col>
@@ -15635,8 +16663,11 @@ if (content.title == 'Tile') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.mantle.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.mantle.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.mantle.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15670,8 +16701,11 @@ if (content.title == 'Tile') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.hearth.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.hearth.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.hearth.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15705,8 +16739,11 @@ if (content.title == 'Tile') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.fireplace.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.fireplace.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.fireplace.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15740,8 +16777,11 @@ if (content.title == 'Tile') {
                       <Item>
                           <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.chimney.R} onChangeText={(text) => {
                               let p = text.split('.').join('');
+                              if(p){
                               content.chimney.R = String((Math.round(p) / 10).toFixed(1));
-                              this.setState({})
+                            }else{
+                              content.chimney.R = null
+                            }this.setState({})
                           }} />
                       </Item>
                   </Col>
@@ -15842,7 +16882,7 @@ if (content.title == 'Tile') {
               onDateChange={(newdate) => { content.recievedDate = newdate }}
             />
           </Item>
-          {this.renderHtmlFooter(sheetId, content)}
+          {this.renderSoilandDustFooter(sheetId)}
         </ScrollView>
       )
     }
@@ -15881,7 +16921,7 @@ if (content.title == 'Tile') {
               <Text>{content.surface || 'Surface Type'}</Text>
             </Button>
           </Item>
-          {this.renderHtmlFooter(sheetId, content)}
+          {this.renderSoilSampleFooter(sheetId, content)}
         </View>
       )
     }
@@ -15893,7 +16933,7 @@ if (content.title == 'Tile') {
         <Form>
           <Item stackedLabel>
             <Label>No. of Samples Collected</Label>
-            <Input keyboardType="numeric" value={content.numCollected} onChangeText={(text) => { content.numCollected = text }} />
+            <Input keyboardType="numeric" value={content.numCollected} onChangeText={(text) => {  content.numCollected = text; this.setState({}) }} />
           </Item>
           <Item stackedLabel last>
             <Label>Turn Around</Label>
@@ -15961,7 +17001,7 @@ if (content.title == 'Tile') {
               onDateChange={(newdate) => { content.recievedDate = newdate }}
             />
           </Item>
-          {this.renderHtmlFooter(sheetId, content)}
+          {this.renderSoilandDustFooter(sheetId)}
         </Form>
       )
     }
@@ -16002,7 +17042,7 @@ if (content.title == 'Tile') {
               <Text>{content.surface || 'Surface Type'}</Text>
             </Button>
           </Item>
-          {this.renderHtmlFooter(sheetId, content)}
+          {this.renderDustSampleFooter(sheetId, content)}
         </View>
       )
     }
@@ -16039,7 +17079,7 @@ if (content.title == 'Tile') {
 
           <Item stackedLabel>
             <Label>If Other.</Label>
-            <Input keyboardType="text" value={content.dwellingOther} onChangeText={(text) => { content.dwellingOther = text; this.setState({})}} />
+            <Input value={content.dwellingOther} onChangeText={(text) => { content.dwellingOther = text; this.setState({})}} />
           </Item>
 
           <Item stackedLabel>
@@ -16079,7 +17119,7 @@ if (content.title == 'Tile') {
                       this.setState({})
                     }
                     if (buttonIndex == 5) {
-                      content.builtover = this.value
+                      content.builtover = 'Other'
                       this.setState({})
                     }
                   }
@@ -16087,6 +17127,10 @@ if (content.title == 'Tile') {
                  <Text>{content.builtover}</Text>
               </TouchableOpacity>
             </View>
+          </Item>
+          <Item stackedLabel>
+            <Label>If Other.</Label>
+            <Input value={content.builtOther} onChangeText={(text) => { content.builtOther = text; this.setState({})}} />
           </Item>
 
           <Text style={{ fontWeight: 'bold' }}>Exterior(Check all that apply)</Text>
@@ -16114,6 +17158,10 @@ if (content.title == 'Tile') {
             <Text>Other</Text>
             <RkChoice rkType='posNeg' selected={content.other} onChange={(e) => { content.other = !e; this.setState({}) }} />
           </ListItem>
+          <Item stackedLabel>
+            <Label>If Other.</Label>
+            <Input value={content.exteriorOther} onChangeText={(text) => { content.exteriorOther = text; this.setState({})}} />
+          </Item>
 
           <Item stackedLabel>
           <View style={{flexDirection:'column',width:'100%'}}>
@@ -17794,6 +18842,23 @@ if (content.title == 'Tile') {
       })
       this.setState({})
     }
+    if (name == 'Other Item') {
+      let newData = this.state.insSheets.map(x => {
+        if (x.id == id) {
+          x.data = [...x.data, {
+            id: x.data.length + 1,
+            side: false,
+            expanded: 1,
+            type: false,
+            title: "Other Item",
+            leadsTo: null,
+            other: { M: null, I: true, R: null, name: 'other', item:'other' },
+          }],
+            x.total = x.data.length - 1
+        }
+      })
+      this.setState({})
+    }
    }
 
   //intfunction
@@ -18323,6 +19388,53 @@ if (content.title == 'Tile') {
       console.log("remove sheet", x.id, sheetId);
       console.log(x.id != sheetId)
       return x.id != sheetId
+    })
+    this.setState({})
+  }
+
+  removeSoilSample(sheetId, id) {
+    console.log("remove Soil", sheetId, id);
+    let newData = this.state.insSheets.map(x => {
+      if (x.id == sheetId) {
+        x.data = x.data.filter(i => {
+          if (i.id != id) {
+            console.log('return')
+            return i
+          }
+        }),
+        x.data = x.data.map((d,i) => {
+          d.id = i + 1
+          if(d.type !== "detail"){
+            d.title = "SS "+ (i)
+            console.log("yo",d)
+          }
+          return d
+        })
+        x.total = null
+      }
+    })
+    this.setState({})
+  }
+
+  removeDustSample(sheetId, id) {
+    console.log("remove dust", sheetId, id);
+    let newData = this.state.insSheets.map(x => {
+      if (x.id == sheetId) {
+        x.data = x.data.filter(i => {
+          if (i.id != id) {
+            console.log('return')
+            return i
+          }
+        }),
+        x.data = x.data.map((d,i) => {
+          d.id = i + 1
+          if(d.type !== "detail"){
+            d.title = "DS "+ (i)
+          }
+          return d
+        })
+        x.total = null
+      }
     })
     this.setState({})
   }
