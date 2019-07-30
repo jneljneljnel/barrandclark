@@ -5665,6 +5665,9 @@ _renderExtSheet(content, sheetId) {
                           }} />
                       </Item>
                   </Col>
+                  <Col>
+                    <Text></Text >
+                  </Col>
               </Grid>
               <Item stackedLabel>
                   <Label>Comments</Label>
@@ -15392,7 +15395,7 @@ if (content.title == 'Interior Roof Trim') {
       );
   }
 
-  /** OTHER ITEM interior **/
+  /** interior OTHER ITEM  **/
 
   if (content.title == 'Other Item') {
       return (
@@ -16474,7 +16477,6 @@ if (content.title == 'Tile') {
                       }} />
                   </Item>
               </Col>
-
           </Grid>
           <Grid>
               <Col style={{ height: 200 }}>
@@ -16540,6 +16542,9 @@ if (content.title == 'Tile') {
                         }this.setState({})
                       }} />
                   </Item>
+              </Col>
+              <Col>
+                <Text></Text >
               </Col>
           </Grid>
           <Item stackedLabel>
@@ -19222,7 +19227,6 @@ if (content.title == 'Tile') {
         if (x.id == id) {
           x.data = [...x.data, {
             id: x.data.length + 1,
-            side: false,
             expanded: 1,
             type: false,
             title: "Other Item",
@@ -19708,7 +19712,7 @@ if (content.title == 'Tile') {
               }if (x.type == 'PermitSheet') {
                 return <View style={{ padding: 10, paddingBottom: 15 }} key={x.id + 'view'}>
                   <Item key={x.id + 'item'} >
-                    <Input key={x.id + 'pp'} ref={this.inp2} value={x.name} onChangeText={(text) => this.setName(text, x.id)} placeholder="PermitSheet Sheet" />
+                    <Input key={x.id + 'pp'} ref={this.inp2} value={x.name} onChangeText={(text) => this.setName(text, x.id)} placeholder="Perimeter Inspection Sheet" />
                   </Item><PermitSheet data={x.data} addItemPerimeter={this.addItemPerimeter} total={x.total}
                     focusNextField={this.focusNextField}
                     renderWindowHeader={this._renderWindowHeader}
