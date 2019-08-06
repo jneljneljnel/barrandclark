@@ -18079,7 +18079,6 @@ if (content.title == 'Tile') {
           {
             id: 2,
             side: false,
-            expanded: 0,
             type: false,
             title: "Exterior Doorway",
             leadsTo: null,
@@ -18092,7 +18091,6 @@ if (content.title == 'Tile') {
           {
             id: 3,
             side: false,
-            expanded: 1,
             type: false,
             title: "Exterior Windows",
             leadsTo: null,
@@ -18107,7 +18105,6 @@ if (content.title == 'Tile') {
           {
             id: 4,
             side: false,
-            expanded: 1,
             type: false,
             title: "Exterior Walls",
             leadsTo: null,
@@ -18118,7 +18115,6 @@ if (content.title == 'Tile') {
           }, {
             id: 5,
             side: false,
-            expanded: 1,
             type: false,
             title: "Roof Trim",
             leadsTo: null,
@@ -18134,12 +18130,11 @@ if (content.title == 'Tile') {
           {
             id: 6,
             side: false,
-            expanded: 1,
             type: false,
             title: "Garage Doors",
             leadsTo: null,
-            door: { M: null, I: true, R: null, name: 'Door' },
-            doorframe: { M: null, I: true, R: null, name: 'Door Frame' },
+            door: { M: null, I: true, R: null, name: 'Garage Door' },
+            doorframe: { M: null, I: true, R: null, name: 'Garage Door Frame' },
           }],
         total: null
       }]
@@ -19450,11 +19445,20 @@ if (content.title == 'Tile') {
         x.data = x.data.filter(i => {
           if (i.id != id) {
             console.log('return')
+            i.expanded = false;
             return i
           }
-        }),
-          x.total = null
+        });
+        let col = x.total;
+        if (col !== false) {
+          col += '1';
+          x.total = col;
+        } else {
+          x.total = 'window';
+        }
+        //  x.total = null
       }
+
     })
     this.setState({})
 
