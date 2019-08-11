@@ -26,6 +26,7 @@ export default class HomeScreen extends React.Component {
     }
     this._retrieveData = this._retrieveData.bind(this)
     this.uploadData = this.uploadData.bind(this)
+    this.uploadData2 = this.uploadData2.bind(this)
     this.getPropPhoto = this.getPropPhoto.bind(this)
     this.clearData = this.clearData.bind(this)
     this.deleteJob = this.deleteJob.bind(this)
@@ -48,12 +49,93 @@ export default class HomeScreen extends React.Component {
     this._retrieveData()
     this.getPermissions()
   }
+
+  uploadData2 = () => {
+    const jobsArray = this.state.jobs;
+    if (this.state.jobs.length){
+    const promises = this.state.jobs.map((x,index) => {
+      let jobId = x.replace(/\*/g, '')
+      return new Promise(resolve =>
+        setTimeout(() => {
+          AsyncStorage.getItem(x).then((state) => {
+            fetch('https://nameless-reef-31035.herokuapp.com/upload',
+            //fetch('http://d7d83079.ngrok.io/upload',
+            {
+              method: 'POST',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                jobid: jobId,
+                state: state,
+              }),
+            }).then((response) => {
+                if(response.status === 200){
+                  //this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
+                  //AsyncStorage.removeItem(x)
+                  Alert.alert(
+                    'Success', `Job ${x} successfyully uploaded`,
+                    [
+                      {text: 'Cancel', onPress: this._retrieveData},
+                      {text: 'OK', onPress: this._retrieveData},
+                    ],
+                   { cancelable: false });
+
+                   const imageFile = {
+                    uri: this.state.pics[0],
+                    name: x+'.png',
+                    type: "image/png"
+                   }
+                   const options = {
+                     keyPrefix: "uploads/",
+                     bucket: "barrandclark",
+                     region: "us-west-1",
+                     accessKey: "AKIA3HLIV76UOGKFFDGB",
+                     secretKey: "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",
+                     successActionStatus: 201,
+                     ACL: 'public-read',
+                   }
+                   if(this.state.pics[0]){
+                     console.log('pics',this.state.pics)
+                     RNS3.put(imageFile, options).then(response => {
+                       console.log(response.body)
+                     })
+                   }
+                  return
+                } else {
+                  Alert.alert(
+                    'Error uploading job', 'Please try again later',
+                    [
+                      {text: 'Cancel', onPress: this._retrieveData},
+                      {text: 'OK', onPress: this._retrieveData},
+                    ],
+                   { cancelable: false });
+                  return
+                }
+              })
+              .catch((error) => {
+                console.error(error);
+              })
+          })
+          resolve()
+        }, 6000 * this.state.jobs.length - 6000 * index)
+      )
+    })
+    Promise.all(promises).then(() => console.log('done'))
+    }
+  }
+
+
   uploadData = () => {
+    const delay = ms => new Promise(res => setTimeout(res, ms));
     if (this.state.jobs.length){
       this.state.jobs.map((x, index) => {
-        AsyncStorage.getItem(x).then(state =>
-          fetch('https://nameless-reef-31035.herokuapp.com/upload',
-          //fetch('http://2584164a.ngrok.io/upload',
+        let jobId = x.replace(/\*/g, '')
+        console.log('JobId', jobId)
+        AsyncStorage.getItem(x).then(async(state) => {
+          //fetch('https://nameless-reef-31035.herokuapp.com/upload',
+          fetch('http://d7d83079.ngrok.io/upload',
           {
             method: 'POST',
             headers: {
@@ -61,16 +143,16 @@ export default class HomeScreen extends React.Component {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              jobid: x,
+              jobid: jobId,
               state: state,
             }),
           })
           .then((response) => {
             if(response.status === 200){
-              this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
-              AsyncStorage.removeItem(x)
+              //this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
+              //AsyncStorage.removeItem(x)
               Alert.alert(
-                'Success', 'Job successfyully uploaded',
+                'Success', `Job ${x} successfyully uploaded`,
                 [
                   {text: 'Cancel', onPress: this._retrieveData},
                   {text: 'OK', onPress: this._retrieveData},
@@ -91,8 +173,8 @@ export default class HomeScreen extends React.Component {
                  successActionStatus: 201,
                  ACL: 'public-read',
                }
-               if(this.state.pics){
-                 console.log(this.state.pics)
+               if(this.state.pics[0]){
+                 console.log('pics',this.state.pics)
                  RNS3.put(imageFile, options).then(response => {
                    console.log(response.body)
                  })
@@ -113,10 +195,10 @@ export default class HomeScreen extends React.Component {
             console.error(error);
           })
           //upload photo
-        );
+        });
       })
       if (this.state.jobs.length){
-        this.setState({jobs:[]})
+        //this.setState({jobs:[]})
       }
     }
     //push to db
@@ -236,7 +318,7 @@ RkTheme.setType('RkButton', 'faded', {
              'Are you sure?',
              [
                { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
-               { text: 'OK', onPress: () => {  this.uploadData() } },
+               { text: 'OK', onPress: () => {  this.uploadData2() } },
              ],
              { cancelable: true }
            )

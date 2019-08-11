@@ -16109,12 +16109,12 @@ if (content.title == 'Tile') {
                               onPress={() =>
                                   ActionSheet.show(
                                       {
-                                          options: INTSUB2,
-                                          cancelButtonIndex: INTSUB2.length - 1,
+                                          options: INTSUB9,
+                                          cancelButtonIndex: INTSUB9.length - 1,
                                           title: content.shower.M || "Select Material"
                                       },
                                       buttonIndex => {
-                                          if (buttonIndex != INTSUB2.length - 1) {
+                                          if (buttonIndex != INTSUB9.length - 1) {
                                               content.shower.M = INTSUB9[buttonIndex]
                                               content.wall.M = INTSUB9[buttonIndex]
                                               content.curb.M = INTSUB9[buttonIndex]
@@ -19681,7 +19681,7 @@ if (content.title == 'Tile') {
       <InputScrollView>
         <View>
           <Item listBorderColor="red">
-            <Input keyboardType="numeric" inputColorPlaceholder='red' placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text, color: 'black' }) }} ref={c => this._usernameInput = c} />
+            <Input keyboardType="phone-pad" inputColorPlaceholder='red' placeholder='JobId' value={this.state.jobId} onChangeText={(text) => { this.setState({ jobId: text, color: 'black' }) }} ref={c => this._usernameInput = c} />
             <Icon name='close-circle' style={{ color: this.state.color }} />
           </Item>
         </View>
