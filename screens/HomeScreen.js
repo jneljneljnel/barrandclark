@@ -52,9 +52,18 @@ export default class HomeScreen extends React.Component {
 
   uploadData2 = () => {
     const jobsArray = this.state.jobs;
+    let finals = []
     if (this.state.jobs.length){
+      Alert.alert(
+        'Uploading...', `please wait`,
+        [
+          {text: 'Cancel', onPress: this._retrieveData},
+          {text: 'OK', onPress: this._retrieveData},
+        ],
+       { cancelable: false });
     const promises = this.state.jobs.map((x,index) => {
       let jobId = x.replace(/\*/g, '')
+      let result = ''
       return new Promise(resolve =>
         setTimeout(() => {
           AsyncStorage.getItem(x).then((state) => {
@@ -74,8 +83,10 @@ export default class HomeScreen extends React.Component {
                 if(response.status === 200){
                   //this.setState({jobs: this.state.jobs.filter((_, i) => i !== index)})
                   //AsyncStorage.removeItem(x)
+                  resolve({jobId:x, success: "Success"})
+                  finals.push({jobId:x, success: "Success"})
                   Alert.alert(
-                    'Success', `Job ${x} successfyully uploaded`,
+                    'Success', `Job ${x} successfully uploaded`,
                     [
                       {text: 'Cancel', onPress: this._retrieveData},
                       {text: 'OK', onPress: this._retrieveData},
@@ -102,8 +113,9 @@ export default class HomeScreen extends React.Component {
                        console.log(response.body)
                      })
                    }
-                  return
                 } else {
+                  finals.push({jobId:x, success: 'Error'})
+                  resolve({jobId:x, success: "Error"})
                   Alert.alert(
                     'Error uploading job', 'Please try again later',
                     [
@@ -111,18 +123,32 @@ export default class HomeScreen extends React.Component {
                       {text: 'OK', onPress: this._retrieveData},
                     ],
                    { cancelable: false });
-                  return
                 }
               })
               .catch((error) => {
                 console.error(error);
               })
           })
-          resolve()
         }, 6000 * this.state.jobs.length - 6000 * index)
       )
     })
-    Promise.all(promises).then(() => console.log('done'))
+    Promise.all(promises).then((x) => {
+      console.log('res', x)
+      let str = ''
+      //let str = "Line 1" + '\n' + "Line 2"
+      finals.forEach( x => str += x.jobId +" "+ x.success+'\n')
+      console.log('then!!!')
+      setTimeout(()=>{
+        Alert.alert(
+          'Results', str,
+          [
+            {text: 'Cancel', onPress: this._retrieveData},
+            {text: 'OK', onPress: this._retrieveData},
+          ],
+         { cancelable: false });
+      }, 1000)
+
+    })
     }
   }
 
