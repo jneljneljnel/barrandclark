@@ -3205,7 +3205,7 @@ _renderExtSheet(content, sheetId) {
                   <Col style={{ height: 200 }}>
                       <Text>Mail Slot</Text>
                       <Grid style={{ marginBottom: 20 }}>
-                    
+
                       <Col>
                           <Button
                               onPress={() =>
@@ -3636,7 +3636,7 @@ _renderExtSheet(content, sheetId) {
           <View keyboardDismissMode="on-drag">
               <Grid style={{ marginTop: 0 }}>
                   <Col>
-                      <Button block error style={{ marginTop: 10 }}
+                      <Button style={{ marginTop: 10 }}
                           onPress={() =>
                               ActionSheet.show(
                                   {
@@ -6621,35 +6621,6 @@ _renderPermitSheet(content, sheetId) {
                         <Text>Wall A</Text>
                         <Grid style={{ marginBottom: 20 }}>
                         <Col>
-                            <Button
-                                onPress={() =>
-                                    ActionSheet.show(
-                                        {
-                                            options: SIDES,
-                                            cancelButtonIndex: SIDES.length - 1,
-                                            title: content.wallA.S || "Select Material"
-                                        },
-                                        buttonIndex => {
-                                          if (buttonIndex != SIDES.length - 1) {
-                                              content.wallA.S = SIDES[buttonIndex]
-                                              content.wallB.S = SIDES[buttonIndex]
-                                              content.wallC.S = SIDES[buttonIndex]
-                                              content.wallD.S = SIDES[buttonIndex]
-                                          }
-                                          else {
-                                              content.wallA.S = '';
-                                              content.wallB.S = '';
-                                              content.wallC.S = '';
-                                              content.wallD.S = '';
-                                          }
-                                            this.setState({})
-                                        }
-                                    )}
-                            >
-                                <Text>{content.wallA.S || "Side"}</Text>
-                            </Button>
-                        </Col>
-                        <Col>
                         <Button
                             onPress={() =>
                                 ActionSheet.show(
@@ -6694,30 +6665,6 @@ _renderPermitSheet(content, sheetId) {
                     <Col style={{ height: 200 }}>
                         <Text>Wall B</Text>
                         <Grid style={{ marginBottom: 20 }}>
-                        <Col>
-                            <Button
-                                onPress={() =>
-                                    ActionSheet.show(
-                                        {
-                                            options: SIDES,
-                                            cancelButtonIndex: SIDES.length - 1,
-                                            title: content.wallB.S || "Select Material"
-                                        },
-                                        buttonIndex => {
-                                          if (buttonIndex != SIDES.length - 1) {
-                                              content.wallB.S = SIDES[buttonIndex]
-                                          }
-                                          else {
-                                              content.wallB.S = '';
-
-                                          }
-                                            this.setState({})
-                                        }
-                                    )}
-                            >
-                                <Text>{content.wallB.S || "Side"}</Text>
-                            </Button>
-                        </Col>
                         <Col>
                         <Button
                             onPress={() =>
@@ -6764,30 +6711,7 @@ _renderPermitSheet(content, sheetId) {
                 <Col style={{ height: 200 }}>
                         <Text>Wall C</Text>
                         <Grid style={{ marginBottom: 20 }}>
-                        <Col>
-                            <Button
-                                onPress={() =>
-                                    ActionSheet.show(
-                                        {
-                                            options: SIDES,
-                                            cancelButtonIndex: SIDES.length - 1,
-                                            title: content.wallC.S || "Select Material"
-                                        },
-                                        buttonIndex => {
-                                          if (buttonIndex != SIDES.length - 1) {
-                                              content.wallC.S = SIDES[buttonIndex]
-                                          }
-                                          else {
-                                              content.wallC.S = '';
 
-                                          }
-                                            this.setState({})
-                                        }
-                                    )}
-                            >
-                                <Text>{content.wallC.S || "Side"}</Text>
-                            </Button>
-                        </Col>
                         <Col>
                         <Button
                             onPress={() =>
@@ -6830,30 +6754,7 @@ _renderPermitSheet(content, sheetId) {
                 <Col style={{ height: 200 }}>
                         <Text>Wall D</Text>
                         <Grid style={{ marginBottom: 20 }}>
-                        <Col>
-                            <Button
-                                onPress={() =>
-                                    ActionSheet.show(
-                                        {
-                                            options: SIDES,
-                                            cancelButtonIndex: SIDES.length - 1,
-                                            title: content.wallD.S || "Select Material"
-                                        },
-                                        buttonIndex => {
-                                          if (buttonIndex != SIDES.length - 1) {
-                                              content.wallD.S = SIDES[buttonIndex]
-                                          }
-                                          else {
-                                              content.wallD.S = '';
 
-                                          }
-                                            this.setState({})
-                                        }
-                                    )}
-                            >
-                                <Text>{content.wallD.S || "Side"}</Text>
-                            </Button>
-                        </Col>
                         <Col>
                         <Button
                             onPress={() =>
@@ -12898,6 +12799,44 @@ if (content.title == 'Stairs') {
                           }} />
                       </Item>
                   </Col>
+                  <Col style={{ height: 200 }}>
+                      <Text>Wall</Text>
+                      <Button
+                          onPress={() =>
+                              ActionSheet.show(
+                                  {
+                                      options: INTSUB1,
+                                      cancelButtonIndex: INTSUB1.length - 1,
+                                      title: "Material"
+                                  },
+                                  buttonIndex => {
+                                      if (buttonIndex != INTSUB1.length - 1) {
+                                          content.wall.M = INTSUB1[buttonIndex]
+                                          this.setState({})
+                                      }
+                                  }
+                              )}
+                      >
+                          <Text>{content.wall.M || "Material"}</Text>
+                      </Button>
+                      <Text >{content.wall.I == true ? 'Intact' : 'Deteriorated'}</Text>
+                      <ListItem>
+                          <RkChoice rkType='posNeg' selected={content.wall.I} onChange={(e) => {
+                              content.wall.I = !content.wall.I
+                              this.setState({})
+                          }} />
+                      </ListItem>
+                      <Item>
+                          <Input keyboardType="numeric" placeholder="Reading" maxLength={4} value={content.wall.R} onChangeText={(text) => {
+                              let p = text.split('.').join('');
+                              if(p){
+                              content.wall.R = String((Math.round(p) / 10).toFixed(1));
+                            }else{
+                              content.wall.R = null
+                            }this.setState({})
+                          }} />
+                      </Item>
+                  </Col>
               </Grid>
               <Item stackedLabel>
                   <Label>Comments</Label>
@@ -17523,9 +17462,52 @@ if (content.title == 'Tile') {
               frame: { M: null, I: true, R: null, name: 'Window Frame' },
               windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
               valence: { M: null, I: true, R: null, name: 'Valence' },
+              wall: { M: null, I: true, R: null, name: 'Wall' },
             },
             {
               id: 5,
+              side: false,
+              expanded: 1,
+              type: false,
+              title: "Interior Window",
+              leadsTo: null,
+              sill: { M: null, I: true, R: null, name: 'Window Sill' },
+              sash: { M: null, I: true, R: null, name: 'Window Sash' },
+              frame: { M: null, I: true, R: null, name: 'Window Frame' },
+              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+              valence: { M: null, I: true, R: null, name: 'Valence' },
+              wall: { M: null, I: true, R: null, name: 'Wall' },
+            },
+            {
+              id: 6,
+              side: false,
+              expanded: 1,
+              type: false,
+              title: "Interior Window",
+              leadsTo: null,
+              sill: { M: null, I: true, R: null, name: 'Window Sill' },
+              sash: { M: null, I: true, R: null, name: 'Window Sash' },
+              frame: { M: null, I: true, R: null, name: 'Window Frame' },
+              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+              valence: { M: null, I: true, R: null, name: 'Valence' },
+              wall: { M: null, I: true, R: null, name: 'Wall' },
+            },
+            {
+              id: 7,
+              side: false,
+              expanded: 1,
+              type: false,
+              title: "Interior Window",
+              leadsTo: null,
+              sill: { M: null, I: true, R: null, name: 'Window Sill' },
+              sash: { M: null, I: true, R: null, name: 'Window Sash' },
+              frame: { M: null, I: true, R: null, name: 'Window Frame' },
+              windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+              valence: { M: null, I: true, R: null, name: 'Valence' },
+              wall: { M: null, I: true, R: null, name: 'Wall' },
+            },
+            {
+              id: 8,
               side: false,
               type: false,
               title: "Closet",
@@ -17537,7 +17519,7 @@ if (content.title == 'Tile') {
               support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
             },
             {
-              id: 6,
+              id: 9,
               side: false,
               type: false,
               title: "Cabinet",
@@ -17551,7 +17533,7 @@ if (content.title == 'Tile') {
               medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
             },
             {
-              id: 7,
+              id: 10,
               type: false,
               expanded: 1,
               loc: 1,
@@ -17789,9 +17771,52 @@ if (content.title == 'Tile') {
             frame: { M: null, I: true, R: null, name: 'Window Frame' },
             windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
             valence: { M: null, I: true, R: null, name: 'Valence' },
+            wall: { M: null, I: true, R: null, name: 'Wall' },
           },
           {
             id: 5,
+            side: false,
+            type: false,
+            title: "Interior Window",
+            expanded: true,
+            loc: 1,
+            sill: { M: null, I: true, R: null, name: 'Window Sill' },
+            sash: { M: null, I: true, R: null, name: 'Window Sash' },
+            frame: { M: null, I: true, R: null, name: 'Window Frame' },
+            windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+            valence: { M: null, I: true, R: null, name: 'Valence' },
+            wall: { M: null, I: true, R: null, name: 'Wall' },
+          },
+          {
+            id: 6,
+            side: false,
+            type: false,
+            title: "Interior Window",
+            expanded: true,
+            loc: 1,
+            sill: { M: null, I: true, R: null, name: 'Window Sill' },
+            sash: { M: null, I: true, R: null, name: 'Window Sash' },
+            frame: { M: null, I: true, R: null, name: 'Window Frame' },
+            windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+            valence: { M: null, I: true, R: null, name: 'Valence' },
+            wall: { M: null, I: true, R: null, name: 'Wall' },
+          },
+          {
+            id: 7,
+            side: false,
+            type: false,
+            title: "Interior Window",
+            expanded: true,
+            loc: 1,
+            sill: { M: null, I: true, R: null, name: 'Window Sill' },
+            sash: { M: null, I: true, R: null, name: 'Window Sash' },
+            frame: { M: null, I: true, R: null, name: 'Window Frame' },
+            windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+            valence: { M: null, I: true, R: null, name: 'Valence' },
+            wall: { M: null, I: true, R: null, name: 'Wall' },
+          },
+          {
+            id: 8,
             side: false,
             type: false,
             title: "Closet",
@@ -17802,7 +17827,7 @@ if (content.title == 'Tile') {
             support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
           },
           {
-            id: 6,
+            id: 9,
             side: false,
             type: false,
             title: "Cabinet",
@@ -17815,7 +17840,7 @@ if (content.title == 'Tile') {
             medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
           },
           {
-            id: 7,
+            id: 10,
             type: false,
             loc: 1,
             title: "Interior Walls",
@@ -17858,7 +17883,7 @@ if (content.title == 'Tile') {
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
-            frame: { M: null, I: true, R: null, name: 'Frame' },
+            frame: { M: null, I: true, R: null, name: 'Door Frame' },
             thresh: { M: null, I: true, R: null, name: 'Threshold' },
             securitydoor: { M: null, I: true, R: null, name: 'Security Door' },
             screendoor: { M: null, I: true, R: null, name: 'Screen Door' },
@@ -17940,7 +17965,7 @@ if (content.title == 'Tile') {
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
-            frame: { M: null, I: true, R: null, name: 'Frame' },
+            frame: { M: null, I: true, R: null, name: 'Door Frame' },
             thresh: { M: null, I: true, R: null, name: 'Threshold' },
             securitydoor: { M: null, I: true, R: null, name: 'Security Door' },
             screendoor: { M: null, I: true, R: null, name: 'Screen Door' },
@@ -18105,7 +18130,7 @@ if (content.title == 'Tile') {
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
-            frame: { M: null, I: true, R: null, name: 'Frame' },
+            frame: { M: null, I: true, R: null, name: 'Door Frame' },
             thresh: { M: null, I: true, R: null, name: 'Threshold' },
             securitydoor: { M: null, I: true, R: null, name: 'Security Door' },
             screendoor: { M: null, I: true, R: null, name: 'Screen Door' },
@@ -18477,7 +18502,7 @@ if (content.title == 'Tile') {
             title: "Exterior Doorway",
             leadsTo: null,
             door: { M: null, I: true, R: null, name: 'Door' },
-            frame: { M: null, I: true, R: null, name: 'Frame' },
+            frame: { M: null, I: true, R: null, name: 'Door Frame' },
             thresh: { M: null, I: true, R: null, name: 'Threshold' },
             securitydoor: { M: null, I: true, R: null, name: 'Security Door' },
             screendoor: { M: null, I: true, R: null, name: 'Screen Door' },
@@ -18519,10 +18544,10 @@ if (content.title == 'Tile') {
             type: false,
             title: "Walls",
             leadsTo: null,
-            wallA: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
-            wallB: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
-            wallC: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
-            wallD: { S: false, M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
+            wallA: { S: "A", M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
+            wallB: { S: "B", M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
+            wallC: { S: "C", M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
+            wallD: { S: "D", M: null, I: true, R: null, name: 'Wall', item:'Wall'  },
           }],
             x.total = x.data.length - 1
         }
@@ -18863,6 +18888,7 @@ if (content.title == 'Tile') {
             frame: { M: null, I: true, R: null, name: 'Window Frame' },
             windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
             valence: { M: null, I: true, R: null, name: 'Valence' },
+            wall: { M: null, I: true, R: null, name: 'Wall' },
           }],
             x.total = x.data.length - 1
         }
@@ -19366,9 +19392,53 @@ if (content.title == 'Tile') {
                       frame: { M: null, I: true, R: null, name: 'Window Frame' },
                       windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
                       valence: { M: null, I: true, R: null, name: 'Valence' },
+                      wall: { M: null, I: true, R: null, name: 'Wall' },
                     },
                     {
                       id: 5,
+                      side: false,
+                      type: false,
+                      title: "Interior Window",
+                      expanded: true,
+                      loc: 1,
+                      sill: { M: null, I: true, R: null, name: 'Window Sill' },
+                      sash: { M: null, I: true, R: null, name: 'Window Sash' },
+                      frame: { M: null, I: true, R: null, name: 'Window Frame' },
+                      windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+                      valence: { M: null, I: true, R: null, name: 'Valence' },
+                      wall: { M: null, I: true, R: null, name: 'Wall' },
+                    },
+                    {
+                      id: 6,
+                      side: false,
+                      type: false,
+                      title: "Interior Window",
+                      expanded: true,
+                      loc: 1,
+                      sill: { M: null, I: true, R: null, name: 'Window Sill' },
+                      sash: { M: null, I: true, R: null, name: 'Window Sash' },
+                      frame: { M: null, I: true, R: null, name: 'Window Frame' },
+                      windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+                      valence: { M: null, I: true, R: null, name: 'Valence' },
+                      wall: { M: null, I: true, R: null, name: 'Wall' },
+                    },
+                    {
+                      id: 7,
+                      side: false,
+                      type: false,
+                      title: "Interior Window",
+                      expanded: true,
+                      loc: 1,
+                      sill: { M: null, I: true, R: null, name: 'Window Sill' },
+                      sash: { M: null, I: true, R: null, name: 'Window Sash' },
+                      frame: { M: null, I: true, R: null, name: 'Window Frame' },
+                      windowScreen: { M: null, I: true, R: null, name: 'Window Screen' },
+                      valence: { M: null, I: true, R: null, name: 'Valence' },
+                      wall: { M: null, I: true, R: null, name: 'Wall' },
+                    },
+
+                    {
+                      id: 8,
                       side: false,
                       type: false,
                       title: "Closet",
@@ -19379,7 +19449,7 @@ if (content.title == 'Tile') {
                       support: { M: null, I: true, R: null, name: 'Closet Shelf Support' },
                     },
                     {
-                      id: 6,
+                      id: 9,
                       side: false,
                       type: false,
                       title: "Cabinet",
@@ -19392,7 +19462,7 @@ if (content.title == 'Tile') {
                       medicine: { M: null, I: true, R: null, name: 'Medicine Cabinet' }
                     },
                     {
-                      id: 7,
+                      id: 10,
                       type: false,
                       loc: 1,
                       title: "Interior Walls",
@@ -19584,11 +19654,3 @@ if (content.title == 'Tile') {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexShrink: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-});
