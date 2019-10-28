@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "slug": "barr-and-clark",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"

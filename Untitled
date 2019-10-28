@@ -1,0 +1,8135 @@
+{
+  "jobId": "3100149",
+  "insSheets": [
+    {
+      "id": 5,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "   ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.5",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "2.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 3,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": "C",
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        }
+      ],
+      "index": 1,
+      "name": "Entry ",
+      "total": "undefined111"
+    },
+    {
+      "id": 1,
+      "name": "Entry",
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          }
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": "C",
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false,
+          "doorType": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": "",
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "total": "011"
+    },
+    {
+      "id": 2,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "D",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "doorType": false,
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": "B",
+          "type": "",
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": "",
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Hall",
+      "total": "undefined111"
+    },
+    {
+      "id": 3,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "  ",
+          "building": "",
+          "expanded": false
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          },
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "expanded": false
+        },
+        {
+          "id": 8,
+          "side": "B",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Horizontal Sliding",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": "C",
+          "type": false,
+          "title": "Closet",
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 10,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": "",
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bedroom 1",
+      "total": "91"
+    },
+    {
+      "id": 4,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "D",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "B",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": "A",
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": "",
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bathroom 1",
+      "total": "undefined1111"
+    },
+    {
+      "id": 5,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "doorType": false,
+          "done": true
+        },
+        {
+          "id": 3,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": "B",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Horizontal Sliding",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": "A",
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": "",
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bedroom 2",
+      "total": "undefined11111"
+    },
+    {
+      "id": 1,
+      "name": "Bedroom 2",
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Interior Window",
+          "leadsTo": null,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "expanded": 1,
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "expanded": 1,
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "expanded": 1,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        }
+      ],
+      "total": "01"
+    },
+    {
+      "id": 6,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "     ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "type": false,
+          "title": "Closet",
+          "side": "C",
+          "loc": 1,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false,
+          "doorType": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bedroom 3",
+      "total": "undefined1111"
+    },
+    {
+      "id": 7,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 3,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 9,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 10,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Fireplace",
+          "leadsTo": null,
+          "mantle": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Mantle"
+          },
+          "hearth": {
+            "M": "Brick",
+            "I": true,
+            "R": "0.0",
+            "name": "Hearth"
+          },
+          "fireplace": {
+            "M": "Brick",
+            "I": true,
+            "R": "0.1",
+            "name": "Fireplace"
+          },
+          "chimney": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Chimney"
+          },
+          "done": true
+        }
+      ],
+      "index": 1,
+      "name": "Living Room ",
+      "total": "91"
+    },
+    {
+      "id": 2,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "    ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "",
+          "expanded": 1,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          }
+        },
+        {
+          "id": 4,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        }
+      ],
+      "index": 1,
+      "name": "Living Room ",
+      "total": "71"
+    },
+    {
+      "id": 8,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "B",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 10,
+          "side": "C",
+          "type": false,
+          "title": "Cabinet",
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 11,
+          "side": "D",
+          "type": false,
+          "title": "Cabinet",
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 12,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Kitchen",
+      "total": "111"
+    },
+    {
+      "id": 9,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "B",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": "D",
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.2",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Laundry ",
+      "total": "undefined111"
+    },
+    {
+      "id": 10,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "  ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 3,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "2.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "comments": "To Laundry Room ",
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 9,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 10,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Louvered",
+          "done": true
+        },
+        {
+          "id": 11,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Stucco",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Service Porch ",
+      "total": "101"
+    },
+    {
+      "id": 11,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "B",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Aluminum",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Aluminum",
+          "done": true
+        },
+        {
+          "id": 9,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bedroom 4",
+      "total": "81"
+    },
+    {
+      "id": 12,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": " ",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "A",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "done": true,
+          "doorType": false
+        },
+        {
+          "id": 4,
+          "side": "C",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": "B",
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        },
+        {
+          "id": 8,
+          "side": "D",
+          "type": false,
+          "title": "Closet",
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 9,
+          "type": false,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.0",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.1",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": "0.1",
+            "name": "Baseboard"
+          },
+          "floor": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "vent": {
+            "S": false,
+            "M": "Gypsum",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Walk in Closet",
+      "total": "81"
+    },
+    {
+      "id": 1,
+      "type": "ExtSheet",
+      "name": "Perimeter",
+      "data": [
+        {
+          "id": 1,
+          "title": "Exterior Sheet Details",
+          "unit": "",
+          "building": "",
+          "side": "A",
+          "direction": "South Side",
+          "expanded": false
+        },
+        {
+          "id": 2,
+          "side": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securitydoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screendoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "expanded": false
+        },
+        {
+          "id": 3,
+          "side": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "expanded": false
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Garage Doors",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door"
+          },
+          "doorframe": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door Frame"
+          },
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Trim",
+          "leadsTo": null,
+          "cBoard": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corner Boards"
+          },
+          "trim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Trim"
+          },
+          "hTrim": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "name": "Horizontal Trim"
+          },
+          "vTrim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Vertical Trim"
+          },
+          "mDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Milk Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf"
+          },
+          "shelfSupport": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf Support"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Support"
+          },
+          "done": true,
+          "doorType": "",
+          "comments": "Upper"
+        },
+        {
+          "id": 8,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Trim",
+          "leadsTo": null,
+          "cBoard": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corner Boards"
+          },
+          "trim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Trim"
+          },
+          "hTrim": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Horizontal Trim"
+          },
+          "vTrim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Vertical Trim"
+          },
+          "mDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Milk Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf"
+          },
+          "shelfSupport": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf Support"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Support"
+          },
+          "comments": "Lower",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Porch",
+          "leadsTo": null,
+          "column": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "S": null,
+            "name": "Column"
+          },
+          "beam": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": null,
+            "name": "Beam"
+          },
+          "ceiling": {
+            "M": "Wood",
+            "I": false,
+            "R": "1.0",
+            "S": null,
+            "name": "Ceiling"
+          },
+          "floor": {
+            "M": "Concrete",
+            "I": true,
+            "R": "0.1",
+            "S": null,
+            "name": "Floor"
+          },
+          "handrail": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Handrail"
+          },
+          "railing": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Railing"
+          },
+          "railcap": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Railcap"
+          },
+          "mailSlot": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Mailslot"
+          },
+          "done": true,
+          "comments": "Front Porch "
+        },
+        {
+          "id": 10,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true
+        },
+        {
+          "id": 11,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Misc Exterior",
+          "leadsTo": null,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Electric Panel/Frame"
+          },
+          "vent": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.2",
+            "name": "Heater Vent"
+          },
+          "accessPanel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Access Panel/Frame"
+          },
+          "gate": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Gate"
+          },
+          "fence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fence"
+          },
+          "playEquip": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Playground Equipment"
+          },
+          "planterBox": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Planter Box"
+          },
+          "equipment": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Equipment"
+          },
+          "done": true
+        },
+        {
+          "id": 12,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.5",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.5",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 13,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.4",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.5",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 14,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.4",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.5",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.4",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 15,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.0",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Aluminum",
+          "done": true
+        },
+        {
+          "id": 16,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.0",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Aluminum",
+          "done": true
+        },
+        {
+          "id": 17,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Other Item",
+          "leadsTo": null,
+          "other": {
+            "M": "Brick",
+            "I": true,
+            "R": "0.2",
+            "name": "Chimney",
+            "item": "other"
+          },
+          "comments": "Chimney",
+          "done": true,
+          "doorType": false
+        }
+      ],
+      "total": "161"
+    },
+    {
+      "id": 2,
+      "type": "ExtSheet",
+      "name": "Perimeter",
+      "data": [
+        {
+          "id": 1,
+          "title": "Exterior Sheet Details",
+          "unit": "",
+          "building": "",
+          "side": "B",
+          "direction": "West Side"
+        },
+        {
+          "id": 2,
+          "side": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securitydoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screendoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.2",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Horizontal Sliding",
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Garage Doors",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door"
+          },
+          "doorframe": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door Frame"
+          }
+        },
+        {
+          "id": 7,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.4",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "2.1",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 8,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.2",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Horizontal Sliding",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "done": true
+        },
+        {
+          "id": 10,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.4",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.4",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true
+        },
+        {
+          "id": 11,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Misc Exterior",
+          "leadsTo": null,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Electric Panel/Frame"
+          },
+          "vent": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.1",
+            "name": "Heater Vent"
+          },
+          "accessPanel": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.0",
+            "name": "Access Panel/Frame"
+          },
+          "gate": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Gate"
+          },
+          "fence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fence"
+          },
+          "playEquip": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Playground Equipment"
+          },
+          "planterBox": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Planter Box"
+          },
+          "equipment": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Equipment"
+          },
+          "done": true
+        }
+      ],
+      "total": "101"
+    },
+    {
+      "id": 3,
+      "type": "ExtSheet",
+      "name": "Perimeter",
+      "data": [
+        {
+          "id": 1,
+          "title": "Exterior Sheet Details",
+          "unit": "",
+          "building": "",
+          "side": "C",
+          "direction": "North Side",
+          "expanded": false
+        },
+        {
+          "id": 2,
+          "side": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securitydoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screendoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          },
+          "expanded": false
+        },
+        {
+          "id": 3,
+          "side": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.5",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "comments": "At Bedroom 3",
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall"
+          },
+          "expanded": false
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Garage Doors",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door"
+          },
+          "doorframe": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door Frame"
+          },
+          "expanded": false
+        },
+        {
+          "id": 7,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "done": true,
+          "doorType": "Fixed"
+        },
+        {
+          "id": 8,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.8",
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "2.1",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.2",
+            "S": "",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "2.1",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 10,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.0",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Louvered",
+          "done": true
+        },
+        {
+          "id": 11,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          },
+          "doorType": "Fixed",
+          "done": true
+        },
+        {
+          "id": 12,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.2",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall",
+            "item": "Wall"
+          },
+          "done": true
+        },
+        {
+          "id": 13,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Misc Exterior",
+          "leadsTo": null,
+          "frame": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.2",
+            "name": "Electric Panel/Frame"
+          },
+          "vent": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.2",
+            "name": "Heater Vent"
+          },
+          "accessPanel": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Access Panel/Frame"
+          },
+          "gate": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Gate"
+          },
+          "fence": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Fence"
+          },
+          "playEquip": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Playground Equipment"
+          },
+          "planterBox": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Planter Box"
+          },
+          "equipment": {
+            "M": "Metal",
+            "I": true,
+            "R": null,
+            "name": "Equipment"
+          },
+          "done": true
+        },
+        {
+          "id": 14,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": false,
+            "R": "0.2",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.2",
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.0",
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true
+        },
+        {
+          "id": 15,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": false,
+            "R": "0.3",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true
+        },
+        {
+          "id": 16,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Porch",
+          "leadsTo": null,
+          "column": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "S": null,
+            "name": "Column"
+          },
+          "beam": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "S": null,
+            "name": "Beam"
+          },
+          "ceiling": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "S": null,
+            "name": "Ceiling"
+          },
+          "floor": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Floor"
+          },
+          "handrail": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Handrail"
+          },
+          "railing": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Railing"
+          },
+          "railcap": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Railcap"
+          },
+          "mailSlot": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "S": null,
+            "name": "Mailslot"
+          },
+          "comments": "Carport",
+          "done": true
+        },
+        {
+          "id": 17,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Misc Exterior",
+          "leadsTo": null,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Electric Panel/Frame"
+          },
+          "vent": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "accessPanel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Access Panel/Frame"
+          },
+          "gate": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Gate"
+          },
+          "fence": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Fence"
+          },
+          "playEquip": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Playground Equipment"
+          },
+          "planterBox": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Planter Box"
+          },
+          "equipment": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Equipment"
+          },
+          "done": true
+        }
+      ],
+      "total": "161"
+    },
+    {
+      "id": 4,
+      "type": "ExtSheet",
+      "name": "Perimeter",
+      "data": [
+        {
+          "id": 1,
+          "title": "Exterior Sheet Details",
+          "unit": "",
+          "building": "",
+          "side": "D",
+          "direction": "East Side"
+        },
+        {
+          "id": 2,
+          "side": false,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securitydoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screendoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": false,
+          "type": false,
+          "title": "Exterior Windows",
+          "leadsTo": null,
+          "well": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Well"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Frame"
+          },
+          "shutters": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Shutters"
+          },
+          "securitybars": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Security Bars"
+          },
+          "awning": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Awning"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "S": false,
+            "name": "Window Screen"
+          }
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Exterior Walls",
+          "leadsTo": null,
+          "wallA": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.4",
+            "name": "Wall"
+          },
+          "wallB": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall"
+          },
+          "wallC": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall"
+          },
+          "wallD": {
+            "S": false,
+            "M": "Stucco",
+            "I": true,
+            "R": "0.5",
+            "name": "Wall"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true,
+          "expanded": false
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Garage Doors",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door"
+          },
+          "doorframe": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Garage Door Frame"
+          }
+        },
+        {
+          "id": 7,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Roof Trim",
+          "leadsTo": null,
+          "eaves": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Eaves"
+          },
+          "rafters": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.3",
+            "name": "Rafters"
+          },
+          "fascia": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Fascia"
+          },
+          "soffit": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Soffit"
+          },
+          "gutter": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Gutter"
+          },
+          "downspout": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Downspout"
+          },
+          "corbel": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Corbel"
+          },
+          "roofSup": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Roof Support"
+          },
+          "done": true
+        },
+        {
+          "id": 8,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Trim",
+          "leadsTo": null,
+          "cBoard": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corner Boards"
+          },
+          "trim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Trim"
+          },
+          "hTrim": {
+            "M": "Wood",
+            "I": true,
+            "R": "1.0",
+            "name": "Horizontal Trim"
+          },
+          "vTrim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Vertical Trim"
+          },
+          "mDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Milk Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf"
+          },
+          "shelfSupport": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf Support"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Support"
+          },
+          "comments": "Upper",
+          "done": true
+        },
+        {
+          "id": 9,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Exterior Trim",
+          "leadsTo": null,
+          "cBoard": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Corner Boards"
+          },
+          "trim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Trim"
+          },
+          "hTrim": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Horizontal Trim"
+          },
+          "vTrim": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Vertical Trim"
+          },
+          "mDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Milk Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf"
+          },
+          "shelfSupport": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Shelf Support"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Support"
+          },
+          "comments": "Lower",
+          "done": true
+        },
+        {
+          "id": 10,
+          "side": false,
+          "expanded": false,
+          "type": false,
+          "title": "Misc Exterior",
+          "leadsTo": null,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Electric Panel/Frame"
+          },
+          "vent": {
+            "M": "Metal",
+            "I": true,
+            "R": "0.0",
+            "name": "Heater Vent"
+          },
+          "accessPanel": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Access Panel/Frame"
+          },
+          "gate": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Gate"
+          },
+          "fence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Fence"
+          },
+          "playEquip": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Playground Equipment"
+          },
+          "planterBox": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Planter Box"
+          },
+          "equipment": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Equipment"
+          },
+          "done": true
+        }
+      ],
+      "total": "91"
+    },
+    {
+      "id": 13,
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": "C",
+          "expanded": false,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Door"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "doorType": "",
+          "done": true
+        },
+        {
+          "id": 4,
+          "side": "A",
+          "type": false,
+          "title": "Interior Window",
+          "expanded": false,
+          "loc": 1,
+          "sill": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.2",
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": "Wood",
+            "I": true,
+            "R": "0.1",
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": "Wood",
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          },
+          "doorType": "Double Hung",
+          "done": true
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": "Plaster",
+            "I": true,
+            "R": "0.1",
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.3",
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": "0.0",
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": "Plaster",
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          },
+          "done": true,
+          "expanded": false
+        }
+      ],
+      "index": 1,
+      "name": "Bathroom 2",
+      "total": "undefined111"
+    },
+    {
+      "id": 1,
+      "name": "Living Room",
+      "type": "InsSheet",
+      "data": [
+        {
+          "id": 1,
+          "title": "Sheet Details",
+          "unit": "",
+          "building": ""
+        },
+        {
+          "id": 2,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Exterior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          },
+          "securityDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Security Door"
+          },
+          "screenDoor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Screen Door"
+          }
+        },
+        {
+          "id": 3,
+          "side": false,
+          "expanded": 1,
+          "type": false,
+          "title": "Interior Doorway",
+          "leadsTo": null,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Door Frame"
+          },
+          "thresh": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Threshold"
+          }
+        },
+        {
+          "id": 4,
+          "side": false,
+          "type": false,
+          "title": "Interior Window",
+          "expanded": true,
+          "loc": 1,
+          "sill": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sill"
+          },
+          "sash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Sash"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Frame"
+          },
+          "windowScreen": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Window Screen"
+          },
+          "valence": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Valence"
+          }
+        },
+        {
+          "id": 5,
+          "side": false,
+          "type": false,
+          "title": "Closet",
+          "loc": 1,
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Door"
+          },
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Frame"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf"
+          },
+          "support": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Closet Shelf Support"
+          }
+        },
+        {
+          "id": 6,
+          "side": false,
+          "type": false,
+          "title": "Cabinet",
+          "loc": 2,
+          "frame": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Frame"
+          },
+          "door": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Door"
+          },
+          "shelf": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Cabinet Shelf"
+          },
+          "countertop": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Countertop"
+          },
+          "backsplash": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Backsplash"
+          },
+          "medicine": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Medicine Cabinet"
+          }
+        },
+        {
+          "id": 7,
+          "type": false,
+          "loc": 1,
+          "title": "Interior Walls",
+          "wallA": {
+            "S": "A",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall A",
+            "item": "Wall"
+          },
+          "wallB": {
+            "S": "B",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall B",
+            "item": "Wall"
+          },
+          "wallC": {
+            "S": "C",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall C",
+            "item": "Wall"
+          },
+          "wallD": {
+            "S": "D",
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Wall D",
+            "item": "Wall"
+          },
+          "ceiling": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Ceiling"
+          },
+          "baseboard": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Baseboard"
+          },
+          "vent": {
+            "S": false,
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Heater Vent"
+          },
+          "floor": {
+            "M": null,
+            "I": true,
+            "R": null,
+            "name": "Floor"
+          }
+        }
+      ],
+      "total": 0
+    }
+  ],
+  "sheets": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ],
+  "data": [
+    {
+      "id": 0,
+      "title": "Property Description Checklist",
+      "type": "property details"
+    },
+    {
+      "id": 1,
+      "type": "calibration",
+      "title": "Calibration"
+    },
+    {
+      "id": 2,
+      "type": "layout",
+      "title": "Layout Photo"
+    },
+    {
+      "id": 3,
+      "type": "layout2",
+      "title": "Property Photo"
+    },
+    {
+      "id": 0,
+      "title": "Property Description Checklist",
+      "type": "property details"
+    },
+    {
+      "id": 1,
+      "type": "calibration",
+      "title": "Calibration"
+    },
+    {
+      "id": 2,
+      "type": "layout",
+      "title": "Layout Photo"
+    },
+    {
+      "id": 3,
+      "type": "layout2",
+      "title": "Property Photo"
+    },
+    {
+      "id": 0,
+      "title": "Property Description Checklist",
+      "type": "property details"
+    },
+    {
+      "id": 1,
+      "type": "calibration",
+      "title": "Calibration",
+      "startone": "1.0",
+      "starttwo": "1.0",
+      "startthree": "1.1",
+      "endone": "1.0",
+      "endtwo": "1.1",
+      "endthree": "1.0",
+      "done": true
+    },
+    {
+      "id": 2,
+      "type": "layout",
+      "title": "Layout Photo"
+    },
+    {
+      "id": 3,
+      "type": "layout2",
+      "title": "Property Photo"
+    },
+    {
+      "id": 0,
+      "type": "details",
+      "title": "Job Details"
+    },
+    {
+      "id": 1,
+      "title": "Property Description Checklist",
+      "type": "property details"
+    },
+    {
+      "id": 4,
+      "type": "calibration",
+      "title": "Calibration"
+    },
+    {
+      "id": 5,
+      "type": "layout",
+      "title": "Layout Photo"
+    },
+    {
+      "id": 6,
+      "type": "layout2",
+      "title": "Property Photo"
+    }
+  ],
+  "selected": 0,
+  "isDateTimePickerVisible": false,
+  "colStatus": false,
+  "color": "black",
+  "au1": false,
+  "au2": false,
+  "inputs": {},
+  "total": 6,
+  "image": "",
+  "propimage": "",
+  "inspectionId": 387
+}
