@@ -14,7 +14,7 @@
   "dependencies": {
     "@expo/samples": "2.1.1",
     "dotenv": "6.2.0",
-    "expo": "33.0.0",
+    "expo": "46.0.14",
     "moment": "2.24.0",
     "native-base": "2.13.8",
     "react": "16.8.3",
